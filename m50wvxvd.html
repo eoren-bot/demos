@@ -60,80 +60,144 @@ footer a:hover { text-decoration: underline; }
 <body>
 <header>
   <h1>Carnegie Group</h1>
-  <p class="subtitle">Here's Monday-morning booking requests handled for Carnegie Group.</p>
+  <p class="subtitle">The repetitive part of the Construction Administrator role, handled, so your administrator can focus on learning the business.</p>
   <p class="services">Steel-frame design-and-build construction company based in Crawley — end-to-end concept-to-completion service across the South East. Group includes Carnegie Steel Buildings, Carnegie Architecture, and BM Steels.</p>
-  <p class="savings"><strong>What this would save:</strong> roughly 1.5 hours a week. Estimate: ~2–3 minutes to approve each pre-drafted confirmation vs ~10–15 minutes to read the request, check the diary, and type a reply (~6–10 bookings a week).</p>
+  <p class="savings"><strong>What this would save:</strong> likely 2–3 hours a week — rough upper-bound only; actual savings depend on your workflow and CRM. Method: ~5 minutes to review each pre-drafted CRM record / reply / booking email vs ~15–25 minutes end-to-end (log the enquiry, chase missing details, pick a diary slot, draft a reply or supplier booking), across roughly 6–10 inbound items a week.</p>
 </header>
 
 <div class="columns">
   <div class="col">
     <h2>Input <span class="sample-tag">sample data</span></h2>
-    <div class="block">Inbox snapshot — Monday 9 November 2026, 10:15 am
+    <div class="block">Admin inbox snapshot — Monday 9 November 2026, 9:40 am
 
-1) Email, Fri 7:12 pm, Alex Sampleton &lt;alex@brambledown-farm.example.co.uk&gt;:
-     &quot;Looking at a 24m x 15m steel frame for a new milking shed near Haywards
-     Heath. Can someone come out for a site survey? Any day next week before
-     Fri 20 Nov works. We&#x27;re on-site weekdays 7am-4pm.&quot;
+1) NEW ENQUIRY — email forwarded to estimating
+   From: Priya Example &lt;priya@castlewell-engineering.example.co.uk&gt;
+   Subject: Enquiry — new engineering workshop, Reigate
 
-2) Voicemail (transcribed), Fri 5:40 pm, Robin Placeholder — Greenacres project PM:
-     &quot;Hi, something&#x27;s come up for Thursday&#x27;s progress meeting. Could we move
-     it? Fri 13 Nov same time would work, or Mon 16 Nov morning. Call me:
-     07700 900 221.&quot;
+     &quot;Hi — we&#x27;re scoping a new engineering workshop for our Reigate
+     site. Looking at roughly 30m x 18m, clear-span, eaves around 6m,
+     with one 5-tonne overhead crane runway. It would house CNC
+     machining. We&#x27;d like a budget / outline price by Fri 20 Nov
+     so we can take it to the board on Wed 25 Nov. Happy to meet if
+     that helps.&quot;
 
-3) Email, Mon 8:02 am, Sam Example &lt;sam@crane-hire.example.co.uk&gt;:
-     &quot;Crane delivery for your BM Steels Bognor site — we have a slot Tue 10 Nov
-     7am or Wed 11 Nov 6am. Please confirm by close of business today.&quot;
+2) SITE SURVEY — follow-up from last week
+   Alex Sampleton &lt;alex@brambledown-farm.example.co.uk&gt;
+     24m x 15m steel frame for a new milking shed, near Haywards
+     Heath. Needs a surveyor visit. Alex is on-site weekdays
+     7am–4pm, any day up to Fri 20 Nov.
+
+3) EQUIPMENT REGISTER — maintenance due within 3 weeks
+   Asset            Check                                Due
+   Van VH23-KNX     MOT                                  Fri 20 Nov 2026
+   Lift chain CH-07 LOLER thorough examination           Thu 26 Nov 2026
 
 DIARY — relevant free slots this/next week
-  Mike (surveyor)   Tue 10/11 pm,  Thu 12/11 all day, Fri 13/11 am
-  Bognor site       ready to receive crane Tue 10/11 OR Wed 11/11
-  Greenacres team   Fri 13/11 10am free; Mon 16/11 am free
+  Mike (surveyor)     Tue 10/11 pm, Thu 12/11 all day, Fri 13/11 am
+  Estimating (James)  Wed 11/11 pm free; Tue 17/11 am free
+
+MAINTENANCE SUPPLIERS ON FILE
+  Example MOT Centre, Crawley — info@example-mot.example.co.uk
+  Example LOLER Services       — bookings@example-loler.example.co.uk
 </div>
   </div>
   <div class="col">
     <h2>Agent output</h2>
-    <div class="block">BOOKING 1 — BRAMBLEDOWN FARM SITE SURVEY (Alex Sampleton)
+    <div class="block">ITEM 1 — NEW ENQUIRY
+
+CRM RECORD
+
+  Client          : Priya Example &lt;priya@castlewell-engineering.example.co.uk&gt;
+  Site            : Reigate
+  Building type   : Engineering workshop (CNC machining)
+  Size            : 30m x 18m, clear-span, ~6m eaves
+  Overhead crane  : 5-tonne crane runway
+  Price deadline  : Fri 20 Nov 2026
+  Board meeting   : Wed 25 Nov 2026
+  Budget          : Not stated — client to confirm
+
+DRAFT ACKNOWLEDGEMENT
+
+  To: priya@castlewell-engineering.example.co.uk
+  Subject: Re: Enquiry — new engineering workshop, Reigate
+
+  Dear Priya,
+
+  Thank you for your enquiry. We have logged the following details:
+  30m x 18m clear-span workshop, ~6m eaves, CNC machining use,
+  with one 5-tonne overhead crane runway, at your Reigate site.
+  We are aiming to have an outline price to you by Fri 20 Nov 2026.
+
+  To allow our estimator to quote accurately, could you confirm:
+  your budget range; required floor loading (kN/m²); power supply
+  and utility expectations (three-phase, compressed air, etc.);
+  and your required completion / on-site date?
+
+  Please let us know if any of the above details need correcting.
+
+  Kind regards,
+  Carnegie Group
+
+
+ITEM 2 — SITE SURVEY
 
 DIARY ENTRY
-  Mike (surveyor) — Thu 12 Nov 2026, all day
-  Location: Brambledown Farm, near Haywards Heath
-  (Thu 12/11 all day is Mike&#x27;s most flexible slot before Fri 20 Nov)
+
+  Surveyor : Mike
+  Slot     : Thu 12/11 all day
+  Job      : Site survey — steel-frame milking shed, 24m x 15m
+  Client   : Alex Sampleton, Brambledown Farm (near Haywards Heath)
+  Note     : Within client&#x27;s 7am–4pm weekday window.
 
 DRAFT REPLY
-  Dear Alex, thank you for getting in touch with Carnegie Group.
-  We can arrange a site survey for Thu 12 Nov 2026 — our surveyor
-  Mike will be with you during the day. Please let us know if a
-  morning or afternoon start suits you best, and we will confirm.
+
+  To: alex@brambledown-farm.example.co.uk
+  Subject: Site Survey Booking — Milking Shed, Haywards Heath
+
+  Dear Alex,
+
+  We can confirm a surveyor visit on Thu 12 Nov 2026 (all day).
+  Could you let us know your preferred arrival time within your
+  7am–4pm window so we can plan the day accordingly?
+
+  Kind regards,
+  Carnegie Group
 
 
-BOOKING 2 — GREENACRES PROGRESS MEETING (Robin Placeholder)
+ITEM 3 — EQUIPMENT COMPLIANCE
 
-DIARY ENTRY
-  Greenacres team — Fri 13 Nov 2026, 10am, existing meeting room
-  (Both options Robin offered are free; Fri 13/11 10am is the
-  earlier slot and keeps the week tidy)
+FLAGS
 
-DRAFT REPLY — CALL-BACK SCRIPT
-  &quot;Hi Robin, this is [name] calling from Carnegie Group. Thanks
-  for your message. We can move the progress meeting to Fri 13
-  Nov 2026 at 10am — same format as before. If you&#x27;d prefer Mon
-  16 Nov morning instead, that works too. Please call us back on
-  [office number] to confirm which you&#x27;d like.&quot;
+  VH23-KNX  — MOT expires Fri 20 Nov 2026 — book immediately
+  CH-07     — LOLER thorough examination due Thu 26 Nov 2026
 
+DRAFT BOOKING EMAILS
 
-BOOKING 3 — CRANE DELIVERY, BM STEELS BOGNOR (Sam Example)
+  To: info@example-mot.example.co.uk
+  Subject: MOT Booking Request — Van VH23-KNX
 
-DIARY ENTRY
-  Bognor site — Tue 10 Nov 2026, 7am
-  Crane delivery from Sam Example / crane-hire
-  (Site is ready for either day; Tue 10/11 is preferred as it
-  is the earlier slot, but Wed 11/11 6am remains available)
+  Dear Example MOT Centre,
 
-DRAFT REPLY
-  Dear Sam, please go ahead and confirm the Tue 10 Nov 2026 7am
-  slot for crane delivery to our BM Steels Bognor site. If that
-  slot is no longer available, Wed 11 Nov 2026 at 6am also works.
-  Please send confirmation to this address. Thank you.</div>
+  We need to book an MOT for our van, asset VH23-KNX, before its
+  expiry on Fri 20 Nov 2026. Could you please advise your first
+  available appointment before that date?
+
+  Kind regards,
+  Carnegie Group
+
+  ---
+
+  To: bookings@example-loler.example.co.uk
+  Subject: LOLER Examination Booking — Lift Chain CH-07
+
+  Dear Example LOLER Services,
+
+  We require a LOLER thorough examination for lift chain CH-07,
+  due by Thu 26 Nov 2026. Please could you confirm your first
+  available appointment before that date?
+
+  Kind regards,
+  Carnegie Group</div>
   </div>
 </div>
 
