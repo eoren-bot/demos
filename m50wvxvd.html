@@ -11,256 +11,515 @@
 body {
   font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #111; background: #fff;
-  max-width: 1200px; margin: 0 auto; padding: 32px 24px;
+  max-width: 1100px; margin: 0 auto; padding: 32px 24px;
 }
-header { border-bottom: 1px solid #e3e3e5; padding-bottom: 12px; margin-bottom: 20px; }
-h1 { font-size: 1.5rem; margin: 0 0 4px 0; }
-.subtitle { color: #444; margin: 0; }
-.services { color: #666; font-size: 0.9rem; margin-top: 6px; }
+header { border-bottom: 1px solid #e3e3e5; padding-bottom: 14px; margin-bottom: 20px; }
+h1 { font-size: 1.55rem; margin: 0 0 4px 0; }
+.subtitle { color: #333; margin: 0 0 6px 0; font-size: 1.02rem; }
+.services { color: #666; font-size: 0.9rem; margin: 6px 0 0 0; }
 .savings {
   background: #f0f7ef; border-left: 3px solid #3a8a4a;
   padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
   font-size: 0.92rem; color: #1e4028;
 }
 .savings strong { font-weight: 600; }
-.sample-tag {
-  background: #fff3cd; border: 1px solid #ffeeba;
-  padding: 2px 8px; border-radius: 3px;
-  font-size: 0.78rem; color: #7a5a00; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.04em;
-  display: inline-block; vertical-align: middle; margin-left: 8px;
+.meta {
+  font-size: 0.85rem; color: #555; margin-top: 10px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
 }
-.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.col h2 { font-size: 1.05rem; margin: 0 0 8px 0; color: #222; }
+.meta span { white-space: nowrap; }
+.meta .pill {
+  background: #eef0f4; padding: 2px 8px; border-radius: 3px;
+}
+.meta .late {
+  background: #fde0e0; color: #5a1a1a; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px;
+}
+h2 { font-size: 1.15rem; margin: 26px 0 8px 0; }
+table.coverage {
+  border-collapse: collapse; width: 100%; font-size: 0.9rem;
+  margin-top: 8px;
+}
+table.coverage th, table.coverage td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid #e8e8ea;
+  vertical-align: top;
+}
+table.coverage th { background: #f6f7f9; font-weight: 600; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+}
+.score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+details {
+  border: 1px solid #e3e3e5; border-radius: 4px;
+  margin: 10px 0; background: #fff;
+}
+details summary {
+  cursor: pointer; padding: 10px 14px; font-weight: 600;
+  list-style: none; display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: '+'; font-weight: 700; color: #777; margin-right: 2px;
+}
+details[open] summary::before { content: '−'; }
+details .body {
+  padding: 10px 14px 16px 14px; border-top: 1px solid #ededf0;
+}
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+}
+.col h3 { font-size: 0.95rem; margin: 0 0 6px 0; color: #222; }
 .block {
   background: #f6f7f9; border: 1px solid #e3e3e5;
-  padding: 14px 16px; border-radius: 4px;
-  white-space: pre-wrap;
+  padding: 12px 14px; border-radius: 4px; white-space: pre-wrap;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem; line-height: 1.5; color: #1a1a1a;
+  font-size: 0.84rem; line-height: 1.5; color: #1a1a1a;
   overflow-x: auto;
+}
+.sample-tag {
+  background: #fff3cd; border: 1px solid #ffeeba;
+  padding: 2px 6px; border-radius: 3px;
+  font-size: 0.74rem; color: #7a5a00; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 24px; border-radius: 0 3px 3px 0;
-  font-size: 0.92rem; color: #1e3a66;
+  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  font-size: 0.9rem; color: #1e3a66;
 }
 footer {
-  margin-top: 32px; padding-top: 16px; border-top: 1px solid #e3e3e5;
-  color: #555; font-size: 0.9rem;
+  margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
+  color: #555; font-size: 0.88rem;
 }
 footer a { color: #1a56b0; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
-  body { padding: 20px 16px; }
-}
-
-.try-it {
-  margin-top: 28px; padding: 18px 20px;
-  background: #fafbfc; border: 1px solid #e3e3e5; border-radius: 4px;
-}
-.try-it h2 { font-size: 1.05rem; margin: 0 0 6px 0; color: #222; }
-.try-it .lead { color: #555; font-size: 0.92rem; margin: 0 0 14px 0; }
-.try-it label { display: block; font-size: 0.88rem; color: #333; margin-bottom: 10px; }
-.try-it label span { display: block; margin-bottom: 4px; font-weight: 600; }
-.try-it select, .try-it textarea {
-  width: 100%; padding: 8px 10px;
-  border: 1px solid #c8c8cc; border-radius: 3px;
-  font: inherit; background: #fff;
-}
-.try-it textarea {
-  min-height: 160px; resize: vertical;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem;
-}
-.try-it .counter {
-  text-align: right; font-size: 0.78rem; color: #777; margin-top: 2px;
-}
-.try-it .counter.over { color: #a33; }
-.try-it button {
-  background: #1a56b0; color: #fff; border: 0;
-  padding: 9px 18px; border-radius: 3px;
-  font: inherit; font-weight: 600; cursor: pointer;
-}
-.try-it button:disabled { background: #88a; cursor: default; }
-.try-it .result, .try-it .error {
-  margin-top: 14px; padding: 12px 14px;
-  border-radius: 3px; white-space: pre-wrap;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem; line-height: 1.5;
-}
-.try-it .result { background: #f6f7f9; border: 1px solid #e3e3e5; color: #1a1a1a; }
-.try-it .error  { background: #fdecec; border: 1px solid #f4bcbc; color: #7a1f1f; font-family: inherit; }
-.try-it .privacy {
-  margin-top: 12px; font-size: 0.82rem; color: #666;
+  body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <header>
   <h1>Carnegie Group</h1>
-  <p class="subtitle">The repetitive part of the Construction Administrator role, handled, so your administrator can focus on learning the business.</p>
-  <p class="services">Steel-frame design-and-build construction company based in Crawley — end-to-end concept-to-completion service across the South East. Group includes Carnegie Steel Buildings, Carnegie Architecture, and BM Steels.</p>
+  <p class="subtitle">Frees up Carnegie Group&#x27;s Construction Administrator to focus on live project support and client relationships by handling the repetitive document, scheduling, and inbox admin that keeps the Contracts, Site, and Estimating teams running.</p>
+  <p class="services">Steel-frame design-and-build construction company based in Crawley — end-to-end concept-to-completion service across the South East. Employee-owned; group includes Carnegie Steel Buildings, Carnegie Architecture, and BM Steels.</p>
   <p class="savings"><strong>What this would save:</strong> likely 2–3 hours a week — rough upper-bound only; actual savings depend on your workflow and CRM. Method: ~5 minutes to review each pre-drafted CRM record / reply / booking email vs ~15–25 minutes end-to-end (log the enquiry, chase missing details, pick a diary slot, draft a reply or supplier booking), across roughly 6–10 inbound items a week.</p>
+  <div class="meta"><span class="pill">Posted 07/10/2026</span>
+    <span class="late">late — 31 days old</span>
+    <span class="pill">Contract: 12-month fixed-term (permanent potential)</span>
+    <span class="pill">Systems: Microsoft Outlook, Microsoft Excel, CRM system</span>
+    <span class="pill">Culture: employee-owned, varied role, learn and develop, cross-team exposure</span>
+    <span class="pill">Source: <a href="https://www.reed.co.uk/jobs/construction-administrator/57433492">Reed ad</a></span></div>
 </header>
 
-<div class="columns">
-  <div class="col">
-    <h2>Input <span class="sample-tag">sample data</span></h2>
-    <div class="block">Admin inbox snapshot — Monday 9 November 2026, 9:40 am
+<h2>Coverage map — every duty in the ad</h2>
+<table class="coverage">
+  <thead><tr>
+    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+    <th>What the agent does</th><th>Value</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Providing administrative support to our Contracts and Site teams</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts emails, prepares tracker row updates, and summarises documents for the Contracts and Site teams; physical site presence is not covered.</td><td class="score">3/5</td></tr>
+    <tr><td>2</td><td>Ordering site materials and equipment</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts purchase order documents and checks arithmetic on quantities and costs; placing the actual order with a supplier requires human action.</td><td class="score">4/5</td></tr>
+    <tr><td>3</td><td>Coordinating maintenance administration for company-owned tools, equipment and vehicles</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent summarises maintenance records, flags upcoming inspection or MOT due dates, and drafts confirmation emails for booked service appointments.</td><td class="score">5/5</td></tr>
+    <tr><td>4</td><td>Managing diaries and bookings</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent picks an available slot from a provided list and drafts a calendar confirmation or booking email.</td><td class="score">3/5</td></tr>
+    <tr><td>5</td><td>Handling telephone calls</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td>Agent cannot make or receive phone calls; it can draft call-back scripts or message templates from pasted notes.</td><td class="score">2/5</td></tr>
+    <tr><td>6</td><td>Supporting our Estimating team with incoming enquiries</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent extracts key fields from pasted enquiry emails into a structured CRM-ready record and drafts an acknowledgement reply; pricing judgements remain with the Estimating team.</td><td class="score">5/5</td></tr>
+    <tr><td>7</td><td>Communicating with clients</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts client-facing emails and letters from pasted notes or instructions; face-to-face meetings and phone calls are not covered.</td><td class="score">4/5</td></tr>
+    <tr><td>8</td><td>Creating and maintaining project schedules in Excel</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent prepares formatted Excel schedule row drafts and computes date arithmetic or duration fields for a human to paste into the live workbook.</td><td class="score">4/5</td></tr>
+    <tr><td>9</td><td>Managing document filing and document control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent reviews pasted document lists, suggests a consistent filing structure, flags missing references or version numbers, and prepares a document register update draft.</td><td class="score">3/5</td></tr>
+  </tbody>
+</table>
 
-1) NEW ENQUIRY — email forwarded to estimating
-   From: Priya Example &lt;priya@castlewell-engineering.example.co.uk&gt;
-   Subject: Enquiry — new engineering workshop, Reigate
+<h2>Worked examples (ranked)</h2>
+<details open>
+  <summary><span class="score">#1</span> Duty 3: Coordinating maintenance administration for company-owned tools, equipment and vehicles <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 5/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent summarises maintenance records, flags upcoming inspection or MOT due dates, and drafts confirmation emails for booked service appointments.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Fleet and Equipment Tracker — pasted from Microsoft Excel, Mon 9 Nov 2026
 
-     &quot;Hi — we&#x27;re scoping a new engineering workshop for our Reigate
-     site. Looking at roughly 30m x 18m, clear-span, eaves around 6m,
-     with one 5-tonne overhead crane runway. It would house CNC
-     machining. We&#x27;d like a budget / outline price by Fri 20 Nov
-     so we can take it to the board on Wed 25 Nov. Happy to meet if
-     that helps.&quot;
+Asset ID  | Description              | Type       | Due Date    | Responsible Manager        | Last Serviced
+VAN-04    | Ford Transit (white)     | MOT        | 27 Nov 2026 | Declan Farrow              | Fri 6 Nov 2026
+VAN-07    | Renault Master (grey)    | MOT        | 15 Dec 2026 | Declan Farrow              | Wed 4 Nov 2026
+LFT-02    | Scissor lift unit        | LOLER      | 12 Nov 2026 | Priya Okonkwo              | Mon 2 Nov 2026
+LFT-05    | Chain hoist (workshop)   | LOLER      | 3 Dec 2026  | Priya Okonkwo              | Tue 3 Nov 2026
+GEN-01    | Diesel generator         | Service    | 20 Nov 2026 | Callum Steele              | Thu 5 Nov 2026
+DRILL-09  | Pillar drill (bay 3)     | PAT Test   | 19 Jan 2027 | Callum Steele              | Fri 6 Nov 2026
 
-2) SITE SURVEY — follow-up from last week
-   Alex Sampleton &lt;alex@brambledown-farm.example.co.uk&gt;
-     24m x 15m steel frame for a new milking shed, near Haywards
-     Heath. Needs a surveyor visit. Alex is on-site weekdays
-     7am–4pm, any day up to Fri 20 Nov.
+Please flag anything due within 30 days and draft a reminder email for each responsible manager.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">MAINTENANCE FLAGS — run Mon 9 Nov 2026 (30-day window closes Mon 30 Nov 2026 — LOLER/MOT/Service due on or before that date also caught if within range; full window to Thu 3 Dec 2026 covers 30 calendar days from today)
 
-3) EQUIPMENT REGISTER — maintenance due within 3 weeks
-   Asset            Check                                Due
-   Van VH23-KNX     MOT                                  Fri 20 Nov 2026
-   Lift chain CH-07 LOLER thorough examination           Thu 26 Nov 2026
+NOTE ON WINDOW: 30 days from Mon 9 Nov 2026 = Wed 9 Dec 2026. All items due on or before Wed 9 Dec 2026 are flagged.
 
-DIARY — relevant free slots this/next week
-  Mike (surveyor)     Tue 10/11 pm, Thu 12/11 all day, Fri 13/11 am
-  Estimating (James)  Wed 11/11 pm free; Tue 17/11 am free
+FLAGGED ITEMS
 
-MAINTENANCE SUPPLIERS ON FILE
-  Example MOT Centre, Crawley — info@example-mot.example.co.uk
-  Example LOLER Services       — bookings@example-loler.example.co.uk
-</div>
+Asset LFT-02 | Scissor lift unit | LOLER | Due: Thu 12 Nov 2026 | Manager: Priya Okonkwo | URGENT — due in 3 days
+Asset GEN-01 | Diesel generator | Service | Due: Fri 20 Nov 2026 | Manager: Callum Steele
+Asset VAN-04 | Ford Transit (white) | MOT | Due: Fri 27 Nov 2026 | Manager: Declan Farrow
+Asset LFT-05 | Chain hoist (workshop) | LOLER | Due: Thu 3 Dec 2026 | Manager: Priya Okonkwo
+
+NOT FLAGGED (outside 30-day window)
+VAN-07 — MOT due Tue 15 Dec 2026
+DRILL-09 — PAT Test due Mon 19 Jan 2027
+
+DRAFT EMAILS — to be sent via Microsoft Outlook
+
+TO: priya.okonkwo@example.co.uk
+SUBJECT: URGENT — LOLER Inspection Due Thu 12 Nov 2026 (LFT-02)
+Priya, the scissor lift unit (LFT-02) has a LOLER inspection due on Thu 12 Nov 2026 — three days from today. Please confirm the appointment is booked immediately. Note also that the chain hoist (LFT-05) is due for LOLER inspection on Thu 3 Dec 2026 and will need scheduling shortly. Please reply to confirm arrangements. Many thanks.
+
+TO: callum.steele@example.co.uk
+SUBJECT: Reminder — Diesel Generator Service Due Fri 20 Nov 2026 (GEN-01)
+Callum, this is a reminder that the diesel generator (GEN-01) is due for service on Fri 20 Nov 2026. Please confirm the service appointment is booked and reply with details. Many thanks.
+
+TO: declan.farrow@example.co.uk
+SUBJECT: Reminder — MOT Due Fri 27 Nov 2026 (VAN-04)
+Declan, the Ford Transit (VAN-04) is due for its MOT on Fri 27 Nov 2026. Please ensure the booking is confirmed and reply with the garage details. Many thanks.</div></div>
+    </div>
   </div>
-  <div class="col">
-    <h2>Agent output</h2>
-    <div class="block">ITEM 1 — NEW ENQUIRY
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 8: Creating and maintaining project schedules in Excel <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 4/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares formatted Excel schedule row drafts and computes date arithmetic or duration fields for a human to paste into the live workbook.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Hi, can you prep an Excel schedule row draft for the Hargrove Rebrand project? Here are the milestones and their start dates. I need duration in calendar days for each row and an overall project span too.
 
-CRM RECORD
+Milestone 1: Discovery &amp; Briefing — starts Mon 9 Nov 2026, ends Wed 11 Nov 2026
+Milestone 2: Concept Development — starts Thu 12 Nov 2026, ends Fri 20 Nov 2026
+Milestone 3: Client Review &amp; Feedback — starts Mon 23 Nov 2026, ends Wed 25 Nov 2026
+Milestone 4: Final Artwork Sign-off — starts Thu 26 Nov 2026, ends Fri 27 Nov 2026
+Milestone 5: Delivery &amp; Handover — starts Mon 30 Nov 2026, ends Tue 1 Dec 2026
 
-  Client          : Priya Example &lt;priya@castlewell-engineering.example.co.uk&gt;
-  Site            : Reigate
-  Building type   : Engineering workshop (CNC machining)
-  Size            : 30m x 18m, clear-span, ~6m eaves
-  Overhead crane  : 5-tonne crane runway
-  Price deadline  : Fri 20 Nov 2026
-  Board meeting   : Wed 25 Nov 2026
-  Budget          : Not stated — client to confirm
+Owner on all rows: Petra Vanlith (petra.vanlith@example.co.uk)
+Status all rows: In Progress
+Project code: HRB-2026
 
-DRAFT ACKNOWLEDGEMENT
+Please format as tab-separated columns ready to paste into the master Excel tracker.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">EXCEL SCHEDULE ROW DRAFT — HARGROVE REBRAND (HRB-2026)
+Prepared Mon 9 Nov 2026 by agent for Petra Vanlith (petra.vanlith@example.co.uk)
+Paste the rows below directly into the master Excel project tracker. Columns are tab-separated.
 
-  To: priya@castlewell-engineering.example.co.uk
-  Subject: Re: Enquiry — new engineering workshop, Reigate
+COLUMN HEADERS
+Project Code    Milestone    Owner    Start Date    End Date    Duration (Days)    Status
 
-  Dear Priya,
+ROW DRAFTS
+HRB-2026    Discovery &amp; Briefing              petra.vanlith@example.co.uk    09/11/2026    11/11/2026    3    In Progress
+HRB-2026    Concept Development               petra.vanlith@example.co.uk    12/11/2026    20/11/2026    9    In Progress
+HRB-2026    Client Review &amp; Feedback          petra.vanlith@example.co.uk    23/11/2026    25/11/2026    3    In Progress
+HRB-2026    Final Artwork Sign-off            petra.vanlith@example.co.uk    26/11/2026    27/11/2026    2    In Progress
+HRB-2026    Delivery &amp; Handover               petra.vanlith@example.co.uk    30/11/2026    01/12/2026    2    In Progress
 
-  Thank you for your enquiry. We have logged the following details
-  and will begin pulling together an outline — please correct us
-  if anything is wrong: 30m x 18m clear-span workshop, ~6m eaves,
-  one 5-tonne overhead crane runway, CNC machining use, Reigate
-  site, outline price required by Fri 20 Nov 2026.
+OVERALL PROJECT SPAN
+Start: Mon 9 Nov 2026    End: Tue 1 Dec 2026    Total calendar days: 23
 
-  To allow our estimator to quote accurately, could you confirm:
-  your budget range; required floor loading (kN/m²); power supply
-  and utility expectations (three-phase, compressed air, etc.);
-  and your target completion date?
-
-  We will be in touch shortly.
-
-  Carnegie Group
-
-
-ITEM 2 — SITE SURVEY
-
-DIARY ENTRY
-
-  Surveyor : Mike
-  Slot     : Thu 12/11 all day
-  Job      : Site survey — milking shed, 24m x 15m steel frame,
-             near Haywards Heath (Alex Sampleton,
-             alex@brambledown-farm.example.co.uk)
-  Note     : Within client&#x27;s 7am–4pm window; falls before Fri 20 Nov 2026.
-
-DRAFT REPLY
-
-  To: alex@brambledown-farm.example.co.uk
-  Subject: Site Survey Booking — Milking Shed
-
-  Dear Alex,
-
-  We can arrange a surveyor visit on Thu 12 Nov 2026 (all day).
-  Could you let us know your preferred arrival time within your
-  7am–4pm window so we can confirm with Mike?
-
-  Carnegie Group
-
-
-ITEM 3 — EQUIPMENT COMPLIANCE
-
-FLAGS
-
-  VH23-KNX  MOT expires         Fri 20 Nov 2026  — book immediately
-  CH-07     LOLER examination    Thu 26 Nov 2026  — book this week
-
-DRAFT BOOKING EMAILS
-
-  To: info@example-mot.example.co.uk
-  Subject: MOT Booking Request — Van VH23-KNX
-
-  Dear Example MOT Centre,
-
-  We need to book an MOT for our van, asset VH23-KNX, before its
-  expiry on Fri 20 Nov 2026. Could you please confirm your first
-  available appointment before that date?
-
-  Carnegie Group — Carnegie Steel Buildings, Crawley
-
-  ---
-
-  To: bookings@example-loler.example.co.uk
-  Subject: LOLER Examination Booking — Lift Chain CH-07
-
-  Dear Example LOLER Services,
-
-  We require a LOLER thorough examination for lift chain CH-07,
-  due by Thu 26 Nov 2026. Please advise your first available
-  appointment before that date.
-
-  Carnegie Group — Carnegie Steel Buildings, Crawley</div>
+NOTES FOR HUMAN REVIEW
+Duration = end date minus start date plus 1 (inclusive calendar days). Verify figures before saving to live tracker. Status can be updated in CRM system once milestones complete.</div></div>
+    </div>
   </div>
-</div>
+</details>
+<details open>
+  <summary><span class="score">#3</span> Duty 4: Managing diaries and bookings <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent picks an available slot from a provided list and drafts a calendar confirmation or booking email.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Meeting request from: Cordelia Fenn (cordelia.fenn@example.co.uk)
+Attendees: Cordelia Fenn, Desmond Holt, Priya Tamboli
+Duration needed: 1 hour
+Preference: Morning slot, early in the week if possible
+Room required: Yes, Conference Room B
+Notes: Desmond is unavailable all day Wed 11 Nov 2026. Priya is unavailable before 09:30 on any day.
 
-<!-- try-it-block -->
-<section class="try-it">
-  <h2>Try it on your own</h2>
-  <p class="lead">Paste a short, representative sample (max 2,000 characters). The agent runs once on your text and shows the result below.</p>
-  <form id="try-form">
-    <label>
-      <span>Task</span>
-      <select name="duty" id="try-duty" required>
-        <option value="bookings">Monday-morning booking requests</option>
-      </select>
-    </label>
-    <label>
-      <span>Your sample data</span>
-      <textarea name="text" id="try-text" rows="10" maxlength="2000" placeholder="Paste a sample of your inbox, timesheet, supplier note, etc." required></textarea>
-    </label>
-    <div class="counter"><span id="try-charcount">0</span>/2000</div>
-    <button type="submit" id="try-submit">Try it</button>
-  </form>
-  <div class="result" id="try-result" hidden></div>
-  <div class="error" id="try-error" hidden></div>
-  <p class="privacy">Your text is processed once to show this result and is not stored.</p>
-</section>
+Available slots from Excel availability tracker:
+- Mon 9 Nov 2026, 08:00-09:00 (Conference Room B free)
+- Mon 9 Nov 2026, 10:00-11:00 (Conference Room B free)
+- Tue 10 Nov 2026, 09:30-10:30 (Conference Room B free)
+- Wed 11 Nov 2026, 09:00-10:00 (Conference Room B free)
+- Thu 12 Nov 2026, 10:00-11:00 (Conference Room B free)
+
+Please select the best slot and draft an Outlook calendar invite confirmation.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">SLOT SELECTED
+Tue 10 Nov 2026, 09:30-10:30, Conference Room B
+
+SELECTION RATIONALE
+Mon 9 Nov 2026 08:00 slot ruled out — Priya unavailable before 09:30.
+Mon 9 Nov 2026 10:00 slot is available but Tue is preferred as it gives all parties notice from today.
+Wed 11 Nov 2026 ruled out — Desmond unavailable all day.
+Tue 10 Nov 2026 09:30 is the earliest valid morning slot satisfying all constraints.
+
+OUTLOOK CALENDAR INVITE DRAFT
+To: cordelia.fenn@example.co.uk; desmond.holt@example.co.uk; priya.tamboli@example.co.uk
+Subject: Team Meeting — Conference Room B
+Date: Tue 10 Nov 2026
+Time: 09:30-10:30
+Location: Conference Room B
+
+Body:
+Please find below your confirmed meeting details. This invite has been raised in Microsoft Outlook and the room booking logged in the CRM system.
+
+Attendees: Cordelia Fenn, Desmond Holt, Priya Tamboli
+Duration: 1 hour
+If you are unable to attend please notify the administrator as soon as possible so an alternative slot can be arranged.
+
+ACTION REQUIRED BY ADMINISTRATOR
+Review and send invite via Microsoft Outlook. Confirm room booking in CRM system.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#4</span> Duty 9: Managing document filing and document control <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reviews pasted document lists, suggests a consistent filing structure, flags missing references or version numbers, and prepares a document register update draft.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Hi, please review this batch of filenames we need to file and update the document register in Excel. Some were emailed in via Outlook this morning.
+
+Batch received Mon 9 Nov 2026:
+
+SpecificationDraft.docx
+PO_Hendricks_v2.pdf
+SiteRiskAssessment.pdf
+ContractAmendment_FinalFinal.docx
+Hendricks_Invoice.pdf
+DrawingRevision_A.dwg
+QualityPlan.docx
+PO99234_DeliveryNote_v1.pdf
+Subcontractor_Agreement.docx
+TestReport_ClarkeEngineering.pdf
+
+Client: Meridian Structures Ltd
+Project code: MSL-2026-04
+Contact: Orla Fenchurch, orla.fenchurch@example.co.uk</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DOCUMENT REGISTER UPDATE DRAFT — Mon 9 Nov 2026
+Project: Meridian Structures Ltd | Code: MSL-2026-04
+Reviewed by agent on receipt via Microsoft Outlook.
+
+RECOMMENDED NAMING CONVENTION
+MSL-2026-04_[DocType]_[Description]_[PORef]_[RevX]_YYYYMMDD
+
+FLAGS — MISSING OR INCONSISTENT INFORMATION
+
+SpecificationDraft.docx — missing PO reference and revision number. Suggest: MSL-2026-04_SPEC_Specification_[PORef]_Rev01_20261109
+SiteRiskAssessment.pdf — missing PO reference and revision number. Suggest: MSL-2026-04_RA_SiteRiskAssessment_[PORef]_Rev01_20261109
+ContractAmendment_FinalFinal.docx — informal naming (FinalFinal); missing PO ref and revision. Suggest: MSL-2026-04_CONTRACT_Amendment_[PORef]_Rev01_20261109
+Hendricks_Invoice.pdf — missing PO reference and revision. Suggest: MSL-2026-04_INV_Hendricks_[PORef]_Rev01_20261109
+QualityPlan.docx — missing PO reference and revision number. Suggest: MSL-2026-04_QP_QualityPlan_[PORef]_Rev01_20261109
+Subcontractor_Agreement.docx — missing PO reference and revision. Suggest: MSL-2026-04_SUB_SubcontractorAgreement_[PORef]_Rev01_20261109
+TestReport_ClarkeEngineering.pdf — missing PO reference and revision. Suggest: MSL-2026-04_TEST_ClarkeEngineering_[PORef]_Rev01_20261109
+
+COMPLIANT FILES (no changes needed)
+PO_Hendricks_v2.pdf — has version; confirm PO number and add project code prefix.
+DrawingRevision_A.dwg — revision present; add project code prefix and PO ref.
+PO99234_DeliveryNote_v1.pdf — PO ref and version present; add project code prefix.
+
+ACTION FOR ADMINISTRATOR
+Insert corrected filenames into Microsoft Excel document register under project MSL-2026-04. Contact Orla Fenchurch (orla.fenchurch@example.co.uk) via Microsoft Outlook to confirm missing PO references before filing. Update CRM system record for Meridian Structures Ltd with register revision date Mon 9 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#5</span> Duty 6: Supporting our Estimating team with incoming enquiries <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 5/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent extracts key fields from pasted enquiry emails into a structured CRM-ready record and drafts an acknowledgement reply; pricing judgements remain with the Estimating team.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: priya.mehta@thornfield-dev.example.co.uk
+To: enquiries@cranebuilt.example.co.uk
+Sent: Mon 9 Nov 2026, 09:14
+Subject: Enquiry – Groundworks &amp; RC Frame Package, Thornfield Business Park Phase 2
+
+Hi,
+
+We are currently tendering for the groundworks and reinforced concrete frame package at Thornfield Business Park Phase 2 in Coventry. We would be grateful if Cranebuilt could provide a quote for this work.
+
+Scope includes bulk excavation, piling mat, drainage, and RC frame to four storeys. Drawings and a specification document are attached. We expect the site to be live from early next year.
+
+Could you confirm whether you are able to quote and return your submission by Friday 20 November 2026 at the latest? Our client is keen to appoint by the end of the month.
+
+Please do not hesitate to contact me if you need any further information.
+
+Kind regards,
+Priya Mehta | Procurement Manager | Thornfield Developments
+priya.mehta@thornfield-dev.example.co.uk | 07700 900341</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">CRM RECORD DRAFT — FOR ESTIMATING TEAM REVIEW BEFORE IMPORT
+
+Enquiry Reference   : [CRM to auto-assign on import]
+Date Received       : Mon 9 Nov 2026
+Source              : Microsoft Outlook — enquiries inbox
+
+CONTACT DETAILS
+Name                : Priya Mehta
+Title               : Procurement Manager
+Company             : Thornfield Developments
+Email               : priya.mehta@thornfield-dev.example.co.uk
+Phone               : 07700 900341
+
+PROJECT DETAILS
+Project Name        : Thornfield Business Park Phase 2
+Location            : Coventry
+Project Type        : Groundworks and Reinforced Concrete Frame Package
+Scope Summary       : Bulk excavation, piling mat, drainage, RC frame to four storeys
+Attachments Noted   : Drawings and specification document
+
+DEADLINE
+Submission Required : Fri 20 Nov 2026
+
+STATUS
+Acknowledgement Sent: Pending Estimating team approval
+
+DRAFT ACKNOWLEDGEMENT EMAIL — FOR ESTIMATING TEAM TO REVIEW AND SEND
+
+To      : priya.mehta@thornfield-dev.example.co.uk
+Subject : RE: Enquiry – Groundworks &amp; RC Frame Package, Thornfield Business Park Phase 2
+
+Dear Priya,
+
+Thank you for getting in touch. We have received your enquiry for the groundworks and reinforced concrete frame package at Thornfield Business Park Phase 2 and have passed the details to our Estimating team for review.
+
+We will confirm shortly whether we are in a position to quote. Please note your requested submission deadline of Fri 20 Nov 2026.
+
+If you need anything in the meantime, please do not hesitate to contact us.
+
+Kind regards,
+Cranebuilt Estimating Team</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 2: Ordering site materials and equipment <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 4/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts purchase order documents and checks arithmetic on quantities and costs; placing the actual order with a supplier requires human action.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Hi, can you draft a PO for the Gardenia Blvd fit-out (PRJ-4418)?
+
+Supplier is Sample Timber Co, account FXS-204. We got a quote from them last Friday.
+Delivery needed by end of next week if possible.
+
+Items we need:
+- Oak laminated panel 2440x1220x18mm: 4 panels at £95.00 each
+- Soft-close drawer runner 450mm pair: 2 pairs at £18.50 each
+
+Please check the line totals and overall PO value including VAT, then draft the PO document so I can approve it and send it from Outlook. Let me know if anything looks off.
+
+Thanks,
+Delia Fairweather</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ARITHMETIC CHECK
+
+Line 1: 4 x Oak laminated panel 2440x1220x18mm @ £95.00 ea = £380.00 CONFIRMED
+Line 2: 2 x Soft-close drawer runner 450mm pair @ £18.50 ea = £37.00 CONFIRMED
+Subtotal = £417.00 CONFIRMED
+VAT @ 20% = £83.40 CONFIRMED
+Total (ex. carriage) = £500.40 CONFIRMED
+
+DRAFT PURCHASE ORDER (ready for manager approval — human must send via Outlook)
+
+PO Date     : Mon 9 Nov 2026
+PO Reference: PRJ-4418-001
+Project     : PRJ-4418 / Gardenia Blvd fit-out
+Supplier    : Sample Timber Co  |  Account: FXS-204
+Requested by: Delia Fairweather
+Delivery by : Fri 13 Nov 2026
+
+LINE ITEMS
+1. Oak laminated panel 2440x1220x18mm   Qty 4   @ £95.00 ea   = £380.00
+2. Soft-close drawer runner 450mm pair  Qty 2   @ £18.50 ea   = £37.00
+Subtotal £417.00  |  VAT @ 20% £83.40  |  TOTAL (ex. carriage) £500.40
+
+NOTE FOR APPROVER: Figures verified. Please review, approve, and send to Sample Timber Co via Outlook. Carriage charges not yet included — confirm with supplier before dispatching.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#7</span> Duty 7: Communicating with clients <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 4/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts client-facing emails and letters from pasted notes or instructions; face-to-face meetings and phone calls are not covered.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Client: Harriet Voss, harriet.voss@dawnfieldsgroup.example.co.uk
+Project: Dawnfields Group website redesign
+Our contact: Marcus Telby, marcus.telby@creatavex.example.co.uk
+
+Internal notes to turn into client email:
+- Phase 1 (discovery and wireframes) signed off internally on Fri 6 Nov 2026
+- Phase 2 kick-off with design team scheduled Wed 11 Nov 2026
+- First draft homepage mockup expected by Fri 13 Nov 2026
+- Client review session to book for week of Mon 16 Nov 2026 — ask Harriet for her availability
+- Action on us: upload Phase 1 sign-off summary to CRM and share link with client
+- Tone: professional but warm; keep it brief</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DRAFT EMAIL — prepared Mon 9 Nov 2026 for Marcus Telby to review before sending via Outlook
+
+TO: harriet.voss@dawnfieldsgroup.example.co.uk
+FROM: marcus.telby@creatavex.example.co.uk
+SUBJECT: Dawnfields Group Website Redesign — Phase 1 Complete and Phase 2 Update
+
+Dear Harriet,
+
+I hope you are well. I am pleased to share a brief progress update on your website redesign project.
+
+Our team completed and signed off Phase 1 — discovery and wireframes — on Fri 6 Nov 2026. Phase 2 kicks off with our design team on Wed 11 Nov 2026, and we expect to have a first draft homepage mockup ready by Fri 13 Nov 2026.
+
+We would love to arrange a client review session during the week of Mon 16 Nov 2026. Please could you let us know your availability so we can get something confirmed in both diaries?
+
+I will also be sending a link to the Phase 1 sign-off summary shortly — this is held securely within our project records for your reference.
+
+Please do not hesitate to get in touch if you have any questions in the meantime.
+
+Warm regards,
+Marcus Telby
+Creatavex
+
+ADMIN NOTE: Upload Phase 1 sign-off summary to CRM system and paste the share link into a follow-up email to Harriet before end of day Mon 9 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 1: Providing administrative support to our Contracts and Site teams <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts emails, prepares tracker row updates, and summarises documents for the Contracts and Site teams; physical site presence is not covered.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Site update notes — batch received Mon 9 Nov 2026, please process.
+
+SITE: Harlow Road, Dunmore
+Supervisor: Pete Calloway
+Update: Groundworks completed Fri 6 Nov 2026. Concrete pour scheduled Wed 11 Nov 2026.
+Document ref: none provided.
+
+SITE: Kettlebridge Business Park, Stoneford
+Supervisor: Dana Ferris
+Update: Steel frame inspection passed Thu 5 Nov 2026. Next milestone is roof membrane install, target Mon 16 Nov 2026.
+Document ref: Inspection cert IC-2089 on file.
+
+SITE: Old Mill Lane, Creswick
+Supervisor: Raj Nanthan
+Update: Internal fit-out started Mon 2 Nov 2026. Fire door delivery delayed — new ETA Tue 17 Nov 2026.
+Document ref: none provided.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">OUTLOOK DRAFT EMAIL
+
+To: contracts.team@example.co.uk
+From: admin@example.co.uk
+Subject: Site Update Summary — Week Commencing Mon 9 Nov 2026
+
+Contracts Team,
+
+Please find below a summary of site updates received today, Mon 9 Nov 2026, for your records and action.
+
+HARLOW ROAD, DUNMORE (Supervisor: Pete Calloway)
+Groundworks completed Fri 6 Nov 2026. Concrete pour is scheduled for Wed 11 Nov 2026. No document reference was provided with this update — flagged below.
+
+KETTLEBRIDGE BUSINESS PARK, STONEFORD (Supervisor: Dana Ferris)
+Steel frame inspection passed Thu 5 Nov 2026. Inspection cert IC-2089 is confirmed on file. Roof membrane install is targeted for Mon 16 Nov 2026.
+
+OLD MILL LANE, CRESWICK (Supervisor: Raj Nanthan)
+Internal fit-out commenced Mon 2 Nov 2026. Fire door delivery is delayed; revised ETA is Tue 17 Nov 2026. No document reference was provided — flagged below.
+
+Regards, Admin
+
+MISSING DOCUMENT REFERENCES — HUMAN ACTION REQUIRED
+1. Harlow Road, Dunmore — no document ref supplied. Please chase Pete Calloway and update the CRM system and Excel tracker once received.
+2. Old Mill Lane, Creswick — no document ref supplied. Please chase Raj Nanthan and update the CRM system and Excel tracker once received.</div></div>
+    </div>
+  </div>
+</details>
 
 <div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
 
@@ -268,60 +527,5 @@ DRAFT BOOKING EMAILS
   Questions, or want a working version for your own inbox / timesheets / invoices?
   [SENDER NAME / EMAIL]
 </footer>
-<script>
-(function () {
-  var API_BASE = "__API_BASE__";
-  var DEMO_ID = "carnegie-group";
-  var form = document.getElementById("try-form");
-  var ta = document.getElementById("try-text");
-  var cc = document.getElementById("try-charcount");
-  var counter = cc.parentElement;
-  var btn = document.getElementById("try-submit");
-  var resBox = document.getElementById("try-result");
-  var errBox = document.getElementById("try-error");
-  var dutySel = document.getElementById("try-duty");
-
-  function updateCounter() {
-    var n = ta.value.length;
-    cc.textContent = n;
-    if (n > 2000) counter.classList.add("over");
-    else counter.classList.remove("over");
-  }
-  ta.addEventListener("input", updateCounter);
-  updateCounter();
-
-  function show(el, text) {
-    el.textContent = text;
-    el.hidden = false;
-  }
-  function hide(el) { el.hidden = true; el.textContent = ""; }
-
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    hide(resBox); hide(errBox);
-    var text = ta.value;
-    if (!text.trim()) { show(errBox, "Paste some text to process."); return; }
-    if (text.length > 2000) { show(errBox, "Please keep the input under 2,000 characters."); return; }
-    btn.disabled = true;
-    var originalLabel = btn.textContent;
-    btn.textContent = "Running ...";
-    fetch(API_BASE + "/try", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ demo_id: DEMO_ID, duty: dutySel.value, text: text })
-    }).then(function (r) {
-      return r.json().then(function (body) { return { status: r.status, body: body }; });
-    }).then(function (w) {
-      if (w.status === 200 && w.body.result) { show(resBox, w.body.result); return; }
-      if (w.body && w.body.message) { show(errBox, w.body.message); return; }
-      show(errBox, "Something went wrong. Please try again shortly.");
-    }).catch(function () {
-      show(errBox, "Couldn't reach the service. Please try again shortly.");
-    }).then(function () {
-      btn.disabled = false; btn.textContent = originalLabel;
-    });
-  });
-})();
-</script>
 </body>
 </html>
