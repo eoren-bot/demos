@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Carnegie Group — demo</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #111; background: #fff;
+  max-width: 1200px; margin: 0 auto; padding: 32px 24px;
+}
+header { border-bottom: 1px solid #e3e3e5; padding-bottom: 12px; margin-bottom: 20px; }
+h1 { font-size: 1.5rem; margin: 0 0 4px 0; }
+.subtitle { color: #444; margin: 0; }
+.services { color: #666; font-size: 0.9rem; margin-top: 6px; }
+.savings {
+  background: #f0f7ef; border-left: 3px solid #3a8a4a;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.92rem; color: #1e4028;
+}
+.savings strong { font-weight: 600; }
+.sample-tag {
+  background: #fff3cd; border: 1px solid #ffeeba;
+  padding: 2px 8px; border-radius: 3px;
+  font-size: 0.78rem; color: #7a5a00; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  display: inline-block; vertical-align: middle; margin-left: 8px;
+}
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.col h2 { font-size: 1.05rem; margin: 0 0 8px 0; color: #222; }
+.block {
+  background: #f6f7f9; border: 1px solid #e3e3e5;
+  padding: 14px 16px; border-radius: 4px;
+  white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86rem; line-height: 1.5; color: #1a1a1a;
+  overflow-x: auto;
+}
+.disclaimer {
+  background: #eef4ff; border-left: 4px solid #4a7dcc;
+  padding: 12px 16px; margin-top: 24px; border-radius: 0 3px 3px 0;
+  font-size: 0.92rem; color: #1e3a66;
+}
+footer {
+  margin-top: 32px; padding-top: 16px; border-top: 1px solid #e3e3e5;
+  color: #555; font-size: 0.9rem;
+}
+footer a { color: #1a56b0; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+  .columns { grid-template-columns: 1fr; }
+  body { padding: 20px 16px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Carnegie Group</h1>
+  <p class="subtitle">Here's Monday-morning booking requests handled for Carnegie Group.</p>
+  <p class="services">Steel-frame design-and-build construction company based in Crawley — end-to-end concept-to-completion service across the South East. Group includes Carnegie Steel Buildings, Carnegie Architecture, and BM Steels.</p>
+  <p class="savings"><strong>What this would save:</strong> roughly 1.5 hours a week. Estimate: ~2–3 minutes to approve each pre-drafted confirmation vs ~10–15 minutes to read the request, check the diary, and type a reply (~6–10 bookings a week).</p>
+</header>
+
+<div class="columns">
+  <div class="col">
+    <h2>Input <span class="sample-tag">sample data</span></h2>
+    <div class="block">Inbox snapshot — Monday 9 November 2026, 10:15 am
+
+1) Email, Fri 7:12 pm, Alex Sampleton &lt;alex@brambledown-farm.example.co.uk&gt;:
+     &quot;Looking at a 24m x 15m steel frame for a new milking shed near Haywards
+     Heath. Can someone come out for a site survey? Any day next week before
+     Fri 20 Nov works. We&#x27;re on-site weekdays 7am-4pm.&quot;
+
+2) Voicemail (transcribed), Fri 5:40 pm, Robin Placeholder — Greenacres project PM:
+     &quot;Hi, something&#x27;s come up for Thursday&#x27;s progress meeting. Could we move
+     it? Fri 13 Nov same time would work, or Mon 16 Nov morning. Call me:
+     07700 900 221.&quot;
+
+3) Email, Sat 10:02 am, Sam Example &lt;sam@crane-hire.example.co.uk&gt;:
+     &quot;Crane delivery for your BM Steels Bognor site — we have a slot Tue 10 Nov
+     7am or Wed 11 Nov 6am. Please confirm by close of business today.&quot;
+
+DIARY — relevant free slots this/next week
+  Mike (surveyor)   Tue 10/11 pm,  Thu 12/11 all day, Fri 13/11 am
+  Bognor site       ready to receive crane Tue 10/11 OR Wed 11/11
+  Greenacres team   Fri 13/11 10am free; Mon 16/11 am free
+</div>
+  </div>
+  <div class="col">
+    <h2>Agent output</h2>
+    <div class="block">BOOKING REQUEST 1 — Alex Sampleton, Brambledown Farm
+
+DIARY ENTRY
+  Mike (surveyor) — Thu 12 Nov 2026, all day
+  Site: near Haywards Heath (Brambledown Farm)
+  Note: Thu 12/11 gives a full day for a 24m x 15m shed survey.
+
+DRAFT REPLY
+  Dear Alex, thank you for getting in touch. We can arrange a site
+  survey with our surveyor Mike on Thu 12 Nov 2026 — he has the
+  full day available. Please let us know if that suits and we will
+  confirm a time. We look forward to visiting.
+
+
+BOOKING REQUEST 2 — Robin Placeholder, Greenacres PM (voicemail)
+
+DIARY ENTRY
+  Greenacres progress meeting — Fri 13 Nov 2026, 10am
+  (Mon 16 Nov am is the fallback if Fri does not suit)
+
+CALL-BACK SCRIPT
+  &quot;Hi Robin, it&#x27;s [name] from Carnegie Group returning your call.
+  We can move the Thursday meeting to Fri 13 Nov at 10am, which
+  suits the team. If that doesn&#x27;t work, Mon 16 Nov morning is also
+  free. Could you confirm which you prefer? Thanks — our number is
+  [office number].&quot;
+
+
+BOOKING REQUEST 3 — Sam Example, crane hire (BM Steels Bognor)
+
+DIARY ENTRY
+  Bognor site — ready to receive crane Tue 10 Nov 2026 or
+  Wed 11 Nov 2026 (both listed as available in diary).
+
+NOTE FOR MANAGER
+  Sam&#x27;s email asks for confirmation by close of business today
+  (Mon 9 Nov 2026). Both slots match the site&#x27;s availability.
+  Please decide which slot to confirm — a preference is needed
+  before the deadline today.
+
+DRAFT REPLY (once slot chosen)
+  &quot;Hi Sam, thank you for the options. Please go ahead with the
+  [Tue 10 Nov / Wed 11 Nov] slot — the Bognor site will be ready
+  to receive. Please confirm the delivery details. Many thanks,
+  Carnegie Group.&quot;</div>
+  </div>
+</div>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<footer>
+  Questions, or want a working version for your own inbox / timesheets / invoices?
+  [SENDER NAME / EMAIL]
+</footer>
+</body>
+</html>
