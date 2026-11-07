@@ -11,192 +11,618 @@
 body {
   font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #111; background: #fff;
-  max-width: 1200px; margin: 0 auto; padding: 32px 24px;
+  max-width: 1100px; margin: 0 auto; padding: 32px 24px;
 }
-header { border-bottom: 1px solid #e3e3e5; padding-bottom: 12px; margin-bottom: 20px; }
-h1 { font-size: 1.5rem; margin: 0 0 4px 0; }
-.subtitle { color: #444; margin: 0; }
-.services { color: #666; font-size: 0.9rem; margin-top: 6px; }
+header { border-bottom: 1px solid #e3e3e5; padding-bottom: 14px; margin-bottom: 20px; }
+h1 { font-size: 1.55rem; margin: 0 0 4px 0; }
+.subtitle { color: #333; margin: 0 0 6px 0; font-size: 1.02rem; }
+.services { color: #666; font-size: 0.9rem; margin: 6px 0 0 0; }
 .savings {
   background: #f0f7ef; border-left: 3px solid #3a8a4a;
   padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
   font-size: 0.92rem; color: #1e4028;
 }
 .savings strong { font-weight: 600; }
-.sample-tag {
-  background: #fff3cd; border: 1px solid #ffeeba;
-  padding: 2px 8px; border-radius: 3px;
-  font-size: 0.78rem; color: #7a5a00; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.04em;
-  display: inline-block; vertical-align: middle; margin-left: 8px;
+.meta {
+  font-size: 0.85rem; color: #555; margin-top: 10px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
 }
-.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.col h2 { font-size: 1.05rem; margin: 0 0 8px 0; color: #222; }
+.meta span { white-space: nowrap; }
+.meta .pill {
+  background: #eef0f4; padding: 2px 8px; border-radius: 3px;
+}
+.meta .late {
+  background: #fde0e0; color: #5a1a1a; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px;
+}
+h2 { font-size: 1.15rem; margin: 26px 0 8px 0; }
+table.coverage {
+  border-collapse: collapse; width: 100%; font-size: 0.9rem;
+  margin-top: 8px;
+}
+table.coverage th, table.coverage td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid #e8e8ea;
+  vertical-align: top;
+}
+table.coverage th { background: #f6f7f9; font-weight: 600; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+}
+.score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+details {
+  border: 1px solid #e3e3e5; border-radius: 4px;
+  margin: 10px 0; background: #fff;
+}
+details summary {
+  cursor: pointer; padding: 10px 14px; font-weight: 600;
+  list-style: none; display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: '+'; font-weight: 700; color: #777; margin-right: 2px;
+}
+details[open] summary::before { content: '−'; }
+details .body {
+  padding: 10px 14px 16px 14px; border-top: 1px solid #ededf0;
+}
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+}
+.col h3 { font-size: 0.95rem; margin: 0 0 6px 0; color: #222; }
 .block {
   background: #f6f7f9; border: 1px solid #e3e3e5;
-  padding: 14px 16px; border-radius: 4px;
-  white-space: pre-wrap;
+  padding: 12px 14px; border-radius: 4px; white-space: pre-wrap;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem; line-height: 1.5; color: #1a1a1a;
+  font-size: 0.84rem; line-height: 1.5; color: #1a1a1a;
   overflow-x: auto;
+}
+.sample-tag {
+  background: #fff3cd; border: 1px solid #ffeeba;
+  padding: 2px 6px; border-radius: 3px;
+  font-size: 0.74rem; color: #7a5a00; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 24px; border-radius: 0 3px 3px 0;
-  font-size: 0.92rem; color: #1e3a66;
+  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  font-size: 0.9rem; color: #1e3a66;
 }
 footer {
-  margin-top: 32px; padding-top: 16px; border-top: 1px solid #e3e3e5;
-  color: #555; font-size: 0.9rem;
+  margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
+  color: #555; font-size: 0.88rem;
 }
 footer a { color: #1a56b0; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
-  body { padding: 20px 16px; }
-}
-
-.try-it {
-  margin-top: 28px; padding: 18px 20px;
-  background: #fafbfc; border: 1px solid #e3e3e5; border-radius: 4px;
-}
-.try-it h2 { font-size: 1.05rem; margin: 0 0 6px 0; color: #222; }
-.try-it .lead { color: #555; font-size: 0.92rem; margin: 0 0 14px 0; }
-.try-it label { display: block; font-size: 0.88rem; color: #333; margin-bottom: 10px; }
-.try-it label span { display: block; margin-bottom: 4px; font-weight: 600; }
-.try-it select, .try-it textarea {
-  width: 100%; padding: 8px 10px;
-  border: 1px solid #c8c8cc; border-radius: 3px;
-  font: inherit; background: #fff;
-}
-.try-it textarea {
-  min-height: 160px; resize: vertical;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem;
-}
-.try-it .counter {
-  text-align: right; font-size: 0.78rem; color: #777; margin-top: 2px;
-}
-.try-it .counter.over { color: #a33; }
-.try-it button {
-  background: #1a56b0; color: #fff; border: 0;
-  padding: 9px 18px; border-radius: 3px;
-  font: inherit; font-weight: 600; cursor: pointer;
-}
-.try-it button:disabled { background: #88a; cursor: default; }
-.try-it .result, .try-it .error {
-  margin-top: 14px; padding: 12px 14px;
-  border-radius: 3px; white-space: pre-wrap;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem; line-height: 1.5;
-}
-.try-it .result { background: #f6f7f9; border: 1px solid #e3e3e5; color: #1a1a1a; }
-.try-it .error  { background: #fdecec; border: 1px solid #f4bcbc; color: #7a1f1f; font-family: inherit; }
-.try-it .privacy {
-  margin-top: 12px; font-size: 0.82rem; color: #666;
+  body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <header>
   <h1>Complete Fixing Solutions</h1>
-  <p class="subtitle">Here&#x27;s weekly timesheets and supplier paperwork handled for Complete Fixing Solutions.</p>
+  <p class="subtitle">Automates Sage data entry, timesheet arithmetic, and invoice reconciliation so the new Office Administrator at Complete Fixing Solutions can focus on resolving discrepancies and supporting the wider team.</p>
   <p class="services">High-end joinery installation and fit-out packages for bespoke manufacturers, fabricators, and principal contractors.</p>
-  <p class="savings"><strong>What this would save:</strong> roughly 2 hours a week. Estimate: ~10 minutes to review each draft vs ~30–45 minutes per weekday keying timesheets into Sage, matching delivery notes to invoices, and drafting POs.</p>
+  <p class="savings"><strong>What this would save:</strong> likely 3–5 hours a week — rough upper-bound only; actual savings depend on your week&#x27;s paperwork volume. Method: ~5 minutes to review each pre-drafted record / draft / flag vs ~15–25 minutes end-to-end to key timesheets into Sage, chase missing PO refs, reconcile invoices against delivery notes, and draft the paperwork, across roughly 15–30 inbound items a week.</p>
+  <div class="meta"><span class="pill">Posted 05/10/2026</span>
+    <span class="late">late — 33 days old</span>
+    <span class="pill">Contract: Full-time (permanent implied)</span>
+    <span class="pill">Systems: Sage, internal systems</span>
+    <span class="pill">Culture: fast-paced environment, varied role, supportive and collaborative, opportunity to grow within the business, exposure to multiple areas of the company</span>
+    <span class="pill">Source: <a href="https://www.reed.co.uk/jobs/office-administrator/57422873">Reed ad</a></span></div>
 </header>
 
-<div class="columns">
-  <div class="col">
-    <h2>Input <span class="sample-tag">sample data</span></h2>
-    <div class="block">PROJECT CFS-4418  Gardenia Blvd shopfit, Chester    WEEK ENDING Fri 6 Nov 2026
-Sage rates: Dafydd £28.50/hr, Rhys £22.00/hr.   Overtime over 9h/day +25%.
+<h2>Coverage map — every duty in the ad</h2>
+<table class="coverage">
+  <thead><tr>
+    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+    <th>What the agent does</th><th>Value</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Processing weekly timesheets from Monday to Wednesday.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent pre-computes hours totals and flags anomalies from pasted timesheet data, ready to post into Sage.</td><td class="score">4/5</td></tr>
+    <tr><td>2</td><td>Raising and managing purchase orders.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent drafts PO documents and maintains a tracker row with supplier, value, and approval status for the human to confirm.</td><td class="score">4/5</td></tr>
+    <tr><td>3</td><td>Identifying and resolving data inconsistencies.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent flags mismatches in pasted records (e.g. PO vs invoice values) but human judgement is needed to decide how to resolve them.</td><td class="score">4/5</td></tr>
+    <tr><td>4</td><td>Reconciling invoices.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent matches invoice figures against POs and flags variances with a computed difference column, ready for Sage posting.</td><td class="score">5/5</td></tr>
+    <tr><td>5</td><td>Updating records using Sage and internal systems.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent prepares structured data rows and field mappings from pasted notes; the human pastes or imports them into Sage.</td><td class="score">3/5</td></tr>
+    <tr><td>6</td><td>Processing new starter documentation.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent extracts key fields from pasted onboarding forms into a structured CRM/HR record and drafts a welcome email; right-to-work verification requires human review.</td><td class="score">3/5</td></tr>
+    <tr><td>7</td><td>Maintaining both digital and paper personnel files.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent suggests filing taxonomy and flags documents with upcoming review or expiry dates; physical filing must be done by the human.</td><td class="score">3/5</td></tr>
+    <tr><td>8</td><td>Supporting team members across departments.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent can draft emails, summaries, or tracker updates on behalf of the administrator; face-to-face or phone support is not covered.</td><td class="score">2/5</td></tr>
+    <tr><td>9</td><td>Ensuring all administrative tasks are completed within set deadlines.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent can draft a deadline tracker and send reminder email drafts, but cannot chase people by phone or make scheduling decisions.</td><td class="score">3/5</td></tr>
+    <tr><td>10</td><td>Updating company documents and records.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent extracts updated content from pasted notes and prepares a revised document draft or tracker row; the human approves and publishes.</td><td class="score">2/5</td></tr>
+    <tr><td>11</td><td>Carrying out general administrative duties as required.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent handles text-based tasks (drafting, extracting, summarising) but cannot cover physical tasks or phone calls.</td><td class="score">1/5</td></tr>
+  </tbody>
+</table>
 
-TIMESHEETS (3 entries this week)
-  Mon 02/11  Dafydd   CFS-4418   9.5h   display cases, east wall
-  Tue 03/11  Rhys     CFS-4412   8.5h   (note: CFS-4412 is Shrewsbury site)
-  Wed 04/11  Dafydd   CFS-4418  10.0h   counter cabinetry install
+<h2>Worked examples (ranked)</h2>
+<details open>
+  <summary><span class="score">#1</span> Duty 4: Reconciling invoices. <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 5/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent matches invoice figures against POs and flags variances with a computed difference column, ready for Sage posting.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Hi, can you reconcile the following invoices against our PO records and flag anything odd before I post to Sage?
 
-SUPPLIER PAPERWORK (3 items this week)
-  DN-2141   Sample Timber    Mon 02/11  oak skirting + MDF            £342.80  (no PO ref)
-  INV-9931  Example Fixings  Tue 03/11  brass fixings (4418 + 4412)   £218.40  (no delivery note)
-  DN-2152   Sample Timber    Wed 04/11  2 x bespoke counter panels    £1,610   (expected £1,450)
+INVOICES RECEIVED THIS WEEK:
+DN-2141  Sample Timber Co   Mon 2 Nov 2026   oak skirting + MDF              £342.80   PO ref: none noted on invoice
+INV-9931  Example Fixings   Tue 3 Nov 2026   brass fixings (two projects)    £218.40   no delivery note arrived yet
+DN-2152  Sample Timber Co   Wed 4 Nov 2026   2 x bespoke counter panels      £1,610.00  PO ref: PO-0774
 
-NEXT WEEK
-  CFS-4418 continues; needs 4 oak laminated panels (Sample Timber) +
-  2 soft-close drawer runners (Example Hardware).
-</div>
+PO RECORDS FOR MATCHING:
+PO-0774  Sample Timber Co   bespoke counter panels   approved value £1,450.00
+No PO on file for DN-2141 or INV-9931.
+
+Please match what you can, calculate any variances, and produce a table I can paste into the internal tracker or use for Sage posting. Flag anything that needs approval before we post.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">RECONCILIATION TABLE — prepared Mon 9 Nov 2026 for Sage posting review
+
+REF        SUPPLIER             INV DATE        DESCRIPTION                     INV VALUE    PO VALUE     VARIANCE    STATUS
+DN-2141    Sample Timber Co     Mon 2 Nov 2026  Oak skirting + MDF              £342.80      —            —           HOLD — no PO reference on invoice; locate PO before posting to Sage
+INV-9931   Example Fixings      Tue 3 Nov 2026  Brass fixings (two projects)    £218.40      —            —           HOLD — no delivery note received; do not post to Sage until note confirmed
+DN-2152    Sample Timber Co     Wed 4 Nov 2026  2 x bespoke counter panels      £1,610.00    £1,450.00    £160.00     VARIANCE — invoice is £160.00 over approved PO value; requires authorised approval before Sage posting
+
+SUMMARY OF FLAGS
+
+DN-2141 — missing PO reference. Check with Sample Timber Co or internal buyer to retrieve PO number.
+INV-9931 — delivery note outstanding from Example Fixings. Chase supplier before posting.
+DN-2152 — price variance of £160.00 against PO-0774 (approved at £1,450.00; invoiced at £1,610.00). Escalate to approver.
+
+ACTION REQUIRED — none of the three lines are cleared for Sage posting at this stage. Update the internal tracker once each flag is resolved.</div></div>
+    </div>
   </div>
-  <div class="col">
-    <h2>Agent output</h2>
-    <div class="block">LABOUR COST
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 1: Processing weekly timesheets from Monday to Wednesday. <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 4/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pre-computes hours totals and flags anomalies from pasted timesheet data, ready to post into Sage.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly Timesheet Export — Week of Mon 02/11
+Exported from internal systems 09/11/2026
 
-Mon 02/11  Dafydd  CFS-4418  9.0h reg + 0.5h OT  £274.31
-Tue 03/11  Rhys    CFS-4412  8.5h reg             £187.00
-Wed 04/11  Dafydd  CFS-4418  9.0h reg + 1.0h OT  £292.13
+Employee: Dafydd Llewelyn  dafydd.llewelyn@example.co.uk
+Mon 02/11  PRJ-4418  Clock in: 08:00  Clock out: 17:30  (9.5h)
+Wed 04/11  PRJ-4418  Clock in: 07:45  Clock out: 17:45  (10.0h)
 
-TOTAL LABOUR THIS WEEK: £753.44
+Employee: Rhys Meredith  rhys.meredith@example.co.uk
+Tue 03/11  PRJ-4412  Clock in: 09:00  Clock out: 17:30  (8.5h)
+Thu 05/11  PRJ-4412  Clock in: 08:30  Clock out: ???  MISSING CLOCK-OUT
 
+Payroll upload deadline: Wed 11 Nov 2026
+Please review before Sage upload.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TIMESHEET REVIEW — Week Mon 2 Nov 2026
+Processed on Mon 9 Nov 2026. Upload deadline: Wed 11 Nov 2026.
 
-FLAGS
+HOURS SUMMARY
+Dafydd Llewelyn  |  Mon 2 Nov 2026  PRJ-4418  reg 9.0h  OT 0.5h  daily cost £274.31
+Dafydd Llewelyn  |  Wed 4 Nov 2026  PRJ-4418  reg 9.0h  OT 1.0h  daily cost £292.13
+Rhys Meredith    |  Tue 3 Nov 2026  PRJ-4412  reg 8.5h  OT 0.0h  daily cost £187.00
 
-1. RHYS TIMESHEET — PROJECT ALLOCATION QUERY
-   Rhys booked 8.5h on Tue 03/11 to CFS-4412 (Shrewsbury site),
-   not to this week&#x27;s primary project CFS-4418. Confirm this is
-   correct before sign-off and ensure CFS-4412 cost centre is
-   authorised for this week.
+ANOMALY FLAGS
+FLAG 1 — MISSING CLOCK-OUT: Rhys Meredith, Thu 5 Nov 2026, PRJ-4412. Clock-out not recorded. Row excluded from Sage upload until confirmed. Action: contact rhys.meredith@example.co.uk to supply missing time.
 
-2. SUPPLIER PRICE VARIANCE — DN-2152 SAMPLE TIMBER
-   Delivery note DN-2152 shows £1,610 against an expected value of
-   £1,450 — an overage of £160.00. No amended PO has been seen.
-   Supervisor should approve or query with Sample Timber before
-   payment is released.
+WEEKLY LABOUR TOTAL (confirmed rows only): £753.44
 
-3. MISSING PAPERWORK — TWO ITEMS
-   DN-2141 (Sample Timber, £342.80) has no PO reference.
-   INV-9931 (Example Fixings, £218.40) has no delivery note.
-   Both must be resolved before the purchase ledger can be updated.
-   Note also that INV-9931 covers both CFS-4418 and CFS-4412 —
-   a split allocation may be needed.
+SAGE UPLOAD ROWS (draft — paste into payroll template)
+Employee,Date,Project,Reg Hrs,OT Hrs,Daily Cost
+Dafydd Llewelyn,02/11/2026,PRJ-4418,9.0,0.5,£274.31
+Rhys Meredith,03/11/2026,PRJ-4412,8.5,0.0,£187.00
+Dafydd Llewelyn,04/11/2026,PRJ-4418,9.0,1.0,£292.13
 
-
-DRAFT PO FOR NEXT WEEK
-
-DRAFT — PENDING HUMAN APPROVAL. DO NOT ISSUE WITHOUT SIGN-OFF.
-
-  Supplier 1: Sample Timber
-    Item: 4 x oak laminated panels
-    Project: CFS-4418 (Gardenia Blvd, Chester)
-    Price/qty: NOT PROVIDED — to be confirmed before issue
-
-  Supplier 2: Example Hardware
-    Item: 2 x soft-close drawer runners
-    Project: CFS-4418 (Gardenia Blvd, Chester)
-    Price/qty: NOT PROVIDED — to be confirmed before issue</div>
+STATUS: 1 row held pending clock-out confirmation. Remaining 3 rows ready for Sage upload by Wed 11 Nov 2026.</div></div>
+    </div>
   </div>
-</div>
+</details>
+<details open>
+  <summary><span class="score">#3</span> Duty 2: Raising and managing purchase orders. <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span><span class="score">· value 4/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts PO documents and maintains a tracker row with supplier, value, and approval status for the human to confirm.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: quotes@sampletimberco.example.co.uk
+To: orders@fletchwoodinteriors.example.co.uk
+Date: Mon 9 Nov 2026
 
-<!-- try-it-block -->
-<section class="try-it">
-  <h2>Try it on your own</h2>
-  <p class="lead">Paste a short, representative sample (max 2,000 characters). The agent runs once on your text and shows the result below.</p>
-  <form id="try-form">
-    <label>
-      <span>Task</span>
-      <select name="duty" id="try-duty" required>
-        <option value="timesheets_supplier">Weekly timesheets + supplier paperwork</option>
-      </select>
-    </label>
-    <label>
-      <span>Your sample data</span>
-      <textarea name="text" id="try-text" rows="10" maxlength="2000" placeholder="Paste a sample of your inbox, timesheet, supplier note, etc." required></textarea>
-    </label>
-    <div class="counter"><span id="try-charcount">0</span>/2000</div>
-    <button type="submit" id="try-submit">Try it</button>
-  </form>
-  <div class="result" id="try-result" hidden></div>
-  <div class="error" id="try-error" hidden></div>
-  <p class="privacy">Your text is processed once to show this result and is not stored.</p>
-</section>
+Hi Priya,
+
+Please find below our quote for the Gardenia Blvd fit-out (PRJ-4418).
+
+4 x Oak laminated panel 2440x1220x18mm at £95.00 each
+2 x Soft-close drawer runner 450mm pair at £18.50 each
+
+Account reference: FXS-204. Payment terms 30 days from invoice.
+Delivery expected Fri 20 Nov 2026.
+
+Let me know if you need anything else.
+
+Kind regards,
+Doug Haller, Sample Timber Co</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">PURCHASE ORDER DRAFT — for Priya to review and confirm before sending
+
+PO Number      : [PENDING — please assign from internal sequence]
+PO Date        : Mon 9 Nov 2026
+Supplier       : Sample Timber Co | Account: FXS-204
+Project        : PRJ-4418 / Gardenia Blvd fit-out
+Requested by   : [MISSING — please add requestor name]
+Authorisation ref : [MISSING — no internal auth code found in quote; required before Sage entry]
+Expected delivery : Fri 20 Nov 2026
+Payment terms  : 30 days from invoice
+
+LINE ITEMS
+4 x Oak laminated panel 2440x1220x18mm @ £95.00 ea = £380.00
+2 x Soft-close drawer runner 450mm pair @ £18.50 ea = £37.00
+Subtotal £417.00 | VAT @ 20% £83.40 | TOTAL (ex. carriage) £500.40
+
+TRACKER ROW (for internal PO log — Excel or Sage)
+Supplier: Sample Timber Co | Acct: FXS-204 | Project: PRJ-4418 | PO Date: Mon 9 Nov 2026 | Value: £500.40 | Delivery: Fri 20 Nov 2026 | Approval status: AWAITING AUTH REF
+
+ACTION NEEDED: Please provide internal authorisation reference and PO number so this can be posted in Sage and the tracker marked Approved.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#4</span> Duty 3: Identifying and resolving data inconsistencies. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 4/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent flags mismatches in pasted records (e.g. PO vs invoice values) but human judgement is needed to decide how to resolve them.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Sage PO Log export — run Mon 9 Nov 2026
+
+PO-7741 | Supplier: Brindlewood Packaging Ltd | Ref: BPL-2026-091 | Date raised: Wed 4 Nov 2026 | Status: Approved
+PO-7742 | Supplier: Fennick Office Supplies | Ref: FOS-884 | Date raised: Thu 5 Nov 2026 | Status: Approved
+PO-7743 | Supplier: Brindlewood Packaging Ltd | Ref: BPL-2026-092 | Date raised: Fri 6 Nov 2026 | Status: Approved
+
+Supplier Invoice List export — received Mon 9 Nov 2026
+
+INV-BPL-091 | Supplier: Brindlewood Packaging Ltd | PO Ref quoted: PO-7741 | Sage ref matched: BPL-2026-091 | Invoice date: Wed 4 Nov 2026
+INV-FOS-884 | Supplier: Fennick Office Supplies | PO Ref quoted: PO-7742 | Sage ref matched: FOS-885 | Invoice date: Fri 6 Nov 2026
+INV-BPL-093 | Supplier: Brindlewood Packaging Ltd | PO Ref quoted: PO-7744 | Sage ref matched: BPL-2026-092 | Invoice date: Fri 6 Nov 2026</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DISCREPANCY SUMMARY — prepared Mon 9 Nov 2026 for administrator review
+
+SOURCE DATA: Sage PO Log vs Supplier Invoice List, both exported Mon 9 Nov 2026
+
+RECORD 1 — PO-7741 / INV-BPL-091
+STATUS: NO DISCREPANCY FOUND
+Supplier, PO reference, Sage ref, and date all match. No action required.
+
+RECORD 2 — PO-7742 / INV-FOS-884
+STATUS: DISCREPANCY DETECTED
+Mismatch in Sage reference: Sage PO Log shows FOS-884, invoice quotes FOS-885.
+Invoice date on record is Fri 6 Nov 2026 but PO was raised Thu 5 Nov 2026 — note date gap.
+REQUIRED ACTION: Administrator to confirm whether FOS-885 is a keying error on the invoice or a separate reference in the supplier system.
+
+RECORD 3 — INV-BPL-093
+STATUS: DISCREPANCY DETECTED — PO NOT FOUND IN SAGE
+Invoice quotes PO-7744 but no PO-7744 exists in the Sage log. Closest Sage record is PO-7743 (BPL-2026-092, raised Fri 6 Nov 2026), which the invoice Sage ref does match.
+REQUIRED ACTION: Administrator to determine whether PO-7744 was raised outside Sage, or whether the supplier has quoted the wrong PO number.
+
+NEXT STEP: Please review flagged items and advise on corrections before invoice approval proceeds.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#5</span> Duty 5: Updating records using Sage and internal systems. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares structured data rows and field mappings from pasted notes; the human pastes or imports them into Sage.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: petra.halloway@example.co.uk
+To: accounts@example.co.uk
+Sent: Mon 9 Nov 2026
+
+Hi,
+
+Can you update the following in Sage before end of day please?
+
+1. Supplier Greenbrook Supplies Ltd, account code SUP-0441, invoice ref GBS-7712, dated Wed 4 Nov 2026, nominal code 5100.
+2. Customer Talford Events Co, account code CUS-1187, payment receipt ref REC-3304, dated Fri 6 Nov 2026, nominal code 4000.
+3. Supplier Mossway Print Ltd, account code SUP-0558, credit note ref CN-0091, dated Thu 5 Nov 2026, nominal code 5200.
+
+All details confirmed by the department heads. Please flag anything that looks off.
+
+Thanks,
+Petra</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">Sage-ready CSV rows extracted from Petra Halloway&#x27;s email (Mon 9 Nov 2026). No amounts are present in the source notes — the administrator should add values before import.
+
+FIELD MAPPING CONFIRMATION
+
+Row 1
+  Transaction Type : Purchase Invoice
+  Account Code     : SUP-0441
+  Supplier Name    : Greenbrook Supplies Ltd
+  Reference        : GBS-7712
+  Date             : 04/11/2026
+  Nominal Code     : 5100
+
+Row 2
+  Transaction Type : Customer Receipt
+  Account Code     : CUS-1187
+  Customer Name    : Talford Events Co
+  Reference        : REC-3304
+  Date             : 06/11/2026
+  Nominal Code     : 4000
+
+Row 3
+  Transaction Type : Purchase Credit Note
+  Account Code     : SUP-0558
+  Supplier Name    : Mossway Print Ltd
+  Reference        : CN-0091
+  Date             : 05/11/2026
+  Nominal Code     : 5200
+
+NEXT STEP — Paste these rows into the Sage batch import screen, complete the Amount column from verified source documents, then confirm with Petra that all three records are live.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 6: Processing new starter documentation. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent extracts key fields from pasted onboarding forms into a structured CRM/HR record and drafts a welcome email; right-to-work verification requires human review.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">New Starter Onboarding Form — received Mon 9 Nov 2026
+
+Full name: Priya Okonkwo
+Preferred name: Priya
+Job title: Marketing Coordinator
+Department: Marketing
+Line manager: Callum Firth (callum.firth@example.co.uk)
+Start date: Mon 16 Nov 2026
+Contract type: Permanent, full-time
+Work location: Hybrid — Leeds office
+Personal email: priya.okonkwo.personal@example.co.uk
+NI number: NOT PROVIDED
+Emergency contact: Devi Okonkwo, 07700 900142
+Right-to-work documents: Passport (copy attached — awaiting verification)
+P45 received: No</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">PERSONNEL RECORD — SAGE AND INTERNAL SYSTEMS
+
+Name: Priya Okonkwo (Priya)
+Job Title: Marketing Coordinator
+Department: Marketing
+Line Manager: Callum Firth
+Start Date: Mon 16 Nov 2026
+Contract: Permanent, full-time
+Location: Hybrid — Leeds office
+Personal Email: priya.okonkwo.personal@example.co.uk
+Emergency Contact: Devi Okonkwo, 07700 900142
+P45 Status: Not received — starter declaration required in Sage
+
+MANDATORY FIELD FLAGS
+MISSING — NI Number: not provided; must be obtained before first payroll run
+PENDING — Right-to-work verification: passport copy received but requires human review; do not confirm employment until cleared
+
+DRAFT WELCOME EMAIL — for Callum Firth to review and send
+To: priya.okonkwo.personal@example.co.uk
+Subject: Welcome to the team, Priya!
+
+Hi Priya, we are delighted to have you joining us on Mon 16 Nov 2026. Callum will be in touch shortly with details of your first day. Please do not hesitate to reply to this email if you have any questions in the meantime. We look forward to welcoming you.
+
+ACTION REQUIRED BY MANAGER — please confirm NI number receipt and right-to-work clearance before Mon 16 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#7</span> Duty 7: Maintaining both digital and paper personnel files. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent suggests filing taxonomy and flags documents with upcoming review or expiry dates; physical filing must be done by the human.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Employee: Priya Nandakumar
+Employee ID: EMP-0472
+Department: Finance
+Start date: Mon 2 Nov 2026
+
+Documents currently on file (digital scan folder and paper wallet):
+- Signed offer letter (scanned, paper copy present)
+- Right to Work check - passport copy (scanned, paper copy present), expiry noted as Fri 13 Nov 2026
+- Equal opportunities monitoring form (scanned only - no paper copy confirmed)
+- Emergency contact form (paper only - not yet scanned)
+- DBS certificate (not on file - either format)
+- Probation review schedule (not on file - either format)
+- P45 from previous employer (not on file - either format)
+
+Required documents checklist: offer letter, right to work, equal opportunities form, emergency contact form, DBS certificate, probation review schedule, P45 or starter checklist.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">FILING INDEX UPDATE — EMP-0472 Priya Nandakumar — run Mon 9 Nov 2026
+
+CROSS-CHECK AGAINST REQUIRED-DOCUMENTS CHECKLIST
+
+Signed offer letter          Digital YES  Paper YES  Status: COMPLETE
+Right to Work (passport)     Digital YES  Paper YES  Status: FLAG — expiry Fri 13 Nov 2026 (this Friday; renewal check needed urgently)
+Equal opportunities form     Digital YES  Paper NO   Status: GAP — paper copy must be printed and filed by human
+Emergency contact form       Digital NO   Paper YES  Status: GAP — paper copy must be scanned and uploaded to Sage today
+DBS certificate              Digital NO   Paper NO   Status: MISSING — obtain and file both formats
+Probation review schedule    Digital NO   Paper NO   Status: MISSING — generate via internal system and file both formats
+P45 / starter checklist      Digital NO   Paper NO   Status: MISSING — chase employee or payroll; required for Sage payroll record
+
+EXPIRY AND REVIEW FLAGS
+URGENT: Right to Work document expires Fri 13 Nov 2026 — assign to responsible manager today Mon 9 Nov 2026
+REMINDER: Probation review schedule should be in place given start date Mon 2 Nov 2026 — create immediately
+
+ACTION FOR HUMAN
+Please retrieve the paper emergency contact form and pass to scanning station.
+Please print the equal opportunities form from Sage and place in Priya Nandakumar paper wallet.
+Physical wallet should be stored in Finance personnel cabinet once gaps above are resolved.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 9: Ensuring all administrative tasks are completed within set deadlines. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 3/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent can draft a deadline tracker and send reminder email drafts, but cannot chase people by phone or make scheduling decisions.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly task list for review — please sort and flag anything urgent.
+
+1. Submit supplier onboarding forms to Priya Shankar — due Wed 4 Nov 2026
+2. Chase Sage payroll variance report sign-off from Callum Drey — due Mon 9 Nov 2026
+3. Update staff contact records in internal systems — due Tue 10 Nov 2026
+4. Send meeting notes from last Thursday to Orla Finch — due Mon 9 Nov 2026
+5. Archive Q3 procurement files in internal systems — due Wed 11 Nov 2026
+6. Book room for department review (scheduling decision needed) — due Thu 12 Nov 2026
+7. Request updated NDA from legal team contact Seb Holt — due Mon 16 Nov 2026
+8. Circulate draft induction checklist to Tamsin Vare — due Fri 20 Nov 2026
+
+Today is Monday 9 Nov 2026. Please sort by urgency, flag overdue items, and draft any needed reminder emails.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DEADLINE TRACKER — sorted by urgency as of Mon 9 Nov 2026
+
+OVERDUE
+Task 1 — Supplier onboarding forms to Priya Shankar
+Due: Wed 4 Nov 2026 — STATUS: OVERDUE (deadline passed)
+Action required: See reminder email draft A below.
+
+DUE TODAY
+Task 2 — Sage payroll variance report sign-off from Callum Drey
+Due: Mon 9 Nov 2026 — STATUS: DUE TODAY
+Action required: See reminder email draft B below.
+
+Task 4 — Send meeting notes to Orla Finch
+Due: Mon 9 Nov 2026 — STATUS: DUE TODAY
+Action required: See reminder email draft C below.
+
+DUE THIS WEEK
+Task 3 — Update staff contact records in internal systems — Tue 10 Nov 2026
+Task 5 — Archive Q3 procurement files in internal systems — Wed 11 Nov 2026
+Task 6 — Room booking for department review — Thu 12 Nov 2026
+NOTE: Task 6 requires a scheduling decision; agent cannot action this.
+
+UPCOMING
+Task 7 — Request updated NDA from Seb Holt — Mon 16 Nov 2026
+Task 8 — Circulate draft induction checklist to Tamsin Vare — Fri 20 Nov 2026
+
+REMINDER EMAIL DRAFT A
+To: priya.shankar@example.co.uk
+Subject: Supplier Onboarding Forms — Overdue
+Hi Priya, the supplier onboarding forms were due Wed 4 Nov 2026 and are now overdue. Could you please confirm receipt or flag any issues? Many thanks.
+
+REMINDER EMAIL DRAFT B
+To: callum.drey@example.co.uk
+Subject: Sage Payroll Variance Report — Sign-off Due Today
+Hi Callum, your sign-off on the Sage payroll variance report is due today, Mon 9 Nov 2026. Please could you action this at your earliest convenience? Thank you.
+
+REMINDER EMAIL DRAFT C
+To: orla.finch@example.co.uk
+Subject: Meeting Notes from Last Thursday
+Hi Orla, I am sending over the meeting notes from Thu 5 Nov 2026 as requested. Please let me know if you have any questions.
+
+All drafts are for administrator review and approval before sending.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#9</span> Duty 8: Supporting team members across departments. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 2/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent can draft emails, summaries, or tracker updates on behalf of the administrator; face-to-face or phone support is not covered.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Hi, can you help me pull together a quick summary email for our site manager, Declan Hurst? He&#x27;s asked for a list of all open purchase orders currently sitting in Sage so he can plan deliveries for next week. I&#x27;ve checked the internal systems and there are four open POs right now. Supplier one is Brindlewood Supplies, PO number 4471, raised Tue 3 Nov 2026, awaiting delivery. Supplier two is Castlemere Fixings, PO number 4483, raised Wed 4 Nov 2026, delivery booked for Wed 11 Nov 2026. Supplier three is Fennick Plant Hire, PO number 4490, raised Fri 6 Nov 2026, status pending confirmation. Supplier four is Oakvane Logistics, PO number 4502, raised Mon 9 Nov 2026, delivery booked for Mon 16 Nov 2026. Can you draft the email ready for me to review and send? Thanks.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DRAFT EMAIL — FOR ADMINISTRATOR REVIEW BEFORE SENDING
+
+To: declan.hurst@example.co.uk
+From: admin@example.co.uk
+Subject: Open Purchase Orders — Summary as at Mon 9 Nov 2026
+
+Hi Declan,
+
+Please find below a summary of the four open purchase orders currently recorded in Sage, as of today Mon 9 Nov 2026.
+
+PO 4471 — Brindlewood Supplies — raised Tue 3 Nov 2026 — status: awaiting delivery.
+
+PO 4483 — Castlemere Fixings — raised Wed 4 Nov 2026 — delivery booked Wed 11 Nov 2026.
+
+PO 4490 — Fennick Plant Hire — raised Fri 6 Nov 2026 — status: pending supplier confirmation.
+
+PO 4502 — Oakvane Logistics — raised Mon 9 Nov 2026 — delivery booked Mon 16 Nov 2026.
+
+Please let me know if you need any further detail or if any of the above requires chasing.
+
+Kind regards,
+[Administrator name]
+
+AGENT NOTE — Please review all PO details against Sage before sending. Confirm supplier contacts if delivery chasing is needed.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#10</span> Duty 10: Updating company documents and records. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 2/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent extracts updated content from pasted notes and prepares a revised document draft or tracker row; the human approves and publishes.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: clara.offen@brightvolt-supplies.example.co.uk
+To: admin@kestrelworks.example.co.uk
+Date: Mon 9 Nov 2026
+Subject: Updated Payment and Delivery Terms — effective immediately
+
+Hi,
+
+Please note that Brightvolt Supplies has updated our standard terms for Kestrelworks Ltd. The changes are as follows:
+
+Payment terms: now 45 days net from invoice date (previously 30 days net).
+Delivery lead time: now 10 working days (previously 7 working days).
+Returns window: now 21 days from delivery (previously 14 days).
+Primary contact for orders: now Marcus Feild, marcus.feild@brightvolt-supplies.example.co.uk.
+
+These terms apply to all orders placed from Mon 9 Nov 2026 onward.
+
+Kind regards,
+Clara Offen, Accounts Manager, Brightvolt Supplies
+
+--- CURRENT SUPPLIER TERMS DOCUMENT (Section 4 — Brightvolt Supplies) ---
+Payment terms: 30 days net. Delivery lead time: 7 working days. Returns window: 14 days. Order contact: clara.offen@brightvolt-supplies.example.co.uk.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">REDLINED SECTION — Section 4, Brightvolt Supplies (changes marked)
+
+Payment terms: ~~30 days net~~ 45 days net from invoice date.
+Delivery lead time: ~~7 working days~~ 10 working days.
+Returns window: ~~14 days~~ 21 days from delivery.
+Order contact: ~~clara.offen@brightvolt-supplies.example.co.uk~~ marcus.feild@brightvolt-supplies.example.co.uk (Marcus Feild).
+
+Effective from: Mon 9 Nov 2026.
+
+SAGE SUPPLIER RECORD UPDATE ROW — paste into Brightvolt Supplies record
+
+Field             Old Value                                      New Value
+PaymentTermsDays  30                                             45
+LeadTimeDays      7                                              10
+ReturnWindowDays  14                                             21
+OrderContactName  Clara Offen                                    Marcus Feild
+OrderContactEmail clara.offen@brightvolt-supplies.example.co.uk  marcus.feild@brightvolt-supplies.example.co.uk
+EffectiveDate     —                                              Mon 9 Nov 2026
+UpdatedBy         [admin to complete]                            —
+
+AGENT NOTE: Please review all three changes and confirm the Sage supplier record and internal terms document are updated together. Awaiting your approval before publishing.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#11</span> Duty 11: Carrying out general administrative duties as required. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span><span class="score">· value 1/5</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles text-based tasks (drafting, extracting, summarising) but cannot cover physical tasks or phone calls.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Hi, can you draft a short all-staff memo about the new visitor signing-in procedure?
+Key points to include:
+- From Mon 16 Nov 2026, all visitors must sign in at reception using the new digital tablet
+- Paper sign-in sheets are being retired
+- Visitors must show photo ID and state who they are visiting
+- The host member of staff must come to reception to collect their visitor — visitors must not be left unattended
+- Any questions should go to Priya Okonkwo at priya.okonkwo@example.co.uk
+- Tone should be friendly but clear
+- Sign off from Office Manager Declan Farris</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DRAFT MEMO — FOR REVIEW BEFORE DISTRIBUTION
+
+To: All Staff
+From: Declan Farris, Office Manager
+Date: Mon 9 Nov 2026
+Subject: New Visitor Signing-In Procedure
+
+We are making a small but important change to how we welcome visitors to the office.
+
+From Mon 16 Nov 2026, all visitors must sign in at reception using the new digital tablet. Paper sign-in sheets will no longer be in use from that date.
+
+When signing in, visitors will be asked to present valid photo ID and to confirm the name of the member of staff they are visiting. The host must come to reception to collect their visitor in person — please note that visitors should not be left unattended in the building at any time.
+
+We appreciate your cooperation in helping us keep the office secure and welcoming for everyone.
+
+If you have any questions about the new procedure, please contact Priya Okonkwo at priya.okonkwo@example.co.uk.
+
+Thank you,
+Declan Farris
+Office Manager
+
+NOTE TO REVIEWER: Please confirm you are happy with the tone and details before this is distributed.</div></div>
+    </div>
+  </div>
+</details>
 
 <div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
 
@@ -204,60 +630,5 @@ DRAFT — PENDING HUMAN APPROVAL. DO NOT ISSUE WITHOUT SIGN-OFF.
   Questions, or want a working version for your own inbox / timesheets / invoices?
   [SENDER NAME / EMAIL]
 </footer>
-<script>
-(function () {
-  var API_BASE = "__API_BASE__";
-  var DEMO_ID = "complete-fixing-solutions";
-  var form = document.getElementById("try-form");
-  var ta = document.getElementById("try-text");
-  var cc = document.getElementById("try-charcount");
-  var counter = cc.parentElement;
-  var btn = document.getElementById("try-submit");
-  var resBox = document.getElementById("try-result");
-  var errBox = document.getElementById("try-error");
-  var dutySel = document.getElementById("try-duty");
-
-  function updateCounter() {
-    var n = ta.value.length;
-    cc.textContent = n;
-    if (n > 2000) counter.classList.add("over");
-    else counter.classList.remove("over");
-  }
-  ta.addEventListener("input", updateCounter);
-  updateCounter();
-
-  function show(el, text) {
-    el.textContent = text;
-    el.hidden = false;
-  }
-  function hide(el) { el.hidden = true; el.textContent = ""; }
-
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    hide(resBox); hide(errBox);
-    var text = ta.value;
-    if (!text.trim()) { show(errBox, "Paste some text to process."); return; }
-    if (text.length > 2000) { show(errBox, "Please keep the input under 2,000 characters."); return; }
-    btn.disabled = true;
-    var originalLabel = btn.textContent;
-    btn.textContent = "Running ...";
-    fetch(API_BASE + "/try", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ demo_id: DEMO_ID, duty: dutySel.value, text: text })
-    }).then(function (r) {
-      return r.json().then(function (body) { return { status: r.status, body: body }; });
-    }).then(function (w) {
-      if (w.status === 200 && w.body.result) { show(resBox, w.body.result); return; }
-      if (w.body && w.body.message) { show(errBox, w.body.message); return; }
-      show(errBox, "Something went wrong. Please try again shortly.");
-    }).catch(function () {
-      show(errBox, "Couldn't reach the service. Please try again shortly.");
-    }).then(function () {
-      btn.disabled = false; btn.textContent = originalLabel;
-    });
-  });
-})();
-</script>
 </body>
 </html>
