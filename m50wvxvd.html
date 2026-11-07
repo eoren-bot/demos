@@ -104,6 +104,46 @@ footer a { color: #1a56b0; text-decoration: none; }
   .columns { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
+
+.try-it {
+  margin-top: 28px; padding: 18px 20px;
+  background: #fafbfc; border: 1px solid #e3e3e5; border-radius: 4px;
+}
+.try-it h2 { font-size: 1.05rem; margin: 0 0 6px 0; color: #222; }
+.try-it .lead { color: #555; font-size: 0.92rem; margin: 0 0 14px 0; }
+.try-it label { display: block; font-size: 0.88rem; color: #333; margin-bottom: 10px; }
+.try-it label span { display: block; margin-bottom: 4px; font-weight: 600; }
+.try-it select, .try-it textarea {
+  width: 100%; padding: 8px 10px;
+  border: 1px solid #c8c8cc; border-radius: 3px;
+  font: inherit; background: #fff;
+}
+.try-it textarea {
+  min-height: 160px; resize: vertical;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86rem;
+}
+.try-it .counter {
+  text-align: right; font-size: 0.78rem; color: #777; margin-top: 2px;
+}
+.try-it .counter.over { color: #a33; }
+.try-it button {
+  background: #1a56b0; color: #fff; border: 0;
+  padding: 9px 18px; border-radius: 3px;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.try-it button:disabled { background: #88a; cursor: default; }
+.try-it .result, .try-it .error {
+  margin-top: 14px; padding: 12px 14px;
+  border-radius: 3px; white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86rem; line-height: 1.5;
+}
+.try-it .result { background: #f6f7f9; border: 1px solid #e3e3e5; color: #1a1a1a; }
+.try-it .error  { background: #fdecec; border: 1px solid #f4bcbc; color: #7a1f1f; font-family: inherit; }
+.try-it .privacy {
+  margin-top: 12px; font-size: 0.82rem; color: #666;
+}
 </style>
 </head>
 <body>
@@ -453,11 +493,89 @@ ACTION REQUIRED – Review suggestions above then apply to live store. File orig
   </div>
 </details>
 
+<!-- try-it-block -->
+<section class="try-it">
+  <h2>Try it on your own</h2>
+  <p class="lead">Paste a short, representative sample (max 2,000 characters). The agent runs once on your text and shows the result below.</p>
+  <form id="try-form">
+    <label>
+      <span>Task</span>
+      <select name="duty" id="try-duty" required>
+        <option value="bookings">Monday-morning booking requests</option>
+      </select>
+    </label>
+    <label>
+      <span>Your sample data</span>
+      <textarea name="text" id="try-text" rows="10" maxlength="2000" placeholder="Paste a sample of your inbox, timesheet, supplier note, etc." required></textarea>
+    </label>
+    <div class="counter"><span id="try-charcount">0</span>/2000</div>
+    <button type="submit" id="try-submit">Try it</button>
+  </form>
+  <div class="result" id="try-result" hidden></div>
+  <div class="error" id="try-error" hidden></div>
+  <p class="privacy">Your text is processed once to show this result and is not stored.</p>
+</section>
+
 <div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
   [SENDER NAME / EMAIL]
 </footer>
+<script>
+(function () {
+  var API_BASE = "https://web-production-c3b095.up.railway.app";
+  var DEMO_ID = "carnegie-group";
+  var form = document.getElementById("try-form");
+  var ta = document.getElementById("try-text");
+  var cc = document.getElementById("try-charcount");
+  var counter = cc.parentElement;
+  var btn = document.getElementById("try-submit");
+  var resBox = document.getElementById("try-result");
+  var errBox = document.getElementById("try-error");
+  var dutySel = document.getElementById("try-duty");
+
+  function updateCounter() {
+    var n = ta.value.length;
+    cc.textContent = n;
+    if (n > 2000) counter.classList.add("over");
+    else counter.classList.remove("over");
+  }
+  ta.addEventListener("input", updateCounter);
+  updateCounter();
+
+  function show(el, text) {
+    el.textContent = text;
+    el.hidden = false;
+  }
+  function hide(el) { el.hidden = true; el.textContent = ""; }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    hide(resBox); hide(errBox);
+    var text = ta.value;
+    if (!text.trim()) { show(errBox, "Paste some text to process."); return; }
+    if (text.length > 2000) { show(errBox, "Please keep the input under 2,000 characters."); return; }
+    btn.disabled = true;
+    var originalLabel = btn.textContent;
+    btn.textContent = "Running ...";
+    fetch(API_BASE + "/try", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ demo_id: DEMO_ID, duty: dutySel.value, text: text })
+    }).then(function (r) {
+      return r.json().then(function (body) { return { status: r.status, body: body }; });
+    }).then(function (w) {
+      if (w.status === 200 && w.body.result) { show(resBox, w.body.result); return; }
+      if (w.body && w.body.message) { show(errBox, w.body.message); return; }
+      show(errBox, "Something went wrong. Please try again shortly.");
+    }).catch(function () {
+      show(errBox, "Couldn't reach the service. Please try again shortly.");
+    }).then(function () {
+      btn.disabled = false; btn.textContent = originalLabel;
+    });
+  });
+})();
+</script>
 </body>
 </html>
