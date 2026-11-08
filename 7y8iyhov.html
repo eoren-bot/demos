@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from Ffolkes Offshore's public job ad. Not produced by or affiliated with Ffolkes Offshore. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Senior Accounts Assistant ad, run by an agent</p>
   <h1>Ffolkes Offshore</h1>
+  <p class="top-sub">Ad posted 5 Nov 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">71%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">29%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">0%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your Xero. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=Ffolkes%20Offshore%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates Xero posting, reconciliations, and chasing so the team focuses on offshore finance decisions.</p>
   <p class="services">UK employer — Ffolkes Offshore (role: Senior Accounts Assistant).</p>
   <p class="honest-count"><strong>Covered: 100%</strong> (agent 71% + your approvals 29%)</p>
@@ -134,24 +197,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <div class="meta"><span class="pill">Systems: Xero</span>
     <span class="pill">Accounting: Xero — integration: easy</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Managing sales and purchase ledgers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts sales invoices and supplier bills to Xero, maintains ledger records, and flags anomalies for review.</td></tr>
-    <tr><td>2</td><td>Processing invoices, supplier payments and expenses</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent posts all invoices and expenses to Xero and prepares the payment run proposal; client releases payment to bank.</td></tr>
-    <tr><td>3</td><td>Bank reconciliations and credit control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent imports bank feed, allocates receipts in Xero, generates aged-debt report, and chases overdue accounts by email via approval queue.</td></tr>
-    <tr><td>4</td><td>Supporting month-end accounts and financial reporting</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine month-end prep tasks; sign-off and statutory steps remain with qualified staff.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Posting accruals and prepayments journals in Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent creates standard accrual and prepayment journals based on prior-month templates and queues for finance manager review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Generating management accounts pack / P&amp;L and balance sheet reports</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent runs Xero reports, compiles into a formatted pack, and emails it to the finance team via the approval queue.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and any VAT / statutory filing</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Client reviews and signs off the closed period before any statutory submissions proceed.</td></tr>
-    <tr><td>5</td><td>Dealing with customer and supplier queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads queries from the shared inbox, pulls the relevant Xero record, drafts a response, and queues it for release — escalating anything complex to the human backup.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -322,7 +367,27 @@ Queued for approval in the Outlook approval queue — your finance manager will 
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Managing sales and purchase ledgers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts sales invoices and supplier bills to Xero, maintains ledger records, and flags anomalies for review.</td></tr>
+    <tr><td>2</td><td>Processing invoices, supplier payments and expenses</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent posts all invoices and expenses to Xero and prepares the payment run proposal; client releases payment to bank.</td></tr>
+    <tr><td>3</td><td>Bank reconciliations and credit control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent imports bank feed, allocates receipts in Xero, generates aged-debt report, and chases overdue accounts by email via approval queue.</td></tr>
+    <tr><td>4</td><td>Supporting month-end accounts and financial reporting</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine month-end prep tasks; sign-off and statutory steps remain with qualified staff.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Posting accruals and prepayments journals in Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent creates standard accrual and prepayment journals based on prior-month templates and queues for finance manager review.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Generating management accounts pack / P&amp;L and balance sheet reports</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent runs Xero reports, compiles into a formatted pack, and emails it to the finance team via the approval queue.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and any VAT / statutory filing</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Client reviews and signs off the closed period before any statutory submissions proceed.</td></tr>
+    <tr><td>5</td><td>Dealing with customer and supplier queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads queries from the shared inbox, pulls the relevant Xero record, drafts a response, and queues it for release — escalating anything complex to the human backup.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
