@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from HAUK Solutions's public job ad. Not produced by or affiliated with HAUK Solutions. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Accounts Assistant / Senior Bookkeeper (UK) ad, run by an agent</p>
   <h1>HAUK Solutions</h1>
+  <p class="top-sub">Ad posted 4 Nov 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">60%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">40%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">0%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your Xero. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=HAUK%20Solutions%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates bookkeeping and reconciliation tasks, freeing up time for advisory and client work.</p>
   <p class="services">UK employer — HAUK Solutions (role: Accounts Assistant / Senior Bookkeeper (UK)).</p>
   <p class="honest-count"><strong>Covered: 100%</strong> (agent 60% + your approvals 20% + our assistant 20%)</p>
@@ -134,28 +197,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <div class="meta"><span class="pill">Systems: Xero, Dext</span>
     <span class="pill">Accounting: Xero — integration: easy</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Handle bookkeeping, VAT returns and bank reconciliations</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts transactions to Xero and reconciles the bank feed daily; VAT return preparation is drafted by agent but submitted by human backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Daily bookkeeping: coding and posting transactions in Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads inbox attachments, codes receipts via Dext, and posts bills and invoices to Xero automatically.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Bank reconciliation: matching Xero transactions to bank feed</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent matches and clears the Xero bank feed, flagging unmatched items for review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ VAT return preparation and submission</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Agent prepares the VAT figures and draft return in Xero; human assistant reviews and presses submit under MTD.</td></tr>
-    <tr><td>2</td><td>Reconcile Accounts Payable &amp; Accounts Receivable ledgers along with period-end tasks</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls aged AP/AR reports from Xero, matches supplier statements, chases overdue balances by email via the approval queue, and clears period-end items.</td></tr>
-    <tr><td>3</td><td>Post relevant period-ending journals</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares accruals, prepayments, and depreciation journals in Xero; client reviews and approves before they are finalised.</td></tr>
-    <tr><td>4</td><td>Prepare month-end management accounts</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles P&amp;L, balance sheet, and commentary pack from Xero data and queues the draft for client sign-off before distribution.</td></tr>
-    <tr><td>5</td><td>Work with Xero and Dext</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent operates natively via Xero API and reads Dext-processed documents to automate data entry and coding across the workflow.</td></tr>
-    <tr><td>6</td><td>Collaborate with UK teams to ensure accuracy and compliance</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine inter-team communication via the M365 approval queue, escalating complex queries to the client or human assistant.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to routine queries from UK accountants (missing info, coding questions)</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts replies to standard queries using data from Xero and queues them for approval before sending.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate technical compliance or judgement queries to senior staff</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Human assistant handles nuanced technical queries that require professional judgement outside the agent&#x27;s playbook.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Share completed reconciliations and reports with UK team on schedule</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent automatically emails completed reports to the UK team distribution list via the approval queue on a set timetable.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -383,7 +424,31 @@ This journal is in DRAFT status in Xero. Your finance manager must review and ap
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Handle bookkeeping, VAT returns and bank reconciliations</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts transactions to Xero and reconciles the bank feed daily; VAT return preparation is drafted by agent but submitted by human backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Daily bookkeeping: coding and posting transactions in Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads inbox attachments, codes receipts via Dext, and posts bills and invoices to Xero automatically.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Bank reconciliation: matching Xero transactions to bank feed</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent matches and clears the Xero bank feed, flagging unmatched items for review.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ VAT return preparation and submission</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Agent prepares the VAT figures and draft return in Xero; human assistant reviews and presses submit under MTD.</td></tr>
+    <tr><td>2</td><td>Reconcile Accounts Payable &amp; Accounts Receivable ledgers along with period-end tasks</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls aged AP/AR reports from Xero, matches supplier statements, chases overdue balances by email via the approval queue, and clears period-end items.</td></tr>
+    <tr><td>3</td><td>Post relevant period-ending journals</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares accruals, prepayments, and depreciation journals in Xero; client reviews and approves before they are finalised.</td></tr>
+    <tr><td>4</td><td>Prepare month-end management accounts</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles P&amp;L, balance sheet, and commentary pack from Xero data and queues the draft for client sign-off before distribution.</td></tr>
+    <tr><td>5</td><td>Work with Xero and Dext</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent operates natively via Xero API and reads Dext-processed documents to automate data entry and coding across the workflow.</td></tr>
+    <tr><td>6</td><td>Collaborate with UK teams to ensure accuracy and compliance</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine inter-team communication via the M365 approval queue, escalating complex queries to the client or human assistant.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to routine queries from UK accountants (missing info, coding questions)</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts replies to standard queries using data from Xero and queues them for approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate technical compliance or judgement queries to senior staff</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Human assistant handles nuanced technical queries that require professional judgement outside the agent&#x27;s playbook.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Share completed reconciliations and reports with UK team on schedule</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent automatically emails completed reports to the UK team distribution list via the approval queue on a set timetable.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
