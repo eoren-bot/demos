@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from WeBuyVintage's public job ad. Not produced by or affiliated with WeBuyVintage. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Bookkeeper ad, run by an agent</p>
   <h1>WeBuyVintage</h1>
+  <p class="top-sub">Ad posted 10 Oct 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">73%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">20%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">7%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your Xero. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=WeBuyVintage%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates Xero posting and reconciliations so your bookkeeper focuses on accuracy and insight.</p>
   <p class="services">UK employer — WeBuyVintage (role: Bookkeeper).</p>
   <p class="honest-count"><strong>Covered: 93%</strong> (agent 73% + your approvals 13% + our assistant 7%)</p>
@@ -134,34 +197,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <div class="meta"><span class="pill">Systems: Xero, Excel, Google Sheets, BrightHR</span>
     <span class="pill">Accounting: Xero — integration: easy</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Maintain and update financial records, including ledgers, journals, and accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts journals and updates ledger entries in Xero automatically as transactions are processed.</td></tr>
-    <tr><td>2</td><td>Process accounts payable and receivable transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates and posts supplier bills and sales invoices in Xero, then allocates payments as cash is received.</td></tr>
-    <tr><td>3</td><td>Reconcile bank statements and company accounts on a weekly basis</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the Xero bank feed, matches transactions to posted entries, and flags unreconciled items for review.</td></tr>
-    <tr><td>4</td><td>Prepare and process invoices, payments, and expense reports</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares payment-run proposals and expense postings in Xero; client approves and releases payments to the bank.</td></tr>
-    <tr><td>5</td><td>Monitor cash flow and report any discrepancies</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates a daily Xero cash-position report and emails an alert if the balance deviates from the rolling forecast.</td></tr>
-    <tr><td>6</td><td>Assist with payroll processing</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles data gathering and journal posting; statutory RTI submission requires the human backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Collate timesheets and variable pay data from internal systems</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads timesheet data from shared inbox or HR platform and compiles the payroll input file.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post payroll journals to Xero after payroll is run</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts the payroll summary journal (wages, PAYE, NI, pension) to Xero once payroll figures are confirmed.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Submit RTI filing to HMRC</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant presses submit on RTI Full Payment Submission — statutory filing requiring a qualified human.</td></tr>
-    <tr><td>7</td><td>Support month-end and year-end closing processes</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs the bulk of month-end prep in Xero; sign-off and statutory filing steps go to human approval or backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Run aged-debtor and aged-creditor reports and chase outstanding items</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates reports from Xero, drafts chaser emails, and queues them for approval.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post accruals, prepayments, and month-end journals</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts standard accrual and prepayment journals to Xero based on prior-month templates.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and VAT return submission</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Head of Finance reviews the closed period in Xero before sign-off; VAT submission handled by remote assistant.</td></tr>
-    <tr><td>8</td><td>Maintain financial documentation and filing systems</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent attaches source documents to Xero transactions and indexes them in the shared drive; physical filing goes to not-covered.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Attach supplier invoices and receipts to Xero transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads attachments from the shared inbox and links them to the matching Xero bill or expense.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain a digital document index in shared drive (Google Drive / SharePoint)</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves and names files systematically in the connected shared drive as documents are processed.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Physical filing of paper documents</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td style="color:#555;">Paper filing requires someone physically present in the Cambridge office — no software route.</td></tr>
-    <tr><td>9</td><td>Liaise with suppliers, clients, and internal teams regarding financial queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads financial queries from the shared inbox, drafts replies (pulling data from Xero), and queues them in the M365 approval queue.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -482,7 +517,37 @@ No payment will leave WeBuyVintage&#x27;s account until your finance manager app
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Maintain and update financial records, including ledgers, journals, and accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts journals and updates ledger entries in Xero automatically as transactions are processed.</td></tr>
+    <tr><td>2</td><td>Process accounts payable and receivable transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates and posts supplier bills and sales invoices in Xero, then allocates payments as cash is received.</td></tr>
+    <tr><td>3</td><td>Reconcile bank statements and company accounts on a weekly basis</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the Xero bank feed, matches transactions to posted entries, and flags unreconciled items for review.</td></tr>
+    <tr><td>4</td><td>Prepare and process invoices, payments, and expense reports</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares payment-run proposals and expense postings in Xero; client approves and releases payments to the bank.</td></tr>
+    <tr><td>5</td><td>Monitor cash flow and report any discrepancies</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates a daily Xero cash-position report and emails an alert if the balance deviates from the rolling forecast.</td></tr>
+    <tr><td>6</td><td>Assist with payroll processing</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles data gathering and journal posting; statutory RTI submission requires the human backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Collate timesheets and variable pay data from internal systems</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads timesheet data from shared inbox or HR platform and compiles the payroll input file.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post payroll journals to Xero after payroll is run</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts the payroll summary journal (wages, PAYE, NI, pension) to Xero once payroll figures are confirmed.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Submit RTI filing to HMRC</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant presses submit on RTI Full Payment Submission — statutory filing requiring a qualified human.</td></tr>
+    <tr><td>7</td><td>Support month-end and year-end closing processes</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs the bulk of month-end prep in Xero; sign-off and statutory filing steps go to human approval or backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Run aged-debtor and aged-creditor reports and chase outstanding items</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates reports from Xero, drafts chaser emails, and queues them for approval.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post accruals, prepayments, and month-end journals</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts standard accrual and prepayment journals to Xero based on prior-month templates.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and VAT return submission</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Head of Finance reviews the closed period in Xero before sign-off; VAT submission handled by remote assistant.</td></tr>
+    <tr><td>8</td><td>Maintain financial documentation and filing systems</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent attaches source documents to Xero transactions and indexes them in the shared drive; physical filing goes to not-covered.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Attach supplier invoices and receipts to Xero transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads attachments from the shared inbox and links them to the matching Xero bill or expense.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain a digital document index in shared drive (Google Drive / SharePoint)</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves and names files systematically in the connected shared drive as documents are processed.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Physical filing of paper documents</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td style="color:#555;">Paper filing requires someone physically present in the Cambridge office — no software route.</td></tr>
+    <tr><td>9</td><td>Liaise with suppliers, clients, and internal teams regarding financial queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads financial queries from the shared inbox, drafts replies (pulling data from Xero), and queues them in the M365 approval queue.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
