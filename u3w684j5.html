@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from Fanvue's public job ad. Not produced by or affiliated with Fanvue. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Accounts Assistant ad, run by an agent</p>
   <h1>Fanvue</h1>
+  <p class="top-sub">Ad posted 28 Oct 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">71%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">29%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">0%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your Xero. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=Fanvue%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Frees up the accounts assistant to focus on ledger quality, close accuracy, and supplier relationships.</p>
   <p class="services">UK employer — Fanvue (role: Accounts Assistant).</p>
   <p class="honest-count"><strong>Covered: 100%</strong> (agent 71% + your approvals 29%)</p>
@@ -134,32 +197,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <div class="meta"><span class="pill">Systems: Xero, Rippling, Excel, Google Sheets</span>
     <span class="pill">Accounting: Xero — integration: easy</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Review and own the ledger in Xero, including outsourced bookkeepers&#x27; coding, supplier bills and daily bank reconciliations across GBP, USD and EUR accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reviews bookkeeper postings in Xero, flags miscodes, and reconciles all three currency bank accounts daily.</td></tr>
-    <tr><td>2</td><td>Prepare month-end journals, accruals and prepayments, and balance sheet reconciliations so we close by working day 5</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent drafts all standard accrual and prepayment journals and prepares balance sheet reconciliation packs; Finance Manager reviews and approves before posting.</td></tr>
-    <tr><td>3</td><td>Keep intercompany balances with our US entity reconciled</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls intercompany ledger balances from Xero, compares against US counterpart data shared via file, and flags discrepancies for resolution.</td></tr>
-    <tr><td>4</td><td>Reconcile payroll, PAYE and pension control accounts to Rippling each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent imports Rippling payroll reports, matches totals against Xero control accounts, and surfaces any variances for the Finance Manager.</td></tr>
-    <tr><td>5</td><td>Prepare the UK VAT return in Xero for review</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles and sense-checks the VAT return in Xero, then routes it to the Finance Manager for approval before submission.</td></tr>
-    <tr><td>6</td><td>Prepare year-end schedules and answer queries from our external accountants and auditors</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent compiles standard year-end schedules from Xero and drafts responses to auditor queries; complex judgement points escalate to Finance Manager.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Compile year-end trial balance, fixed asset, prepayment and accrual schedules from Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent exports and formats standard year-end schedules directly from Xero ledger data.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and send responses to routine auditor information requests via the M365 approval queue</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts email responses with supporting Xero exports attached, held in approval queue until Finance Manager releases.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate complex accounting judgement queries (e.g. revenue recognition, provisions) to Finance Manager</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent flags judgement-based auditor questions and routes them to the Finance Manager with relevant ledger context.</td></tr>
-    <tr><td>7</td><td>Run the invoice inbox, logging, chasing and routing supplier invoices so nothing reaches the ledger without a document</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors the shared invoice inbox, logs each invoice into Xero as a draft bill, and chases missing documents by email via the approval queue.</td></tr>
-    <tr><td>8</td><td>Chase receipts and missing context from colleagues for card spend, and keep receipt compliance high</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies unreceipted card transactions in Xero, drafts personalised chaser emails to cardholders via the M365 approval queue, and tracks compliance rates.</td></tr>
-    <tr><td>9</td><td>Maintain supplier records and support onboarding, including verifying bank details before anything is paid</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates and updates supplier contacts in Xero and drafts bank-detail verification emails; payment release remains a client-approval step.</td></tr>
-    <tr><td>10</td><td>Be the first point of contact for finance questions from the wider team</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine finance queries by email, drafting replies from ledger data; non-standard or sensitive queries are escalated to the Finance Manager.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Answer routine queries about invoice status, payment ETAs, and expense policy via email</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent looks up Xero invoice/payment records and drafts a reply, queued for release before sending.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to budget vs actuals questions by pulling relevant Xero reports</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates a Xero tracking report and drafts an email summary to the enquiring team member.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate policy or judgement questions (e.g. whether a purchase is approvable) to Finance Manager</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent routes out-of-policy or judgement-based queries to the Finance Manager with relevant context attached.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -548,7 +585,35 @@ VAT return period 1 Aug 2026 to 31 Oct 2026 saved as pending in Xero (not yet su
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Review and own the ledger in Xero, including outsourced bookkeepers&#x27; coding, supplier bills and daily bank reconciliations across GBP, USD and EUR accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reviews bookkeeper postings in Xero, flags miscodes, and reconciles all three currency bank accounts daily.</td></tr>
+    <tr><td>2</td><td>Prepare month-end journals, accruals and prepayments, and balance sheet reconciliations so we close by working day 5</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent drafts all standard accrual and prepayment journals and prepares balance sheet reconciliation packs; Finance Manager reviews and approves before posting.</td></tr>
+    <tr><td>3</td><td>Keep intercompany balances with our US entity reconciled</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls intercompany ledger balances from Xero, compares against US counterpart data shared via file, and flags discrepancies for resolution.</td></tr>
+    <tr><td>4</td><td>Reconcile payroll, PAYE and pension control accounts to Rippling each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent imports Rippling payroll reports, matches totals against Xero control accounts, and surfaces any variances for the Finance Manager.</td></tr>
+    <tr><td>5</td><td>Prepare the UK VAT return in Xero for review</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles and sense-checks the VAT return in Xero, then routes it to the Finance Manager for approval before submission.</td></tr>
+    <tr><td>6</td><td>Prepare year-end schedules and answer queries from our external accountants and auditors</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent compiles standard year-end schedules from Xero and drafts responses to auditor queries; complex judgement points escalate to Finance Manager.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Compile year-end trial balance, fixed asset, prepayment and accrual schedules from Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent exports and formats standard year-end schedules directly from Xero ledger data.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and send responses to routine auditor information requests via the M365 approval queue</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts email responses with supporting Xero exports attached, held in approval queue until Finance Manager releases.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate complex accounting judgement queries (e.g. revenue recognition, provisions) to Finance Manager</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent flags judgement-based auditor questions and routes them to the Finance Manager with relevant ledger context.</td></tr>
+    <tr><td>7</td><td>Run the invoice inbox, logging, chasing and routing supplier invoices so nothing reaches the ledger without a document</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors the shared invoice inbox, logs each invoice into Xero as a draft bill, and chases missing documents by email via the approval queue.</td></tr>
+    <tr><td>8</td><td>Chase receipts and missing context from colleagues for card spend, and keep receipt compliance high</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies unreceipted card transactions in Xero, drafts personalised chaser emails to cardholders via the M365 approval queue, and tracks compliance rates.</td></tr>
+    <tr><td>9</td><td>Maintain supplier records and support onboarding, including verifying bank details before anything is paid</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates and updates supplier contacts in Xero and drafts bank-detail verification emails; payment release remains a client-approval step.</td></tr>
+    <tr><td>10</td><td>Be the first point of contact for finance questions from the wider team</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine finance queries by email, drafting replies from ledger data; non-standard or sensitive queries are escalated to the Finance Manager.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Answer routine queries about invoice status, payment ETAs, and expense policy via email</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent looks up Xero invoice/payment records and drafts a reply, queued for release before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to budget vs actuals questions by pulling relevant Xero reports</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates a Xero tracking report and drafts an email summary to the enquiring team member.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate policy or judgement questions (e.g. whether a purchase is approvable) to Finance Manager</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent routes out-of-policy or judgement-based queries to the Finance Manager with relevant context attached.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
