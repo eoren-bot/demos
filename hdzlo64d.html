@@ -103,6 +103,14 @@ details .body {
   padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
+.legal-banner {
+  background: #fff8e6; border: 1px solid #e6c768;
+  padding: 10px 14px; border-radius: 4px;
+  font-size: 0.82rem; color: #4a3810; line-height: 1.5;
+}
+.legal-banner.top { margin-bottom: 18px; }
+.legal-banner.foot { margin-top: 14px; }
+.legal-banner strong { font-weight: 700; }
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -115,12 +123,13 @@ footer a { color: #1a56b0; text-decoration: none; }
 </style>
 </head>
 <body>
+<div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from WeBuyVintage's public job ad. Not produced by or affiliated with WeBuyVintage. All people, suppliers, invoices and figures shown are fictional.</div>
 <header>
   <h1>WeBuyVintage</h1>
-  <p class="subtitle">Automates Xero posting, reconciliations, and chasing so the bookkeeper focuses on judgement calls.</p>
+  <p class="subtitle">Automates Xero data-entry and chasing so the bookkeeper focuses on accuracy and judgement.</p>
   <p class="services">UK employer — WeBuyVintage (role: Bookkeeper).</p>
-  <p class="honest-count"><strong>Covered: 93%</strong> (agent 67% + your approvals 13% + our assistant 13%)</p>
-  <p class="not-covered-strip"><strong>Not covered (1):</strong> Physical filing of paper documents in the Cambridge office</p>
+  <p class="honest-count"><strong>Covered: 93%</strong> (agent 73% + your approvals 13% + our assistant 7%)</p>
+  <p class="not-covered-strip"><strong>Not covered (1):</strong> Handle any physical paper documents or post requiring filing</p>
   <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
   <div class="meta"><span class="pill">Systems: Xero, Excel, Google Sheets, BrightHR</span>
     <span class="pill">Accounting: Xero — integration: easy</span></div>
@@ -133,176 +142,182 @@ footer a { color: #1a56b0; text-decoration: none; }
     <th>What the agent does</th>
   </tr></thead>
   <tbody>
-    <tr><td>1</td><td>Maintain and update financial records, including ledgers, journals, and accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts journals and updates ledgers in Xero via API, keeping records current without manual entry.</td></tr>
-    <tr><td>2</td><td>Process accounts payable and receivable transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates and posts supplier bills and sales invoices in Xero, allocates payments, and updates aged-debt reports.</td></tr>
-    <tr><td>3</td><td>Reconcile bank statements and company accounts on a weekly basis</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the Xero bank feed, matches transactions, flags unreconciled items, and emails a summary for review.</td></tr>
-    <tr><td>4</td><td>Prepare and process invoices, payments, and expense reports</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares invoices and payment-run proposals in Xero; client approves and releases payments to the bank.</td></tr>
+    <tr><td>1</td><td>Maintain and update financial records, including ledgers, journals, and accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts journals and ledger entries to Xero via API, keeping records current in real time.</td></tr>
+    <tr><td>2</td><td>Process accounts payable and receivable transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates supplier bills and sales invoices in Xero from inbox attachments and allocates matching payments.</td></tr>
+    <tr><td>3</td><td>Reconcile bank statements and company accounts on a weekly basis</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the Xero bank feed, matches transactions, flags unreconciled items, and emails a summary for sign-off.</td></tr>
+    <tr><td>4</td><td>Prepare and process invoices, payments, and expense reports</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent drafts invoices and expense postings in Xero and assembles a payment run; client approves before funds leave the account.</td></tr>
     <tr><td>5</td><td>Monitor cash flow and report any discrepancies</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates a daily cash-position report from Xero and emails an alert if the balance breaches a defined threshold.</td></tr>
-    <tr><td>6</td><td>Assist with payroll processing</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles data gathering and journal posting; statutory RTI submission requires the human backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Gather and validate timesheets / pay data from employees</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent collates timesheet data from the shared inbox and flags discrepancies before payroll is run.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post payroll journals to Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts the payroll journal to Xero once payroll figures are confirmed.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Submit RTI filing to HMRC</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant presses submit on RTI via the payroll bureau, as this is a statutory filing requiring a qualified person.</td></tr>
-    <tr><td>7</td><td>Support month-end and year-end closing processes</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs reconciliations and prepares draft close packs; client signs off before any statutory filing.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Run all reconciliations and generate draft trial balance in Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent performs bank, debtor, and creditor reconciliations and exports a draft trial balance for review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off by Head of Finance before filing</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Client reviews and approves the close pack before any returns are filed.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Prepare and submit VAT return</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant reviews and submits the VAT return via MTD, as statutory submission requires a qualified person.</td></tr>
-    <tr><td>8</td><td>Maintain financial documentation and filing systems</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent indexes and stores digital documents; physical paper filing requires a person on-site.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Index and attach digital invoices and receipts to Xero transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads attachments from the shared inbox and links them to the matching Xero bill or invoice.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain a digital document register in shared drive</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent updates the shared-drive register with new document references and flags missing items.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Physical filing of paper documents in the Cambridge office</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td style="color:#555;">Handling and filing physical paper is an in-person task with no software route.</td></tr>
-    <tr><td>9</td><td>Liaise with suppliers, clients, and internal teams regarding financial queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts and queues responses to financial queries via the M365 approval queue, chasing overdue items automatically.</td></tr>
+    <tr><td>6</td><td>Assist with payroll processing</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles data gathering and payroll journal postings; statutory RTI submission requires human-backup sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Collate timesheets and variable pay data from shared inbox each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads timesheet attachments, compiles a summary, and flags anomalies before payroll is run.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post payroll journals to Xero after payroll run is complete</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts the wage and PAYE journals to Xero automatically once the payroll file is shared.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Submit RTI filing to HMRC</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant submits the RTI return to HMRC — a statutory filing requiring a qualified person.</td></tr>
+    <tr><td>7</td><td>Support month-end and year-end closing processes</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs reconciliations, posts accruals/prepayments, and prepares a close checklist; client signs off before filing.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Run aged-debt and aged-creditor reports and circulate to Head of Finance</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates and emails aged reports from Xero as part of the month-end pack.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post accruals and prepayment journals for the period</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent posts standard accrual and prepayment journals to Xero using prior-period templates.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off by Head of Finance before any statutory filing</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Client reviews and approves the close pack before accounts are locked — a deliberate human control.</td></tr>
+    <tr><td>8</td><td>Maintain financial documentation and filing systems</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent attaches source documents to Xero transactions and maintains a structured digital filing system.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Attach supplier invoices and receipts to corresponding Xero transactions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads inbox attachments and links them to the correct Xero bill or expense record automatically.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Organise digital financial files in shared drive by period and document type</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent moves processed documents into the correct shared-drive folders following a naming convention.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Handle any physical paper documents or post requiring filing</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td style="color:#555;">Physical paper filing is in-person work the agent cannot perform.</td></tr>
+    <tr><td>9</td><td>Liaise with suppliers, clients, and internal teams regarding financial queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts and queues responses to financial queries via the M365 approval queue; urgent calls handled by voice add-on.</td></tr>
   </tbody>
 </table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
-  <summary><span class="score">#1</span> Duty 2: Process accounts payable and receivable transactions <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#1</span> Duty 1: Maintain and update financial records, including ledgers, journals, and accounts <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent creates and posts supplier bills and sales invoices in Xero, allocates payments, and updates aged-debt reports.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent posts journals and ledger entries to Xero via API, keeping records current in real time.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: g.hartwell@hartwell-clearance.example.co.uk
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Miscoding alert flagged from Xero import review — Mon 2 Nov 2026.
+
+Supplier: Callum Oakenshaw Vintage Textiles
+Invoice ref: INV-A101
+Invoice date: Mon 2 Nov 2026
+Amount: £342.80
+Original account code posted: 5001 — Resale Stock Purchases (correct category for vintage clothing)
+Error: Amount was instead coded to 7200 — Premises Costs at the point of entry.
+
+Please correct the ledger coding and post a correcting journal so that INV-A101 sits under the right account before month-end review. Flag for bookkeeper review once done.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">CORRECTING JOURNAL — INV-A101 — Mon 2 Nov 2026
+
+Supplier: Callum Oakenshaw Vintage Textiles
+Invoice amount: £342.80
+
+ORIGINAL (INCORRECT) CODING
+Account 7200 — Premises Costs — DEBIT £342.80 (posted in error)
+
+CORRECTING JOURNAL ENTRIES
+Step 1 — Reverse incorrect entry:
+  CREDIT 7200 Premises Costs £342.80
+Step 2 — Post to correct account:
+  DEBIT 5001 Resale Stock Purchases £342.80
+
+ACTION TAKEN
+Posted to Xero as correcting journal CJ-001, dated Mon 2 Nov 2026.
+Ledger for INV-A101 now reads: 5001 Resale Stock Purchases — £342.80.
+Journal memo: Miscoding correction — INV-A101 moved from 7200 to 5001.
+
+FLAG
+Marked for bookkeeper review in Xero before month-end close.
+No further action required unless your bookkeeper disputes the recode.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 2: Process accounts payable and receivable transactions <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent creates supplier bills and sales invoices in Xero from inbox attachments and allocates matching payments.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Lily Fenwick &lt;l.fenwick@marblaneauctions.example.co.uk&gt;
 To: accounts@webuyvintage.co.uk
-Date: Wed 4 Nov 2026
-Subject: Invoice INV-A103 — Bulk Vintage Lot Collection
+Date: Mon 2 Nov 2026
+Subject: Invoice INV-A101 — Vintage Lot Cataloguing Services
 
 Hi,
 
-Please find attached our invoice INV-A103 dated Wed 4 Nov 2026 for the bulk vintage clothing and homeware collection service completed last week. Total on invoice: £1,610.00.
+Please find attached our invoice INV-A101 dated Mon 2 Nov 2026 for £342.80 covering cataloguing and grading services for the October vintage lot intake. Payment terms are 30 days from invoice date.
 
-Our agreed quote for the job was £1,450.00. Please process at your earliest convenience — payment terms are 30 days.
+No purchase order number was included as this was arranged directly with your office.
 
-Grace Hartwell
-Hartwell Clearance Services</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">ACCOUNTS PAYABLE — SUPPLIER BILL PROCESSING
-Today: Mon 9 Nov 2026
+Regards,
+Lily Fenwick
+Marblane Auctions
 
-INVOICE RECEIVED: INV-A103 from Hartwell Clearance Services
-Invoice date: Wed 4 Nov 2026
-Invoice total: £1,610.00
-Expected amount on record: £1,450.00
-Variance flagged: £160.00 (invoice exceeds agreed quote)
+PDF attachment: INV-A101_MarblaneAuctions_02112026.pdf</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ACCOUNTS PAYABLE — BILL CREATION AND FLAG
 
-ACTION — BILL POSTED TO XERO
-Posted to Xero as draft bill #INV-A103, supplier: Hartwell Clearance Services, amount: £1,610.00, dated Wed 4 Nov 2026. Status set to DRAFT pending variance resolution. Bill is NOT approved for payment until variance of £160.00 is confirmed or a corrected invoice for £1,450.00 is received.
+Agent read attachment INV-A101_MarblaneAuctions_02112026.pdf and extracted the following:
 
-ACTION — APPROVAL EMAIL QUEUED
-Queued for approval in the Outlook approval queue: email to g.hartwell@hartwell-clearance.example.co.uk querying the £160.00 overcharge and requesting either a credit note or a revised invoice for £1,450.00.
+Supplier: Marblane Auctions
+Invoice ref: INV-A101
+Invoice date: Mon 2 Nov 2026
+Amount: £342.80
+Due date: Wed 2 Dec 2026 (30 days)
 
-AWAITING SIGN-OFF FROM WEBUYVINTAGE BEFORE EMAIL IS SENT.</div></div>
+ACTION — Posted to Xero as draft bill #INV-A101 under supplier Marblane Auctions, account coded to Cataloguing and Grading Services. Status: awaiting approval.
+
+FLAG — No purchase order reference found on this invoice. Your accounts team should confirm the spend was authorised before approving the bill.
+
+ACTION — Queued for approval in the Outlook approval queue: email to your finance manager noting the missing PO and requesting sign-off before payment is released.
+
+No payment allocation made until bill is approved.</div></div>
     </div>
   </div>
 </details>
 <details open>
-  <summary><span class="score">#2</span> Duty 3: Reconcile bank statements and company accounts on a weekly basis <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#3</span> Duty 3: Reconcile bank statements and company accounts on a weekly basis <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls the Xero bank feed, matches transactions, flags unreconciled items, and emails a summary for review.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls the Xero bank feed, matches transactions, flags unreconciled items, and emails a summary for sign-off.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly bank reconciliation request — Mon 9 Nov 2026
-
-Please reconcile the WeBuyVintage Xero bank feed for the week Mon 2 Nov 2026 to Fri 6 Nov 2026.
-
-Bank account: WeBuyVintage Business Current Account
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly bank reconciliation run — Mon 9 Nov 2026
 Period: Mon 2 Nov 2026 to Fri 6 Nov 2026
+Xero bank feed: WeBuyVintage main current account
 
-Expected roadshow takings to match:
-  Tue 3 Nov 2026 — Nottingham Vintage Fair, cash-to-bank deposit
-  Thu 5 Nov 2026 — Birmingham Antiques Market, card reader settlement
-  Fri 6 Nov 2026 — Coventry Pop-Up Fair, card reader settlement
+Transactions pulled from feed this week:
 
-Review contact (internal): Hannah Thornbury
-Review email: h.thornbury@webuyvintage.example.co.uk</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">WEEKLY BANK RECONCILIATION — WeBuyVintage
+INV-A101 | Mon 2 Nov 2026 | £342.80 | Supplier payment — no PO reference on invoice
+INV-A102 | Tue 3 Nov 2026 | £218.40 | Supplier payment — no delivery note received yet
+INV-A103 | Wed 4 Nov 2026 | £1,610.00 | Supplier payment — invoice total exceeds expected amount of £1,450.00
+
+Please reconcile against Xero ledger, flag unmatched items, and email summary to approvals queue for sign-off.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">WEEKLY RECONCILIATION REPORT — WeBuyVintage
 Period: Mon 2 Nov 2026 to Fri 6 Nov 2026
 Run date: Mon 9 Nov 2026
 
-XERO ACTIONS
-Bank feed pulled for WeBuyVintage Business Current Account in Xero.
-Automated matching completed for period Mon 2 Nov 2026 to Fri 6 Nov 2026.
-All routine supplier payments and online sales receipts matched and reconciled in Xero.
+XERO MATCH RESULTS
+INV-A101 | Mon 2 Nov 2026 | £342.80 | UNMATCHED — no PO reference found in Xero; cannot link to purchase order
+INV-A102 | Tue 3 Nov 2026 | £218.40 | UNMATCHED — no delivery note recorded in Xero to confirm goods received
+INV-A103 | Wed 4 Nov 2026 | £1,610.00 | UNMATCHED — invoice total exceeds expected amount of £1,450.00; variance of £160.00 requires authorisation
 
-UNRECONCILED ITEMS FLAGGED IN XERO (3 items)
-1. Tue 3 Nov 2026 — Nottingham Vintage Fair cash-to-bank deposit — no matching sales record found in Xero. Flagged.
-2. Thu 5 Nov 2026 — Birmingham Antiques Market card reader settlement — no matching Xero receipt linked. Flagged.
-3. Fri 6 Nov 2026 — Coventry Pop-Up Fair card reader settlement — no matching Xero receipt linked. Flagged.
+TOTALS
+Total invoiced this period: £2,171.20
+Total if INV-A103 corrected to expected: £2,011.20
+Unreconciled items: 3
 
-All three items held as unreconciled in Xero pending your review and confirmation of correct sales totals.
+ACTIONS TAKEN
+All three transactions left unposted in Xero pending your finance team&#x27;s review and approval.
 
-NEXT STEP
-Summary email drafted to Hannah Thornbury listing the three flagged roadshow items and requesting confirmation of takings figures to allow Xero reconciliation to be completed.
-Queued for approval in the Outlook approval queue before sending to h.thornbury@webuyvintage.example.co.uk.</div></div>
-    </div>
-  </div>
-</details>
-<details open>
-  <summary><span class="score">#3</span> Duty 7: Support month-end and year-end closing processes <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent runs reconciliations and prepares draft close packs; client signs off before any statutory filing.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Jessica Stokeley (Finance, WeBuyVintage)
-Date: Mon 9 Nov 2026
-To: Automation Agent
-
-Please run the October 2026 month-end close for WeBuyVintage. Checklist below:
-
-1. Reconcile all bank accounts in Xero against Oct statements
-2. Confirm all supplier bills and purchase invoices posted for Oct
-3. Confirm all sales invoices raised and cash allocations matched
-4. Prepare draft VAT workings for the Oct quarter-end return
-5. Compile draft close pack and email to me and Charlie Yardley for sign-off
-6. Flag any unreconciled items or missing postings
-
-Do not submit the VAT return until Charlie and I have both signed off.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">MONTH-END CLOSE — OCTOBER 2026 — WEBBUYINTAGE
-Run date: Mon 9 Nov 2026
-
-STEP 1 — BANK RECONCILIATION
-All three WeBuyVintage bank accounts reconciled in Xero against Oct 2026 statements.
-Result: No unreconciled items found. Reconciliation marked complete in Xero.
-
-STEP 2 — SUPPLIER BILLS
-All Oct supplier bills reviewed in Xero. One draft bill (vintage stock consignment, BV-OCT-14) flagged as awaiting approval — no action taken pending sign-off.
-
-STEP 3 — SALES INVOICES AND CASH ALLOCATIONS
-All Oct sales invoices confirmed posted in Xero. All customer receipts matched and allocated. No unmatched payments outstanding.
-
-STEP 4 — VAT WORKINGS
-Draft Oct quarter-end VAT workings compiled and included in close pack. Return is staged in Xero but NOT submitted — awaiting sign-off from Jessica Stokeley and Charlie Yardley.
-
-STEP 5 — DRAFT CLOSE PACK
-Close pack document (bank rec summary, P&amp;L snapshot, VAT workings, open items log) prepared and attached.
-
-EMAIL ACTION — Queued for approval in the Outlook approval queue.
-Draft email addressed to j.stokeley@webbuyintage.internal and c.yardley@webbuyintage.internal with close pack attached, requesting sign-off before VAT submission.
-
-OUTSTANDING ITEM — Draft bill BV-OCT-14 requires review before final close confirmation.</div></div>
+NOTIFICATION
+Reconciliation summary email queued for approval in the Outlook approval queue — addressed to your accounts team for sign-off before any items are posted to Xero.</div></div>
     </div>
   </div>
 </details>
 <details>
-  <summary><span class="score">#4</span> Duty 1: Maintain and update financial records, including ledgers, journals, and accounts <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#4</span> Duty 7: Support month-end and year-end closing processes <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent posts journals and updates ledgers in Xero via API, keeping records current without manual entry.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent runs reconciliations, posts accruals/prepayments, and prepares a close checklist; client signs off before filing.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Date: Mon 9 Nov 2026
-Reported by: Isaac Barnes, Finance Admin — WeBuyVintage
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Period to close: October 2026
+Today: Mon 9 Nov 2026
+Outstanding tasks flagged for month-end:
+- Storage unit rent covers Nov and Dec — October portion must be accrued
+- Two consignment payouts agreed in October but invoices not yet received
+- Prepayment for annual trade-fair stand booked in October, event in March 2027
+- Bank feed confirmed reconciled up to Fri 6 Nov 2026
+- VAT return period: October 2026, submission deadline Fri 13 Nov 2026
+- BrightHR shows all October timesheets approved
+- Confirm accruals and prepayment journal entries, then circulate October close pack for sign-off</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">MONTH-END CLOSE — OCTOBER 2026 — WeBuyVintage
+Run date: Mon 9 Nov 2026
 
-A purchase posted on Thu 5 Nov 2026 for a lot of Victorian silverware acquired at auction has been allocated to the wrong nominal code. It was booked under nominal 5200 (General Supplies) but should sit under nominal 5000 (Stock Purchases — Antiques and Collectables). The original journal reference in Xero is JNL-00441. No VAT was involved in this transaction. Please post a correcting journal to move the allocation to the correct nominal code and update the ledger accordingly. Flag the correcting entry with a clear narrative so the audit trail is clean.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">TASK: Correcting journal — misallocated antiques purchase
-RUN DATE: Mon 9 Nov 2026
-TRIGGERED BY: Isaac Barnes (Finance Admin, WeBuyVintage)
-ORIGINAL ENTRY: JNL-00441, dated Thu 5 Nov 2026
+STEP 1 — ACCRUALS POSTED TO XERO
+Accrued liability: October portion of storage unit rent (Nov/Dec invoice not yet received) — posted to Xero as draft journal ACR-OCT-001, dated 31 Oct 2026
+Accrued liability: two outstanding consignment payouts agreed in October — posted to Xero as draft journal ACR-OCT-002, dated 31 Oct 2026
 
-CORRECTING JOURNAL POSTED TO XERO (Draft, pending review):
-Reference: JNL-00447
-Date: Mon 9 Nov 2026
+STEP 2 — PREPAYMENT POSTED TO XERO
+Prepayment asset: trade-fair stand fee paid October 2026, event Mar 2027 — posted to Xero as draft journal PRE-OCT-001, dated 31 Oct 2026
 
-Debit  — 5000 Stock Purchases — Antiques and Collectables
-Credit — 5200 General Supplies
+STEP 3 — RECONCILIATION CONFIRMATION
+Bank feed reconciled to Fri 6 Nov 2026 — no unmatched items found in Xero
+BrightHR October timesheets: all approved per system record
 
-Narrative: Correcting entry — Victorian silverware lot originally misallocated to nominal 5200 (General Supplies) on Thu 5 Nov 2026 via JNL-00441. Reallocated to correct nominal 5000 (Stock Purchases — Antiques and Collectables) on Mon 9 Nov 2026 by agent on instruction of Isaac Barnes.
+STEP 4 — OCTOBER CLOSE PACK
+Google Sheets close checklist updated: all items marked complete pending sign-off
+Email to your finance manager queued for approval in the Outlook approval queue — subject: &quot;WeBuyVintage October 2026 Close Pack — Action Required by Fri 13 Nov 2026&quot;
+Pack includes: accruals schedule, prepayment schedule, reconciliation summary, and VAT return for review
 
-LEDGER STATUS: Nominal 5000 and 5200 ledger cards updated in Xero to reflect the correction.
-ACTION REQUIRED: Please review JNL-00447 in Xero and approve to post.</div></div>
+NEXT STEP — Your finance manager must approve the email and sign off journals in Xero before VAT return is filed. Deadline: Fri 13 Nov 2026.</div></div>
     </div>
   </div>
 </details>
@@ -311,191 +326,178 @@ ACTION REQUIRED: Please review JNL-00447 in Xero and approve to post.</div></div
   <div class="body">
     <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent generates a daily cash-position report from Xero and emails an alert if the balance breaches a defined threshold.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Daily cash-position check — Wed 11 Nov 2026
-Trigger: Scheduled 08:00 run
-Account monitored in Xero: WeBuyVintage main current account
-Alert threshold: Minimum balance must not fall below forecast balance for the day
-Forecast source: Google Sheets cash-flow model (tab: Nov 2026 Weekly Forecast)
-Today&#x27;s forecast balance: [pull from Google Sheets]
-Today&#x27;s actual balance: [pull from Xero bank feed]
-Alert recipient: Harper Wyndham, Head of Finance
-Alert recipient email: h.wyndham@webuyvintage.example.co.uk
-Escalation if unread after 2 hours: Leo Chadwick, Finance Director
-Escalation email: l.chadwick@webuyvintage.example.co.uk</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">CASH POSITION REPORT — WeBuyVintage — Wed 11 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Daily cash-position check — Mon 9 Nov 2026
+Source: Xero live bank feed, WeBuyVintage main current account
+Alert threshold: cash balance must stay at or above the defined minimum at all times
+Check frequency: each weekday morning before 09:00
+Recent activity to flag:
+- Several large vintage stock purchase payments cleared Fri 6 Nov 2026
+- Expected customer settlement from consignment sales not yet received as of Mon 9 Nov 2026
+- Standing order for warehouse storage facility due Wed 11 Nov 2026
+- No new wholesale purchase invoices approved over the weekend
+Please run today&#x27;s cash-position report and alert the Head of Finance if threshold is breached.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DAILY CASH-POSITION REPORT — WeBuyVintage — Mon 9 Nov 2026
 
-SOURCE DATA RETRIEVED
-Xero bank feed balance as of 08:00 Wed 11 Nov 2026: pulled successfully
-Google Sheets forecast balance (Nov 2026 Weekly Forecast, Wed 11 Nov): pulled successfully
+DATA SOURCE: Xero live bank feed, WeBuyVintage main current account, pulled 08:47 on Mon 9 Nov 2026.
 
-DISCREPANCY DETECTED
-Actual balance is below forecast balance by more than the defined threshold.
-Shortfall magnitude: significant mid-week gap flagged for immediate review.
-Status: BREACH — alert triggered.
+STATUS: THRESHOLD BREACH DETECTED
 
-ACTION TAKEN
-Alert email drafted to Harper Wyndham (Head of Finance).
-Queued for approval in the Outlook approval queue before sending to h.wyndham@webuyvintage.example.co.uk.
+VARIANCE BREAKDOWN:
+- Large vintage stock purchase payments cleared Fri 6 Nov 2026, reducing the closing balance below the defined minimum threshold.
+- Expected consignment-sale customer settlement not yet received as of Mon 9 Nov 2026, widening the shortfall.
+- Standing order for warehouse storage facility remains scheduled for Wed 11 Nov 2026, which will apply further downward pressure if the gap is not closed before then.
 
-EMAIL DRAFT SUMMARY
-To: Harper Wyndham
-Subject: CASH ALERT — Balance shortfall detected Wed 11 Nov 2026
-Body: WeBuyVintage current account balance as of this morning falls materially short of the Nov 2026 weekly forecast for today. Immediate review of incoming vintage stock receipts and pending sales settlements is recommended. If no action is taken within 2 hours, Leo Chadwick will be notified automatically.
+DISCREPANCY NOTE: The gap between the current balance and the threshold is attributable to the timing difference between outgoing stock payments and incoming consignment receipts.
 
-ESCALATION RULE ARMED
-If email remains unread by 10:00 Wed 11 Nov 2026, agent will queue a follow-up alert to l.chadwick@webuyvintage.example.co.uk via the Outlook approval queue.</div></div>
+RECOMMENDED ACTION: Your Head of Finance should review pending consignment settlements and consider whether the Wed 11 Nov 2026 standing order creates an additional risk.
+
+EMAIL ALERT: Queued for approval in the Outlook approval queue — draft addressed to your Head of Finance, summarising the breach, the variance breakdown above, and the Wed 11 Nov 2026 standing order risk. Sent on behalf of WeBuyVintage.
+
+NO Xero entries created — this is a read and alert duty only.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#6</span> Duty 6: Assist with payroll processing <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles data gathering and journal posting; statutory RTI submission requires the human backup.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles data gathering and payroll journal postings; statutory RTI submission requires human-backup sign-off.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: warehouse@webuyvintage.co.uk
-To: admin@webuyvintage.co.uk
-Date: Mon 9 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Payroll run: October 2026 — variable pay data, week of Mon 2 Nov 2026
+Source sheets: BrightHR timesheets + Google Sheets labour tracker
 
-Hi, please find last week&#x27;s timesheet summary for payroll processing.
+Staff variable hours logged (processed from BrightHR):
+  Dafydd — Mon 02/11: PRJ-4418, reg 9.0h, OT 0.5h, daily cost £274.31
+  Dafydd — Wed 04/11: PRJ-4418, reg 9.0h, OT 1.0h, daily cost £292.13
+  Rhys   — Tue 03/11: PRJ-4412, reg 8.5h, OT 0.0h, daily cost £187.00
 
-Dafydd — PRJ-4418 (Vintage Furniture Intake &amp; Grading)
-  Mon 2 Nov 2026: 9.0 reg hrs + 0.5 OT hrs (rate £28.50/hr, OT x1.25)
-  Wed 4 Nov 2026: 9.0 reg hrs + 1.0 OT hrs (rate £28.50/hr, OT x1.25)
+Rates on file: Dafydd £28.50/hr, Rhys £22.00/hr. Overtime at x1.25 already applied.
+Total variable labour this week: £753.44
 
-Rhys — PRJ-4412 (Clothing &amp; Accessories Sort)
-  Tue 3 Nov 2026: 8.5 reg hrs, no OT (rate £22.00/hr)
+Please compile payroll journal and flag for RTI sign-off. RTI window closes Fri 13 Nov 2026.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">PAYROLL JOURNAL — WEEK OF MON 2 NOV 2026
+Compiled by agent on Mon 9 Nov 2026 for WeBuyVintage.
 
-Please post the payroll journal for week ending Fri 6 Nov 2026 and flag for RTI.
-Thanks</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">PAYROLL JOURNAL — WEEK ENDING FRI 6 NOV 2026
-Processed by agent on Mon 9 Nov 2026
+LABOUR LINES POSTED TO XERO (draft payroll journal PJ-NOV01):
+  Mon 02/11  Dafydd  PRJ-4418  reg 9.0h OT 0.5h  £274.31  DR Wages Expense / CR Wages Control
+  Tue 03/11  Rhys    PRJ-4412  reg 8.5h OT 0.0h  £187.00  DR Wages Expense / CR Wages Control
+  Wed 04/11  Dafydd  PRJ-4418  reg 9.0h OT 1.0h  £292.13  DR Wages Expense / CR Wages Control
+  TOTAL POSTED: £753.44
 
-LINE ITEMS EXTRACTED FROM SHARED INBOX
+STATUS: Posted to Xero as draft payroll journal PJ-NOV01. Awaiting your finance team&#x27;s review before finalisation.
 
-  Dafydd | PRJ-4418 | Mon 2 Nov 2026 | 9.0 reg + 0.5 OT hrs | daily cost £274.31
-  Rhys   | PRJ-4412 | Tue 3 Nov 2026 | 8.5 reg + 0.0 OT hrs | daily cost £187.00
-  Dafydd | PRJ-4418 | Wed 4 Nov 2026 | 9.0 reg + 1.0 OT hrs | daily cost £292.13
+RTI SIGN-OFF REQUIRED:
+Statutory RTI submission requires human authorisation. Your finance manager must log in to HMRC and press submit no later than Fri 13 Nov 2026.
 
-TOTAL LABOUR — WEEK ENDING FRI 6 NOV 2026 = £753.44
-
-XERO ACTION
-Posted to Xero as draft payroll journal MAN-20261106 — WeBuyVintage payroll, week ending Fri 6 Nov 2026, total £753.44. Accounts debited: Wages Expense (PRJ-4418 and PRJ-4412). Accrued Wages account credited. Status: draft pending your review.
-
-ACTION REQUIRED — HUMAN STEP
-RTI Full Payment Submission to HMRC cannot be submitted by the agent. Please log in to your payroll software and submit RTI for the period ending Fri 6 Nov 2026 once you have approved the journal above.</div></div>
+ACTION NEEDED: Please confirm journal is correct, then approve RTI submission before the Fri 13 Nov 2026 deadline. Reply to release or amend.</div></div>
     </div>
   </div>
 </details>
 <details>
-  <summary><span class="score">#7</span> Duty 9: Liaise with suppliers, clients, and internal teams regarding financial queries <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#7</span> Duty 8: Maintain financial documentation and filing systems <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts and queues responses to financial queries via the M365 approval queue, chasing overdue items automatically.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent attaches source documents to Xero transactions and maintains a structured digital filing system.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Owen Underhill &lt;o.underhill@ravenhill-estates.example.co.uk&gt;
-Received: Mon 9 Nov 2026, 09:14
-To: accounts@webuyvintage.co.uk
-Subject: Query re: outstanding payment — collection consignment
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Scanned receipt uploaded to inbox folder: &quot;receipts-to-process&quot;
+File name: receipt_ellsworth_nov2026_manchesterroadshow.pdf
+Receipt date: Fri 6 Nov 2026
+Expense type: Travel and subsistence — Manchester vintage roadshow
+Submitted by: external field rep Rosie Ellsworth
+Xero expense line already created: Expense EXP-0047, dated Fri 6 Nov 2026
+Category: Roadshow Travel Expenses
+Filing path in use: Finance / Expenses / 2026 / November</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TASK: Attach scanned receipt to Xero expense line and file document
+
+STEP 1 — XERO ATTACHMENT
+Located expense record EXP-0047 (Roadshow Travel Expenses, Fri 6 Nov 2026) in Xero.
+Attached file receipt_ellsworth_nov2026_manchesterroadshow.pdf directly to EXP-0047 in Xero.
+Attachment confirmed on Xero expense line EXP-0047 — document is now visible in the Files tab.
+
+STEP 2 — DIGITAL FILING
+Source file moved from receipts-to-process inbox to structured filing path:
+Finance / Expenses / 2026 / November / receipt_ellsworth_nov2026_manchesterroadshow.pdf
+File renamed for consistency: EXP-0047_RoadshowTravel_RosieEllsworth_06Nov2026.pdf
+Original inbox folder cleared of this document.
+
+STEP 3 — LOG UPDATE
+Filing log updated: EXP-0047 | Fri 6 Nov 2026 | Roadshow Travel | Filed Mon 9 Nov 2026 | Attached in Xero.
+
+ACTION REQUIRED
+Your accounts team should review and approve EXP-0047 in Xero before the expense is posted.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 9: Liaise with suppliers, clients, and internal teams regarding financial queries <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts and queues responses to financial queries via the M365 approval queue; urgent calls handled by voice add-on.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Inbound email received Mon 9 Nov 2026, 09:14
+From: Nathan Sheppard &lt;n.sheppard@ravenroadestates.example.co.uk&gt;
+To: accounts@webuyvintage.example.co.uk
+Subject: Overdue Invoice — INV-7742
 
 Hi,
 
-I wanted to follow up on the payment for the vintage furniture consignment we delivered on Tue 3 Nov 2026. I have not yet received confirmation that our invoice has been received and approved on your end. Could you let me know the current status and when we can expect settlement? We would be grateful for an update as soon as possible.
+I&#x27;m following up on invoice INV-7742 raised by us on Tue 3 Nov 2026 for a consignment of vintage ceramics collected last week. Payment was due within 5 days of receipt, so it was due Fri 6 Nov 2026. We have not yet received payment or any remittance advice. Could you please confirm the status and when we can expect funds?
 
 Many thanks,
-Owen Underhill
-Ravenhill Estates
+Nathan Sheppard
+Raven Road Estates</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED
+Supplier: Nathan Sheppard, Raven Road Estates
+Invoice reference: INV-7742
+Invoice date: Tue 3 Nov 2026
+Due date: Fri 6 Nov 2026
+Status: Checked Xero — INV-7742 is recorded and unpaid; flagged as overdue as of Fri 6 Nov 2026.
 
-Xero supplier record: Ravenhill Estates
-Relevant bill reference in Xero: BILL-2026-0894
-Bill date: Tue 3 Nov 2026
-Due date: Mon 23 Nov 2026
-Current status in Xero: Awaiting approval</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED: Mon 9 Nov 2026 from Owen Underhill, Ravenhill Estates
+ACTION TAKEN
+Bill INV-7742 status note updated in Xero to reflect supplier follow-up received Mon 9 Nov 2026.
 
-XERO LOOKUP: Pulled bill BILL-2026-0894 from WeBuyVintage Xero account.
-  Supplier: Ravenhill Estates
-  Bill date: Tue 3 Nov 2026
-  Due date: Mon 23 Nov 2026
-  Current status: Awaiting approval
+EMAIL DRAFT — queued for approval in the Outlook approval queue before sending.
+To: n.sheppard@ravenroadestates.example.co.uk
+Subject: Re: Overdue Invoice — INV-7742
 
-ACTION — STATUS UPDATE IN XERO: Bill BILL-2026-0894 flagged for internal approval review in Xero. No payment date change applied; due date remains Mon 23 Nov 2026.
+Dear Nathan, thank you for getting in touch. We can confirm we have received invoice INV-7742 and apologise for the delay in remittance. Your finance team is reviewing payment now and we expect to process this and send remittance advice to you by Wed 11 Nov 2026. Please do not hesitate to contact us if you need anything further. Kind regards, WeBuyVintage Accounts Team.
 
-EMAIL DRAFT — queued for approval in the Outlook approval queue:
-
-  To: o.underhill@ravenhill-estates.example.co.uk
-  Subject: RE: Query re: outstanding payment — collection consignment
-
-  Dear Owen,
-
-  Thank you for getting in touch. We can confirm that your invoice for the vintage furniture consignment delivered on Tue 3 Nov 2026 has been received and is recorded in our system as BILL-2026-0894. It is currently progressing through our internal approval process, with a scheduled payment due date of Mon 23 Nov 2026. We will notify you as soon as approval is complete.
-
-  Kind regards,
-  WeBuyVintage Accounts Team</div></div>
-    </div>
-  </div>
-</details>
-<details>
-  <summary><span class="score">#8</span> Duty 8: Maintain financial documentation and filing systems <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent indexes and stores digital documents; physical paper filing requires a person on-site.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Elsie Hargreaves &lt;e.hargreaves@northernpickersco.example.co.uk&gt;
-To: accounts@webuyvintage.co.uk
-Date: Mon 9 Nov 2026
-Subject: Invoice INV-NPC-0847 — Job Lot Clearance Collection
-
-Hi,
-
-Please find attached our invoice INV-NPC-0847 for the job lot clearance collection carried out on Fri 6 Nov 2026.
-Attachment: INV-NPC-0847_NorthernPickers_06Nov2026.pdf
-
-Payment terms are 30 days from invoice date.
-
-Thanks,
-Elsie Hargreaves
-Northern Pickers Co.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">DOCUMENT INDEXING AND FILING LOG — Mon 9 Nov 2026
-
-ACTION 1 — XERO BILL ATTACHMENT
-Supplier invoice INV-NPC-0847 (Northern Pickers Co., dated Fri 6 Nov 2026) matched to existing draft bill in Xero.
-PDF file INV-NPC-0847_NorthernPickers_06Nov2026.pdf attached to draft bill in Xero.
-Bill due date set to Mon 7 Dec 2026 (30 days from invoice date Fri 6 Nov 2026) — NOTE: physical payment approval requires a person on-site.
-
-ACTION 2 — DOCUMENT REGISTER UPDATE
-Shared document register (Google Sheets, tab: Supplier Invoice Log) updated with new row:
-  Document ref  : INV-NPC-0847
-  Supplier       : Northern Pickers Co.
-  Contact        : Elsie Hargreaves
-  Invoice date   : Fri 6 Nov 2026
-  Received date  : Mon 9 Nov 2026
-  Xero bill ref  : matched to draft bill, PDF attached
-  Filing status  : Digitally filed — physical copy requires on-site handling
-
-NEXT STEP — Please review the attached bill in Xero and confirm before approval.</div></div>
+NEXT STEP
+Approval required from your bookkeeper before the reply is sent.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#9</span> Duty 4: Prepare and process invoices, payments, and expense reports <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares invoices and payment-run proposals in Xero; client approves and releases payments to the bank.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts invoices and expense postings in Xero and assembles a payment run; client approves before funds leave the account.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Matilda Kenworthy (WeBuyVintage buying team)
-Date: Mon 9 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Batch: Autumn Roadshow Expense Claims — Week of Mon 2 Nov 2026
+Total staff submitting: 40 team members
+Expense categories and agreed totals already validated against receipts in BrightHR:
 
-Please batch up the supplier payment run for last week. We have three unpaid bills sitting in Xero from suppliers we bought stock from during the week of 2 Nov to 6 Nov 2026. All are due today or earlier. Suppliers are Evie Bentley Estates (vintage jewellery lot), Florence Whitlock Collectibles (ceramics bundle), and Sophie Norcott Textiles (pre-war fabric roll). Can you pull the open bills, group them into one payment run proposal, and get it into the approval queue so I can release funds this morning? Our bank account in Xero is the WeBuyVintage Current Account.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">WEEKLY SUPPLIER PAYMENT RUN — Mon 9 Nov 2026
+  Travel (mileage, rail, parking)   — 40 claims
+  Accommodation (2-night stays)     — 40 claims
+  Meals and subsistence             — 40 claims
 
-Bills collated from Xero (due on or before Mon 9 Nov 2026):
+All receipts approved in BrightHR by the office manager on Fri 6 Nov 2026.
+Please post all claims to Xero under nominal code EXP-7710 (Staff Expenses — Roadshow).
+Payment due: Fri 13 Nov 2026 via BACS to individual employee bank accounts.
+Note: Do not release payment — queue for Head of Finance approval only.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TASK: Post 40 roadshow expense claims to Xero and assemble BACS payment run.
+SOURCE: BrightHR approval batch, office manager sign-off Fri 6 Nov 2026.
 
-  1. Evie Bentley Estates — vintage jewellery lot — bill dated Mon 2 Nov 2026
-  2. Florence Whitlock Collectibles — ceramics bundle — bill dated Wed 4 Nov 2026
-  3. Sophie Norcott Textiles — pre-war fabric roll — bill dated Fri 6 Nov 2026
+XERO POSTINGS (Mon 9 Nov 2026):
+  40 individual expense bills posted to Xero as draft bills under nominal code EXP-7710 (Staff Expenses — Roadshow).
+  Each bill dated Mon 2 Nov 2026 (roadshow week start), due date Fri 13 Nov 2026.
+  Categories split across three line types per claim: Travel, Accommodation, Meals and subsistence.
+  All 40 bills marked Awaiting Approval in Xero — no bill is yet authorised or paid.
 
-ACTION: Payment batch grouped in Xero under WeBuyVintage Current Account. All three bills marked Ready for Payment. Batch reference: PAY-RUN-20261109.
+BACS PAYMENT RUN:
+  Payment run assembled in Xero covering all 40 claims, scheduled value date Fri 13 Nov 2026.
+  Run is HELD — funds will not leave the WeBuyVintage account until the Head of Finance releases it.
 
-Posted to Xero as a draft payment run (PAY-RUN-20261109) against the WeBuyVintage Current Account — awaiting your approval before funds are released to the bank.
+APPROVAL NOTICE:
+  Notification queued for approval in the Outlook approval queue, addressed to your Head of Finance, summarising the 40 draft bills and the pending BACS run for review and release by Fri 13 Nov 2026.
 
-NEXT STEP FOR MATILDA KENWORTHY: Review PAY-RUN-20261109 in Xero and click Approve to release payments to Evie Bentley Estates, Florence Whitlock Collectibles, and Sophie Norcott Textiles.</div></div>
+ACTION REQUIRED: Head of Finance to approve bills in Xero and release BACS run before Fri 13 Nov 2026.</div></div>
     </div>
   </div>
 </details>
@@ -505,6 +507,7 @@ NEXT STEP FOR MATILDA KENWORTHY: Review PAY-RUN-20261109 in Xero and click Appro
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
   [SENDER NAME / EMAIL]
+  <div class="legal-banner foot"><strong>Illustration prepared by Vizaible</strong> from WeBuyVintage's public job ad. Not produced by or affiliated with WeBuyVintage. All people, suppliers, invoices and figures shown are fictional.</div>
 </footer>
 </body>
 </html>
