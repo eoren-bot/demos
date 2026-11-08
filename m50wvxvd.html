@@ -26,9 +26,17 @@ h1 { font-size: 1.55rem; margin: 0 0 4px 0; }
 .honest-count {
   background: #f3f0fb; border-left: 3px solid #6a4ac9;
   padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
-  font-size: 0.92rem; color: #332154;
+  font-size: 0.95rem; color: #332154;
 }
-.honest-count strong { font-weight: 600; }
+.honest-count strong { font-weight: 700; }
+.not-covered-strip {
+  padding: 6px 12px; margin-top: 6px; border-radius: 3px;
+  background: #fde0e0; color: #5a1a1a; font-size: 0.88rem;
+}
+.not-covered-strip strong { font-weight: 600; }
+.hard-integration {
+  color: #7a2d2d; font-weight: 600;
+}
 .meta {
   font-size: 0.85rem; color: #555; margin-top: 10px;
   display: flex; flex-wrap: wrap; gap: 8px 14px;
@@ -149,11 +157,12 @@ footer a { color: #1a56b0; text-decoration: none; }
 <body>
 <header>
   <h1>Carnegie Group</h1>
-  <p class="subtitle">Frees up the Construction Administrator to focus on site teams instead of repetitive admin drafting.</p>
+  <p class="subtitle">Automates ordering, scheduling and document tasks so your Construction Administrator focuses on projects.</p>
   <p class="services">Steel-frame design-and-build contractor for commercial and industrial buildings — end-to-end concept-to-completion across the South East. Scope is industrial units, warehouses, workshops, and commercial steel-frame buildings. No agricultural sheds, no residential housing.</p>
-  <p class="honest-count"><strong>Honest coverage:</strong> Covers 0 of 9 duties fully, 7 partly.</p>
+  <p class="honest-count"><strong>Covered: 93%</strong> (agent 80% + your approvals 7% + our assistant 7%) · voice add-on 7%</p>
+  
   <p class="savings"><strong>What this would save:</strong> likely 2–3 hours a week — rough upper-bound only; actual savings depend on your workflow and CRM. Method: ~5 minutes to review each pre-drafted CRM record / reply / booking email vs ~15–25 minutes end-to-end (log the enquiry, chase missing details, pick a diary slot, draft a reply or supplier booking), across roughly 6–10 inbound items a week.</p>
-  <div class="meta"><span class="pill">Systems: Microsoft Outlook, Excel, CRM system</span></div>
+  <div class="meta"><span class="pill">Systems: Microsoft Office, Outlook, Excel, CRM</span></div>
 </header>
 
 <h2>Coverage map — every duty in the ad</h2>
@@ -163,329 +172,353 @@ footer a { color: #1a56b0; text-decoration: none; }
     <th>What the agent does</th>
   </tr></thead>
   <tbody>
-    <tr><td>1</td><td>Providing administrative support to our Contracts and Site teams</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td>Too broad and catch-all — no single concrete task to automate end-to-end.</td></tr>
-    <tr><td>2</td><td>Ordering site materials and equipment</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts a purchase order from pasted supplier details and quantities for you to review and send.</td></tr>
-    <tr><td>3</td><td>Coordinating maintenance administration for company-owned tools, equipment and vehicles</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent flags upcoming inspection/MOT dates from a pasted schedule and drafts booking confirmation emails for you to apply.</td></tr>
-    <tr><td>4</td><td>Managing diaries and bookings</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent picks an optimal slot from a provided availability list and drafts a calendar invite or confirmation email for you to apply.</td></tr>
-    <tr><td>5</td><td>Handling telephone calls</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td>Agent cannot make or receive phone calls — this requires a human on the line.</td></tr>
-    <tr><td>6</td><td>Supporting our Estimating team with incoming enquiries</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent extracts key fields from pasted enquiry emails into a structured CRM record draft for you to apply.</td></tr>
-    <tr><td>7</td><td>Communicating with clients</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts templated client emails or update letters from pasted notes; back-and-forth judgement stays with your team.</td></tr>
-    <tr><td>8</td><td>Creating and maintaining project schedules in Excel</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts updated Excel schedule rows from pasted project data for you to paste into the live workbook.</td></tr>
-    <tr><td>9</td><td>Managing document filing and document control</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent suggests a filing structure and drafts tracker row updates from pasted document metadata for you to apply to the live store.</td></tr>
+    <tr><td>1</td><td>Providing administrative support to our Contracts and Site teams</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles document drafting, email chasing, schedule updates and status reporting for both teams.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and send standard contract correspondence and progress update emails</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts emails via M365 approval queue and releases on human sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain contract status logs and update shared schedule/CRM entries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads inbox for updates and writes changes to CRM and schedule records.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Flag outstanding actions and chase site teams for missing information</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent sends chaser emails through the approval queue when deadlines are approaching.</td></tr>
+    <tr><td>2</td><td>Ordering site materials and equipment</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares purchase orders and supplier emails; client approves spend before orders are released.</td></tr>
+    <tr><td>3</td><td>Coordinating maintenance administration for company-owned tools, equipment and vehicles</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks service intervals, flags upcoming maintenance and drafts booking emails to service providers.</td></tr>
+    <tr><td>4</td><td>Managing diaries and bookings</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads shared M365 calendars, schedules meetings and sends booking confirmations via the approval queue.</td></tr>
+    <tr><td>5</td><td>Handling telephone calls</td><td><span class="badge" style="color:#52317a;background:#ece0fb;">voice add-on</span></td><td>Voice add-on answers inbound calls, takes messages and routes urgent calls to the right team member.</td></tr>
+    <tr><td>6</td><td>Supporting our Estimating team with incoming enquiries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent triages enquiry emails, logs them in the CRM and drafts acknowledgement or information-request replies.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Log new enquiries from shared inbox into the CRM and assign to the estimator</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads inbox, creates CRM record and flags to the estimating team.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and send acknowledgement emails to prospective clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent queues a personalised acknowledgement email for human release within hours of receipt.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Chase estimators for draft quotes when turnaround deadline approaches</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent sends internal chaser via approval queue when a quote hasn&#x27;t been drafted in time.</td></tr>
+    <tr><td>7</td><td>Communicating with clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts client-facing emails (progress updates, meeting confirmations, document requests) via the M365 approval queue.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Send project progress update emails to clients on a scheduled basis</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent pulls schedule data and drafts weekly update emails for client-approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to routine client queries about timelines or documentation</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads shared inbox, drafts replies and queues them for human release.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate complex or sensitive client issues to the contracts manager</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant reviews flagged threads and advises on response where judgement is needed.</td></tr>
+    <tr><td>8</td><td>Creating and maintaining project schedules in Excel</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent updates shared Excel schedule files with new dates and milestones as information arrives via email.</td></tr>
+    <tr><td>9</td><td>Managing document filing and document control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads incoming attachments, renames and files them to the correct SharePoint/OneDrive folders per the document control convention.</td></tr>
   </tbody>
 </table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
-  <summary><span class="score">#1</span> Duty 3: Coordinating maintenance administration for company-owned tools, equipment and vehicles <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <summary><span class="score">#1</span> Duty 3: Coordinating maintenance administration for company-owned tools, equipment and vehicles <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent flags upcoming inspection/MOT dates from a pasted schedule and drafts booking confirmation emails for you to apply.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent tracks service intervals, flags upcoming maintenance and drafts booking emails to service providers.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Carnegie Group — Equipment &amp; Vehicle Inspection Register (pasted from Excel)
-Today: Mon 9 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Vehicle maintenance log — Carnegie Group fleet (Excel extract, Mon 9 Nov 2026)
 
-Asset ID | Description              | Type            | Due Date    | Inspection Body
-CG-V04   | Ford Transit flatbed     | MOT             | Fri 13 Nov 2026 | Wyndham Fleet Services
-CG-L02   | 2T overhead gantry crane | LOLER           | Tue 17 Nov 2026 | Pemberton Lifting Compliance
-CG-V07   | Iveco tipper             | MOT             | Wed 25 Nov 2026 | Wyndham Fleet Services
-CG-L05   | 500kg jib crane (workshop)| LOLER          | Thu 3 Dec 2026  | Pemberton Lifting Compliance
-CG-V02   | Toyota Hilux             | MOT             | Wed 2 Dec 2026  | Wyndham Fleet Services
-CG-L01   | Mezzanine pallet scissor lift | LOLER      | Fri 20 Nov 2026 | Pemberton Lifting Compliance
+Asset ID: CG-VAN-07
+Type: Ford Transit flatbed (site deliveries, structural steel drops)
+Reg: YK23 HBT
+Current MOT expiry: Mon 23 Nov 2026
+Days to expiry: 14
+Preferred garage: Quintrell Motor Services
+Garage contact: Oscar Quintrell
+Garage email: o.quintrell@quintrellmotors.example.co.uk
+Internal fleet owner: Owen Beaumont (Plant &amp; Transport)
+Notes: Vehicle in active use this week — earliest available drop-off window preferred after Fri 13 Nov 2026</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">MAINTENANCE ALERT — MOT DUE IN 14 DAYS
 
-Contact: Nathan Wyndham — n.wyndham@wyndham-fleet.example.co.uk
-Contact: Elsie Pemberton — e.pemberton@pemberton-lifting.example.co.uk</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">FLAGGED ITEMS — DUE WITHIN 30 DAYS OF MON 9 NOV 2026
+Asset: CG-VAN-07 | Ford Transit flatbed | Reg YK23 HBT
+MOT expiry: Mon 23 Nov 2026
+Flagged today: Mon 9 Nov 2026
+Fleet owner: Owen Beaumont
 
-All six assets fall within the 30-day window. Listed by due date:
+ACTION TAKEN — BOOKING EMAIL DRAFTED
 
-1. CG-V04 | Ford Transit flatbed | MOT | Fri 13 Nov 2026 | Wyndham Fleet Services — ACTION URGENT
-2. CG-L02 | 2T overhead gantry crane | LOLER | Tue 17 Nov 2026 | Pemberton Lifting Compliance — ACTION URGENT
-3. CG-L01 | Mezzanine pallet scissor lift | LOLER | Fri 20 Nov 2026 | Pemberton Lifting Compliance
-4. CG-V07 | Iveco tipper | MOT | Wed 25 Nov 2026 | Wyndham Fleet Services
-5. CG-V02 | Toyota Hilux | MOT | Wed 2 Dec 2026 | Wyndham Fleet Services
-6. CG-L05 | 500kg jib crane (workshop) | LOLER | Thu 3 Dec 2026 | Pemberton Lifting Compliance
+To: o.quintrell@quintrellmotors.example.co.uk (Oscar Quintrell, Quintrell Motor Services)
+Subject: MOT Booking Request — YK23 HBT (Carnegie Group)
 
-DRAFT EMAIL 1 — To: n.wyndham@wyndham-fleet.example.co.uk
-Subject: MOT Booking Request — CG-V04 Ford Transit Flatbed (Due Fri 13 Nov 2026)
+Draft body: Dear Oscar, please could you book our Ford Transit flatbed (reg YK23 HBT) in for its MOT at the earliest available slot from Mon 16 Nov 2026 onwards. The certificate expires on Mon 23 Nov 2026 and the vehicle is in active site use this week. Please confirm a date and we will arrange drop-off. Many thanks, Carnegie Group.
 
-Dear Nathan,
+Queued for approval in the Outlook approval queue — awaiting sign-off from Owen Beaumont before release.
 
-Please could you confirm availability to carry out the MOT for our Ford Transit flatbed (Asset CG-V04) before or on Fri 13 Nov 2026. We are also looking to book the Iveco tipper (CG-V07, due Wed 25 Nov 2026) and Toyota Hilux (CG-V02, due Wed 2 Dec 2026) in due course — please advise if you can schedule all three in one block.
-
-Please confirm your preferred dates and we will arrange vehicle availability from our yard.
-
-Kind regards
-Carnegie Group
-
-DRAFT EMAIL 2 — To: e.pemberton@pemberton-lifting.example.co.uk
-Subject: LOLER Inspection Bookings — Three Assets (Nov/Dec 2026)
-
-Dear Elsie,
-
-We have three items requiring LOLER thorough examination over the coming weeks. Details are as follows:
-
-  CG-L02 | 2T overhead gantry crane | Due Tue 17 Nov 2026
-  CG-L01 | Mezzanine pallet scissor lift | Due Fri 20 Nov 2026
-  CG-L05 | 500kg jib crane (workshop) | Due Thu 3 Dec 2026
-
-Please confirm your earliest available dates. All assets are located at our engineering workshop. We would prefer morning slots where possible to minimise disruption to site operations.
-
-Kind regards
-Carnegie Group
-
-NEXT STEPS FOR ADMIN
-— Review both drafts, add site address, then send via Outlook.
-— Log confirmed booking dates against each asset in the Excel register.
-— Update CRM records for CG-V04 and CG-L02 today given urgency.</div></div>
+No accounting entry required for this action.</div></div>
     </div>
   </div>
 </details>
 <details open>
-  <summary><span class="score">#2</span> Duty 2: Ordering site materials and equipment <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <summary><span class="score">#2</span> Duty 6: Supporting our Estimating team with incoming enquiries <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts a purchase order from pasted supplier details and quantities for you to review and send.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent triages enquiry emails, logs them in the CRM and drafts acknowledgement or information-request replies.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Supplier: Holbrook Structural Sections Ltd
-Contact: Max Holbrook — m.holbrook@holbrook-structural.example.co.uk
-Our account ref: FXS-204
-Project: PRJ-4418 / Gardenia Blvd fit-out
-
-Please raise a PO against the quote Max sent over on Fri 6 Nov 2026.
-Items and quantities we need:
-
-  4 x Oak laminated panel 2440x1220x18mm — quoted at £95.00 each
-  2 x Soft-close drawer runner 450mm pair — quoted at £18.50 each
-
-Supplier has confirmed delivery by Wed 18 Nov 2026.
-Our delivery address is Carnegie Group, Unit 7, Bessemer Road, Sheffield, S9 2QT.
-Payment terms: 30 days from invoice date.
-Please draft the PO so I can review and copy into Excel or email straight to Max.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">PURCHASE ORDER DRAFT — FOR YOUR REVIEW BEFORE SENDING
-
-PO Date        : Mon 9 Nov 2026
-Supplier       : Holbrook Structural Sections Ltd
-Supplier Contact: Max Holbrook (m.holbrook@holbrook-structural.example.co.uk)
-Account Ref    : FXS-204
-Project        : PRJ-4418 / Gardenia Blvd fit-out
-Requested Delivery: Wed 18 Nov 2026
-Delivery Address: Carnegie Group, Unit 7, Bessemer Road, Sheffield, S9 2QT
-Payment Terms  : 30 days from invoice date
-
-LINE ITEMS
-Qty  Description                              Unit Price   Line Total
-4    Oak laminated panel 2440x1220x18mm       £95.00       £380.00
-2    Soft-close drawer runner 450mm pair      £18.50       £37.00
-
-Subtotal (ex. VAT)   : £417.00
-VAT @ 20%            : £83.40
-TOTAL (ex. carriage) : £500.40
-
-ACTION REQUIRED — Please confirm figures are correct, then forward to Max Holbrook or paste line items into your Excel PO template. Carriage to be confirmed by supplier before sign-off.</div></div>
-    </div>
-  </div>
-</details>
-<details open>
-  <summary><span class="score">#3</span> Duty 6: Supporting our Estimating team with incoming enquiries <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent extracts key fields from pasted enquiry emails into a structured CRM record draft for you to apply.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Paste of inbound enquiry email received Mon 9 Nov 2026:
-
-From: i.larkin@hartwell-logistics.example.co.uk
-Sent: Mon 9 Nov 2026
-To: estimating@carnegiegroup.com
-Subject: Clear-span warehouse enquiry – Doncaster site
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Jacob Underhill &lt;j.underhill@vantexlogistics.example.co.uk&gt;
+To: enquiries@carnegiegroup.co.uk
+Date: Mon 9 Nov 2026, 09:14
+Subject: Quote Request — New Distribution Warehouse, Doncaster
 
 Hi,
 
-We are looking to procure a clear-span portal-frame warehouse at our Doncaster distribution park. The building will be used as a heavy-goods distribution unit. Approximate footprint required is 60 m x 30 m with an eaves height of 8 m. We would need the steel frame fully erected and clad. No budget figure confirmed yet. We are hoping to have quotes back by Fri 27 Nov 2026 to present to our board the following week. Could someone from your estimating team please get in touch to discuss further?
+We are looking to develop a new clear-span portal-frame distribution warehouse on a site in Doncaster. The building will be approximately 40m x 80m with a 10m eaves height and a full mezzanine level across one end. We would like Carnegie Group to price the full steel-frame package including erection.
 
-Kind regards,
-Isaac Larkin
-Facilities Manager, Hartwell Logistics</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">CRM RECORD DRAFT — created Mon 9 Nov 2026 for Estimating Team review
+We have a planning reference but no structural drawings yet. Could you send us a quote and let us know what information you need to get started?
 
-ENQUIRY DATE: Mon 9 Nov 2026
-COMPANY: Hartwell Logistics
-CONTACT NAME: Isaac Larkin
-CONTACT TITLE: Facilities Manager
-EMAIL: i.larkin@hartwell-logistics.example.co.uk
-PROJECT TYPE: Clear-span portal-frame warehouse (erect and clad)
-SECTOR: Distribution / logistics
-LOCATION: Doncaster
-FOOTPRINT: 60 m x 30 m
-EAVES HEIGHT: 8 m
-SCOPE NOTE: Full steel frame supply, erection, and cladding
-BUDGET: Not provided
-QUOTE DEADLINE: Fri 27 Nov 2026
-STATUS: New enquiry — awaiting Estimating acknowledgement
+Best regards,
+Jacob Underhill
+Operations Director, Vantex Logistics</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TRIAGE SUMMARY — Mon 9 Nov 2026
 
-SUGGESTED OUTLOOK REPLY (from: estimating@carnegiegroup.com):
+Enquiry received from Jacob Underhill, Operations Director, Vantex Logistics (j.underhill@vantexlogistics.example.co.uk). Clear-span portal-frame distribution warehouse, approx 40m x 80m, 10m eaves, mezzanine level, Doncaster. Full steel-frame supply and erection package requested. No structural drawings held yet; planning reference available.
 
-Dear Isaac, thank you for contacting Carnegie Group regarding your Doncaster distribution unit. We are pleased to look at this opportunity and will be in touch shortly to discuss your specification in more detail. We will work to meet your deadline of Fri 27 Nov 2026. Kind regards, Carnegie Group Estimating Team.
+CRM ACTION: New contact record created for Jacob Underhill / Vantex Logistics. Enquiry logged as ENQ-2026-0341, status Open, assigned to Estimating team. 48-hour quote-chase timer set — trigger date Wed 11 Nov 2026.
 
-ACTION: Log to CRM, assign to Estimating lead, set follow-up reminder for Tue 10 Nov 2026.</div></div>
+ACKNOWLEDGEMENT EMAIL — queued for approval in the Outlook approval queue
+
+To: j.underhill@vantexlogistics.example.co.uk
+Subject: Re: Quote Request — New Distribution Warehouse, Doncaster
+
+Dear Jacob, thank you for contacting Carnegie Group. We have logged your enquiry (ref ENQ-2026-0341) and passed it to our Estimating team. To prepare an accurate quotation for your portal-frame warehouse and mezzanine we will need site layout, ground conditions information, and any planning drawings you hold. A member of our team will be in touch shortly. Kind regards, Carnegie Group Estimating.
+
+CHASE ALERT SCHEDULED: If no quote is issued by Wed 11 Nov 2026, agent will automatically notify the assigned estimator via Outlook flagged reminder referencing ENQ-2026-0341.</div></div>
     </div>
   </div>
 </details>
-<details>
-  <summary><span class="score">#4</span> Duty 8: Creating and maintaining project schedules in Excel <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+<details open>
+  <summary><span class="score">#3</span> Duty 7: Communicating with clients <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts updated Excel schedule rows from pasted project data for you to paste into the live workbook.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts client-facing emails (progress updates, meeting confirmations, document requests) via the M365 approval queue.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Project: Harwick Distribution Unit – portal-frame warehouse, 40 m x 80 m clear span
-Client contact: Jessica Ashworth, Fielden Timber Logistics (j.ashworth@fielden-timber.example.co.uk)
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Inbound email received Mon 9 Nov 2026, 08:14
+From: Phoebe Norcott &lt;p.norcott@whitbridgelogistics.example.co.uk&gt;
+To: contracts@carnegiegroup.com
+Subject: RE: Whitbridge Distribution Unit — Steel Frame Programme
 
-Revised milestones received from site manager today (Mon 9 Nov 2026):
+Hi,
 
-1. Structural steel fabrication sign-off — was Wed 4 Nov, now pushed to Wed 11 Nov
-2. Steel delivery to site — was Mon 9 Nov, now pushed to Mon 16 Nov (depends on task 1)
-3. Portal-frame erection start — now Mon 23 Nov (depends on task 2)
-4. Roof and cladding install start — now Mon 30 Nov (depends on task 3)
-5. Mezzanine level steelwork install — now Wed 2 Dec (depends on task 3)
-6. Practical completion / client handover — now Fri 4 Dec (depends on tasks 4 and 5)
+Could you send over the latest construction programme for the portal-frame distribution unit? We have a site visit from our quantity surveyor on Wed 11 Nov and need to confirm the steel erection sequence before she arrives.
 
-Please draft updated Excel schedule rows for the live Harwick workbook. Include: Row ID, Task Name, Revised Start, Revised Finish, Predecessor Row IDs, Status, and Owner.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">EXCEL SCHEDULE ROW DRAFTS — HARWICK DISTRIBUTION UNIT
-Ready to paste into the live workbook. Review all entries before applying.
+Thanks,
+Phoebe Norcott
+Whitbridge Logistics
 
-ROW ID | TASK NAME                          | REVISED START  | REVISED FINISH | PREDECESSORS | STATUS      | OWNER
-HW-01  | Structural steel fabrication s/o  | Mon 09/11/2026 | Wed 11/11/2026 | —            | IN PROGRESS | Carnegie Group
-HW-02  | Steel delivery to site             | Mon 16/11/2026 | Mon 16/11/2026 | HW-01        | NOT STARTED | Carnegie Group
-HW-03  | Portal-frame erection start        | Mon 23/11/2026 | Fri 27/11/2026 | HW-02        | NOT STARTED | Carnegie Group
-HW-04  | Roof and cladding install start    | Mon 30/11/2026 | Wed 02/12/2026 | HW-03        | NOT STARTED | Carnegie Group
-HW-05  | Mezzanine level steelwork install  | Wed 02/12/2026 | Thu 03/12/2026 | HW-03        | NOT STARTED | Carnegie Group
-HW-06  | Practical completion / handover    | Fri 04/12/2026 | Fri 04/12/2026 | HW-04, HW-05 | NOT STARTED | Carnegie Group
+Agent context: CRM record confirms active project — Whitbridge Distribution Unit, 40m x 80m clear-span portal frame. Latest schedule file on record: Whitbridge_Programme_Rev4_09112026.xlsx, updated today by site team. Steel erection phase shown as running Mon 16 Nov to Fri 27 Nov 2026. Handover target: Fri 4 Dec 2026.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ACTION TAKEN — Mon 9 Nov 2026
 
-NOTES FOR SCHEDULER
-All dates revised as of Mon 09/11/2026 following site manager update.
-HW-01 original finish was Wed 04/11/2026 — flag as slipped milestone in workbook.
-Client (Jessica Ashworth, Fielden Timber Logistics) may need notification of revised handover date.
-Confirm row formatting matches existing workbook column order before pasting.</div></div>
-    </div>
-  </div>
-</details>
-<details>
-  <summary><span class="score">#5</span> Duty 4: Managing diaries and bookings <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent picks an optimal slot from a provided availability list and drafts a calendar invite or confirmation email for you to apply.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Duty: Pick best slot and draft confirmation email plus calendar row.
+CRM RECORD READ
+Project: Whitbridge Distribution Unit (40m x 80m clear-span portal frame)
+Latest programme file: Whitbridge_Programme_Rev4_09112026.xlsx (updated today)
+Steel erection window per Rev 4: Mon 16 Nov to Fri 27 Nov 2026
+Handover target: Fri 4 Dec 2026
 
-Client contact: Oscar Quintrell, Brightwell Industrial Developments
-Oscar&#x27;s email: o.quintrell@brightwell-industrial.example.co.uk
-Meeting purpose: Initial site visit and design brief discussion for a proposed 30m clear-span portal-frame warehouse unit.
-Duration needed: 2 hours
-Our attendee: Charlotte Brightwell (Contracts Manager, Carnegie Group)
+EMAIL DRAFTED AND QUEUED
+To: p.norcott@whitbridgelogistics.example.co.uk
+Subject: Whitbridge Distribution Unit — Updated Construction Programme Rev 4
 
-Outlook free slots for Charlotte Brightwell this week and next:
-- Tue 10 Nov 2026: 09:00-11:00
-- Tue 10 Nov 2026: 14:00-16:00
-- Thu 12 Nov 2026: 10:00-12:00
-- Mon 16 Nov 2026: 09:00-11:00
-- Wed 18 Nov 2026: 13:00-15:00
+Dear Phoebe,
 
-Preference notes: Morning slots preferred. Avoid Mondays if possible. Earliest available that fits is ideal.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">SELECTED SLOT
-Date: Thursday 12 November 2026
-Time: 10:00 - 12:00
-Attendee (Carnegie Group): Charlotte Brightwell
-Reason chosen: First available 2-hour morning slot that avoids Monday, matching all stated preferences.
+Thank you for getting in touch. Please find attached our latest construction programme (Rev 4, issued Mon 9 Nov 2026) for the Whitbridge Distribution Unit portal-frame project.
 
-CONFIRMATION EMAIL DRAFT
-To: o.quintrell@brightwell-industrial.example.co.uk
-Subject: Portal-Frame Warehouse Site Visit - Thu 12 November 2026, 10:00
+The programme confirms steel erection is scheduled to run from Mon 16 Nov through to Fri 27 Nov 2026, with a project handover target of Fri 4 Dec 2026. We hope this gives your quantity surveyor everything she needs ahead of the site visit on Wed 11 Nov.
 
-Dear Oscar,
-
-Thank you for your interest in working with Carnegie Group. We are pleased to confirm a site visit and design brief meeting for your proposed 30m clear-span portal-frame warehouse unit.
-
-Date: Thursday 12 November 2026
-Time: 10:00 to 12:00
-Carnegie Group attendee: Charlotte Brightwell, Contracts Manager
-
-Please let us know the site address and we will ensure Charlotte is with you promptly at 10:00. If this date no longer suits, do not hesitate to contact us and we will rearrange.
+Please do not hesitate to contact us if you have any questions.
 
 Kind regards
-Charlotte Brightwell
-Contracts Manager, Carnegie Group
+Carnegie Group
 
-CALENDAR ENTRY ROW (for Excel or CRM)
-Date | Start | End | Subject | Organiser | External Contact | External Co.
-Thu 12 Nov 2026 | 10:00 | 12:00 | Portal-Frame Warehouse Site Visit &amp; Brief | Charlotte Brightwell | Oscar Quintrell | Brightwell Industrial Developments</div></div>
+Queued for approval in the Outlook approval queue — awaiting release by contracts manager before sending.</div></div>
     </div>
   </div>
 </details>
 <details>
-  <summary><span class="score">#6</span> Duty 7: Communicating with clients <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <summary><span class="score">#4</span> Duty 9: Managing document filing and document control <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts templated client emails or update letters from pasted notes; back-and-forth judgement stays with your team.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads incoming attachments, renames and files them to the correct SharePoint/OneDrive folders per the document control convention.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Client: Willow Oakenshaw, Contracts Manager, Freightline Distribution Ltd
-Contact email: w.oakenshaw@freightline-distribution.example.co.uk
-Project: Clear-span portal-frame distribution unit, Ref CG-2026-114
-Notes for update email:
-- Steel erection started on site Tue 3 Nov, going well
-- Main portal frames all stood and plumbed as of Fri 6 Nov, ahead of programme
-- Purlins and sheeting rails installation begins Wed 11 Nov
-- External cladding subcontractor (Noah Yardley, Yardley Cladding) mobilising Mon 16 Nov
-- One minor hold: anchor bolt packs for the lean-to canopy not yet delivered, supplier chasing, expected Thu 12 Nov
-- Practical completion still on track for Fri 27 Nov
-- Ask Willow to confirm mezzanine access stair position by Wed 11 Nov so we can finalise steelwork GA drawings
-- Tone: professional, positive, concise</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">DRAFT EMAIL — FOR CARNEGIE GROUP REVIEW AND SEND VIA OUTLOOK
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Daniel Ravenhill &lt;d.ravenhill@ravenhill-structural.example.co.uk&gt;
+To: drawings@carnegiegroup.example.co.uk
+Date: Mon 9 Nov 2026
+Subject: Revised GA Drawings - Thornwick Distribution Unit (Proj CG-2026-047)
 
-To: w.oakenshaw@freightline-distribution.example.co.uk
-Subject: Project Update — Portal-Frame Distribution Unit, Ref CG-2026-114
+Hi,
 
-Dear Willow,
+Please find attached the revised general arrangement drawings for the Thornwick Distribution Unit portal-frame structure. These supersede revision B issued last month.
 
-I hope you are well. I am pleased to provide a brief progress update on your distribution unit project.
+Attachments:
+  TDU-GA-001 Rev C.pdf    (Plan layout, column grid and eaves detail)
+  TDU-GA-002 Rev C.pdf    (Elevations, haunch and ridge connections)
+  TDU-GA-003 Rev C.pdf    (Cross-section and mezzanine steel interface)
 
-Steel erection commenced on Tue 3 Nov 2026 and the main portal frames were fully stood and plumbed by Fri 6 Nov 2026, which puts us slightly ahead of programme — a pleasing start. Installation of purlins and sheeting rails is under way from Wed 11 Nov 2026, and our cladding contractor, Noah Yardley of Yardley Cladding, is mobilising to site on Mon 16 Nov 2026.
+The changes reflect the updated column base plate sizes agreed at the site coordination meeting. Please confirm receipt and filing.
 
-We do have one minor item to flag: anchor bolt packs for the lean-to canopy are awaited from our supplier and are expected to arrive Thu 12 Nov 2026. We are monitoring this closely and do not anticipate any impact on the overall programme. Practical completion remains targeted for Fri 27 Nov 2026.
+Regards,
+Daniel Ravenhill
+Ravenhill Structural Engineering</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DOCUMENT CONTROL ACTION LOG — Mon 9 Nov 2026
+Carnegie Group | Project: Thornwick Distribution Unit | Ref: CG-2026-047
 
-ACTION REQUIRED — could you please confirm the mezzanine access stair position by Wed 11 Nov 2026 so that we can finalise the steelwork general arrangement drawings without delay?
+ATTACHMENTS DETECTED: 3 PDF files from d.ravenhill@ravenhill-structural.example.co.uk
 
-Please do not hesitate to get in touch if you have any questions.
+RENAME AND FILE ACTIONS
 
-Kind regards,
-Carnegie Group</div></div>
+Original: TDU-GA-001 Rev C.pdf
+Renamed: CG-2026-047_TDU_GA-001_RevC_20261109.pdf
+Filed to SharePoint: Projects / CG-2026-047 Thornwick Distribution Unit / Drawings / General Arrangement / Current
+
+Original: TDU-GA-002 Rev C.pdf
+Renamed: CG-2026-047_TDU_GA-002_RevC_20261109.pdf
+Filed to SharePoint: Projects / CG-2026-047 Thornwick Distribution Unit / Drawings / General Arrangement / Current
+
+Original: TDU-GA-003 Rev C.pdf
+Renamed: CG-2026-047_TDU_GA-003_RevC_20261109.pdf
+Filed to SharePoint: Projects / CG-2026-047 Thornwick Distribution Unit / Drawings / General Arrangement / Current
+
+SUPERSEDED VERSIONS: Rev B copies of GA-001, GA-002, GA-003 moved to Drawings / General Arrangement / Superseded
+
+STATUS: All 3 drawings filed. Awaiting Carnegie Group confirmation before notifying sender.</div></div>
     </div>
   </div>
 </details>
 <details>
-  <summary><span class="score">#7</span> Duty 9: Managing document filing and document control <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <summary><span class="score">#5</span> Duty 1: Providing administrative support to our Contracts and Site teams <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent suggests a filing structure and drafts tracker row updates from pasted document metadata for you to apply to the live store.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles document drafting, email chasing, schedule updates and status reporting for both teams.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Today is Mon 9 Nov 2026. Please process the following new documents received this week for the Harwick Distribution Unit project. Suggest folder paths, revision labels, and draft the Excel document register rows so I can file and update the live store.
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly site update schedule — Thornfield Distribution Unit (Portal-Frame Erection Phase)
+Update due: every Friday by 17:00
+Responsible: Site Manager — Harry Driscoll (h.driscoll@thornfield.example.co.uk)
+Submission route: email to Contracts team inbox
 
-Doc 1: General arrangement drawing, filename CG-HDU-GA-001, revision B, issued Wed 4 Nov 2026 by Daisy Hargreaves at Merrow Structural Engineers. Supersedes revision A.
-Doc 2: Portal-frame steelwork fabrication drawing, filename CG-HDU-FAB-012, revision A, issued Thu 5 Nov 2026 by Daisy Hargreaves at Merrow Structural Engineers. First issue.
-Doc 3: LOLER thorough-examination certificate for Gantry Crane GC-04, certificate ref LOLER-GC04-2026-11, issued Fri 6 Nov 2026 by Sophie Sheppard at Redvale Lifting Inspections. Next examination due in 6 months.
-Doc 4: Mezzanine floor structural calculations, filename CG-HDU-CALC-003, revision C, issued Mon 9 Nov 2026 by Daisy Hargreaves at Merrow Structural Engineers. Supersedes revision B.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">FILING STRUCTURE AND DOCUMENT REGISTER ROWS — HARWICK DISTRIBUTION UNIT — Mon 9 Nov 2026
+Week ending Fri 06 Nov 2026 — NO UPDATE RECEIVED as of Mon 9 Nov 2026 09:15
+Previous update received: Fri 30 Oct 2026 (on time)
+Outstanding items flagged in last update: column base grouting sign-off, portal-frame crane lift sequence confirmation
+CRM project record: Thornfield Distribution Unit — CN-2026-047
+Agent instruction: spot gap, draft chaser to site manager, queue for approval</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">GAP DETECTED
+Project: Thornfield Distribution Unit (CN-2026-047)
+Expected update: Fri 6 Nov 2026 by 17:00
+Status as of Mon 9 Nov 2026: no update received — 1 working day overdue
+Last update on record: Fri 30 Oct 2026
 
-SUGGESTED FOLDER PATHS
+ACTION TAKEN
+CRM record CN-2026-047 updated — weekly update status flagged as OVERDUE for week ending Fri 6 Nov 2026.
 
-Doc 1: Projects\Harwick Distribution Unit\Drawings\General Arrangement\
-Doc 2: Projects\Harwick Distribution Unit\Drawings\Fabrication\
-Doc 3: Company\Plant &amp; Equipment\LOLER Certificates\Gantry Cranes\
-Doc 4: Projects\Harwick Distribution Unit\Calculations\Mezzanine\
+EMAIL DRAFT — queued for approval in the Outlook approval queue
 
-ACTION — Mark superseded files for Doc 1 (Rev A) and Doc 4 (Rev B) as SUPERSEDED in the folder and in the register. Do not delete; retain for audit trail.
+To: h.driscoll@thornfield.example.co.uk
+Subject: Thornfield Distribution Unit — Weekly Site Update Overdue (w/e Fri 6 Nov 2026)
 
-EXCEL DOCUMENT REGISTER ROWS — DRAFT FOR YOUR REVIEW
+Harry,
 
-Doc Ref         | Title                              | Rev | Status    | Issue Date    | Issued By         | Company                    | Next Action / Expiry
-CG-HDU-GA-001   | General Arrangement                | B   | CURRENT   | Wed 4 Nov 2026  | Daisy Hargreaves  | Merrow Structural Engineers | Check for further revisions
-CG-HDU-FAB-012  | Portal-Frame Fabrication Drawing   | A   | CURRENT   | Thu 5 Nov 2026  | Daisy Hargreaves  | Merrow Structural Engineers | First issue — monitor for Rev B
-LOLER-GC04-2026-11 | LOLER Certificate — Gantry Crane GC-04 | —  | CURRENT | Fri 6 Nov 2026 | Sophie Sheppard  | Redvale Lifting Inspections | Next exam due May 2027
-CG-HDU-CALC-003 | Mezzanine Floor Structural Calcs   | C   | CURRENT   | Mon 9 Nov 2026  | Daisy Hargreaves  | Merrow Structural Engineers | Supersedes Rev B
+Your weekly site update for the Thornfield Distribution Unit was due by 17:00 on Fri 6 Nov 2026 and has not yet been received. Could you please submit your report at your earliest convenience today, Mon 9 Nov 2026, covering progress on column base grouting sign-off and the portal-frame crane lift sequence confirmation.
 
-Please review, confirm paths are correct, then file originals and update the live Excel register.</div></div>
+Many thanks,
+Carnegie Group Contracts Team</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 4: Managing diaries and bookings <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads shared M365 calendars, schedules meetings and sends booking confirmations via the approval queue.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Enquiry received via website contact form — Mon 9 Nov 2026, 08:42
+
+From: Isaac Larkin, Procurement Manager, Hartwell Industrial Estates
+Email: i.larkin@hartwellindustrial.example.co.uk
+
+Message: Hi, we are looking to add a clear-span portal-frame warehouse unit (approx 25m x 50m) to our estate in Coventry. Would like someone from Carnegie Group to visit the site and discuss structural steel options and indicative programme. Could you arrange a site visit later this week or early next week? Morning slots preferred. Happy for one to two hours on site.
+
+Please check engineer availability and confirm a suitable time.
+
+Assigned to: Leo Stokeley (Senior Structural Engineer, Carnegie Group)</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DIARY CHECK — Mon 9 Nov 2026
+
+Agent scanned Leo Stokeley&#x27;s M365 calendar for available morning slots Thu 12 Nov to Wed 18 Nov 2026.
+
+AVAILABILITY FOUND
+Thu 12 Nov 2026, 09:00–11:00 — Leo Stokeley confirmed free, no conflicts.
+
+ACTION TAKEN
+Calendar event created in Leo Stokeley&#x27;s Outlook calendar:
+  Title: Site Visit — Hartwell Industrial Estates (Portal-Frame Warehouse Enquiry)
+  Date: Thu 12 Nov 2026, 09:00–11:00
+  Location: Hartwell Industrial Estates, Coventry (address to be confirmed by client)
+  Attendees: Leo Stokeley (Carnegie Group); Isaac Larkin (Hartwell Industrial Estates)
+
+EMAIL DRAFT — Queued for approval in the Outlook approval queue
+
+To: i.larkin@hartwellindustrial.example.co.uk
+Subject: Site Visit Confirmation — Carnegie Group, Thu 12 Nov 2026
+
+Dear Isaac,
+
+Thank you for your enquiry. We are pleased to confirm a site visit on Thu 12 Nov 2026, 09:00–11:00, with our Senior Structural Engineer, Leo Stokeley. Leo will discuss clear-span portal-frame options and indicative programme for your Coventry site. Please reply with the full site address at your earliest convenience.
+
+Kind regards, Carnegie Group</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#7</span> Duty 8: Creating and maintaining project schedules in Excel <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent updates shared Excel schedule files with new dates and milestones as information arrives via email.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Daisy Hargreaves (Site Manager, Carnegie Group)
+To: admin@carnegiegroup.example.co.uk
+Sent: Mon 9 Nov 2026, 08:14
+
+Hi,
+
+Just to flag — got a call from the fabricator this morning. The portal-frame steel sections for the Mersey Distribution Unit are running three days late. Original delivery was booked for Wed 11 Nov, now looking at Mon 16 Nov at the earliest.
+
+This pushes everything. Column erection was due to start Thu 12 Nov, roof beam installation was set for Mon 16 Nov, and purlins/cladding rails were scheduled to begin Wed 18 Nov. Can you shift all of those on by three working days and update the programme file?
+
+File is on the shared drive: Projects/MerseyDistUnit/Programme_MerseyDist_v3.xlsx
+
+Cheers,
+Daisy</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">SCHEDULE UPDATE — MERSEY DISTRIBUTION UNIT
+Source email: Daisy Hargreaves, Mon 9 Nov 2026
+File updated: Projects/MerseyDistUnit/Programme_MerseyDist_v3.xlsx (saved as v4)
+
+CHANGES APPLIED TO EXCEL PROGRAMME
+
+Steel delivery — was Wed 11 Nov 2026, now Mon 16 Nov 2026
+Column erection start — was Thu 12 Nov 2026, now Tue 17 Nov 2026
+Roof beam installation start — was Mon 16 Nov 2026, now Thu 19 Nov 2026
+Purlins and cladding rails start — was Wed 18 Nov 2026, now Mon 23 Nov 2026
+
+KNOCK-ON TASKS FLAGGED IN PROGRAMME (highlighted amber)
+Row 14 — Secondary steelwork fix-out: predecessor is purlins, review start date
+Row 17 — Mezzanine structural tie-in: check dependency on column erection completion
+Row 21 — Building inspector attendance: notify to rebook from week of 16 Nov
+
+ACTION REQUIRED FROM CARNEGIE GROUP
+Please confirm v4 is correct before it is shared with the wider project team. If any flagged rows need manual date decisions, advise and the file will be updated accordingly.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 2: Ordering site materials and equipment <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares purchase orders and supplier emails; client approves spend before orders are released.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Nathan Wyndham (Site Supervisor, PRJ-4418)
+To: Admin
+Date: Mon 9 Nov 2026
+
+Hi, can you raise a PO for the Gardenia Blvd fit-out? We need the following from Sample Timber Co (account FXS-204) for the mezzanine office partitioning work:
+
+- 4 x Oak laminated panel 2440x1220x18mm at £95.00 each
+- 2 x Soft-close drawer runner 450mm pair at £18.50 each
+
+We need delivery by Wed 18 Nov 2026 at the latest to keep the mezzanine installation on programme. Please get this approved by James Fairbrother before it goes out.
+
+Thanks
+Nathan</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">PURCHASE ORDER DRAFT — PRJ-4418 / GARDENIA BLVD FIT-OUT
+PO raised by Carnegie Group | Mon 9 Nov 2026
+
+Supplier: Sample Timber Co | Account: FXS-204
+Requested by: Nathan Wyndham (Site Supervisor)
+Required delivery: Wed 18 Nov 2026
+
+LINE ITEMS
+4 x Oak laminated panel 2440x1220x18mm   @ £95.00 ea = £380.00
+2 x Soft-close drawer runner 450mm pair  @ £18.50 ea = £37.00
+Subtotal: £417.00 | VAT @ 20%: £83.40 | TOTAL (ex. carriage): £500.40
+
+ACCOUNTING SYSTEM ACTION
+Draft purchase order posted to CRM as PO-FXS204-4418 against project PRJ-4418, supplier account FXS-204, status: pending approval.
+
+EMAIL ACTION
+Supplier order email to Sample Timber Co queued for approval in the Outlook approval queue — awaiting sign-off from James Fairbrother (Contracts Manager) before release.
+
+NOTE FOR APPROVER — James Fairbrother: Please approve or reject by Tue 10 Nov 2026 to allow sufficient lead time for the Wed 18 Nov 2026 site delivery.</div></div>
     </div>
   </div>
 </details>
