@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from London Paramount Care's public job ad. Not produced by or affiliated with London Paramount Care. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Accounts Assistant ad, run by an agent</p>
   <h1>London Paramount Care</h1>
+  <p class="top-sub">Ad posted 2 Nov 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">90%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">10%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">0%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your Xero. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=London%20Paramount%20Care%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates routine ledger posting and chasing so the finance team focuses on judgement calls.</p>
   <p class="services">UK employer — London Paramount Care (role: Accounts Assistant).</p>
   <p class="honest-count"><strong>Covered: 100%</strong> (agent 90% + your approvals 10%)</p>
@@ -134,27 +197,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <div class="meta"><span class="pill">Systems: Xero, Microsoft Excel, Microsoft Office</span>
     <span class="pill">Accounting: Xero — integration: easy</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Processing supplier invoices and payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads incoming supplier invoices from the shared inbox, posts bills to Xero, and prepares a payment-run proposal for client release.</td></tr>
-    <tr><td>2</td><td>Raising customer invoices and recording payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates and sends sales invoices to local authority / NHS commissioners via the M365 approval queue, then allocates incoming receipts in Xero.</td></tr>
-    <tr><td>3</td><td>Maintaining supplier and customer accounts.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent keeps supplier and customer contact records current in Xero, updates payment terms, and flags stale or duplicate accounts for review.</td></tr>
-    <tr><td>4</td><td>Completing bank reconciliations and checking expenses.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs the Xero bank reconciliation daily, matches transactions to posted bills and receipts, and flags unmatched items for review.</td></tr>
-    <tr><td>5</td><td>Investigating payment discrepancies and following up outstanding invoices.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies discrepancies from Xero reports, drafts query or chaser emails to suppliers/customers via the approval queue, and logs outcomes.</td></tr>
-    <tr><td>6</td><td>Maintaining accurate financial records.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent ensures all transactions are posted, categorised correctly, and that audit trails in Xero are complete and up to date.</td></tr>
-    <tr><td>7</td><td>Supporting month-end procedures and general finance administration.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Expanded into concrete sub-tasks; majority are handled by the agent end-to-end.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Prepare month-end reconciliation summary and aged-debt/creditor reports in Xero.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates aged-debtor and aged-creditor reports, reconciles control accounts, and packages a summary for the controller&#x27;s sign-off.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and journal approval before management accounts are finalised.</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Controller reviews and approves the reconciliation pack and any manual journals before the period is locked.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain finance administration filing and document management (digital).</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves and indexes invoice PDFs and remittances in the shared drive, linking documents to Xero transactions.</td></tr>
-    <tr><td>8</td><td>Responding to finance queries from colleagues and suppliers.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads queries from the shared inbox, pulls the relevant Xero record, drafts a response, and queues it for release via the M365 approval queue.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -510,7 +552,30 @@ Queued for approval in the Outlook approval queue. Awaiting release by your fina
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Processing supplier invoices and payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads incoming supplier invoices from the shared inbox, posts bills to Xero, and prepares a payment-run proposal for client release.</td></tr>
+    <tr><td>2</td><td>Raising customer invoices and recording payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates and sends sales invoices to local authority / NHS commissioners via the M365 approval queue, then allocates incoming receipts in Xero.</td></tr>
+    <tr><td>3</td><td>Maintaining supplier and customer accounts.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent keeps supplier and customer contact records current in Xero, updates payment terms, and flags stale or duplicate accounts for review.</td></tr>
+    <tr><td>4</td><td>Completing bank reconciliations and checking expenses.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs the Xero bank reconciliation daily, matches transactions to posted bills and receipts, and flags unmatched items for review.</td></tr>
+    <tr><td>5</td><td>Investigating payment discrepancies and following up outstanding invoices.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies discrepancies from Xero reports, drafts query or chaser emails to suppliers/customers via the approval queue, and logs outcomes.</td></tr>
+    <tr><td>6</td><td>Maintaining accurate financial records.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent ensures all transactions are posted, categorised correctly, and that audit trails in Xero are complete and up to date.</td></tr>
+    <tr><td>7</td><td>Supporting month-end procedures and general finance administration.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Expanded into concrete sub-tasks; majority are handled by the agent end-to-end.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Prepare month-end reconciliation summary and aged-debt/creditor reports in Xero.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates aged-debtor and aged-creditor reports, reconciles control accounts, and packages a summary for the controller&#x27;s sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and journal approval before management accounts are finalised.</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Controller reviews and approves the reconciliation pack and any manual journals before the period is locked.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain finance administration filing and document management (digital).</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves and indexes invoice PDFs and remittances in the shared drive, linking documents to Xero transactions.</td></tr>
+    <tr><td>8</td><td>Responding to finance queries from colleagues and suppliers.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads queries from the shared inbox, pulls the relevant Xero record, drafts a response, and queues it for release via the M365 approval queue.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
