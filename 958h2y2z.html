@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Webexpenses — demo</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #111; background: #fff;
+  max-width: 1100px; margin: 0 auto; padding: 32px 24px;
+}
+header { border-bottom: 1px solid #e3e3e5; padding-bottom: 14px; margin-bottom: 20px; }
+h1 { font-size: 1.55rem; margin: 0 0 4px 0; }
+.subtitle { color: #333; margin: 0 0 6px 0; font-size: 1.02rem; }
+.services { color: #666; font-size: 0.9rem; margin: 6px 0 0 0; }
+.savings {
+  background: #f0f7ef; border-left: 3px solid #3a8a4a;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.92rem; color: #1e4028;
+}
+.savings strong { font-weight: 600; }
+.honest-count {
+  background: #f3f0fb; border-left: 3px solid #6a4ac9;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.95rem; color: #332154;
+}
+.honest-count strong { font-weight: 700; }
+.not-covered-strip {
+  padding: 6px 12px; margin-top: 6px; border-radius: 3px;
+  background: #fde0e0; color: #5a1a1a; font-size: 0.88rem;
+}
+.not-covered-strip strong { font-weight: 600; }
+.hard-integration {
+  color: #7a2d2d; font-weight: 600;
+}
+.meta {
+  font-size: 0.85rem; color: #555; margin-top: 10px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
+}
+.meta span { white-space: nowrap; }
+.meta .pill {
+  background: #eef0f4; padding: 2px 8px; border-radius: 3px;
+}
+.meta .late {
+  background: #fde0e0; color: #5a1a1a; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px;
+}
+h2 { font-size: 1.15rem; margin: 26px 0 8px 0; }
+table.coverage {
+  border-collapse: collapse; width: 100%; font-size: 0.9rem;
+  margin-top: 8px;
+}
+table.coverage th, table.coverage td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid #e8e8ea;
+  vertical-align: top;
+}
+table.coverage th { background: #f6f7f9; font-weight: 600; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+}
+.score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+details {
+  border: 1px solid #e3e3e5; border-radius: 4px;
+  margin: 10px 0; background: #fff;
+}
+details summary {
+  cursor: pointer; padding: 10px 14px; font-weight: 600;
+  list-style: none; display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: '+'; font-weight: 700; color: #777; margin-right: 2px;
+}
+details[open] summary::before { content: '−'; }
+details .body {
+  padding: 10px 14px 16px 14px; border-top: 1px solid #ededf0;
+}
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+}
+.col h3 { font-size: 0.95rem; margin: 0 0 6px 0; color: #222; }
+.block {
+  background: #f6f7f9; border: 1px solid #e3e3e5;
+  padding: 12px 14px; border-radius: 4px; white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.84rem; line-height: 1.5; color: #1a1a1a;
+  overflow-x: auto;
+}
+.sample-tag {
+  background: #fff3cd; border: 1px solid #ffeeba;
+  padding: 2px 6px; border-radius: 3px;
+  font-size: 0.74rem; color: #7a5a00; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.disclaimer {
+  background: #eef4ff; border-left: 4px solid #4a7dcc;
+  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  font-size: 0.9rem; color: #1e3a66;
+}
+footer {
+  margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
+  color: #555; font-size: 0.88rem;
+}
+footer a { color: #1a56b0; text-decoration: none; }
+@media (max-width: 760px) {
+  .columns { grid-template-columns: 1fr; }
+  body { padding: 20px 14px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Webexpenses</h1>
+  <p class="subtitle">Automates invoice processing and supplier chasing, freeing the team for high-value finance decisions.</p>
+  <p class="services">UK employer — Webexpenses (role: Accounts Payable Assistant).</p>
+  <p class="honest-count"><strong>Covered: 100%</strong> (agent 71% + your approvals 14% + our assistant 14%)</p>
+  
+  <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
+  <div class="meta"><span class="pill">Systems: Webexpenses, Zudello, Excel</span></div>
+</header>
+
+<h2>Coverage map — every duty in the ad</h2>
+<table class="coverage">
+  <thead><tr>
+    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+    <th>What the agent does</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Process supplier invoices, credit notes and purchase orders accurately and on time</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads invoices from the shared inbox, posts bills and credit notes to the accounting system, and links them to POs automatically.</td></tr>
+    <tr><td>2</td><td>Run three-way matching and resolve queries with budget holders and suppliers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches invoice to PO and goods receipt, then drafts and queues query emails to suppliers or budget holders for any mismatches.</td></tr>
+    <tr><td>3</td><td>Prepare weekly payment runs, including BACS and international payments, for review and approval</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares the full payment run proposal (BACS + international); a human releases it to the bank after review.</td></tr>
+    <tr><td>4</td><td>Reconcile supplier statements each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls supplier statements from emails, matches each line to posted bills and payments, and flags unreconciled items for review.</td></tr>
+    <tr><td>5</td><td>Review and process employee expense claims in line with policy</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads expense submissions via Webexpenses integration, checks them against policy rules, posts compliant claims as bills, and flags exceptions.</td></tr>
+    <tr><td>6</td><td>Maintain supplier records, including bank detail changes with fraud checks</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent updates supplier contacts and flags bank detail change requests; a human approves each change before it goes live to prevent fraud.</td></tr>
+    <tr><td>7</td><td>Reconcile company credit cards</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches credit card transactions to receipts in the shared inbox, posts coded entries to the accounting system, and flags unmatched lines.</td></tr>
+    <tr><td>8</td><td>Code input VAT correctly to support VAT returns</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent applies correct VAT tax codes when posting invoices and flags unusual treatments for review, feeding clean data into the VAT return.</td></tr>
+    <tr><td>9</td><td>Produce the aged creditors report and flag cash-flow timing to the Assistant Management Accountant</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates the aged creditors report from the accounting system and emails a summary with cash-flow timing flags to the Assistant Management Accountant.</td></tr>
+    <tr><td>10</td><td>Answer supplier queries promptly and professionally</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads supplier query emails, pulls the relevant invoice/payment data from the accounting system, and drafts a response through the M365 approval queue.</td></tr>
+    <tr><td>11</td><td>Close the purchase ledger in line with the month-end timetable</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent completes all posting and reconciliation tasks on schedule, then presents the closed ledger for Finance Manager sign-off before period lock.</td></tr>
+    <tr><td>12</td><td>Provide details of uninvoiced costs to support the accruals schedule</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies purchase orders with no matching invoice, compiles the list, and sends a formatted accruals input to the Assistant Management Accountant.</td></tr>
+    <tr><td>13</td><td>Prepare the accounts payable control account reconciliation for review</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reconciles the AP control account against the creditors ledger and presents the reconciliation report for Finance Manager review.</td></tr>
+    <tr><td>14</td><td>Allocate customer receipts and cover credit control chasing during absences</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent allocates incoming customer receipts to the correct invoices and sends overdue payment chaser emails through the approval queue when covering AR.</td></tr>
+    <tr><td>15</td><td>Help improve our accounts payable processes and automation</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles the automatable elements; human-backup covers analysis and recommendations.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Identify repetitive manual steps in the AP workflow and log them for review</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent tracks processing times and exception rates, compiling a monthly improvement log for the Finance Manager.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Research and document AP automation tool options for the Finance Manager</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant prepares a short options paper comparing AP automation tools relevant to the team&#x27;s stack.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Test new workflow changes and confirm they post correctly to the accounting system</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent runs test postings in a sandbox and reports pass/fail results to the Finance Manager.</td></tr>
+    <tr><td>16</td><td>Keep processes documented and up to date</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent maintains and updates process documentation; human-backup reviews for accuracy on major changes.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Update standard operating procedure documents when workflows change</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts updated SOP sections and queues them for Finance Manager sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Version-control and store process documents in the shared drive</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves updated documents to the designated SharePoint folder and notifies the team.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Review documentation accuracy after a system change or audit finding</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant reads through SOPs after a system migration to confirm accuracy before sign-off.</td></tr>
+    <tr><td>17</td><td>Build experience towards the Assistant Management Accountant role as you progress through your studies</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td>Personal development and study progression are inherently human; remote assistant can support with scheduling study sessions or tracking CPD milestones. <span style="color:#7a5a00;">(~10 min/mo)</span></td></tr>
+  </tbody>
+</table>
+
+<h2>Worked examples (ranked)</h2>
+<details open>
+  <summary><span class="score">#1</span> Duty 1: Process supplier invoices, credit notes and purchase orders accurately and on time <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads invoices from the shared inbox, posts bills and credit notes to the accounting system, and links them to POs automatically.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: h.thornbury@zudellolabs.example.co.uk
+To: invoices@webexpenses.com
+Date: Wed 4 Nov 2026
+Subject: Invoice INV-A103 attached
+
+Hi,
+
+Please find attached our invoice INV-A103 dated Wed 4 Nov 2026 for cloud infrastructure
+hosting services supplied to Webexpenses under purchase order PO-2026-0441.
+
+Invoice total: £1,610.00 (inc. VAT)
+Payment due: Mon 9 Nov 2026
+
+Please confirm receipt. Let me know if you have any questions.
+
+Harry Thornbury
+Accounts — Zudello Labs</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">AGENT RUN — Mon 9 Nov 2026
+
+SOURCE DOCUMENT
+Invoice INV-A103 received from Harry Thornbury, Zudello Labs — Wed 4 Nov 2026.
+Service: Cloud infrastructure hosting. Linked PO: PO-2026-0441.
+
+PO MATCH CHECK
+PO-2026-0441 expected amount: £1,450.00
+Invoice total presented:      £1,610.00
+Variance (over-billed):       £160.00 — DISCREPANCY FLAGGED
+
+BILL NOT POSTED — variance exceeds tolerance. Manual review required before posting to Xero.
+
+DISCREPANCY ALERT — QUEUED FOR APPROVAL IN THE OUTLOOK APPROVAL QUEUE
+To: h.thornbury@zudellolabs.example.co.uk
+From: invoices@webexpenses.com
+Subject: Query — Invoice INV-A103 vs PO-2026-0441
+
+Dear Harry, we have received INV-A103 (£1,610.00, due Mon 9 Nov 2026) but our
+purchase order PO-2026-0441 authorises £1,450.00. Could you please confirm whether
+a revised invoice for £1,450.00 or a credit note for £160.00 should be issued?
+
+Regards, Webexpenses Accounts Payable
+
+ACTION NEEDED: Webexpenses approver to confirm query email and authorise bill posting once resolved.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 2: Run three-way matching and resolve queries with budget holders and suppliers <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent matches invoice to PO and goods receipt, then drafts and queues query emails to suppliers or budget holders for any mismatches.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Zudello document capture — auto-extracted invoice data
+Supplier: Sample Timber Co | Account: FXS-204
+Invoice ref: STC-7892 | Invoice date: Fri 6 Nov 2026
+Linked PO: PO-3301 | Project: PRJ-4418 / Gardenia Blvd fit-out
+
+Line 1: 4 x Oak laminated panel 2440x1220x18mm @ £95.00 ea = £380.00
+Line 2: 2 x Soft-close drawer runner 450mm pair @ £18.50 ea = £37.00
+Invoice subtotal: £417.00 | VAT @ 20%: £83.40 | Invoice total: £500.40
+
+Goods Receipt Note GRN-5541 (received Tue 3 Nov 2026):
+  Oak laminated panel 2440x1220x18mm — qty received: 3 (PO qty: 4)
+  Soft-close drawer runner 450mm pair — qty received: 2 (PO qty: 2)
+
+Budget holder: Oscar Sheppard | o.sheppard@webexpenses.com
+Supplier contact: Phoebe Barnes | p.barnes@sampletimberco.example.co.uk</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">THREE-WAY MATCH RESULT — Mon 9 Nov 2026
+
+Invoice STC-7892 vs PO-3301 vs GRN-5541 | Supplier: Sample Timber Co (FXS-204)
+
+MATCH STATUS: FAIL — quantity discrepancy on Line 1
+  PO qty: 4 x Oak laminated panel 2440x1220x18mm
+  GRN-5541 qty received (Tue 3 Nov 2026): 3
+  Invoice qty billed: 4
+  Overbilled amount on Line 1: 1 unit x £95.00 = £95.00
+
+ACTION TAKEN: Bill STC-7892 posted to Xero as draft bill #BILL-STC-7892 — status HELD pending resolution. No payment run scheduled.
+
+EMAIL 1 — Queued for approval in the Outlook approval queue
+To: o.sheppard@webexpenses.com (Oscar Sheppard, budget holder)
+Subject: Query — GRN shortfall on PO-3301, PRJ-4418 Gardenia Blvd fit-out
+Body: Hi Oscar, GRN-5541 records 3 oak laminated panels received against a PO and invoice for 4. Please confirm whether the 4th panel is outstanding or was not ordered. We are holding payment on STC-7892 (£500.40) until resolved.
+
+EMAIL 2 — Queued for approval in the Outlook approval queue
+To: p.barnes@sampletimberco.example.co.uk (Phoebe Barnes, Sample Timber Co)
+Subject: Invoice STC-7892 — quantity mismatch, payment on hold
+Body: Hi Phoebe, our GRN records only 3 of the 4 oak laminated panels billed on STC-7892. We are holding payment pending clarification. Please advise whether the 4th panel was despatched or if a credit note for £95.00 plus VAT is required.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#3</span> Duty 4: Reconcile supplier statements each month <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls supplier statements from emails, matches each line to posted bills and payments, and flags unreconciled items for review.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: a.chadwick@zudellolicensing.example.co.uk
+To: accounts@webexpenses.com
+Date: Mon 9 Nov 2026
+Subject: October Statement — Zudello Software Licensing
+
+Hi,
+
+Please find below our statement of account for October 2026.
+
+INV-A101  02/11/2026  £342.80   Cloud platform licence top-up
+INV-A102  03/11/2026  £218.40   API connector module — renewal
+INV-A103  04/11/2026  £1,610.00 Enterprise seat expansion (25 seats)
+
+Statement total: £2,171.20
+
+Could you confirm receipt and advise on payment timing?
+
+Kind regards
+Alice Chadwick, Accounts — Zudello Software Licensing</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">SUPPLIER STATEMENT RECONCILIATION — Zudello Software Licensing
+Run date: Mon 9 Nov 2026
+
+LINE-BY-LINE MATCH AGAINST ZUDELLO LEDGER (Webexpenses account)
+
+Ref       Stmt date    Stmt £      Ledger £    Status
+INV-A101  02/11/2026   £342.80     £342.80     MATCHED — note: no PO reference on supplier invoice; flagged for review
+INV-A102  03/11/2026   £218.40     £218.40     MATCHED — note: no delivery note received; payment on hold pending confirmation
+INV-A103  04/11/2026   £1,610.00   £1,450.00   UNRECONCILED — supplier total exceeds Webexpenses expected amount by £160.00
+
+Statement total per Zudello: £2,171.20
+Total if INV-A103 corrected to expected: £2,011.20
+Unreconciled variance: £160.00
+
+ACTIONS QUEUED
+
+INV-A101 — email to Alice Chadwick requesting PO reference: queued for approval in the Outlook approval queue
+INV-A103 — email to Alice Chadwick disputing £160.00 overcharge on enterprise seat expansion: queued for approval in the Outlook approval queue
+
+PENDING INTERNAL ACTION
+INV-A102 — Webexpenses finance team to confirm delivery note receipt before releasing payment.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#4</span> Duty 8: Code input VAT correctly to support VAT returns <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent applies correct VAT tax codes when posting invoices and flags unusual treatments for review, feeding clean data into the VAT return.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Supplier: Lockhart Digital Services
+Invoice ref: INV-A103
+Invoice date: Wed 4 Nov 2026
+Due date: Wed 2 Dec 2026
+
+Line items:
+1. SaaS platform subscription licence (12 months) — £1,450.00 — standard rated (20% VAT)
+2. Introductory training session (exempt from VAT per supplier note) — £160.00 — zero/exempt
+
+Invoice total per supplier: £1,610.00
+Our expected PO value: £1,450.00
+
+Please code and post. Finance Manager for VAT review: Harper Lockhart.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INVOICE PROCESSING — INV-A103 — Lockhart Digital Services — Wed 4 Nov 2026
+
+VAT CODING APPLIED
+Line 1: SaaS platform subscription licence — £1,450.00 — tax code T1 (20% Standard Rate input VAT)
+Line 2: Introductory training session — £160.00 — tax code T2 (Exempt, no input VAT recoverable)
+Mixed VAT treatment detected across two lines — flagged for VAT review.
+
+VARIANCE NOTED
+Invoice total £1,610.00 exceeds expected PO value of £1,450.00. Variance: £160.00 (matches the exempt training line). Invoice total has not been adjusted; posted as received pending Finance Manager sign-off.
+
+ACCOUNTING SYSTEM ACTION
+Posted to Xero as draft bill INV-A103 — Lockhart Digital Services — £1,610.00 — due Mon 30 Nov 2026 — awaiting approval before payment.
+
+VAT REVIEW NOTIFICATION
+Queued for approval in the Outlook approval queue — addressed to Harper Lockhart (h.lockhart@lockhartdigital.example.co.uk cc Finance team). Subject: VAT review required — INV-A103 mixed VAT rates — £1,450.00 standard rated, £160.00 exempt. Please confirm coding before VAT return submission.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#5</span> Duty 12: Provide details of uninvoiced costs to support the accruals schedule <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent identifies purchase orders with no matching invoice, compiles the list, and sends a formatted accruals input to the Assistant Management Accountant.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Isaac Vickery (Finance Operations)
+To: Automation Agent
+Date: Mon 9 Nov 2026
+Subject: Month-end accruals run — October 2026
+
+Please run the open-PO scan for October month-end. We need a list of all purchase orders raised in Zudello with no matching invoice received, so Emma Pemberton (Assistant Management Accountant) can update the accruals schedule before the books close.
+
+Known open item to include:
+  PO reference: PO-7731
+  Supplier: Sample Timber Co (account FXS-204)
+  Linked project: PRJ-4418 / Gardenia Blvd fit-out
+  PO lines: 4 x Oak laminated panel 2440x1220x18mm at £95.00 each; 2 x Soft-close drawer runner 450mm pair at £18.50 each
+  VAT at 20% applies. No invoice received as at today.
+
+Please email Emma the formatted schedule for review.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ZUDELLO SCAN RESULT — Mon 9 Nov 2026
+
+Open POs with no matched invoice as at Mon 9 Nov 2026 (October month-end accruals):
+
+  PO-7731 | Sample Timber Co (FXS-204) | PRJ-4418 / Gardenia Blvd fit-out
+  Line 1: 4 x Oak laminated panel 2440x1220x18mm   @ £95.00 ea = £380.00
+  Line 2: 2 x Soft-close drawer runner 450mm pair  @ £18.50 ea = £37.00
+  Subtotal: £417.00 | VAT @ 20%: £83.40 | Accrual total: £500.40
+  Invoice status in Zudello: No invoice received. Accrual required.
+
+Total uninvoiced spend to accrue: £500.40
+
+ACTION TAKEN:
+Accruals schedule compiled from Zudello open-PO data and queued for approval in the Outlook approval queue — email addressed to Emma Pemberton (e.pemberton@webexpenses.example.co.uk), subject: &quot;October 2026 Accruals Input — Uninvoiced POs as at 9 Nov 2026&quot;. Awaiting Webexpenses sign-off before sending.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 14: Allocate customer receipts and cover credit control chasing during absences <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent allocates incoming customer receipts to the correct invoices and sends overdue payment chaser emails through the approval queue when covering AR.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">AR cover note — colleague Benjamin Driscoll on leave Mon 9 Nov 2026, returning Thu 12 Nov 2026.
+
+Three bank transfers cleared this morning against open Webexpenses subscription invoices:
+
+  1. George Norcott Ltd — £342.80 received — matches INV-A101 (issued Mon 2 Nov 2026)
+  2. James Holbrook Solutions — £218.40 received — matches INV-A102 (issued Tue 3 Nov 2026)
+  3. Arthur Ravenhill Group — £1,610.00 received — matches INV-A103 (issued Wed 4 Nov 2026)
+
+Also two accounts are 30 days overdue as of today and require a payment chaser email:
+  - George Norcott Ltd — INV-A101 — £342.80
+  - Arthur Ravenhill Group — INV-A103 — £1,610.00
+
+Send chasers from Benjamin Driscoll&#x27;s Webexpenses mailbox pending approval.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">RECEIPT ALLOCATIONS — Mon 9 Nov 2026 (AR cover: B. Driscoll on leave)
+
+Posted to Xero: INV-A101 — George Norcott Ltd — £342.80 — marked PAID, receipt allocated Mon 9 Nov 2026.
+Posted to Xero: INV-A102 — James Holbrook Solutions — £218.40 — marked PAID, receipt allocated Mon 9 Nov 2026.
+Posted to Xero: INV-A103 — Arthur Ravenhill Group — £1,610.00 — marked PAID, receipt allocated Mon 9 Nov 2026.
+
+FLAG: INV-A103 settled at £1,610.00; Webexpenses expected £1,450.00 — variance of £160.00. Overpayment noted on record. Please review before Benjamin Driscoll returns Thu 12 Nov 2026.
+
+OVERDUE CHASERS — 30 days outstanding
+
+Queued for approval in the Outlook approval queue: chaser email to g.norcott@georgenorcottltd.example.co.uk re INV-A101 — £342.80 — 30 days overdue. Sender shown as Webexpenses (via Benjamin Driscoll&#x27;s mailbox).
+
+Queued for approval in the Outlook approval queue: chaser email to a.ravenhill@arthurravenhill.example.co.uk re INV-A103 — £1,610.00 — 30 days overdue. Sender shown as Webexpenses (via Benjamin Driscoll&#x27;s mailbox).
+
+ACTION REQUIRED: Please approve or edit both queued emails before end of day Mon 9 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#7</span> Duty 9: Produce the aged creditors report and flag cash-flow timing to the Assistant Management Accountant <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent generates the aged creditors report from the accounting system and emails a summary with cash-flow timing flags to the Assistant Management Accountant.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Imogen Galloway, Finance Operations
+To: Automation Agent
+Date: Mon 9 Nov 2026
+Subject: End-of-month aged creditors run — October close
+
+Please run the aged creditors report as at Mon 9 Nov 2026 (last working day of the October close period). Pull all outstanding supplier balances from Xero, bucket them into current, 30-day, 60-day, and 90-plus-day bands, and flag any balances in the 60-day or 90-plus-day bands. Email a cash-flow timing summary to the Assistant Management Accountant. No payment runs have been processed since Fri 6 Nov 2026.
+
+Assistant Management Accountant: Niamh Whitlock
+Internal email: niamh.whitlock@webexpenses.com</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ACTION: Aged creditors report pulled from Xero as at Mon 9 Nov 2026.
+Report exported and logged in Xero — Aged Payables Summary, run date Mon 9 Nov 2026.
+
+BAND SUMMARY (no payment runs since Fri 6 Nov 2026)
+  Current (0-30 days)   — balances present, no flags
+  31-60 days            — balances present, no flags
+  61-90 days            — FLAG: balances outstanding; cash-flow impact imminent
+  90+ days              — FLAG: balances outstanding; escalation recommended
+
+CASH-FLOW TIMING FLAGS
+  61-90 day balances: payment significantly overdue; recommend scheduling settlement this week (by Fri 13 Nov 2026) to avoid supplier relationship risk.
+  90+ day balances: immediate review required; potential for supplier account suspension or late-payment interest.
+
+EMAIL QUEUED
+  To: niamh.whitlock@webexpenses.com
+  Subject: Aged Creditors Report — October Close, Mon 9 Nov 2026
+  Body: Hi Niamh, please find attached the aged creditors summary pulled from Xero as at Mon 9 Nov 2026. Two bands require your attention: 61-90 day and 90-plus-day balances are both flagged for cash-flow timing risk. We recommend reviewing these ahead of Fri 13 Nov 2026. Please approve or amend any proposed payment runs at your earliest convenience. Kind regards, Webexpenses Finance Operations.
+  Queued for approval in the Outlook approval queue.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 10: Answer supplier queries promptly and professionally <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads supplier query emails, pulls the relevant invoice/payment data from the accounting system, and drafts a response through the M365 approval queue.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Ethan Oakenshaw &lt;e.oakenshaw@bentleysoftwaresupplies.example.co.uk&gt;
+To: accounts@webexpenses.com
+Date: Mon 9 Nov 2026
+Subject: Payment query — Invoice BSS-2047
+
+Hi,
+
+I am writing to chase payment on invoice BSS-2047, which was submitted to Webexpenses on Wed 4 Nov 2026 and covers our monthly software licence supply. We have not yet received confirmation that payment has been processed. Could you please confirm the current status and expected payment date?
+
+Many thanks,
+Ethan Oakenshaw
+Bentley Software Supplies
+
+Accounting system: Xero
+Supplier contact reference: BSS / Oakenshaw</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">LEDGER CHECK — Xero
+Supplier: Bentley Software Supplies (contact: Ethan Oakenshaw)
+Invoice reference: BSS-2047
+Invoice received: Wed 4 Nov 2026
+Status in Xero: Approved and scheduled for payment
+Payment run date confirmed in Xero: Fri 13 Nov 2026
+
+ACTION TAKEN
+Queued for approval in the Outlook approval queue — draft reply to Ethan Oakenshaw below.
+
+DRAFT EMAIL
+To: e.oakenshaw@bentleysoftwaresupplies.example.co.uk
+Subject: RE: Payment query — Invoice BSS-2047
+
+Dear Ethan,
+
+Thank you for getting in touch. We can confirm that invoice BSS-2047 has been received and approved in our system. Payment is scheduled to be made on Fri 13 Nov 2026 and you should expect funds to clear shortly after.
+
+Please do not hesitate to contact us if you have any further questions.
+
+Kind regards,
+Webexpenses Accounts Payable</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#9</span> Duty 15: Help improve our accounts payable processes and automation <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles the automatable elements; human-backup covers analysis and recommendations.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly AP batch review — Mon 9 Nov 2026
+Period reviewed: Mon 2 Nov 2026 to Fri 6 Nov 2026
+Total invoices processed via Zudello this week: 35
+Invoices auto-coded correctly by Zudello on first pass: 21
+Invoices requiring manual GL code correction by AP team: 14
+Common correction types noted by team:
+  - Wrong cost centre assigned (software licences coded to facilities)
+  - Subscription renewals split incorrectly across departments
+  - VAT treatment flag not matching supplier profile
+Source systems checked: Zudello capture, Webexpenses expense data, Excel AP tracker
+Request: Log findings in process improvement register ahead of Q4 quarterly review.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">AP PROCESS IMPROVEMENT LOG ENTRY — Mon 9 Nov 2026
+
+Review period: Mon 2 Nov 2026 to Fri 6 Nov 2026
+Entry raised by: Webexpenses AP Automation Agent
+
+FINDING: Manual coding correction rate for the review period was 40% (14 of 35 invoices processed through Zudello required post-capture GL correction by the AP team).
+
+ROOT CAUSES IDENTIFIED (from AP team notes and Excel AP tracker):
+  1. Software licence invoices defaulting to facilities cost centre — coding rule absent in Zudello supplier profile.
+  2. Subscription renewal lines split incorrectly across departments — no line-level allocation rule configured.
+  3. VAT treatment flags mismatched against supplier profile — supplier records in Zudello not updated to current VAT status.
+
+AUTOMATED ACTIONS TAKEN:
+  - Entry posted to Webexpenses AP process improvement register (log ref: APLOG-2026-11-09).
+  - Zudello supplier profiles flagged for rule-update review by AP team.
+  - Excel AP tracker updated: week of 2 Nov 2026 row marked &quot;Manual correction rate: 40% — escalated to Q4 review&quot;.
+
+RECOMMENDED HUMAN ACTION (for AP team / Ella Ellsworth to review):
+  Analyse Zudello coding rules for software and subscription categories before Fri 13 Nov 2026 and prepare recommendations for the Q4 quarterly review.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#10</span> Duty 16: Keep processes documented and up to date <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent maintains and updates process documentation; human-backup reviews for accuracy on major changes.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Eva Kenworthy (Finance Manager)
+To: Automation Agent
+Date: Mon 9 Nov 2026
+
+Hi, please update the payment run SOP to reflect the changes we agreed last week. Key changes are:
+
+1. Payment runs now happen every Tuesday and Friday instead of weekly on Friday only.
+2. Zudello is used to match and approve invoices before export — this step was not in the old SOP.
+3. The Excel payment schedule template has been replaced by a live Zudello export; the manual Excel file is retired.
+4. Webexpenses expense claims must be fully approved in Webexpenses before they are included in any payment run.
+5. Finance Manager sign-off is required in Zudello before the bank file is released.
+
+Please draft the updated SOP and email it to me for review before publishing to SharePoint.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">SOP UPDATED: Payment Run Process — v2.1
+Effective from: Mon 9 Nov 2026
+Drafted by: Automation Agent for Webexpenses Finance team
+
+STEP 1 — CLAIM APPROVAL IN WEBEXPENSES
+All employee expense claims must reach fully approved status in Webexpenses before the cut-off for each payment run. Claims not fully approved are excluded and held to the next run.
+
+STEP 2 — INVOICE MATCHING AND APPROVAL IN ZUDELLO
+Finance processes all supplier invoices in Zudello. Each invoice must be matched and marked approved in Zudello before it is eligible for payment.
+
+STEP 3 — PAYMENT RUN SCHEDULE
+Payment runs are executed twice weekly: every Tuesday and every Friday. The manual Excel payment schedule template is retired; the authoritative payment list is generated via live Zudello export at each run.
+
+STEP 4 — FINANCE MANAGER SIGN-OFF
+Eva Kenworthy reviews the Zudello export and provides Finance Manager sign-off within Zudello before the bank file is released for processing.
+
+STEP 5 — PUBLICATION
+Once approved, this SOP will be published to the Webexpenses Finance team SharePoint.
+
+EMAIL ACTION: Draft email to Eva Kenworthy (e.kenworthy@webexpenses.example.co.uk) with subject &quot;Updated Payment Run SOP v2.1 — Please Review&quot; and SOP attached — queued for approval in the Outlook approval queue before sending.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#11</span> Duty 3: Prepare weekly payment runs, including BACS and international payments, for review and approval <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares the full payment run proposal (BACS + international); a human releases it to the bank after review.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Florence Larkin, Finance Manager
+To: Expenses Automation Agent
+Date: Fri 6 Nov 2026
+
+Please compile this week&#x27;s payment run for my review before close of business today.
+
+BACS payments due by Fri 6 Nov 2026:
+  Supplier: Zudello Ltd — INV-ZUD-0892 — due Fri 6 Nov 2026 — sort code 20-44-51 — acc 73821904
+  Supplier: Noah Pemberton (contractor) — INV-NP-114 — due Fri 6 Nov 2026 — sort code 09-01-29 — acc 11043872
+
+International payment due by Fri 6 Nov 2026:
+  Supplier: Sophie Vickery Consulting (EUR) — INV-SVC-307 — due Fri 6 Nov 2026 — IBAN DE44500105175407324931 — BIC BELADEBEXXX
+
+All invoices are already approved in Webexpenses. Please build the BACS file and international schedule and email me the summary for sign-off.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">WEEKLY PAYMENT RUN — Fri 6 Nov 2026
+Prepared by Webexpenses automation agent for review by Florence Larkin, Finance Manager.
+
+BACS SCHEDULE (value date Fri 6 Nov 2026)
+  1. Zudello Ltd | INV-ZUD-0892 | Sort 20-44-51 | Acc 73821904 | Approved in Webexpenses
+  2. Noah Pemberton (contractor) | INV-NP-114 | Sort 09-01-29 | Acc 11043872 | Approved in Webexpenses
+
+INTERNATIONAL PAYMENT SCHEDULE (value date Fri 6 Nov 2026)
+  1. Sophie Vickery Consulting | INV-SVC-307 | IBAN DE44500105175407324931 | BIC BELADEBEXXX | EUR | Approved in Webexpenses
+
+STATUS
+  BACS file: built and held — awaiting Finance Manager release to bank.
+  International schedule: built and held — awaiting Finance Manager release to bank.
+  No £ figures included: MONEY FACTS did not supply amounts for these invoices.
+
+ACTION REQUIRED
+  Florence Larkin to review, approve, and release both files to the bank today (Fri 6 Nov 2026).
+  Queued for approval in the Outlook approval queue: payment run summary email to f.larkin@webexpenses.example.co.uk.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#12</span> Duty 6: Maintain supplier records, including bank detail changes with fraud checks <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent updates supplier contacts and flags bank detail change requests; a human approves each change before it goes live to prevent fraud.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Isla Ellsworth &lt;i.ellsworth@peakprintservices.example.co.uk&gt;
+To: accounts@webexpenses.com
+Date: Mon 9 Nov 2026
+
+Hi,
+
+Please update our bank details on your system. We have switched to a new business account following a merger with our parent group.
+
+New sort code: 20-45-91
+New account number: 73628401
+Account name: Peak Print Services Ltd
+
+Our previous sort code was 11-22-33 and account number 88114422.
+
+Please confirm once updated. Invoices are due for payment shortly so we would appreciate a quick turnaround.
+
+Thanks,
+Isla Ellsworth, Accounts Receivable, Peak Print Services</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">BANK DETAIL CHANGE REQUEST — LOGGED Mon 9 Nov 2026
+
+SUPPLIER: Peak Print Services Ltd
+CONTACT: Isla Ellsworth (i.ellsworth@peakprintservices.example.co.uk)
+SYSTEM RECORD: Supplier contact located in Zudello — no update applied yet.
+
+CHANGE REQUESTED
+  Previous sort code: 11-22-33  |  Previous account: 88114422
+  New sort code: 20-45-91       |  New account: 73628401
+  Account name: Peak Print Services Ltd
+
+STATUS: Held in bank-detail change queue — awaiting Finance Manager approval before any live update is made to Zudello.
+
+FRAUD-CHECK ACTIONS TAKEN
+1. Request logged against supplier record in Zudello as a pending change.
+2. Verification call script queued for approval in the Outlook approval queue — draft addressed to Finance Manager, referencing the two account numbers above and requesting a callback to Isla Ellsworth on the phone number already held on file (not any number supplied in this email).
+
+VERIFICATION CALL SCRIPT (held pending approval)
+&quot;Hello, this is Webexpenses Accounts. We have received a request to change bank details for Peak Print Services. Before we process this, could you please confirm your authorised contact name, the account name, and the reason for the change?&quot;
+
+NEXT STEP: Finance Manager to approve or reject via the Outlook approval queue. Only on approval will the supplier bank record be updated in Zudello.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#13</span> Duty 11: Close the purchase ledger in line with the month-end timetable <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent completes all posting and reconciliation tasks on schedule, then presents the closed ledger for Finance Manager sign-off before period lock.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Ivy Brightwell, Finance Manager, Webexpenses
+Date: Mon 9 Nov 2026
+Subject: October month-end — purchase ledger close
+
+Please run the October purchase ledger close today. Checklist below for reference:
+
+1. Confirm all October supplier invoices are posted in Zudello and pushed through to Xero.
+2. Confirm no invoices are sitting in Zudello pending approval or unmatched.
+3. Confirm supplier statement reconciliations are complete in Excel.
+4. Confirm all October expense claims submitted via Webexpenses are posted and cleared.
+5. Present close checklist for my sign-off before period lock.
+
+Lock deadline: end of day Mon 9 Nov 2026.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">PURCHASE LEDGER CLOSE CHECKLIST — OCTOBER 2026
+Run by: Webexpenses connected agent
+Presented to: Ivy Brightwell, Finance Manager
+Date: Mon 9 Nov 2026
+
+TASK 1 — SUPPLIER INVOICES
+All October supplier invoices confirmed posted in Zudello and synced to Xero as approved bills. No items remaining in draft or pending queue.
+
+TASK 2 — ZUDELLO APPROVAL QUEUE
+Zero invoices in pending-approval or unmatched status in Zudello as of Mon 9 Nov 2026.
+
+TASK 3 — SUPPLIER STATEMENT RECONCILIATIONS
+All supplier statement reconciliations confirmed complete in Excel. No unreconciled variances outstanding.
+
+TASK 4 — WEBEXPENSES CLAIMS
+All October employee expense claims submitted via Webexpenses confirmed posted and cleared in Xero. No claims in draft, rejected, or unposted status.
+
+TASK 5 — SIGN-OFF REQUEST
+All four checklist items are clear. The October purchase ledger is ready for period lock. Please confirm approval to lock the period in Xero.
+Queued for approval in the Outlook approval queue — sign-off notification sent to i.brightwell@webexpenses.example.co.uk.</div></div>
+    </div>
+  </div>
+</details>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<footer>
+  Questions, or want a working version for your own inbox / timesheets / invoices?
+  [SENDER NAME / EMAIL]
+</footer>
+</body>
+</html>
