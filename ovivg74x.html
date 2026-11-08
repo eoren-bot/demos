@@ -126,9 +126,9 @@ footer a { color: #1a56b0; text-decoration: none; }
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from London Paramount Care's public job ad. Not produced by or affiliated with London Paramount Care. All people, suppliers, invoices and figures shown are fictional.</div>
 <header>
   <h1>London Paramount Care</h1>
-  <p class="subtitle">Automates invoice processing, reconciliations and chasing so your Accounts Assistant focuses on judgement calls.</p>
+  <p class="subtitle">Automates routine ledger posting and chasing so the finance team focuses on judgement calls.</p>
   <p class="services">UK employer — London Paramount Care (role: Accounts Assistant).</p>
-  <p class="honest-count"><strong>Covered: 100%</strong> (agent 80% + your approvals 20%)</p>
+  <p class="honest-count"><strong>Covered: 100%</strong> (agent 90% + your approvals 10%)</p>
   
   <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
   <div class="meta"><span class="pill">Systems: Xero, Microsoft Excel, Microsoft Office</span>
@@ -142,314 +142,370 @@ footer a { color: #1a56b0; text-decoration: none; }
     <th>What the agent does</th>
   </tr></thead>
   <tbody>
-    <tr><td>1</td><td>Processing supplier invoices and payments.</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent posts supplier invoices to Xero and prepares payment runs; client releases payments to bank.</td></tr>
-    <tr><td>2</td><td>Raising customer invoices and recording payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates and sends sales invoices via Xero and allocates incoming cash receipts automatically.</td></tr>
-    <tr><td>3</td><td>Maintaining supplier and customer accounts.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent keeps supplier and customer contact records in Xero current, updating addresses, payment terms and account status.</td></tr>
-    <tr><td>4</td><td>Completing bank reconciliations and checking expenses.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches Xero transactions to the bank feed daily and flags unreconciled items or anomalous expense claims for review.</td></tr>
-    <tr><td>5</td><td>Investigating payment discrepancies and following up outstanding invoices.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies mismatches between purchase orders and invoices, drafts supplier query emails, and chases overdue sales invoices via the approval queue.</td></tr>
-    <tr><td>6</td><td>Maintaining accurate financial records.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent ensures all transactions are posted, categorised and audit-trailed in Xero in real time.</td></tr>
-    <tr><td>7</td><td>Supporting month-end procedures and general finance administration.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles the automatable sub-tasks; client signs off the period before filing.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Prepare month-end reconciliation packs and aged debtor/creditor reports.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates aged debt, aged creditor and balance-sheet reconciliation reports from Xero and emails them to the Financial Controller for review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and lock of the accounting period.</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Financial Controller reviews the pack produced by the agent and locks the period in Xero.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ General finance admin — filing digital documents and updating trackers.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves invoice PDFs to SharePoint, updates Excel trackers, and maintains the Xero document store.</td></tr>
-    <tr><td>8</td><td>Responding to finance queries from colleagues and suppliers.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads the shared finance inbox, pulls the relevant Xero records, and drafts replies via the M365 approval queue for release.</td></tr>
+    <tr><td>1</td><td>Processing supplier invoices and payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads incoming supplier invoices from the shared inbox, posts bills to Xero, and prepares a payment-run proposal for client release.</td></tr>
+    <tr><td>2</td><td>Raising customer invoices and recording payments.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates and sends sales invoices to local authority / NHS commissioners via the M365 approval queue, then allocates incoming receipts in Xero.</td></tr>
+    <tr><td>3</td><td>Maintaining supplier and customer accounts.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent keeps supplier and customer contact records current in Xero, updates payment terms, and flags stale or duplicate accounts for review.</td></tr>
+    <tr><td>4</td><td>Completing bank reconciliations and checking expenses.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent runs the Xero bank reconciliation daily, matches transactions to posted bills and receipts, and flags unmatched items for review.</td></tr>
+    <tr><td>5</td><td>Investigating payment discrepancies and following up outstanding invoices.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies discrepancies from Xero reports, drafts query or chaser emails to suppliers/customers via the approval queue, and logs outcomes.</td></tr>
+    <tr><td>6</td><td>Maintaining accurate financial records.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent ensures all transactions are posted, categorised correctly, and that audit trails in Xero are complete and up to date.</td></tr>
+    <tr><td>7</td><td>Supporting month-end procedures and general finance administration.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Expanded into concrete sub-tasks; majority are handled by the agent end-to-end.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Prepare month-end reconciliation summary and aged-debt/creditor reports in Xero.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates aged-debtor and aged-creditor reports, reconciles control accounts, and packages a summary for the controller&#x27;s sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and journal approval before management accounts are finalised.</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Controller reviews and approves the reconciliation pack and any manual journals before the period is locked.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain finance administration filing and document management (digital).</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent saves and indexes invoice PDFs and remittances in the shared drive, linking documents to Xero transactions.</td></tr>
+    <tr><td>8</td><td>Responding to finance queries from colleagues and suppliers.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads queries from the shared inbox, pulls the relevant Xero record, drafts a response, and queues it for release via the M365 approval queue.</td></tr>
   </tbody>
 </table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
-  <summary><span class="score">#1</span> Duty 4: Completing bank reconciliations and checking expenses. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#1</span> Duty 1: Processing supplier invoices and payments. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent matches Xero transactions to the bank feed daily and flags unreconciled items or anomalous expense claims for review.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads incoming supplier invoices from the shared inbox, posts bills to Xero, and prepares a payment-run proposal for client release.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Run the daily bank reconciliation for London Paramount Care&#x27;s current account in Xero.
-Today is Mon 9 Nov 2026.
-Bank feed covers: Mon 2 Nov 2026 to Fri 6 Nov 2026 (last week&#x27;s transactions now fully settled).
-Total transactions in feed for the period: 41
-Xero auto-matched: 39
-Unreconciled items remaining: 2
-Expense claim flagged: one staff expense posted on Wed 4 Nov 2026 with no receipt attached, category listed as &quot;general supplies&quot; — unusual for a care employer (expected categories: PPE, medication consumables, uniform, travel).
-Second unreconciled item: a direct debit on Thu 5 Nov 2026 with no matching bill in Xero and payee name partially truncated in the feed.
-Please prepare the exception report and email it to the accounts team for review.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">DAILY BANK RECONCILIATION — EXCEPTION REPORT
-London Paramount Care | Current Account | Period: Mon 2 Nov 2026 to Fri 6 Nov 2026
-Reconciliation run: Mon 9 Nov 2026
-
-RECONCILIATION SUMMARY
-Transactions in bank feed: 41
-Auto-matched in Xero: 39
-Unreconciled items requiring review: 2
-
-EXCEPTION 1 — UNMATCHED DIRECT DEBIT
-Date: Thu 5 Nov 2026
-Issue: Payee name truncated in bank feed; no matching bill found in Xero.
-Action required: Your accounts team to identify the payee and either match to an existing bill or post a new draft bill in Xero before next reconciliation run.
-
-EXCEPTION 2 — ANOMALOUS EXPENSE CLAIM
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: n.oakenshaw@thornburymedical.example.co.uk
+To: the AP inbox
 Date: Wed 4 Nov 2026
-Category logged: General supplies (outside expected care-sector categories: PPE, medication consumables, uniform, travel)
-Issue: No receipt attached to the claim.
-Action required: Your finance manager to request the receipt and confirm or recode the expense category before approval.
+Subject: Invoice INV-A103 — November Care Consumables Supply
 
-EMAIL ACTION
-Draft prepared for your accounts team summarising both exceptions — queued for approval in the Outlook approval queue.
-Sender: London Paramount Care</div></div>
-    </div>
-  </div>
-</details>
-<details open>
-  <summary><span class="score">#2</span> Duty 5: Investigating payment discrepancies and following up outstanding invoices. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent identifies mismatches between purchase orders and invoices, drafts supplier query emails, and chases overdue sales invoices via the approval queue.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Accounts inbox, Mon 9 Nov 2026.
+Hi,
 
-Supplier invoice received from Kenworthy Utilities Ltd (contact: Charlotte Kenworthy, c.kenworthy@kenworthy-utilities.example.co.uk):
-  Invoice ref: INV-A103, dated Wed 4 Nov 2026
-  Service: Monthly electricity supply, care home premises
-  Invoice total: £1,610.00
-  Our agreed contracted rate for this period: £1,450.00
-  Variance to investigate: £160.00
+Please find attached our invoice INV-A103 dated Wed 4 Nov 2026 for the supply of incontinence pads, disposable gloves, and hygiene products to London Paramount Care residential units.
 
-Overdue sales invoice — local authority client:
-  Client: Merriweather Borough Council (contact: Nathan Merriweather, n.merriweather@merriweather-bc.example.co.uk)
-  Our invoice ref: SI-0874
-  Invoice date: Mon 2 Nov 2026
-  Payment terms: 7 days
-  Amount: £1,450.00
-  Status: unpaid as of today, Mon 9 Nov 2026 (7 days overdue)
+Invoice total: £1,610.00
+Our PO reference: LPC-PO-0047
+Payment terms: 30 days from invoice date
 
-Please investigate the overcharge on INV-A103 and chase SI-0874.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">DISCREPANCY REVIEW — Mon 9 Nov 2026 — London Paramount Care
-
-ACTION 1 — SUPPLIER OVERCHARGE QUERY (INV-A103)
-Supplier: Kenworthy Utilities Ltd
-Invoice INV-A103 dated Wed 4 Nov 2026 shows £1,610.00 against a contracted rate of £1,450.00. Variance: £160.00.
-Posted to Xero as draft bill INV-A103 (held, pending supplier correction — amount disputed).
-Supplier query email drafted and queued for approval in the Outlook approval queue.
-
-EMAIL DRAFT 1 — To: c.kenworthy@kenworthy-utilities.example.co.uk
-Subject: Query — Invoice INV-A103 — Overcharge of £160.00
-Body: Dear Charlotte, We are writing regarding invoice INV-A103 (dated Wed 4 Nov 2026) totalling £1,610.00. Our agreed contracted rate for this billing period is £1,450.00, leaving an unexplained variance of £160.00. Could you please review and issue a corrected invoice or credit note at your earliest convenience? We will hold payment pending resolution. Kind regards, London Paramount Care Accounts Team.
-
-ACTION 2 — OVERDUE SALES INVOICE CHASE (SI-0874)
-Client: Merriweather Borough Council
-Invoice SI-0874 dated Mon 2 Nov 2026 for £1,450.00 was due Mon 9 Nov 2026 and remains unpaid (7 days overdue).
-Status confirmed in Xero — invoice SI-0874 marked overdue. Chase email queued for approval in the Outlook approval queue.
-
-EMAIL DRAFT 2 — To: n.merriweather@merriweather-bc.example.co.uk
-Subject: Overdue Invoice — SI-0874 — £1,450.00
-Body: Dear Nathan, This is a reminder that invoice SI-0874 for £1,450.00, issued Mon 2 Nov 2026, was due for payment today, Mon 9 Nov 2026, and remains outstanding. Please arrange payment at your earliest convenience. If you have any queries, do not hesitate to contact us. Kind regards, London Paramount Care Accounts Team.
-
-FLAG FOR YOUR FINANCE MANAGER — Both actions are held in the Outlook approval queue. Please review and approve before sending or releasing payment.</div></div>
-    </div>
-  </div>
-</details>
-<details open>
-  <summary><span class="score">#3</span> Duty 6: Maintaining accurate financial records. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent ensures all transactions are posted, categorised and audit-trailed in Xero in real time.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Evening draft queue review request — Mon 9 Nov 2026
-
-Please process today&#x27;s Xero draft transactions queue for London Paramount Care.
-
-Drafts awaiting review:
-
-1. TXN-0441 — dated Mon 9 Nov 2026 — Supplier: Elsie Fairbrother Medical Supplies — auto-coded to nominal 400 (Sales). Description reads &quot;sterile gloves and disposable aprons, care ward stock.&quot;
-
-2. TXN-0442 — dated Mon 9 Nov 2026 — Supplier: Daisy Pemberton Pharmacy Ltd — auto-coded to nominal 620 (Advertising). Description reads &quot;prescription medications and controlled drug stock replenishment.&quot;
-
-3. TXN-0443 — dated Mon 9 Nov 2026 — Supplier: Freddie Barnes Facilities — auto-coded to nominal 710 (Premises). Description reads &quot;emergency call system servicing and sensor battery replacement across two residential floors.&quot;
-
-4. TXN-0444 — dated Mon 9 Nov 2026 — auto-coded to nominal 550 (Motor). Description is blank. Supplier field is blank.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">EVENING DRAFT QUEUE REVIEW — London Paramount Care — Mon 9 Nov 2026
-
-TXN-0441 — Elsie Fairbrother Medical Supplies
-ACTION: Nominal corrected from 400 (Sales) to 630 (Medical and Care Consumables). Description confirmed: sterile gloves and disposable aprons, care ward stock. Confidence: HIGH.
-Posted to Xero with updated nominal code — draft bill dated Mon 9 Nov 2026.
-
-TXN-0442 — Daisy Pemberton Pharmacy Ltd
-ACTION: Nominal corrected from 620 (Advertising) to 640 (Medications and Pharmacy Supplies). Description confirmed: prescription medications and controlled drug stock replenishment. Confidence: HIGH.
-Posted to Xero with updated nominal code — draft bill dated Mon 9 Nov 2026.
-
-TXN-0443 — Freddie Barnes Facilities
-ACTION: Nominal 710 (Premises) accepted. Description is consistent with care home maintenance activity. Confidence: HIGH. No change required.
-Confirmed in Xero as draft bill dated Mon 9 Nov 2026.
-
-TXN-0444 — FLAGGED FOR FINANCIAL CONTROLLER REVIEW
-ACTION: Supplier field blank, description blank, nominal 550 (Motor) unverified. Confidence: LOW. Agent has not amended this record.
-Queued for approval in the Outlook approval queue — notification sent to your Financial Controller requesting supplier details, description, and nominal confirmation before this draft is accepted in Xero.
-
-AUDIT TRAIL: All corrections logged in Xero with agent reference LPC-20261109-EQ and timestamp Mon 9 Nov 2026.</div></div>
-    </div>
-  </div>
-</details>
-<details>
-  <summary><span class="score">#4</span> Duty 7: Supporting month-end procedures and general finance administration. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles the automatable sub-tasks; client signs off the period before filing.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Trigger: Month-end close routine for October 2026.
-Period: 1 Oct 2026 to 31 Oct 2026.
-Task: Run bank reconciliation report in Xero, compile summary pack, and queue period-lock request for Financial Controller sign-off.
-Xero bank feed status: All transactions imported through 31 Oct 2026.
-Unreconciled items as of this morning: 0 unmatched receipts, 0 unmatched payments confirmed after final manual review completed Fri 6 Nov 2026.
-Aged payables and receivables reports: exported from Xero as of 31 Oct 2026.
-Outstanding accruals: none flagged by accounts team.
-Send summary pack to: Financial Controller (internal).
-Period-lock request: queue for Financial Controller approval before locking October in Xero.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">MONTH-END CLOSE — OCTOBER 2026
-Run date: Mon 9 Nov 2026
-Prepared by: London Paramount Care automated finance agent
-
-RECONCILIATION STATUS
-Period: 1 Oct 2026 to 31 Oct 2026
-Xero bank feed: fully imported to 31 Oct 2026
-Unreconciled items: none — manual review completed Fri 6 Nov 2026
-Aged payables report: exported from Xero as at 31 Oct 2026 — attached
-Aged receivables report: exported from Xero as at 31 Oct 2026 — attached
-Outstanding accruals flagged: none
-
-ACTIONS TAKEN
-Reconciliation summary report pulled from Xero for October 2026 period
-Summary pack (reconciliation report, aged payables, aged receivables) compiled and queued for approval in the Outlook approval queue — addressed to your Financial Controller for review before distribution
-
-PERIOD-LOCK REQUEST
-Period-lock instruction for October 2026 in Xero queued for approval in the Outlook approval queue — your Financial Controller must approve before the period is locked in Xero
-
-ACTION REQUIRED
-Your Financial Controller to review the summary pack and approve the period-lock request via the Outlook approval queue by Fri 13 Nov 2026.</div></div>
-    </div>
-  </div>
-</details>
-<details>
-  <summary><span class="score">#5</span> Duty 3: Maintaining supplier and customer accounts. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent keeps supplier and customer contact records in Xero current, updating addresses, payment terms and account status.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: w.sheppard@caremedsupplies.example.co.uk
-To: accounts@londonparamountcare.co.uk
-Date: Mon 9 Nov 2026
-Subject: Updated Bank Details — CaremedSupplies Ltd
-
-Hello,
-
-Please be advised that CaremedSupplies Ltd has changed its banking provider with effect from Mon 9 Nov 2026. Kindly update your records before the next payment run.
-
-New bank details:
-  Account name: CaremedSupplies Ltd
-  Sort code: 20-14-53
-  Account number: 73820164
-
-Our remittance address has also changed to:
-  Unit 7 Birchwood Park, Stevenage, SG1 4QR
-
-Payment terms remain 30 days net. Please confirm receipt of this notice.
+Please process at your earliest convenience. Bank details on file.
 
 Regards,
-Willow Sheppard, Accounts — CaremedSupplies Ltd</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">AGENT TASK — SUPPLIER CONTACT UPDATE: CaremedSupplies Ltd
-Triggered by inbound email from w.sheppard@caremedsupplies.example.co.uk received Mon 9 Nov 2026.
+Niamh Oakenshaw
+Accounts, Thornbury Medical Supplies</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INVOICE PROCESSING SUMMARY — Mon 9 Nov 2026
+London Paramount Care — Accounts Payable
 
-XERO ACTIONS TAKEN:
-Updated in Xero supplier contact — CaremedSupplies Ltd:
-  Remittance address changed to: Unit 7 Birchwood Park, Stevenage, SG1 4QR
-  Bank sort code on file updated to: 20-14-53
-  Bank account number on file updated to: 73820164
-  Payment terms confirmed unchanged: 30 days net
-  Account status: Active — no change required
+BILL POSTED
+Supplier: Thornbury Medical Supplies
+Invoice ref: INV-A103 | Invoice date: Wed 4 Nov 2026
+Due date: Fri 4 Dec 2026 (30-day terms)
+Invoice total: £1,610.00
+Posted to Xero as draft bill INV-A103, coded to Care Consumables expense account.
 
-NOTE: Bank detail changes have been saved as PENDING in Xero and are flagged for your finance manager to approve before the next payment run. No payment will be made to the new account until approval is granted.
+PO MATCH RESULT — VARIANCE FLAGGED
+Matched to PO ref LPC-PO-0047.
+PO expected amount: £1,450.00
+Invoice amount: £1,610.00
+Variance: £160.00 above expected. Bill held in Xero as draft pending your finance manager&#x27;s approval before authorisation.
 
-APPROVAL EMAIL QUEUED:
-Queued for approval in the Outlook approval queue — draft email to w.sheppard@caremedsupplies.example.co.uk confirming London Paramount Care has received the notification and that updated details are under internal review.
+PAYMENT RUN PROPOSAL
+Proposed BACS payment of £1,450.00 (PO-agreed amount) held pending variance resolution.
+Full payment of £1,610.00 can be released once your accounts team confirms the overage is approved.
 
-ACTION REQUIRED: Your finance manager should review and approve the bank detail change in Xero before Mon 16 Nov 2026.</div></div>
+ACTION REQUIRED
+Please review the £160.00 variance on INV-A103 and confirm whether to approve the full £1,610.00 or request a credit note from Thornbury Medical Supplies.
+Payment proposal queued for approval in the Outlook approval queue.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 2: Raising customer invoices and recording payments. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent generates and sends sales invoices to local authority / NHS commissioners via the M365 approval queue, then allocates incoming receipts in Xero.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly placement fee invoices — w/e Fri 6 Nov 2026
+Please raise invoices for the following commissioners and route for approval.
+
+Commissioner 1: Southwark Council Adult Social Care
+Contact: Eva Vickery, e.vickery@southwark-asc.example.co.uk
+Placement ref: SWK-2026-091 | Weekly fee: £1,610.00 | Period: Mon 2 Nov – Fri 6 Nov 2026
+
+Commissioner 2: Lambeth Council Commissioning Team
+Contact: Sophia Bentley, s.bentley@lambeth-comm.example.co.uk
+Placement ref: LBT-2026-047 | Weekly fee: £342.80 | Period: Mon 2 Nov – Fri 6 Nov 2026
+
+Commissioner 3: Lewisham NHS Integrated Care Board
+Contact: Alfie Ravenhill, a.ravenhill@lewisham-icb.example.co.uk
+Placement ref: LEW-2026-033 | Weekly fee: £218.40 | Period: Mon 2 Nov – Fri 6 Nov 2026
+
+Payment received Mon 9 Nov 2026: £342.80 from Lambeth Council — ref LBT-2026-047.
+Please allocate against the correct invoice.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INVOICES DRAFTED — Mon 9 Nov 2026
+
+Posted to Xero as draft invoice SI-2600 | Southwark Council Adult Social Care | Ref SWK-2026-091 | Period Mon 2 Nov – Fri 6 Nov 2026 | Amount £1,610.00 | Due Mon 23 Nov 2026
+Queued for approval in the Outlook approval queue — email to Eva Vickery (e.vickery@southwark-asc.example.co.uk) from London Paramount Care.
+
+Posted to Xero as draft invoice SI-2601 | Lambeth Council Commissioning Team | Ref LBT-2026-047 | Period Mon 2 Nov – Fri 6 Nov 2026 | Amount £342.80 | Due Mon 23 Nov 2026
+Queued for approval in the Outlook approval queue — email to Sophia Bentley (s.bentley@lambeth-comm.example.co.uk) from London Paramount Care.
+
+Posted to Xero as draft invoice SI-2602 | Lewisham NHS Integrated Care Board | Ref LEW-2026-033 | Period Mon 2 Nov – Fri 6 Nov 2026 | Amount £218.40 | Due Mon 23 Nov 2026
+Queued for approval in the Outlook approval queue — email to Alfie Ravenhill (a.ravenhill@lewisham-icb.example.co.uk) from London Paramount Care.
+
+TOTAL INVOICED THIS WEEK: £2,171.20
+
+RECEIPT ALLOCATION — Mon 9 Nov 2026
+Payment of £342.80 received from Lambeth Council (ref LBT-2026-047) allocated in Xero against SI-2601. Invoice marked as paid. Remaining open balance on this commissioner account: £0.00.
+
+ACTION REQUIRED: Your finance manager should approve the three queued emails before dispatch.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#3</span> Duty 4: Completing bank reconciliations and checking expenses. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent runs the Xero bank reconciliation daily, matches transactions to posted bills and receipts, and flags unmatched items for review.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: our shared accounts mailbox
+Received: Mon 9 Nov 2026, 08:04
+
+Please run the Xero bank reconciliation for Friday 6 Nov 2026. The bank feed for that day has loaded overnight. We expect most items to clear against posted bills and carer expense receipts. Flag anything that cannot be auto-matched so the finance manager can review before the morning stand-up.
+
+Bank feed date: Fri 6 Nov 2026
+Feed items loaded: 45
+Posted bills and receipts available in Xero: current as of end of day Fri 6 Nov 2026
+
+Outstanding supplier invoices logged last week for context:
+  INV-A101  Mon 2 Nov 2026  £342.80  — no PO reference noted
+  INV-A102  Tue 3 Nov 2026  £218.40  — delivery note not yet received
+  INV-A103  Wed 4 Nov 2026  £1,610.00  — queried; expected amount was £1,450.00 (variance £160.00)
+
+Please summarise results and queue a review email for the finance manager.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">RECONCILIATION RUN — Fri 6 Nov 2026 bank feed
+Processed by agent: Mon 9 Nov 2026
+System: Xero
+
+RESULTS
+Feed items loaded:      45
+Auto-matched:           42
+Unmatched (held):        3
+
+AUTO-MATCH SUMMARY
+42 transactions matched to posted bills and carer expense receipts in Xero. No action required on these items.
+
+UNMATCHED ITEMS REQUIRING REVIEW
+
+1. INV-A101  dated Mon 2 Nov 2026  £342.80
+   Reason: No PO reference on invoice — Xero cannot confirm purchase authorisation. Awaiting your finance manager to supply or waive the PO reference before the payment line can be matched.
+
+2. INV-A102  dated Tue 3 Nov 2026  £218.40
+   Reason: Delivery note not received. Xero match held pending goods-received confirmation from your operations team.
+
+3. INV-A103  dated Wed 4 Nov 2026  £1,610.00
+   Reason: Invoice total exceeds expected amount. Expected £1,450.00; variance is £160.00. Held in Xero pending supplier credit note or approval to pay full amount.
+
+TOTALS FOR AWARENESS
+Total invoiced across three held items:  £2,171.20
+Total if INV-A103 corrected to expected: £2,011.20
+
+NEXT STEP
+Review email queued for approval in the Outlook approval queue — addressed to your finance manager, summarising the three unmatched items and requesting sign-off decisions before close of business Mon 9 Nov 2026.</div></div>
     </div>
   </div>
 </details>
 <details>
-  <summary><span class="score">#6</span> Duty 8: Responding to finance queries from colleagues and suppliers. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#4</span> Duty 5: Investigating payment discrepancies and following up outstanding invoices. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads the shared finance inbox, pulls the relevant Xero records, and drafts replies via the M365 approval queue for release.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent identifies discrepancies from Xero reports, drafts query or chaser emails to suppliers/customers via the approval queue, and logs outcomes.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Florence Wyndham &lt;f.wyndham@brookfield-lodge.example.co.uk&gt;
-To: finance@londonparamountcare.example.co.uk
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Xero aged-debt report run today, Mon 9 Nov 2026. Customer invoice outstanding:
+
+  Invoice ref: LPC-OUT-0847
+  Customer: Harrow Council Adult Social Care commissioning team
+  Contact on file: Nathan Merriweather (commissioning manager)
+  Email on file: n.merriweather@harrowcouncil.example.co.uk
+  Invoice date: Mon 2 Nov 2026
+  Due date: Thu 5 Nov 2026 (30-day net from issue, early payment terms applied)
+  Amount outstanding: £1,610.00
+  Status in Xero: Awaiting payment — now 4 days overdue
+
+Please draft a polite chaser email to Harrow Council, queue it for approval, and schedule a follow-up reminder if no response by Thu 12 Nov 2026.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DISCREPANCY CHECK — Mon 9 Nov 2026
+
+Invoice LPC-OUT-0847 confirmed in Xero as awaiting payment. Amount £1,610.00. Due date was Thu 5 Nov 2026. Now 4 days overdue. No part-payment or remittance recorded in Xero against this invoice.
+
+ACTION 1 — CHASER EMAIL DRAFTED
+To: n.merriweather@harrowcouncil.example.co.uk
+Subject: Overdue Invoice LPC-OUT-0847 — London Paramount Care
+
+Dear Nathan,
+
+I hope this message finds you well. Our records show that invoice LPC-OUT-0847, dated Mon 2 Nov 2026 and totalling £1,610.00, fell due on Thu 5 Nov 2026 and remains outstanding. Could you please confirm receipt and advise on the expected payment date? If you require a copy of the invoice or have any queries, please do not hesitate to contact our accounts team.
+
+Kind regards,
+London Paramount Care
+
+Queued for approval in the Outlook approval queue — awaiting sign-off from your finance manager before sending.
+
+ACTION 2 — XERO NOTE LOGGED
+Activity note posted to Xero against LPC-OUT-0847: Chaser email drafted Mon 9 Nov 2026. Queued for approval. Awaiting payment of £1,610.00.
+
+ACTION 3 — FOLLOW-UP REMINDER SCHEDULED
+If no payment or response recorded in Xero by Thu 12 Nov 2026, agent will escalate with a second chaser and flag to your finance manager for review.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#5</span> Duty 6: Maintaining accurate financial records. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent ensures all transactions are posted, categorised correctly, and that audit trails in Xero are complete and up to date.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly Xero completeness check request — Monday 9 Nov 2026
+
+Please run the end-of-week audit for the period Mon 2 Nov 2026 to Fri 6 Nov 2026.
+Check all bank transactions in the London Paramount Care Xero account are posted,
+categorised, and reconciled. Flag anything sitting as uncategorised or unreconciled.
+
+Bank feed imported automatically from the connected current account.
+One transaction flagged internally as needing a nominal review:
+
+Date: Thu 5 Nov 2026
+Reference: BACS-7741
+Payee: Elsie Fairbrother Medical Supplies
+Description on bank feed: BACS CREDIT — currently sitting as Uncategorised Expense
+Suggested correct nominal: 480 — Care Consumables and Medical Supplies
+VAT treatment: Exempt (care sector)
+
+Please recode, update the audit trail note, and confirm the ledger is clean for the week.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">COMPLETENESS CHECK — WEEK OF MON 2 NOV 2026 TO FRI 6 NOV 2026
+Run date: Mon 9 Nov 2026
+System: Xero (London Paramount Care)
+
+TRANSACTION RECODE
+
+Transaction reference: BACS-7741
+Payee: Elsie Fairbrother Medical Supplies
+Date on ledger: Thu 5 Nov 2026
+Previous nominal: Uncategorised Expense
+Recoded to: Nominal 480 — Care Consumables and Medical Supplies
+VAT treatment updated: Exempt (care sector)
+Audit trail note added in Xero: Recoded Mon 9 Nov 2026 — weekly completeness check identified incorrect nominal; corrected to 480 per finance team instruction.
+Status: Posted to Xero — ledger entry updated and reconciled.
+
+WEEK SUMMARY
+All other transactions for Mon 2 Nov 2026 to Fri 6 Nov 2026 are posted, categorised, and reconciled.
+No further uncategorised or unreconciled items found.
+Ledger is clean. No action required from your accounts team beyond reviewing this note.
+
+ACTION REQUIRED
+Your finance manager should review and confirm the recode before close of business Mon 9 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 7: Supporting month-end procedures and general finance administration. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Expanded into concrete sub-tasks; majority are handled by the agent end-to-end.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Today is Mon 30 Nov 2026. Please run the month-end close for October 2026 in Xero.
+
+Steps required:
+1. Pull the aged-debt report for all outstanding client invoices as at 31 Oct 2026.
+2. Compile a summary of all journals posted in October 2026 (accruals, prepayments, payroll journals).
+3. Bundle the aged-debt report and journal summary into a single month-end pack and email it to the finance controller for review.
+4. Once the controller confirms approval, lock the October 2026 period in Xero so no further postings can be made.
+
+Approval contact: your finance controller (internal — do not email an external address).
+Note: No sterling figures to be included; descriptive summaries only.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">MONTH-END CLOSE — OCTOBER 2026
+Run date: Mon 30 Nov 2026
+System: Xero
+
+STEP 1 — AGED-DEBT REPORT
+Pulled aged-debt report from Xero as at 31 Oct 2026. Report lists all outstanding client invoices by debtor, age bracket (current, 30, 60, 90+ days), and status. No sterling figures included per instruction. Report exported to Excel and saved as October-2026-Aged-Debt.xlsx.
+
+STEP 2 — JOURNAL SUMMARY
+Compiled October 2026 journal log from Xero covering: accruals journals (care staffing costs), prepayment release journals (insurance and software licences), and payroll journals. Summary exported to Excel as October-2026-Journal-Summary.xlsx.
+
+STEP 3 — MONTH-END PACK EMAILED
+Both files attached to a single email addressed to the finance controller (the shared accounts mailbox). Queued for approval in the Outlook approval queue before sending. Subject line: London Paramount Care — October 2026 Month-End Pack for Review.
+
+STEP 4 — PERIOD LOCK (PENDING CONTROLLER APPROVAL)
+October 2026 period in Xero is NOT yet locked. Agent is monitoring the approval queue. Once the finance controller confirms approval, the agent will lock the October 2026 financial period in Xero automatically and log the lock timestamp. No further action required from your accounts team until confirmation is received.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#7</span> Duty 3: Maintaining supplier and customer accounts. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent keeps supplier and customer contact records current in Xero, updates payment terms, and flags stale or duplicate accounts for review.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: s.whitlock@hartwell-supplies.example.co.uk
+To: the AP inbox
 Date: Mon 9 Nov 2026
-Subject: Petty cash claim - still not reimbursed
+Subject: Updated banking details — Hartwell Care Supplies Ltd
 
-Hi Finance Team,
+Dear London Paramount Care accounts team,
 
-I submitted a petty cash claim last Tuesday for cleaning supplies purchased for the communal areas here at Brookfield Lodge. It has now been almost a week and I have not received reimbursement. Could you let me know what is happening with this, please? I need to settle the amount with the member of staff who covered the cost out of pocket and they are chasing me for it.
+Please note that Hartwell Care Supplies Ltd has changed its banking provider with effect from Mon 9 Nov 2026. Our new bank details are enclosed in the attached secure PDF. Our supplier reference in your system is SUPP-0084.
 
-Thanks,
+Could you please update your records at your earliest convenience and confirm receipt? Our payment terms remain 30 days net.
+
+Regards,
+Sebastian Whitlock
+Accounts, Hartwell Care Supplies Ltd</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ACTION LOG — Mon 9 Nov 2026 — London Paramount Care
+
+SUPPLIER RECORD UPDATE
+Supplier: Hartwell Care Supplies Ltd
+Xero supplier reference: SUPP-0084
+Action: Bank details updated in Xero supplier contact record. New sort code and account number on file (masked). Payment terms confirmed as 30 days net — no change required.
+Updated in Xero: Mon 9 Nov 2026.
+
+CHANGE FLAG — CONTROLLER REVIEW REQUIRED
+A banking detail change was received by email from s.whitlock@hartwell-supplies.example.co.uk on Mon 9 Nov 2026 for supplier SUPP-0084 (Hartwell Care Supplies Ltd). This is a sensitive update. Your finance manager should verify the change directly with the supplier before any payment is released against the new details.
+
+CONFIRMATION EMAIL — QUEUED FOR APPROVAL
+To: s.whitlock@hartwell-supplies.example.co.uk
+Subject: Re: Updated banking details — Hartwell Care Supplies Ltd
+Body: Thank you for letting us know. We have updated your banking details in our records with effect from Mon 9 Nov 2026 and can confirm payment terms remain 30 days net. Please do not hesitate to contact our accounts team if you have any queries.
+Regards, London Paramount Care
+Status: Queued for approval in the Outlook approval queue — do not send until your finance manager confirms the bank detail verification is complete.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 8: Responding to finance queries from colleagues and suppliers. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads queries from the shared inbox, pulls the relevant Xero record, drafts a response, and queues it for release via the M365 approval queue.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: f.wyndham@northwingresidence.example.co.uk
+To: the AP inbox
+Date: Mon 9 Nov 2026, 09:14
+Subject: Petty Cash Reimbursement - Still Not Received
+
+Hi,
+
+I submitted a petty cash reimbursement request last Tuesday (Tue 3 Nov 2026) for care-home supplies purchased at short notice. I was told to expect payment within a few working days but nothing has appeared yet.
+
+Could someone please check the status and let me know when I can expect this to come through? The delay is causing difficulty for the home&#x27;s day-to-day supply budget.
+
+Many thanks,
 Florence Wyndham
-Care Home Manager, Brookfield Lodge</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED — Mon 9 Nov 2026
-Sender: Florence Wyndham, Brookfield Lodge
-Subject: Petty cash claim submitted Tue 3 Nov 2026 — reimbursement outstanding
+Manager, North Wing Residence</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">STEP 1 — QUERY IDENTIFICATION
+Sender: Florence Wyndham (f.wyndham@northwingresidence.example.co.uk)
+Query type: Petty cash reimbursement status
+Submission date cited: Tue 3 Nov 2026
 
-XERO CHECK
-Searched Xero for petty cash claims linked to Brookfield Lodge submitted on Tue 3 Nov 2026.
-Record found: Petty Cash Claim PC-0847 — cleaning supplies, Brookfield Lodge communal areas.
-Status in Xero: Awaiting Approval. Claim has not yet been authorised by the approvals queue and no payment has been processed.
+STEP 2 — XERO RECORD CHECK
+Searched Xero (London Paramount Care account) for a petty cash reimbursement linked to North Wing Residence submitted on Tue 3 Nov 2026.
+Result: Reimbursement claim found — recorded as a draft spend money transaction dated Tue 3 Nov 2026, currently awaiting internal authorisation. No payment has been issued yet.
 
-ACTION TAKEN
-Draft reply composed and queued for approval in the Outlook approval queue.
-
-EMAIL DRAFT — awaiting release
-To: f.wyndham@brookfield-lodge.example.co.uk
-Subject: RE: Petty cash claim - still not reimbursed
+STEP 3 — EMAIL DRAFT
+To: f.wyndham@northwingresidence.example.co.uk
+Subject: Re: Petty Cash Reimbursement - Still Not Received
 
 Dear Florence,
 
-Thank you for getting in touch. We have checked our records and can confirm that your petty cash claim (ref PC-0847), submitted on Tue 3 Nov 2026 for cleaning supplies at Brookfield Lodge, is currently awaiting internal approval. Once authorised, reimbursement will be processed promptly. We will keep you updated.
+Thank you for getting in touch. We have checked our records in Xero and can confirm your petty cash reimbursement request, submitted on Tue 3 Nov 2026, has been received and is currently pending internal authorisation.
+
+Once approved, payment will be processed promptly. We anticipate this will be completed no later than Wed 11 Nov 2026.
+
+We apologise for any inconvenience caused and will update you as soon as the payment has been released.
 
 Kind regards,
-London Paramount Care Finance Team</div></div>
-    </div>
-  </div>
-</details>
-<details>
-  <summary><span class="score">#7</span> Duty 1: Processing supplier invoices and payments. <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
-  <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent posts supplier invoices to Xero and prepares payment runs; client releases payments to bank.</p>
-    <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: n.oakenshaw@carewellsupplies.example.co.uk
-To: accounts@londonparamountcare.co.uk
-Date: Wed 4 Nov 2026
+London Paramount Care Finance Team
 
-Please find attached three invoices for care consumables supplied to London Paramount Care during the week of 2 Nov 2026.
-
-INV-A101 dated Mon 2 Nov 2026 — disposable gloves and aprons, £342.80. Note: our order desk did not capture a PO reference for this order.
-INV-A102 dated Tue 3 Nov 2026 — incontinence pads (bulk), £218.40. Delivery note still in transit; we will forward separately.
-INV-A103 dated Wed 4 Nov 2026 — medication trolleys x2, £1,610.00.
-
-PO reference on file for INV-A103 is LPC-PO-0094, which carried an expected value of £1,450.00.
-
-Please process for payment at your earliest convenience. Our standard terms are 30 days from invoice date.
-Niamh Oakenshaw, Accounts — Carewell Supplies</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">INVOICES RECEIVED FROM CAREWELL SUPPLIES — Wed 4 Nov 2026
-
-INV-A101 | Mon 2 Nov 2026 | £342.80 | Disposable gloves and aprons
-  Posted to Xero as draft bill #INV-A101 — contact: Carewell Supplies
-  FLAG: No PO reference on invoice. Held from payment run pending your finance manager&#x27;s approval of PO match.
-
-INV-A102 | Tue 3 Nov 2026 | £218.40 | Incontinence pads (bulk)
-  Posted to Xero as draft bill #INV-A102 — contact: Carewell Supplies
-  FLAG: No delivery note received. Bill posted but held from payment run until delivery note is confirmed.
-
-INV-A103 | Wed 4 Nov 2026 | £1,610.00 | Medication trolleys x2
-  Posted to Xero as draft bill #INV-A103 — contact: Carewell Supplies, matched to LPC-PO-0094
-  FLAG: Invoice total £1,610.00 exceeds PO expected amount of £1,450.00 — variance of £160.00. Queued for approval before payment release.
-
-PAYMENT RUN SUMMARY (due by Fri 4 Dec 2026 on 30-day terms)
-  Total invoiced:          £2,171.20
-  Cleared for release:     £0.00 — all three bills flagged, awaiting your accounts team sign-off
-  If INV-A103 corrected:   £2,011.20
-
-ACTION REQUIRED: Please review flags above and confirm which bills to release. Approval email queued for approval in the Outlook approval queue.</div></div>
+STEP 4 — QUEUE ACTION
+Queued for approval in the Outlook approval queue. Awaiting release by your finance manager before sending.</div></div>
     </div>
   </div>
 </details>
@@ -458,7 +514,7 @@ ACTION REQUIRED: Please review flags above and confirm which bills to release. A
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
-  [SENDER NAME / EMAIL]
+  Etay Oren · etay@vizaible.com
   <div class="legal-banner foot"><strong>Illustration prepared by Vizaible</strong> from London Paramount Care's public job ad. Not produced by or affiliated with London Paramount Care. All people, suppliers, invoices and figures shown are fictional.</div>
 </footer>
 </body>
