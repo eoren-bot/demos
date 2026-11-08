@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>HAUK Solutions — demo</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #111; background: #fff;
+  max-width: 1100px; margin: 0 auto; padding: 32px 24px;
+}
+header { border-bottom: 1px solid #e3e3e5; padding-bottom: 14px; margin-bottom: 20px; }
+h1 { font-size: 1.55rem; margin: 0 0 4px 0; }
+.subtitle { color: #333; margin: 0 0 6px 0; font-size: 1.02rem; }
+.services { color: #666; font-size: 0.9rem; margin: 6px 0 0 0; }
+.savings {
+  background: #f0f7ef; border-left: 3px solid #3a8a4a;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.92rem; color: #1e4028;
+}
+.savings strong { font-weight: 600; }
+.honest-count {
+  background: #f3f0fb; border-left: 3px solid #6a4ac9;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.95rem; color: #332154;
+}
+.honest-count strong { font-weight: 700; }
+.not-covered-strip {
+  padding: 6px 12px; margin-top: 6px; border-radius: 3px;
+  background: #fde0e0; color: #5a1a1a; font-size: 0.88rem;
+}
+.not-covered-strip strong { font-weight: 600; }
+.hard-integration {
+  color: #7a2d2d; font-weight: 600;
+}
+.meta {
+  font-size: 0.85rem; color: #555; margin-top: 10px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
+}
+.meta span { white-space: nowrap; }
+.meta .pill {
+  background: #eef0f4; padding: 2px 8px; border-radius: 3px;
+}
+.meta .late {
+  background: #fde0e0; color: #5a1a1a; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px;
+}
+h2 { font-size: 1.15rem; margin: 26px 0 8px 0; }
+table.coverage {
+  border-collapse: collapse; width: 100%; font-size: 0.9rem;
+  margin-top: 8px;
+}
+table.coverage th, table.coverage td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid #e8e8ea;
+  vertical-align: top;
+}
+table.coverage th { background: #f6f7f9; font-weight: 600; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+}
+.score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+details {
+  border: 1px solid #e3e3e5; border-radius: 4px;
+  margin: 10px 0; background: #fff;
+}
+details summary {
+  cursor: pointer; padding: 10px 14px; font-weight: 600;
+  list-style: none; display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: '+'; font-weight: 700; color: #777; margin-right: 2px;
+}
+details[open] summary::before { content: '−'; }
+details .body {
+  padding: 10px 14px 16px 14px; border-top: 1px solid #ededf0;
+}
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+}
+.col h3 { font-size: 0.95rem; margin: 0 0 6px 0; color: #222; }
+.block {
+  background: #f6f7f9; border: 1px solid #e3e3e5;
+  padding: 12px 14px; border-radius: 4px; white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.84rem; line-height: 1.5; color: #1a1a1a;
+  overflow-x: auto;
+}
+.sample-tag {
+  background: #fff3cd; border: 1px solid #ffeeba;
+  padding: 2px 6px; border-radius: 3px;
+  font-size: 0.74rem; color: #7a5a00; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.disclaimer {
+  background: #eef4ff; border-left: 4px solid #4a7dcc;
+  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  font-size: 0.9rem; color: #1e3a66;
+}
+footer {
+  margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
+  color: #555; font-size: 0.88rem;
+}
+footer a { color: #1a56b0; text-decoration: none; }
+@media (max-width: 760px) {
+  .columns { grid-template-columns: 1fr; }
+  body { padding: 20px 14px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>HAUK Solutions</h1>
+  <p class="subtitle">Automates bookkeeping and reconciliations so your team focuses on client advisory work.</p>
+  <p class="services">UK employer — HAUK Solutions (role: Accounts Assistant / Senior Bookkeeper (UK)).</p>
+  <p class="honest-count"><strong>Covered: 100%</strong> (agent 67% + your approvals 20% + our assistant 13%)</p>
+  
+  <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
+  <div class="meta"><span class="pill">Systems: Xero, Dext</span>
+    <span class="pill">Accounting: Xero — integration: easy</span></div>
+</header>
+
+<h2>Coverage map — every duty in the ad</h2>
+<table class="coverage">
+  <thead><tr>
+    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+    <th>What the agent does</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Handle bookkeeping, VAT returns and bank reconciliations</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts transactions to Xero, reconciles bank feeds daily, and prepares VAT return workings; statutory VAT submission handed to human-backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Bookkeeping: code and post transactions from bank feeds and Dext receipts into Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent ingests Dext-processed receipts and auto-codes transactions in Xero, flagging ambiguous items for review.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Bank reconciliation: match Xero transactions to bank statement lines</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent runs the Xero reconciliation workflow daily and flags unmatched items for client sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ VAT return preparation and submission</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Agent compiles the VAT figures and report; a qualified remote assistant reviews and presses submit via MTD.</td></tr>
+    <tr><td>2</td><td>Reconcile Accounts payable &amp; Accounts Receivable ledgers along with period-end tasks.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls aged AP/AR reports from Xero, matches supplier statements to ledger balances, and flags discrepancies for review.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Reconcile supplier statements against Xero AP ledger</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent downloads supplier statements from the shared inbox, compares line-by-line to Xero, and drafts supplier query emails for missing invoices.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Reconcile customer balances in Xero AR ledger and chase overdue invoices</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates aged receivables report, allocates cash receipts, and queues chaser emails via the M365 approval queue.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Period-end cleardown of AP/AR control accounts</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent prepares the control account reconciliation schedule; client approves any write-offs or adjustments before period is closed.</td></tr>
+    <tr><td>3</td><td>Post relevant period-ending journals</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent prepares and posts standard period-end journals (accruals, prepayments, depreciation) to Xero, flagging non-standard entries for client approval.</td></tr>
+    <tr><td>4</td><td>Prepare month-end management accounts.</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles P&amp;L, balance sheet, and commentary pack from Xero data; client reviews and signs off before distribution.</td></tr>
+    <tr><td>5</td><td>Work with Xero and Dext.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent operates within Xero and processes Dext documents end-to-end as part of daily bookkeeping workflow.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Process supplier invoices and receipts captured via Dext into Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads Dext-extracted data, posts bills or expense claims to Xero, and matches to purchase orders where present.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Maintain Xero chart of accounts and supplier/customer contacts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent creates or updates supplier and customer records in Xero when new entities appear in the shared inbox.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Review and action Dext items flagged as low-confidence extractions</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent surfaces low-confidence Dext items in a digest email; client reviews and confirms correct coding before posting.</td></tr>
+    <tr><td>6</td><td>Collaborate with UK teams to ensure accuracy and compliance</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine inter-team communication via the M365 approval queue; complex compliance queries escalated to human-backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and send status update emails to UK client managers on open queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts progress emails from shared inbox context and queues them for manager release via M365 approval.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to UK team queries about posted transactions or coding decisions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent pulls transaction details from Xero and drafts factual reply emails for approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate compliance or technical accounting questions requiring professional judgement</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant handles queries that require qualified accounting judgement beyond the agent&#x27;s playbook.</td></tr>
+    <tr><td>7</td><td>Work with a forward-thinking UK accountancy practice that embraces cloud technology</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent is natively cloud-based and integrates with Xero and Dext, fully aligned with the firm&#x27;s technology stack.</td></tr>
+  </tbody>
+</table>
+
+<h2>Worked examples (ranked)</h2>
+<details open>
+  <summary><span class="score">#1</span> Duty 1: Handle bookkeeping, VAT returns and bank reconciliations <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent posts transactions to Xero, reconciles bank feeds daily, and prepares VAT return workings; statutory VAT submission handed to human-backup.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Monday 9 Nov 2026 — morning bank feed task for HAUK Solutions Xero account.
+
+Bank feed pulled at 08:15. 120 items unreconciled as of this morning.
+Dext has 117 receipts/invoices queued and ready to match.
+
+Three supplier bills also need posting:
+  INV-A101 from Ellsworth Supplies, dated Mon 2 Nov 2026, £342.80 — no PO reference on the invoice
+  INV-A102 from Chadwick Print &amp; Stationery, dated Tue 3 Nov 2026, £218.40 — delivery note not yet received
+  INV-A103 from Ravenhill Facilities Group, dated Wed 4 Nov 2026, £1,610.00 — expected amount was £1,450.00
+
+Manager sign-off required on any unmatched items before close of business today, Mon 9 Nov 2026.
+Please email Oscar Ravenhill (o.ravenhill@ravenhillfacilities.example.co.uk) if the INV-A103 discrepancy needs querying.
+Contact for internal review: Florence Chadwick (finance lead).</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">BANK RECONCILIATION — Mon 9 Nov 2026 — HAUK Solutions
+
+RECONCILIATION SUMMARY
+Items in feed: 120
+Matched automatically via Dext receipts: 117
+Unmatched items requiring review: 3
+
+SUPPLIER BILLS POSTED TO XERO
+INV-A101 — Ellsworth Supplies — £342.80 — dated Mon 2 Nov 2026 — Posted to Xero as draft bill #INV-A101. FLAG: no PO reference on invoice; held as draft pending Florence Chadwick approval.
+INV-A102 — Chadwick Print &amp; Stationery — £218.40 — dated Tue 3 Nov 2026 — Posted to Xero as draft bill #INV-A102. FLAG: delivery note not yet received; held as draft.
+INV-A103 — Ravenhill Facilities Group — £1,610.00 — dated Wed 4 Nov 2026 — Posted to Xero as draft bill #INV-A103. FLAG: invoice total exceeds expected amount of £1,450.00 by £160.00. Supplier query email drafted.
+
+TOTAL INVOICED THIS PERIOD: £2,171.20
+TOTAL IF INV-A103 CORRECTED TO EXPECTED: £2,011.20
+
+SUPPLIER QUERY EMAIL — INV-A103 VARIANCE
+Recipient: o.ravenhill@ravenhillfacilities.example.co.uk
+Subject: Invoice INV-A103 — Amount Query
+Body: Dear Oscar, we have received your invoice INV-A103 dated Wed 4 Nov 2026 for £1,610.00. Our records show the expected amount as £1,450.00, a variance of £160.00. Could you please clarify or issue a corrected invoice at your earliest convenience? Kind regards, HAUK Solutions.
+Queued for approval in the Outlook approval queue — awaiting Florence Chadwick sign-off before send.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 3: Post relevant period-ending journals <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares and posts standard period-end journals (accruals, prepayments, depreciation) to Xero, flagging non-standard entries for client approval.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Jessica Driscoll, Finance Manager, HAUK Solutions
+Date: Mon 9 Nov 2026
+
+Please run the October month-end accruals journals. Three recurring items to capture:
+
+1. Employer liability insurance — October portion of the annual premium paid upfront in January. Split evenly across 12 months. Policy runs Jan–Dec 2026.
+
+2. Recruitment platform subscription — billed quarterly in arrears. October is month one of the current quarter. Accrue one-third of the quarterly charge to Accruals.
+
+3. Outsourced payroll bureau fee — October service delivered but invoice not yet received from supplier. Accrue one month&#x27;s standard fee to Accruals.
+
+All three entries should use period-end date 31 Oct 2026. Flag anything non-standard for my approval before the period is locked. Lock date target: Mon 16 Nov 2026.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">HAUK Solutions — October 2026 Month-End Accruals Run
+Processed: Mon 9 Nov 2026 | Period-end date: 31 Oct 2026 | Target lock: Mon 16 Nov 2026
+
+JOURNALS POSTED TO XERO (Draft — pending Jessica Driscoll sign-off)
+
+JNL-OCT-01 | Employer Liability Insurance Prepayment Release
+DR Insurance Expense (P&amp;L) — 1/12 of annual premium
+CR Prepayment Asset (Balance Sheet)
+Status: STANDARD — posted to Xero as draft journal JNL-OCT-01
+
+JNL-OCT-02 | Recruitment Platform Subscription Accrual
+DR Recruitment Expense (P&amp;L) — 1/3 of quarterly fee
+CR Accruals (Balance Sheet)
+Status: STANDARD — posted to Xero as draft journal JNL-OCT-02
+
+JNL-OCT-03 | Outsourced Payroll Bureau Fee Accrual
+DR Payroll Administration Expense (P&amp;L) — one month standard fee
+CR Accruals (Balance Sheet)
+Status: FLAG FOR APPROVAL — no invoice received; amount based on standing instruction only. Confirm before period locks Mon 16 Nov 2026.
+
+ACTION REQUIRED: Jessica Driscoll to review and approve all three draft journals in Xero before Mon 16 Nov 2026. JNL-OCT-03 requires explicit confirmation. Notification queued for approval in the Outlook approval queue.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#3</span> Duty 5: Work with Xero and Dext. <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent operates within Xero and processes Dext documents end-to-end as part of daily bookkeeping workflow.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Dext Notifications &lt;no-reply@dext.com&gt;
+To: bookkeeping@hauксolutions.co.uk
+Date: Mon 9 Nov 2026, 06:14
+
+Overnight Dext queue summary for HAUK Solutions:
+15 new receipts uploaded to your Dext inbox.
+Suppliers include: stationery, software subscriptions, travel, courier services, staff meals, office consumables, and two receipts flagged by Dext pre-check as requiring VAT review.
+
+Please log in to review. Submitting users: Noah Hargreaves, Hannah Barnes, Elliot Sheppard.
+
+Manager on duty for approvals: Eva Stokeley
+Approval email: e.stokeley@hauксolutions.co.uk</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">DEXT-TO-XERO PROCESSING RUN — Mon 9 Nov 2026 — HAUK Solutions
+
+RECEIPTS PROCESSED AUTOMATICALLY: 13 of 15
+Agent reviewed each Dext document, matched supplier, VAT code, and nominal account, then posted directly to Xero.
+All 13 posted to Xero as draft bills — awaiting Eva Stokeley&#x27;s final approval before submission.
+Submitters covered: Noah Hargreaves (5 receipts), Hannah Barnes (4 receipts), Elliot Sheppard (4 receipts).
+
+RECEIPTS FLAGGED — HELD PENDING MANAGER CONFIRMATION: 2 of 15
+
+FLAG 1 — Receipt from Elliot Sheppard, staff meal, supplier receipt unclear whether attendees are wholly business-related. VAT treatment ambiguous: standard-rated vs. entertainment (blocked input tax). Agent has NOT posted to Xero. Awaiting Eva Stokeley&#x27;s instruction on VAT code.
+
+FLAG 2 — Receipt from Noah Hargreaves, online subscription, supplier not VAT-registered per HMRC lookup but receipt shows a VAT line. Possible error on document. Agent has NOT posted to Xero. Requires Eva Stokeley to confirm correct treatment before coding.
+
+ACTION REQUIRED — Eva Stokeley, please confirm VAT treatment for both flagged receipts so the agent can complete coding and post to Xero.
+Notification queued for approval in the Outlook approval queue before sending to e.stokeley@haukesolutions.co.uk.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#4</span> Duty 6: Collaborate with UK teams to ensure accuracy and compliance <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles routine inter-team communication via the M365 approval queue; complex compliance queries escalated to human-backup.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Alice Holbrook &lt;a.holbrook@fenwickgroup.example.co.uk&gt;
+To: accounts@hauксolutions.com
+Date: Mon 9 Nov 2026
+Subject: Prepayment coding query — October vs September
+
+Hi,
+
+We&#x27;ve just been reviewing our management accounts and noticed the prepayment
+for our October software licence renewal was coded differently to the same
+item in September. September shows it under Prepayments (Balance Sheet), but
+October appears under Software Subscriptions (P&amp;L). Could you clarify why
+the coding changed and whether October needs correcting?
+
+Thanks,
+Alice Holbrook
+Client Manager, Fenwick Group</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TASK: Respond to prepayment coding query from Alice Holbrook at Fenwick Group.
+
+XERO LOOKUP: Retrieved journal entries for Fenwick Group account — September
+and October prepayment transactions reviewed in Xero.
+
+FINDING: September entry was posted to Prepayments (Balance Sheet) as the
+licence period extended beyond the month end, deferring the cost correctly.
+October entry was posted directly to Software Subscriptions (P&amp;L) because
+the renewal fell entirely within the October period — no deferral required.
+Both postings are consistent with HAUK Solutions&#x27; prepayment policy. No
+correction to the October coding is needed.
+
+COMPLEXITY CHECK: Routine coding explanation — no escalation required.
+
+EMAIL DRAFT — Queued for approval in the Outlook approval queue:
+To: a.holbrook@fenwickgroup.example.co.uk
+Subject: Re: Prepayment coding query — October vs September
+Body: Hi Alice, thank you for raising this. The difference in coding reflects
+the period each charge covers. The September licence renewal extended beyond
+month end, so it was correctly deferred to Prepayments on the Balance Sheet.
+The October renewal fell entirely within that month, so it was expensed
+directly to Software Subscriptions in the P&amp;L — no correction is needed.
+Please do let us know if you have any further questions. Kind regards,
+HAUK Solutions Accounts Team</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#5</span> Duty 7: Work with a forward-thinking UK accountancy practice that embraces cloud technology <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent is natively cloud-based and integrates with Xero and Dext, fully aligned with the firm&#x27;s technology stack.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Rosie Bentley (r.bentley@hartwell-advisory.example.co.uk)
+To: admin@hauksolutions.com
+Date: Mon 9 Nov 2026
+
+Hi HAUK Solutions team,
+
+We have just onboarded a new client and need to get their bookkeeping set up urgently. We use Xero as our primary ledger and Dext for receipt and bill capture. Can you confirm your agent integrates natively with both and can begin pulling through Dext-processed documents into Xero without any manual intervention on our side? We want zero rekeying. Also, can you set up Hartwell Advisory as a contact in your system and log this as an open enquiry so your team can follow up?
+
+Rosie Bentley
+Hartwell Advisory</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">Trigger received: Enquiry email from Rosie Bentley at Hartwell Advisory, Mon 9 Nov 2026.
+
+CONTACT CREATED
+Posted to Xero: New contact record — Hartwell Advisory, primary contact Rosie Bentley, email r.bentley@hartwell-advisory.example.co.uk.
+
+ENQUIRY LOGGED
+Posted to Xero: Draft note attached to Hartwell Advisory contact — enquiry received Mon 9 Nov 2026, subject: Dext-to-Xero native integration confirmation, status: Open, assigned for follow-up by HAUK Solutions team.
+
+INTEGRATION STATUS CONFIRMED
+Agent verified: Live Dext-to-Xero pipeline active. Dext-processed documents publish directly to Xero as draft bills or transactions with no manual rekeying required. No third-party bridging tool needed.
+
+EMAIL DRAFT PREPARED
+Queued for approval in the Outlook approval queue — reply to Rosie Bentley confirming HAUK Solutions agent integrates natively with both Dext and Xero, that Hartwell Advisory has been created as a contact in Xero, and that a member of the HAUK Solutions team will follow up by Wed 11 Nov 2026.
+
+ACTION REQUIRED
+Please approve or amend the queued reply before it is sent.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 4: Prepare month-end management accounts. <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent compiles P&amp;L, balance sheet, and commentary pack from Xero data; client reviews and signs off before distribution.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Client: Isla Grainger (i.grainger@wyndhamretail.example.co.uk)
+Period: October 2026 (month-end close)
+Accounting system: Xero — HAUK Solutions access confirmed
+Pack required: Management accounts — P&amp;L, balance sheet, commentary
+Prior period for variance: September 2026
+Client manager for approval: George Kenworthy (internal, HAUK Solutions)
+Distribution deadline: Wed 11 Nov 2026
+Notes: Isla has requested period-on-period commentary highlighting any notable cost or revenue movements. All October transactions confirmed posted in Xero by Fri 6 Nov 2026. No adjusting journals pending.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TASK: Month-end management accounts — October 2026 for Isla Grainger / Wyndham Retail
+
+STEP 1 — TRIAL BALANCE PULL
+Retrieved October 2026 trial balance from Xero (HAUK Solutions client ledger: Wyndham Retail). All accounts confirmed balanced. No unreconciled items flagged.
+
+STEP 2 — PACK COMPILED
+Generated management accounts pack containing:
+  - Profit and Loss: October 2026 actuals vs September 2026 actuals with period-on-period variance columns
+  - Balance Sheet: as at 31 Oct 2026
+  - Commentary: narrative notes on material movements identified between periods, drawn from Xero transaction detail
+
+STEP 3 — APPROVAL ROUTING
+Pack queued for approval in the Outlook approval queue — assigned to George Kenworthy (HAUK Solutions client manager) for review and sign-off before distribution.
+Approval required by: Tue 10 Nov 2026 to meet distribution deadline of Wed 11 Nov 2026.
+
+STEP 4 — PENDING APPROVAL: DISTRIBUTION EMAIL DRAFT
+To: i.grainger@wyndhamretail.example.co.uk
+Subject: Wyndham Retail — Management Accounts, October 2026
+Body: Please find attached your management accounts pack for October 2026, prepared by HAUK Solutions. Do not hesitate to contact us if you have any queries.
+Status: Queued for approval in the Outlook approval queue — will not send until George Kenworthy approves.</div></div>
+    </div>
+  </div>
+</details>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<footer>
+  Questions, or want a working version for your own inbox / timesheets / invoices?
+  [SENDER NAME / EMAIL]
+</footer>
+</body>
+</html>
