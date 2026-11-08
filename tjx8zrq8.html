@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from StructSpectrum Ltd's public job ad. Not produced by or affiliated with StructSpectrum Ltd. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Sales and Bookings Coordinator ad, run by an agent</p>
   <h1>StructSpectrum Ltd</h1>
+  <p class="top-sub">Ad posted 11 Oct 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">82%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">18%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">0%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your accounting system. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=StructSpectrum%20Ltd%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates enquiry replies, quotes, and follow-ups so the coordinator wins more jobs faster.</p>
   <p class="services">UK structural-engineering consultancy. Calculations, design and reports for homeowners, builders, architects and surveyors — fully remote, growing fast, small-business scale.</p>
   <p class="honest-count"><strong>Covered: 100%</strong> (agent 82% + our assistant 18%)</p>
@@ -133,29 +196,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <p class="savings"><strong>What this would save:</strong> likely 4–6 hours a week — rough upper-bound only; actual savings depend on enquiry volume. Method: ~5 minutes to review each pre-drafted quote / follow-up / job record vs ~10–20 minutes end-to-end to triage an enquiry, draft a quote, chase missing details, send a follow-up, and update the job record, across roughly 20–40 enquiries a week.</p>
   
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Reply to client enquiries from various sources</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors shared inbox across all channels, drafts fast personalised replies, and queues them for one-click release.</td></tr>
-    <tr><td>2</td><td>Prepare and send quotes for standard jobs</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls job details from the enquiry, populates a standard quote template, calculates the fee, and queues the quote email for coordinator sign-off before dispatch.</td></tr>
-    <tr><td>3</td><td>Send follow-ups and reminders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks quote status, auto-schedules follow-up emails at set intervals, drafts them, and queues for coordinator review before sending.</td></tr>
-    <tr><td>4</td><td>Answer customer questions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles common FAQs (turnaround times, what&#x27;s included, fees) via drafted email replies; complex technical questions are flagged to the area manager before the response is released.</td></tr>
-    <tr><td>5</td><td>Book jobs in</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates a new job record in the scheduling system, assigns it to the relevant engineer, and sends a booking confirmation email through the approval queue.</td></tr>
-    <tr><td>6</td><td>Monitor jobs in progress and keep records updated</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks job status records, flags overdue milestones, and drafts client update emails; truly ambiguous edge cases go to the human backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Flag overdue or stalled jobs and draft client status updates</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent compares job deadlines against today&#x27;s date, identifies overdue items, and drafts a status-update email to the client for coordinator release.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Update job records when milestones are completed</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads incoming engineer completion notes from the shared inbox and updates the corresponding job record fields to reflect current status.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate jobs with unresolved blockers to the area manager</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">When a job is blocked by a client or technical issue the agent can&#x27;t resolve by email, the remote assistant reviews and escalates appropriately.</td></tr>
-    <tr><td>7</td><td>Outreach to new potential clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts and queues outbound prospecting emails to architects and builders from a target list; list building and strategy decisions are handled by the coordinator or human backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and queue personalised outreach emails to architects or builders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent takes a prospect list, drafts tailored introduction emails referencing StructSpectrum&#x27;s services, and queues them for coordinator approval before sending.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Follow up with prospects who haven&#x27;t responded after initial contact</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent tracks outreach sent dates, schedules follow-up sequences, drafts the messages, and queues them for release.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Research and compile new prospect lists from directories or referrals</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">The remote assistant researches trade directories, LinkedIn, and planning portals to build fresh prospect lists the agent can then action.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -445,7 +485,32 @@ Regards, StructSpectrum Ltd</div></div>
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Reply to client enquiries from various sources</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors shared inbox across all channels, drafts fast personalised replies, and queues them for one-click release.</td></tr>
+    <tr><td>2</td><td>Prepare and send quotes for standard jobs</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls job details from the enquiry, populates a standard quote template, calculates the fee, and queues the quote email for coordinator sign-off before dispatch.</td></tr>
+    <tr><td>3</td><td>Send follow-ups and reminders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks quote status, auto-schedules follow-up emails at set intervals, drafts them, and queues for coordinator review before sending.</td></tr>
+    <tr><td>4</td><td>Answer customer questions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles common FAQs (turnaround times, what&#x27;s included, fees) via drafted email replies; complex technical questions are flagged to the area manager before the response is released.</td></tr>
+    <tr><td>5</td><td>Book jobs in</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates a new job record in the scheduling system, assigns it to the relevant engineer, and sends a booking confirmation email through the approval queue.</td></tr>
+    <tr><td>6</td><td>Monitor jobs in progress and keep records updated</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks job status records, flags overdue milestones, and drafts client update emails; truly ambiguous edge cases go to the human backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Flag overdue or stalled jobs and draft client status updates</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent compares job deadlines against today&#x27;s date, identifies overdue items, and drafts a status-update email to the client for coordinator release.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Update job records when milestones are completed</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads incoming engineer completion notes from the shared inbox and updates the corresponding job record fields to reflect current status.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate jobs with unresolved blockers to the area manager</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">When a job is blocked by a client or technical issue the agent can&#x27;t resolve by email, the remote assistant reviews and escalates appropriately.</td></tr>
+    <tr><td>7</td><td>Outreach to new potential clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts and queues outbound prospecting emails to architects and builders from a target list; list building and strategy decisions are handled by the coordinator or human backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and queue personalised outreach emails to architects or builders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent takes a prospect list, drafts tailored introduction emails referencing StructSpectrum&#x27;s services, and queues them for coordinator approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Follow up with prospects who haven&#x27;t responded after initial contact</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent tracks outreach sent dates, schedules follow-up sequences, drafts the messages, and queues them for release.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Research and compile new prospect lists from directories or referrals</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">The remote assistant researches trade directories, LinkedIn, and planning portals to build fresh prospect lists the agent can then action.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
