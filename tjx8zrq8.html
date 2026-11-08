@@ -103,6 +103,14 @@ details .body {
   padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
+.legal-banner {
+  background: #fff8e6; border: 1px solid #e6c768;
+  padding: 10px 14px; border-radius: 4px;
+  font-size: 0.82rem; color: #4a3810; line-height: 1.5;
+}
+.legal-banner.top { margin-bottom: 18px; }
+.legal-banner.foot { margin-top: 14px; }
+.legal-banner strong { font-weight: 700; }
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -115,14 +123,15 @@ footer a { color: #1a56b0; text-decoration: none; }
 </style>
 </head>
 <body>
+<div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from StructSpectrum Ltd's public job ad. Not produced by or affiliated with StructSpectrum Ltd. All people, suppliers, invoices and figures shown are fictional.</div>
 <header>
   <h1>StructSpectrum Ltd</h1>
-  <p class="subtitle">Automates enquiry replies, quotes, and follow-ups so the coordinator wins more bookings faster.</p>
+  <p class="subtitle">Automates enquiry replies, quotes, and follow-ups so the coordinator wins more jobs faster.</p>
   <p class="services">UK structural-engineering consultancy. Calculations, design and reports for homeowners, builders, architects and surveyors — fully remote, growing fast, small-business scale.</p>
-  <p class="honest-count"><strong>Covered: 100%</strong> (agent 89% + our assistant 11%)</p>
+  <p class="honest-count"><strong>Covered: 100%</strong> (agent 82% + our assistant 18%)</p>
   
   <p class="savings"><strong>What this would save:</strong> likely 4–6 hours a week — rough upper-bound only; actual savings depend on enquiry volume. Method: ~5 minutes to review each pre-drafted quote / follow-up / job record vs ~10–20 minutes end-to-end to triage an enquiry, draft a quote, chase missing details, send a follow-up, and update the job record, across roughly 20–40 enquiries a week.</p>
-  <div class="meta"><span class="pill">Systems: AI tools, online systems</span></div>
+  
 </header>
 
 <h2>Coverage map — every duty in the ad</h2>
@@ -132,16 +141,19 @@ footer a { color: #1a56b0; text-decoration: none; }
     <th>What the agent does</th>
   </tr></thead>
   <tbody>
-    <tr><td>1</td><td>Reply to client enquiries from various sources</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors shared inbox (email, web form, etc.), drafts prompt replies to each enquiry, and queues them for one-click human release.</td></tr>
-    <tr><td>2</td><td>Prepare and send quotes for standard jobs</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent populates standard quote templates from enquiry details, calculates pricing for recognised job types, and routes the draft to the coordinator for a single approval click before sending.</td></tr>
-    <tr><td>3</td><td>Send follow-ups and reminders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks outstanding quotes and unanswered enquiries, drafts timed follow-up emails at set intervals, and dispatches them through the M365 approval queue.</td></tr>
-    <tr><td>4</td><td>Answer customer questions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine FAQ-type questions (timelines, deliverables, fees) via draft email through the approval queue; escalates technically complex queries to the coordinator or area manager.</td></tr>
-    <tr><td>5</td><td>Book jobs in</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates job entries in the scheduling/CRM system, assigns reference numbers, sends booking confirmation emails through the approval queue, and updates the shared calendar.</td></tr>
-    <tr><td>6</td><td>Monitor jobs in progress and keep records updated</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks job status, updates CRM records, and flags overdue or stalled jobs; physical file handling or on-site checks fall to human backup.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Track job status and update CRM / schedule records</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads job records, updates status fields, and logs timestamps automatically as milestones are reached.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Flag overdue or stalled jobs and draft chaser communications</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent identifies jobs past expected completion, drafts internal alerts and client-facing status emails for approval.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate complex project issues requiring engineering judgement</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant reviews flagged edge cases and liaises with area managers when the issue needs professional engineering context.</td></tr>
-    <tr><td>7</td><td>Outreach to new potential clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent researches target contacts (builders, architects) from available lists, drafts personalised outbound prospecting emails, and queues them in the M365 approval queue for coordinator sign-off before sending.</td></tr>
+    <tr><td>1</td><td>Reply to client enquiries from various sources</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors shared inbox across all channels, drafts fast personalised replies, and queues them for one-click release.</td></tr>
+    <tr><td>2</td><td>Prepare and send quotes for standard jobs</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls job details from the enquiry, populates a standard quote template, calculates the fee, and queues the quote email for coordinator sign-off before dispatch.</td></tr>
+    <tr><td>3</td><td>Send follow-ups and reminders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks quote status, auto-schedules follow-up emails at set intervals, drafts them, and queues for coordinator review before sending.</td></tr>
+    <tr><td>4</td><td>Answer customer questions</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles common FAQs (turnaround times, what&#x27;s included, fees) via drafted email replies; complex technical questions are flagged to the area manager before the response is released.</td></tr>
+    <tr><td>5</td><td>Book jobs in</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates a new job record in the scheduling system, assigns it to the relevant engineer, and sends a booking confirmation email through the approval queue.</td></tr>
+    <tr><td>6</td><td>Monitor jobs in progress and keep records updated</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks job status records, flags overdue milestones, and drafts client update emails; truly ambiguous edge cases go to the human backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Flag overdue or stalled jobs and draft client status updates</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent compares job deadlines against today&#x27;s date, identifies overdue items, and drafts a status-update email to the client for coordinator release.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Update job records when milestones are completed</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads incoming engineer completion notes from the shared inbox and updates the corresponding job record fields to reflect current status.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate jobs with unresolved blockers to the area manager</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">When a job is blocked by a client or technical issue the agent can&#x27;t resolve by email, the remote assistant reviews and escalates appropriately.</td></tr>
+    <tr><td>7</td><td>Outreach to new potential clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts and queues outbound prospecting emails to architects and builders from a target list; list building and strategy decisions are handled by the coordinator or human backup.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft and queue personalised outreach emails to architects or builders</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent takes a prospect list, drafts tailored introduction emails referencing StructSpectrum&#x27;s services, and queues them for coordinator approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Follow up with prospects who haven&#x27;t responded after initial contact</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent tracks outreach sent dates, schedules follow-up sequences, drafts the messages, and queues them for release.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Research and compile new prospect lists from directories or referrals</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">The remote assistant researches trade directories, LinkedIn, and planning portals to build fresh prospect lists the agent can then action.</td></tr>
   </tbody>
 </table>
 
@@ -149,37 +161,41 @@ footer a { color: #1a56b0; text-decoration: none; }
 <details open>
   <summary><span class="score">#1</span> Duty 1: Reply to client enquiries from various sources <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent monitors shared inbox (email, web form, etc.), drafts prompt replies to each enquiry, and queues them for one-click human release.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent monitors shared inbox across all channels, drafts fast personalised replies, and queues them for one-click release.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Received: Mon 9 Nov 2026, 07:04 am
-Source: Shared inbox — info@structspectrum.co.uk
-From: Noah Bentley &lt;n.bentley@bentleyhomes.example.co.uk&gt;
-Subject: Steel beam calculation for kitchen knock-through
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Received: Mon 9 Nov 2026, 07:04 AM
+Channel: Email — the shared enquiries inbox
+From: n.bentley@homesandplans.example.co.uk
+Subject: Steel beam calculation — kitchen wall removal
 
-Hi,
+Hi there,
 
-I&#x27;m looking to knock through the wall between my kitchen and dining room to create an open-plan space. The wall is around 4 metres wide and I believe it may be load-bearing. I need a structural engineer to carry out the calculations and provide a report I can pass to my builder.
+I&#x27;m planning to knock through the wall between my kitchen and dining room to create an open-plan space. My builder has told me I&#x27;ll need a structural engineer to provide a beam calculation before building control will sign off.
 
-Could you let me know if this is something you can help with, your typical turnaround time, and what information you&#x27;d need from me to get started?
+The wall runs about 3.8 metres and I believe it may be load-bearing. The house is a 1970s semi-detached. Would you be able to help, and how quickly could you turn this around? Happy to send photos and any plans I have.
 
 Thanks,
 Noah Bentley</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">ACTION: Enquiry received at 07:04 on Mon 9 Nov 2026 from Noah Bentley via shared inbox. Agent drafted reply at 07:06 on Mon 9 Nov 2026.
+      <div class="col"><h3>Agent output</h3><div class="block">ENQUIRY DETECTED
+Received: Mon 9 Nov 2026 at 07:04 AM via the shared enquiries inbox
+From: Noah Bentley — n.bentley@homesandplans.example.co.uk
+Type: Structural beam calculation request (kitchen knock-through, load-bearing wall query)
+Action: Reply drafted and queued for coordinator approval
 
-DRAFT EMAIL — queued for approval in the Outlook approval queue.
+DRAFT REPLY — queued for approval in the Outlook approval queue
 
-To: n.bentley@bentleyhomes.example.co.uk
-Subject: Re: Steel beam calculation for kitchen knock-through
+To: n.bentley@homesandplans.example.co.uk
+Subject: Re: Steel beam calculation — kitchen wall removal
 
-Dear Noah,
+Hi Noah,
 
-Thank you for getting in touch with StructSpectrum Ltd. This is exactly the kind of project we handle regularly, so we&#x27;d be happy to help.
+Thank you for getting in touch with StructSpectrum Ltd. Great news — this is exactly the kind of project we handle regularly, so we can certainly help.
 
-For a load-bearing wall removal of approximately 4 metres, we would carry out full structural calculations and produce a stamped engineer&#x27;s report suitable for your builder and building control. Our typical turnaround once we have the information we need is five to seven working days.
+For a 1970s semi-detached with a 3.8-metre span, we would assess whether the wall is load-bearing, calculate the required steel beam size and padstone details, and produce a signed calculation report suitable for building control submission.
 
-To prepare your quote and begin work, we&#x27;d need a few details from you: the property type and approximate age, any existing floor plans or sketches of the wall layout, and confirmation of what sits above the wall (bedroom, bathroom, roof, etc.).
+If you could send across any existing floor plans, photos of the wall from both sides, and a note of what sits above (bedroom, bathroom, or roof), we can review them and get a formal quote back to you promptly. We aim to turn around residential beam calculations within three to five working days of receiving all the information.
 
-Please reply with those details at your convenience and we&#x27;ll come back to you promptly with a formal quote. If you&#x27;d prefer to speak to someone, feel free to call us during office hours.
+Please reply to this email with your documents attached and we will come straight back to you.
 
 Kind regards,
 StructSpectrum Ltd</div></div>
@@ -189,226 +205,242 @@ StructSpectrum Ltd</div></div>
 <details open>
   <summary><span class="score">#2</span> Duty 2: Prepare and send quotes for standard jobs <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent populates standard quote templates from enquiry details, calculates pricing for recognised job types, and routes the draft to the coordinator for a single approval click before sending.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls job details from the enquiry, populates a standard quote template, calculates the fee, and queues the quote email for coordinator sign-off before dispatch.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Enquiry received Mon 9 Nov 2026, 09:14
-From: Willow Ashworth, Ashworth Build Ltd
-Email: w.ashworth@ashworthbuild.example.co.uk
-Phone: 07700 900412
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Enquiry received Mon 9 Nov 2026 via website contact form.
 
-Message: Hi, we&#x27;re doing a kitchen knock-through for a client in Bristol and need a steel beam calc for a standard RSJ. While you&#x27;re at it, the same property has a suspected cracked lintel above the bay window — the client&#x27;s mortgage lender is asking for a full structural survey and written report before they&#x27;ll release funds. Can you send us a quote for both jobs together? Happy to proceed quickly if the price is right.
+From: Rosie Pemberton, R Pemberton Building Services
+Email: r.pemberton@rpembertonbuilding.example.co.uk
+Phone: 07xxx xxxxxx
 
-Job type 1: Single steel beam calc (standard RSJ)
-Job type 2: Structural survey + report (domestic)
-Quote valid until: Fri 20 Nov 2026</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">ENQUIRY MATCHED TO PRICE SCHEDULE — Mon 9 Nov 2026
+Message: Hi, I&#x27;m a builder working on a domestic loft conversion in Bristol for a homeowner client. I need a structural engineer to carry out a full structural survey of the existing roof and party wall, produce a written report, and also calculate a single steel beam (standard RSJ) needed to support the new landing area. Can you provide a quote? Happy to send over drawings if needed. Looking to get started fairly soon.
 
-Contact: Willow Ashworth, Ashworth Build Ltd
-Email: w.ashworth@ashworthbuild.example.co.uk
+Job type flags identified:
+  - Structural survey + report (domestic)
+  - Single steel beam calc (standard RSJ)</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ENQUIRY MATCHED TO STANDARD PRICING — Mon 9 Nov 2026
 
-QUOTE LINES POPULATED FROM STANDARD FEE SCHEDULE
-1 x Single steel beam calc (standard RSJ)     £95.00
-1 x Structural survey + report (domestic)     £195.00
-Subtotal                                      £290.00
-VAT @ 20%                                     £58.00
-TOTAL                                         £348.00
+Client: Rosie Pemberton, R Pemberton Building Services
+Email: r.pemberton@rpembertonbuilding.example.co.uk
+Job: Domestic loft conversion — Bristol
 
-Quote valid until: Fri 20 Nov 2026
-Turnaround: standard lead time applies
+FEE CALCULATION (ex. VAT, from published price list):
+  1 x Single steel beam calc (standard RSJ)     = £95.00
+  1 x Structural survey + report (domestic)     = £195.00
+  Subtotal                                      = £290.00
+  VAT @ 20%                                     = £58.00
+  TOTAL                                         = £348.00
 
-DRAFT EMAIL PREPARED — to Willow Ashworth
-Subject: StructSpectrum Ltd — Quote for Steel Beam Calc and Structural Survey
-Body: Dear Willow, please find attached our quote of £348.00 (inc. VAT) covering a single steel beam calculation and a structural survey with written report for the Bristol property. This quote is valid until Fri 20 Nov 2026. To proceed, please reply confirming acceptance and we will schedule both jobs promptly. Kind regards, StructSpectrum Ltd.
+Quote valid for 30 days from date of issue. Turnaround 5 working days from instruction.
 
-ACTION REQUIRED — Queued for approval in the Outlook approval queue. Please click Approve to send, or Reject to edit before sending.</div></div>
+DRAFT EMAIL — queued for approval in the Outlook approval queue before dispatch.
+
+To: r.pemberton@rpembertonbuilding.example.co.uk
+Subject: StructSpectrum Ltd — Structural Engineering Quote, Loft Conversion Bristol
+
+Dear Rosie, thank you for your enquiry received Mon 9 Nov 2026. Please find attached our quote for the structural survey and report together with the RSJ beam calculation for your loft conversion project. The total fee is £348.00 including VAT. We would be happy to review any drawings you can share. Please do not hesitate to contact us if you have any questions.
+
+Yours sincerely,
+StructSpectrum Ltd</div></div>
     </div>
   </div>
 </details>
 <details open>
   <summary><span class="score">#3</span> Duty 3: Send follow-ups and reminders <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent tracks outstanding quotes and unanswered enquiries, drafts timed follow-up emails at set intervals, and dispatches them through the M365 approval queue.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent tracks quote status, auto-schedules follow-up emails at set intervals, drafts them, and queues for coordinator review before sending.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Quote tracker alert — no reply received after 3 days.
-
-Quote reference: SS-Q-0847
-Client: Oscar Fenwick
-Client email: o.fenwick@fenwick.example.co.uk
-Enquiry type: Steel beam calculations for kitchen knock-through (load-bearing wall removal)
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Quote reference: SS-2026-418
+Client: Isaac Galloway
+Client email: i.galloway@gallowaybuilds.example.co.uk
+Scope: Steel beam calculations and specification for a single-storey rear kitchen extension, including padstone sizing and existing wall load assessment.
 Quote sent: Fri 6 Nov 2026
-Quote status: Sent — awaiting acceptance
-Follow-up rule: Draft chaser at 3 business days if no response
+Quote status: No response received
+Follow-up rule: Chase at 3 calendar days if no reply
 Today: Mon 9 Nov 2026
-Next scheduled follow-up if still no reply: Thu 12 Nov 2026
-Log follow-up attempt in schedule: Yes</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">FOLLOW-UP TRIGGER CONFIRMED
+Coordinator instruction: Draft a friendly reminder referencing the original scope and queue for review before sending.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">QUOTE TRACKER UPDATE
 
-Quote SS-Q-0847 sent Fri 6 Nov 2026 — no reply received as of Mon 9 Nov 2026 (3 business days elapsed). Follow-up chaser drafted and queued.
+Quote SS-2026-418 for Isaac Galloway has had no response since Fri 6 Nov 2026. Three-day follow-up threshold reached today, Mon 9 Nov 2026. Draft chaser prepared and queued below.
 
-EMAIL DRAFT — QUEUED FOR APPROVAL IN THE OUTLOOK APPROVAL QUEUE
+ACTION TAKEN
+Email draft queued for approval in the Outlook approval queue. Release with one click to send via our shared accounts mailbox.
 
-To: o.fenwick@fenwick.example.co.uk
-Subject: Following up — Quote SS-Q-0847, Kitchen Beam Calculations
+EMAIL DRAFT
 
-Dear Oscar,
+To: i.galloway@gallowaybuilds.example.co.uk
+Subject: Following up — Quote SS-2026-418, Steel Beam Calcs (Kitchen Extension)
 
-I hope you are well. I am writing to follow up on the quote we sent you on Fri 6 Nov 2026 for steel beam calculations in connection with your kitchen knock-through. We wanted to check whether you had any questions or needed any further information before making a decision.
+Dear Isaac,
 
-Please do not hesitate to get in touch — we are happy to talk through the scope or timescales.
+I hope you are well. I wanted to follow up on the quote we sent on Fri 6 Nov 2026 covering steel beam calculations and specification for your single-storey rear kitchen extension, including padstone sizing and existing wall load assessment.
+
+If you have any questions about the scope or would like to discuss anything before proceeding, please do not hesitate to get in touch. We are happy to talk through the detail at a time that suits you.
+
+We look forward to hearing from you.
 
 Kind regards,
 StructSpectrum Ltd
 
-SCHEDULE LOG UPDATED
-
-Quote SS-Q-0847 — follow-up attempt recorded: Mon 9 Nov 2026. If no reply received, next chaser due: Thu 12 Nov 2026.</div></div>
+NEXT AUTOMATED STEP
+If no reply is received by Thu 12 Nov 2026, a second follow-up will be drafted and re-queued for coordinator review.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#4</span> Duty 5: Book jobs in <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent creates job entries in the scheduling/CRM system, assigns reference numbers, sends booking confirmation emails through the approval queue, and updates the shared calendar.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent creates a new job record in the scheduling system, assigns it to the relevant engineer, and sends a booking confirmation email through the approval queue.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Client: Mia Cartwright
-Contact email: m.cartwright@holbrookbuilds.example.co.uk
-Quote accepted: Tue 3 Nov 2026
-Job type: Steel beam calculations for kitchen knock-through (load-bearing wall removal)
-Property address: 14 Ferndale Close, Bristol, BS6 7PT
-Site visit required: No — client has supplied existing drawings
-Calculations to be delivered by: Wed 18 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: d.yardley@homeowners.example.co.uk
+To: the enquiries inbox
+Date: Mon 9 Nov 2026
+
+Hi, just wanted to confirm I am happy to go ahead with the quote you sent for the steel beam calculations for my kitchen knock-through. Please book me in as soon as possible. I would like the report by 27 November if that is achievable. Looking forward to hearing from you.
+
+Daisy Yardley
+14 Bramble Close, Sheffield
+
+Quote reference: SS-2026-418
+Scope: Steel beam design calculations — single-storey kitchen knock-through
+Agreed deadline requested: Fri 27 Nov 2026
+Engineer availability checked: James Chadwick — slot open from Wed 11 Nov 2026</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ACTION TAKEN — BOOK JOB FROM ACCEPTED QUOTE
+
+Quote SS-2026-418 accepted by Daisy Yardley on Mon 9 Nov 2026.
+
+JOB RECORD CREATED
+Job reference: JOB-2026-418
+Client: Daisy Yardley, 14 Bramble Close, Sheffield
+Scope: Steel beam design calculations — single-storey kitchen knock-through
 Assigned engineer: James Chadwick
-Any notes: Client confirmed acceptance by email. Drawings attached to original enquiry thread.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">JOB BOOKING — StructSpectrum Ltd CRM
+Start date: Wed 11 Nov 2026
+Deadline: Fri 27 Nov 2026
+Status: Booked
 
-Booking reference assigned: SS-2026-0847
-Client: Mia Cartwright
-Job type: Steel beam calculations — load-bearing wall removal (kitchen knock-through)
-Property: 14 Ferndale Close, Bristol, BS6 7PT
-Quote accepted: Tue 3 Nov 2026
-Booked on: Mon 9 Nov 2026
-Assigned engineer: James Chadwick
-Calculations due: Wed 18 Nov 2026
+CONFIRMATION EMAIL — Queued for approval in the Outlook approval queue
 
-CRM ACTIONS TAKEN
-Job entry SS-2026-0847 created in the online CRM system with status: Active.
-James Chadwick&#x27;s shared calendar updated — delivery target blocked for Wed 18 Nov 2026.
-Drawings noted as received; no site visit scheduled.
+To: d.yardley@homeowners.example.co.uk
+Subject: Your Booking Confirmation — Steel Beam Calculations (JOB-2026-418)
 
-EMAIL ACTION
-Draft confirmation prepared addressed to Mia Cartwright (m.cartwright@holbrookbuilds.example.co.uk), confirming booking reference SS-2026-0847, assigned engineer, and Wed 18 Nov 2026 delivery date, with next steps on drawing review. Queued for approval in the Outlook approval queue.</div></div>
+Dear Daisy,
+
+Thank you for confirming. We are pleased to book you in for your steel beam design calculations. James Chadwick has been assigned to your job, with work beginning Wed 11 Nov 2026 and your report targeted for delivery by Fri 27 Nov 2026.
+
+Please do not hesitate to get in touch if you have any questions.
+
+StructSpectrum Ltd</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#5</span> Duty 7: Outreach to new potential clients <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent researches target contacts (builders, architects) from available lists, drafts personalised outbound prospecting emails, and queues them in the M365 approval queue for coordinator sign-off before sending.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts and queues outbound prospecting emails to architects and builders from a target list; list building and strategy decisions are handled by the coordinator or human backup.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Outreach task — Monday 9 Nov 2026
-Coordinator: Niamh Norcott
-Target segment: Local architects — residential and mixed-use practices
-Source list: 20 contacts from regional RIBA directory export, tagged &quot;architect — residential focus&quot;
-Goal: Introduce StructSpectrum Ltd as a preferred structural-engineering partner for their domestic projects (extensions, loft conversions, beam calcs, surveys)
-Tone: Friendly, professional, brief
-Personalisation fields available per contact: first name, practice name, recent project type noted in directory (e.g. two-storey extensions, loft schemes)
-Sending schedule: Stagger across Tue 10 Nov to Fri 13 Nov 2026, 5 emails per day
-Sign-off name on all emails: Niamh Norcott, StructSpectrum Ltd
-Two sample contacts from list:
-  - Daniel Wyndham, Wyndham Architecture, noted project type: two-storey rear extensions
-  - Lily Lockhart, Lockhart Studio, noted project type: loft conversion schemes</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">TASK SUMMARY — Mon 9 Nov 2026
-Agent: StructSpectrum Ltd outreach automation
-Coordinator: Niamh Norcott
-Action: 20 personalised prospecting emails drafted from RIBA directory list and staged in the Outlook approval queue for batch sign-off before staggered sending Tue 10 Nov to Fri 13 Nov 2026 (5 per day).
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Outreach batch — local architects, Mon 9 Nov 2026
 
-SAMPLE DRAFT 1 OF 20
-To: d.wyndham@wyndhamamarchitecture.example.co.uk
-Subject: Structural engineering support for your extension projects — StructSpectrum Ltd
-Body: Hi Daniel, I noticed Wyndham Architecture has a strong focus on two-storey rear extensions and wanted to reach out. At StructSpectrum Ltd we provide fast, reliable structural calculations — steel beam sizing, load calcs, and calcs packs — tailored to exactly this kind of project. If you ever need a structural engineer you can rely on to turn work around cleanly, we&#x27;d love to have a conversation. Best regards, Niamh Norcott, StructSpectrum Ltd
-Status: Queued for approval in the Outlook approval queue — scheduled to send Tue 10 Nov 2026
+Remote assistant has compiled the target list (50 contacts). Three sample contacts for review before full batch release:
 
-SAMPLE DRAFT 2 OF 20
-To: l.lockhart@lockhardtstudio.example.co.uk
-Subject: Loft conversion structural calcs — how StructSpectrum Ltd can support Lockhart Studio
-Body: Hi Lily, I see Lockhart Studio works regularly on loft conversion schemes — a great fit with what we do at StructSpectrum Ltd. We handle structural surveys, load calcs, and full calcs packs for loft projects and can work to tight architect timelines. Happy to chat if you&#x27;d like a reliable structural-engineering partner on your next scheme. Best regards, Niamh Norcott, StructSpectrum Ltd
-Status: Queued for approval in the Outlook approval queue — scheduled to send Tue 10 Nov 2026
+1. Daniel Wyndham, Wyndham Architecture Ltd — d.wyndham@wyndhamarchitecture.example.co.uk — focus: residential extensions and loft conversions
+2. Lucas Merriweather, Merriweather Design Studio — l.merriweather@merriweatherdesign.example.co.uk — focus: domestic alterations and new builds
+3. Niamh Norcott, Norcott Architectural Services — n.norcott@norcottarch.example.co.uk — focus: heritage and residential projects
 
-REMAINING 18 DRAFTS: Personalised on the same template using each contact&#x27;s first name, practice name, and noted project type. All queued for approval in the Outlook approval queue. Sending schedule: 5 emails per day, Tue 10 Nov through Fri 13 Nov 2026.
-ACTION REQUIRED: Niamh Norcott to review and approve batch in the Outlook approval queue before Tue 10 Nov 2026.</div></div>
+Please draft a personalised introductory email to each. Tone: professional but approachable. Mention our structural-engineering services, relevant to their project types. Queue all three for approval before release.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">Outreach batch processed — Mon 9 Nov 2026. Three emails drafted and queued.
+
+EMAIL 1 — Queued for approval in the Outlook approval queue
+To: d.wyndham@wyndhamarchitecture.example.co.uk
+Subject: Structural engineering support for your residential extension and loft projects
+Body: Dear Daniel, I hope this finds you well. We are StructSpectrum Ltd, a structural-engineering practice supporting architects across the UK. We specialise in steel beam calculations, loft conversion load assessments, and full calcs packs for two-storey rear extensions — work that maps closely to the residential extension and loft projects your practice handles. If you are ever looking for a reliable structural partner who can turn calculations around promptly and communicate clearly with your clients, we would be glad to have a conversation. Kind regards, StructSpectrum Ltd
+
+EMAIL 2 — Queued for approval in the Outlook approval queue
+To: l.merriweather@merriweatherdesign.example.co.uk
+Subject: Structural engineering calculations for domestic alterations and new builds
+Body: Dear Lucas, We are StructSpectrum Ltd, a structural-engineering practice with broad experience across domestic alterations, knock-throughs, and new-build load assessments. We understand the pace that design studios work at, and we aim to deliver clear, coordinated calculations that fit straight into your project documentation. We would welcome the chance to support Merriweather Design Studio on future projects. Kind regards, StructSpectrum Ltd
+
+EMAIL 3 — Queued for approval in the Outlook approval queue
+To: n.norcott@norcottarch.example.co.uk
+Subject: Structural calculations for heritage and residential projects
+Body: Dear Niamh, We are StructSpectrum Ltd and we work with architects on a range of residential structural briefs, including sensitive heritage settings where careful load assessment and bay-window or facade appraisals are needed. We would love to explore whether there is scope to support Norcott Architectural Services on upcoming projects. Kind regards, StructSpectrum Ltd
+
+STATUS: 3 of 50 contacts queued. Remaining 47 emails will be drafted and queued in sequence once your finance manager confirms approval to proceed with the full batch.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#6</span> Duty 4: Answer customer questions <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles routine FAQ-type questions (timelines, deliverables, fees) via draft email through the approval queue; escalates technically complex queries to the coordinator or area manager.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles common FAQs (turnaround times, what&#x27;s included, fees) via drafted email replies; complex technical questions are flagged to the area manager before the response is released.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Inbound enquiry received Mon 9 Nov 2026 via website contact form.
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Received: Mon 9 Nov 2026, 08:47
+From: a.underhill@greenpinearchitects.example.co.uk
+To: the enquiries inbox
 
-From: Alice Underhill
-Email: a.underhill@example.co.uk
-Subject: How long does a structural report take?
+Hi, I am putting together a planning application for a client who needs a structural report for a two-storey rear extension. Could you let me know exactly what documents I should supply to StructSpectrum Ltd so you can carry out the report and produce the calculations pack? I want to make sure I send everything over in one go to avoid delays. Many thanks, Alice Underhill, Green Pine Architects
 
-Message: Hi, I&#x27;m having a wall removed between my kitchen and dining room and my builder says I need a structural engineer&#x27;s report and calculations before work starts. Could you let me know roughly how long it takes to get the report done and what I&#x27;d need to provide? Also, is there anything I need to do to get started? Thanks, Alice
+FAQ MATCH: &quot;Documents required for structural report / calculations pack&quot;
+Classification: Standard FAQ — no technical complexity flag triggered
+Action: Draft reply from FAQ library and queue for release</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">FAQ MATCH CONFIRMED — standard reply drafted from FAQ library.
+No technical flag triggered. Queued for approval in the Outlook approval queue before release.
 
-No prior correspondence on file. Query type: standard residential FAQ — turnaround times, deliverables, process.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">QUERY CLASSIFICATION: Routine FAQ — residential report turnaround and process. No technical complexity. Drafting standard reply.
+DRAFT EMAIL
 
-ACTION: Draft email queued for approval in the Outlook approval queue.
-
-To: a.underhill@example.co.uk
-From: enquiries@structspectrum.co.uk
-Date: Mon 9 Nov 2026
-Subject: Re: How long does a structural report take?
+To: a.underhill@greenpinearchitects.example.co.uk
+Subject: Documents needed for your structural report — StructSpectrum Ltd
 
 Dear Alice,
 
-Thank you for getting in touch with StructSpectrum Ltd. For a residential knock-through such as yours, our standard turnaround for structural calculations and a written report is five to seven working days from the point we receive all the information we need.
+Thank you for getting in touch. To carry out a structural report and calculations pack for a two-storey rear extension, please supply the following:
 
-To get started, we typically ask for existing floor plans or a rough sketch of the wall to be removed, photos of the wall from both sides, and confirmation of whether the wall is load-bearing or party. If you are unsure, do not worry — we can advise once we review your photos and plans.
+1. Architectural drawings — proposed and existing floor plans, sections, and elevations (PDF preferred).
+2. Site location plan — an OS-based plan showing the plot boundary.
+3. Party wall or boundary information — if the extension adjoins a neighbouring property.
+4. Soil investigation data — any available ground investigation or trial-pit records; if none exist, please advise.
+5. Details of existing structure — photos of the current rear wall, foundations if exposed, and any previous structural reports for the property.
+6. Planning documents — any conditions or structural notes attached to the planning consent so far.
 
-Once we have those details, we will send you a formal quote for approval before any work begins. If you are happy to proceed, simply reply to this email and we will send over our short instruction form.
+Once we receive the above, we will confirm turnaround and next steps promptly.
 
 Kind regards,
-StructSpectrum Ltd
-
-ESCALATION FLAG: None. Query fully handled by standard response. No coordinator referral required.</div></div>
+StructSpectrum Ltd</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#7</span> Duty 6: Monitor jobs in progress and keep records updated <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent tracks job status, updates CRM records, and flags overdue or stalled jobs; physical file handling or on-site checks fall to human backup.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent tracks job status records, flags overdue milestones, and drafts client update emails; truly ambiguous edge cases go to the human backup.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Job ref: SS-2614
-Job type: Loft conversion load calculations
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Job ref: SS-2047
 Client: Harry Marston
-Client email: h.marston@harrymarston.example.co.uk
-Assigned engineer: George Oakenshaw
-Job booked: Fri 30 Oct 2026
-Target delivery: Fri 13 Nov 2026
-Current status in CRM: In Progress
-Last status update recorded: Fri 30 Oct 2026 (booking date — no further updates logged)
-Days since last update: 10 days
-Coordinator: Charlotte Hartwell
-Coordinator email: internal</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">JOB MONITOR ALERT — Mon 9 Nov 2026
+Client email: h.marston@marston-builds.example.co.uk
+Job type: Structural report — loft conversion load calcs, semi-detached property
+Agreed delivery date: Thu 5 Nov 2026
+Today: Mon 9 Nov 2026
+Current status: In progress — calculations drafted, report write-up not yet completed
+Reason for delay: Engineer workload backlog; report write-up pushed back
+Revised ETA agreed internally: Wed 11 Nov 2026
+Any client contact since missed deadline: None</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">JOB STATUS FLAG
 
-Job ref SS-2614 (loft conversion load calcs, client Harry Marston) was booked on Fri 30 Oct 2026 and assigned to George Oakenshaw. No status update has been logged in the CRM in the 10 days since booking. Target delivery is Fri 13 Nov 2026 — four working days from today.
+Job ref SS-2047 is two working days overdue. Agreed delivery was Thu 5 Nov 2026; today is Mon 9 Nov 2026. No client contact has been made since the missed deadline. Revised internal ETA is Wed 11 Nov 2026.
 
-ACTION 1 — CRM UPDATE
-Flagged job SS-2614 in the online CRM: status note added reading &quot;Stalled review triggered Mon 9 Nov 2026 — no progress update received since booking. Coordinator Charlotte Hartwell notified.&quot;
+ACTION TAKEN — JOB RECORD
+Job record SS-2047 updated: status changed from In Progress to Overdue. Revised delivery date logged as Wed 11 Nov 2026. Delay reason recorded as engineer workload backlog.
 
-ACTION 2 — INTERNAL FLAG TO COORDINATOR
-Charlotte Hartwell has been notified of the stalled status on SS-2614. Recommend she confirms with George Oakenshaw whether calcs are on track for the Fri 13 Nov 2026 deadline.
+ACTION TAKEN — INTERNAL NOTE
+Note added to SS-2047 for the area manager: report write-up was not completed by the agreed date due to workload backlog. Revised ETA is Wed 11 Nov 2026. No client contact had been made prior to this flag.
 
-ACTION 3 — ENGINEER PROGRESS-CHASER EMAIL (DRAFT)
-To: George Oakenshaw (internal)
-Subject: Progress update needed — Job SS-2614 loft load calcs
-Body: Hi George, could you give us a quick status update on SS-2614 (Harry Marston, loft conversion load calcs)? The job has had no recorded progress since booking on Fri 30 Oct and delivery is due Fri 13 Nov. Please log your current stage in the system or reply here. Thanks, StructSpectrum Ltd
-Queued for approval in the Outlook approval queue.</div></div>
+ACTION TAKEN — CLIENT EMAIL
+Queued for approval in the Outlook approval queue — draft email to Harry Marston (h.marston@marston-builds.example.co.uk):
+
+Subject: Update on Your Structural Report — Job Ref SS-2047
+
+Dear Mr Marston, we are writing to apologise that your loft conversion structural report, due on Thu 5 Nov 2026, has been delayed due to an internal workload issue. We expect to deliver your completed report by Wed 11 Nov 2026. We are sorry for any inconvenience caused and will be in touch as soon as the report is ready.
+
+Regards, StructSpectrum Ltd</div></div>
     </div>
   </div>
 </details>
@@ -417,7 +449,8 @@ Queued for approval in the Outlook approval queue.</div></div>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
-  [SENDER NAME / EMAIL]
+  Etay Oren · etay@vizaible.com
+  <div class="legal-banner foot"><strong>Illustration prepared by Vizaible</strong> from StructSpectrum Ltd's public job ad. Not produced by or affiliated with StructSpectrum Ltd. All people, suppliers, invoices and figures shown are fictional.</div>
 </footer>
 </body>
 </html>
