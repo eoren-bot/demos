@@ -103,6 +103,14 @@ details .body {
   padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
+.legal-banner {
+  background: #fff8e6; border: 1px solid #e6c768;
+  padding: 10px 14px; border-radius: 4px;
+  font-size: 0.82rem; color: #4a3810; line-height: 1.5;
+}
+.legal-banner.top { margin-bottom: 18px; }
+.legal-banner.foot { margin-top: 14px; }
+.legal-banner strong { font-weight: 700; }
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -115,11 +123,12 @@ footer a { color: #1a56b0; text-decoration: none; }
 </style>
 </head>
 <body>
+<div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from Ffolkes Offshore's public job ad. Not produced by or affiliated with Ffolkes Offshore. All people, suppliers, invoices and figures shown are fictional.</div>
 <header>
   <h1>Ffolkes Offshore</h1>
-  <p class="subtitle">Automates Xero posting and reconciliation, freeing the team for client relationships and analysis.</p>
+  <p class="subtitle">Automates Xero posting and chasing so the team focuses on complex financial decisions.</p>
   <p class="services">UK employer — Ffolkes Offshore (role: Senior Accounts Assistant).</p>
-  <p class="honest-count"><strong>Covered: 100%</strong> (agent 71% + your approvals 29%)</p>
+  <p class="honest-count"><strong>Covered: 100%</strong> (agent 67% + your approvals 33%)</p>
   
   <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
   <div class="meta"><span class="pill">Systems: Xero</span>
@@ -133,14 +142,17 @@ footer a { color: #1a56b0; text-decoration: none; }
     <th>What the agent does</th>
   </tr></thead>
   <tbody>
-    <tr><td>1</td><td>Managing sales and purchase ledgers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts sales invoices and purchase bills to Xero, maintains supplier/customer records, and flags anomalies for review.</td></tr>
-    <tr><td>2</td><td>Processing invoices, supplier payments and expenses</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent captures and codes invoices/expenses in Xero and prepares a payment-run proposal; client releases the actual bank payment.</td></tr>
-    <tr><td>3</td><td>Bank reconciliations and credit control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches Xero transactions to the bank feed daily and chases overdue debtors by email through the M365 approval queue.</td></tr>
-    <tr><td>4</td><td>Supporting month-end accounts and financial reporting</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine month-end prep tasks; client signs off the final pack before any filing.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Preparing accruals and prepayments schedules and posting journals to Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent calculates standard accruals/prepayments from recurring data and posts draft journals to Xero for review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Generating management reports (P&amp;L, aged debtors/creditors) from Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent runs and exports standard Xero reports, formats them, and emails the pack to the finance manager via the approval queue.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and approval of the final accounts pack</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Client reviews and formally approves the month-end pack before any downstream filing or distribution.</td></tr>
-    <tr><td>5</td><td>Dealing with customer and supplier queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads queries from the shared inbox, drafts responses pulling data from Xero (invoice status, payment dates), and queues emails for client release.</td></tr>
+    <tr><td>1</td><td>Managing sales and purchase ledgers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent posts sales invoices and purchase bills to Xero, maintains ledger accuracy, and flags anomalies for review.</td></tr>
+    <tr><td>2</td><td>Processing invoices, supplier payments and expenses</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent captures and codes invoices/expenses in Xero and builds the payment-run proposal; a human releases the actual bank payment.</td></tr>
+    <tr><td>3</td><td>Bank reconciliations and credit control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the Xero bank feed daily, matches transactions, flags unreconciled items, and emails overdue customers through the approval queue.</td></tr>
+    <tr><td>4</td><td>Supporting month-end accounts and financial reporting</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles the preparatory and reporting sub-tasks; sign-off stays with a human.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Post accruals and prepayments journals in Xero</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts and posts standard accrual/prepayment journals based on recurring schedule, queued for finance manager to confirm before posting.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Generate and distribute aged-debt and P&amp;L reports</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent runs aged-debtor, aged-creditor and P&amp;L reports from Xero and emails them to the management team via the approval queue.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Month-end sign-off and approval before any statutory filing</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Finance manager reviews the agent-prepared trial balance and approves close before any returns are submitted.</td></tr>
+    <tr><td>5</td><td>Dealing with customer and supplier queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads incoming queries from the shared inbox, drafts responses pulling data from Xero, and queues emails for approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to supplier invoice-status and payment-date queries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent looks up payment status in Xero and drafts a reply with expected payment date, queued for approval.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to customer queries about their outstanding invoices or account balance</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent pulls the customer ledger from Xero, drafts a clear statement or explanation email, routes through the approval queue.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalate disputed invoices or credit-note approvals</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td style="color:#555;">Agent flags disputes it cannot resolve automatically and routes them to the finance manager with a summary for a decision.</td></tr>
   </tbody>
 </table>
 
@@ -148,202 +160,195 @@ footer a { color: #1a56b0; text-decoration: none; }
 <details open>
   <summary><span class="score">#1</span> Duty 3: Bank reconciliations and credit control <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent matches Xero transactions to the bank feed daily and chases overdue debtors by email through the M365 approval queue.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls the Xero bank feed daily, matches transactions, flags unreconciled items, and emails overdue customers through the approval queue.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Ffolkes Offshore — daily bank rec run, Mon 9 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Run month-end bank reconciliation for October 2026. Xero bank feed is live for our main GBP current account. Statement balance at 31 Oct 2026 is confirmed. Two receipts have come in this week that the system has not auto-matched:
 
-Three unmatched receipts in Xero bank feed (statement date Mon 9 Nov 2026):
+Receipt 1: £1,450.00 received Mon 2 Nov 2026 — sender reference unclear, possibly related to offshore survey work.
+Receipt 2: £160.00 received Tue 3 Nov 2026 — no remittance advice, source unknown.
 
-  Receipt 1: £342.80 received Fri 6 Nov 2026 — narrative &quot;THORNBURY MARINE SVCS&quot;
-  Receipt 2: £218.40 received Fri 6 Nov 2026 — narrative &quot;CARTWRIGHT SUBSEA LTD&quot;
-  Receipt 3: £1,610.00 received Thu 5 Nov 2026 — narrative &quot;HH INSPECTION GRP&quot; — open invoice on file shows expected amount £1,450.00; variance £160.00
+Both are sitting unreconciled in the Xero bank feed. Please flag, attempt to match against open sales invoices, and draft chase emails to the relevant customers if no match can be confirmed.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">BANK RECONCILIATION RUN — Mon 9 Nov 2026 — Ffolkes Offshore
 
-Overdue debtor flag:
-  Contact: Rory Thornbury, Thornbury Marine Services
-  Invoice: INV-A101, due Mon 2 Nov 2026, amount £342.80
-  Days overdue as of today Mon 9 Nov 2026: 14 days
-  Contact email: r.thornbury@thornburymarine.example.co.uk</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">BANK RECONCILIATION — Mon 9 Nov 2026 — Ffolkes Offshore
+Xero bank feed checked. Two unreconciled receipts identified.
 
-RECEIPT 1 — £342.80 (Fri 6 Nov 2026, THORNBURY MARINE SVCS)
-Matched to INV-A101. Posted to Xero as cash allocation against INV-A101 — invoice marked paid.
+UNMATCHED RECEIPT 1
+Amount: £1,450.00 — received Mon 2 Nov 2026
+Match attempt: No open Xero sales invoice found with this exact value and a confirmed remittance. Flagged as unreconciled in Xero pending customer confirmation.
+Action: Draft customer query email queued for approval — customer: Rory Thornbury, r.thornbury@harrowmarine.example.co.uk
+Queued for approval in the Outlook approval queue — Subject: Unallocated Receipt £1,450.00 — Remittance Advice Requested
 
-RECEIPT 2 — £218.40 (Fri 6 Nov 2026, CARTWRIGHT SUBSEA LTD)
-Matched to INV-A102. Posted to Xero as cash allocation against INV-A102 — invoice marked paid.
+UNMATCHED RECEIPT 2
+Amount: £160.00 — received Tue 3 Nov 2026
+Match attempt: No remittance advice on file. No open invoice matches this amount exactly. Flagged as unreconciled in Xero.
+Action: Draft customer query email queued for approval — customer: Henry Hargreaves, h.hargreaves@northseaops.example.co.uk
+Queued for approval in the Outlook approval queue — Subject: Unallocated Receipt £160.00 — Remittance Advice Requested
 
-RECEIPT 3 — £1,610.00 (Thu 5 Nov 2026, HH INSPECTION GRP)
-FLAGGED — amount exceeds expected receipt of £1,450.00 by £160.00. No automatic allocation made. Held unmatched in Xero pending client clarification. Please confirm whether a revised invoice or credit note is expected before this is posted.
-
-CREDIT CONTROL — INV-A101 — 14 days overdue
-
-Email draft prepared and queued for approval in the Outlook approval queue.
-  To: r.thornbury@thornburymarine.example.co.uk
-  Subject: Overdue Invoice INV-A101 — £342.80 — Ffolkes Offshore
-  Body summary: Ffolkes Offshore writes to Rory Thornbury noting INV-A101 (due Mon 2 Nov 2026, £342.80) remains outstanding at 14 days overdue and requests prompt payment.</div></div>
+SUMMARY
+Both receipts posted to Xero as unreconciled items pending your finance manager&#x27;s review and customer responses before final allocation.</div></div>
     </div>
   </div>
 </details>
 <details open>
   <summary><span class="score">#2</span> Duty 1: Managing sales and purchase ledgers <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent posts sales invoices and purchase bills to Xero, maintains supplier/customer records, and flags anomalies for review.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent posts sales invoices and purchase bills to Xero, maintains ledger accuracy, and flags anomalies for review.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: j.brightwell@northseamarineservices.example.co.uk
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: j.brightwell@northseaequipment.example.co.uk
 To: accounts@ffolkesoffshore.com
 Date: Mon 9 Nov 2026
-Subject: November purchase invoices — batch submission
+Subject: November supplier invoices — batch submission
 
-Please find attached 12 invoices for services rendered to Ffolkes Offshore during the period Mon 2 Nov to Wed 4 Nov 2026. Details below for your records:
+Please find attached three invoices for processing against your purchase ledger.
 
-INV-A101  Mon 2 Nov 2026  £342.80   — Dive support vessel standby, 2 Nov
-INV-A102  Tue 3 Nov 2026  £218.40   — Subsea inspection consumables, 3 Nov
-INV-A103  Wed 4 Nov 2026  £1,610.00 — ROV mobilisation and deployment, 4 Nov
+INV-A101 dated Mon 2 Nov 2026 — £342.80 — Subsea valve maintenance kit
+INV-A102 dated Tue 3 Nov 2026 — £218.40 — Deck safety equipment supply
+INV-A103 dated Wed 4 Nov 2026 — £1,610.00 — Offshore rig inspection service
 
-Expected mobilisation cost per signed work order: £1,450.00
-Remaining 9 invoices attached (miscellaneous rig services — no anomalies noted by supplier).
+Our payment terms are 30 days from invoice date. PO references should be quoted where applicable. Please confirm receipt and processing.
 
-Supplier: North Sea Marine Services Ltd
-Supplier contact: Jack Brightwell, Accounts
-Payment terms: 30 days from invoice date</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">BATCH PROCESSING — Mon 9 Nov 2026
-Supplier: North Sea Marine Services Ltd
-Contact on file: Jack Brightwell (j.brightwell@northseamarineservices.example.co.uk)
-Accounting system: Xero (Ffolkes Offshore purchase ledger)
+Regards
+Jack Brightwell, North Sea Equipment Ltd</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">BATCH RECEIVED — Mon 9 Nov 2026
+Supplier: North Sea Equipment Ltd (contact matched in Xero)
+Invoices processed: 3
 
 BILLS POSTED TO XERO
-INV-A101  Mon 2 Nov 2026  £342.80   — Posted to Xero as draft bill #INV-A101
-          Account code: Vessel Support | FLAG: No PO reference on invoice — manual review required
-INV-A102  Tue 3 Nov 2026  £218.40   — Posted to Xero as draft bill #INV-A102
-          Account code: Subsea Consumables | FLAG: No delivery note received — hold pending confirmation
-INV-A103  Wed 4 Nov 2026  £1,610.00 — Posted to Xero as draft bill #INV-A103
-          Account code: ROV Operations | FLAG: Invoice total exceeds signed work order by £160.00 (expected £1,450.00)
 
-BATCH TOTALS
-Total invoiced this batch (3 flagged bills): £2,171.20
-Total if INV-A103 corrected to expected:     £2,011.20
-Variance on INV-A103:                        £160.00
+INV-A101 | Mon 2 Nov 2026 | £342.80 | Subsea valve maintenance kit
+Posted to Xero as draft bill #INV-A101 — FLAGGED: no PO reference on invoice; your accounts team must confirm before approval.
 
-ACTION REQUIRED BY FFOLKES OFFSHORE
-1. Confirm PO reference for INV-A101 before approving.
-2. Supply delivery note to clear INV-A103 hold.
-3. Authorise or dispute £160.00 overcharge on INV-A103.
+INV-A102 | Tue 3 Nov 2026 | £218.40 | Deck safety equipment supply
+Posted to Xero as draft bill #INV-A102 — FLAGGED: no delivery note received; your accounts team to confirm goods receipt before approval.
 
-Coded summary queued for approval in the Outlook approval queue — please review and approve before bills are marked awaiting payment in Xero.</div></div>
+INV-A103 | Wed 4 Nov 2026 | £1,610.00 | Offshore rig inspection service
+Posted to Xero as draft bill #INV-A103 — FLAGGED: invoice total £1,610.00 exceeds expected amount of £1,450.00; variance of £160.00 requires supplier clarification before approval.
+
+LEDGER SUMMARY
+Total invoiced this batch: £2,171.20
+Total if INV-A103 corrected to expected: £2,011.20
+
+ACTION REQUIRED — your finance manager to review all three flagged bills in Xero before any are approved or scheduled for payment. Supplier query email for INV-A103 queued for approval in the Outlook approval queue.</div></div>
     </div>
   </div>
 </details>
 <details open>
   <summary><span class="score">#3</span> Duty 4: Supporting month-end accounts and financial reporting <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles routine month-end prep tasks; client signs off the final pack before any filing.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles the preparatory and reporting sub-tasks; sign-off stays with a human.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Month-end close for October 2026. Please post the standard accruals for offshore vessel inspection fees and crew accommodation costs — both invoices received but not yet posted. Also accrue the month&#x27;s platform safety compliance consultancy — service delivered in October, invoice not yet received. Once accruals are in, pull the October P&amp;L and balance sheet from Xero and send the draft month-end pack to Amelia Bentley, our Finance Manager, for sign-off. Hold distribution until she approves.
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Run November month-end prep. Today is Mon 9 Nov 2026 — we need everything ready before the VAT period closes.
 
-Accrual references to use:
-- Vessel inspection fees: ACC-OCT-01
-- Crew accommodation: ACC-OCT-02
-- Platform safety consultancy: ACC-OCT-03
+Accruals to post for November:
+- Survey vessel charter: invoiced by Amelia Bentley Marine Services, days accrued but no bill received yet
+- ROV inspection services: invoiced by Oakenshaw Subsea Ltd, services delivered week of Mon 2 Nov 2026, bill outstanding
+- Crew welfare supplies: delivered Fri 6 Nov 2026 by Yardley Provisions, invoice not yet received
 
-Amelia&#x27;s email: a.bentley@ffolkesoffshore.example.co.uk</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">ACTIONS TAKEN — MON 9 NOV 2026
+Once accruals are in, pull the November P&amp;L and the aged-debtor report (all outstanding balances).
 
-ACCRUALS POSTED TO XERO
-ACC-OCT-01 — Vessel inspection fees accrual for October 2026. Posted to Xero as draft journal entry, period end 31 Oct 2026.
-ACC-OCT-02 — Crew accommodation costs accrual for October 2026. Posted to Xero as draft journal entry, period end 31 Oct 2026.
-ACC-OCT-03 — Platform safety compliance consultancy accrual for October 2026 (invoice not yet received). Posted to Xero as draft journal entry, period end 31 Oct 2026.
+Draft a month-end reporting pack email to the finance manager — include the P&amp;L, aged-debt summary, and a note that accruals have been posted. Flag that the VAT period closes soon and sign-off is needed promptly.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">ACCRUALS POSTED TO XERO
 
-REPORTS GENERATED FROM XERO
-October 2026 Profit and Loss — extracted from Xero, period 1–31 Oct 2026.
-October 2026 Balance Sheet — extracted from Xero, as at 31 Oct 2026.
+1. Draft bill posted to Xero — Amelia Bentley Marine Services | Account: Survey Vessel Charter | Period: November 2026 | Status: Accrual, awaiting supplier invoice
+2. Draft bill posted to Xero — Oakenshaw Subsea Ltd | Account: ROV Inspection Services | Period: w/c Mon 2 Nov 2026 | Status: Accrual, awaiting supplier invoice
+3. Draft bill posted to Xero — Yardley Provisions | Account: Crew Welfare Supplies | Delivery date: Fri 6 Nov 2026 | Status: Accrual, awaiting supplier invoice
 
-EMAIL DRAFTED
-To: a.bentley@ffolkesoffshore.example.co.uk
-Subject: Ffolkes Offshore — October 2026 Draft Month-End Pack for Sign-Off
-Body: Amelia, please find attached the draft October 2026 month-end pack, including three accrual journals (ACC-OCT-01 to ACC-OCT-03) and the P&amp;L and balance sheet extracted from Xero. Kindly review and confirm approval before we distribute to the wider team.
-Attachments: October 2026 P&amp;L, October 2026 Balance Sheet, Accrual Journal Summary.
-Queued for approval in the Outlook approval queue — no email will send until Amelia or an authorised reviewer approves.</div></div>
+REPORTS GENERATED IN XERO
+
+P&amp;L Report: November 2026 (month-to-date as at Mon 9 Nov 2026) — extracted and attached
+Aged Debtor Report: all outstanding balances as at Mon 9 Nov 2026 — extracted and attached
+
+EMAIL ACTION
+
+Draft prepared and queued for approval in the Outlook approval queue.
+To: Finance Manager, Ffolkes Offshore
+Subject: November Month-End Pack — Action Required Before VAT Period Close
+Body summary: Three accruals have been posted in Xero for November. The November P&amp;L and aged-debtor report are attached for your review. Please note the VAT period closes shortly — your sign-off is required promptly. No figures are final until you approve.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#4</span> Duty 5: Dealing with customer and supplier queries <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads queries from the shared inbox, drafts responses pulling data from Xero (invoice status, payment dates), and queues emails for client release.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reads incoming queries from the shared inbox, drafts responses pulling data from Xero, and queues emails for approval before sending.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Harry Grainger &lt;h.grainger@apexmarineservices.example.co.uk&gt;
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Harry Grainger &lt;h.grainger@coastalvalve.example.co.uk&gt;
 To: accounts@ffolkesoffshore.com
-Date: Mon 9 Nov 2026
-Subject: Outstanding Invoice — Subsea Inspection Equipment Hire
+Received: Mon 9 Nov 2026, 08:14
 
-Dear Accounts Team,
+Subject: Invoice CVI-3847 — No Payment Received
 
-I am following up on our invoice for subsea inspection equipment hire, submitted on Tue 3 Nov 2026. We have not yet received payment or any acknowledgement. Could you please confirm the status and when we can expect funds to be cleared?
+Hi,
 
-We rely on prompt settlement to maintain our equipment availability for ongoing offshore contracts.
+I&#x27;m chasing payment on our invoice CVI-3847, submitted on Wed 4 Nov 2026 for
+subsea valve inspection services completed at your Aberdeen facility. We have
+not received any funds and our payment terms are 14 days. Could you please
+confirm the status and when we can expect settlement?
 
-Kind regards,
+Thanks,
 Harry Grainger
-Accounts Receivable, Apex Marine Services</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED Mon 9 Nov 2026 — Supplier: Apex Marine Services
-Contact: Harry Grainger &lt;h.grainger@apexmarineservices.example.co.uk&gt;
-Subject: Outstanding invoice for subsea inspection equipment hire, submitted Tue 3 Nov 2026
+Coastal Valve Inspections</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED: Supplier payment chase — Harry Grainger, Coastal Valve Inspections
+INVOICE REFERENCE: CVI-3847 | Submitted: Wed 4 Nov 2026
 
-XERO CHECK
-Searched Xero supplier records for Apex Marine Services.
-Located approved bill dated Tue 3 Nov 2026 — subsea inspection equipment hire.
-Status: Approved and queued. Bill is included in the next scheduled payment run on Fri 13 Nov 2026.
-No payment has been issued yet; no holds or disputes flagged on the record.
+XERO CHECK: Invoice CVI-3847 located in Xero as an approved bill under
+Coastal Valve Inspections. Status: Awaiting Payment. Bill is included in the
+next scheduled payment run, currently pending authorisation in the approvals
+queue. Payment run is due to be released by Wed 11 Nov 2026, with funds
+expected to clear by Fri 13 Nov 2026.
 
-DRAFT EMAIL — Queued for approval in the Outlook approval queue
+ACTION: Draft response queued for approval in the Outlook approval queue.
 
-To: h.grainger@apexmarineservices.example.co.uk
-Subject: Re: Outstanding Invoice — Subsea Inspection Equipment Hire
+DRAFT EMAIL TO SUPPLIER:
+To: h.grainger@coastalvalve.example.co.uk
+Subject: RE: Invoice CVI-3847 — Payment Status Update
 
-Dear Harry,
-
-Thank you for your email. We can confirm your invoice dated Tue 3 Nov 2026 for subsea inspection equipment hire has been received and approved in our system. Payment is scheduled to be issued on Fri 13 Nov 2026 as part of our regular payment run.
-
-Please do not hesitate to contact us if you have any further questions.
-
-Kind regards,
-Ffolkes Offshore Accounts Team</div></div>
+Dear Harry, thank you for your email. We can confirm that invoice CVI-3847
+has been received and posted to our system. It is included in our current
+payment run, which is pending internal sign-off. We anticipate funds will
+reach you by Fri 13 Nov 2026. Apologies for any inconvenience.
+Kind regards, Ffolkes Offshore Accounts Team</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#5</span> Duty 2: Processing invoices, supplier payments and expenses <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent captures and codes invoices/expenses in Xero and prepares a payment-run proposal; client releases the actual bank payment.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent captures and codes invoices/expenses in Xero and builds the payment-run proposal; a human releases the actual bank payment.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Weekly invoice and expense processing run — Monday 9 Nov 2026.
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Batch of supplier invoices received for processing — week of Mon 2 Nov 2026 to Fri 6 Nov 2026. Twenty invoices scanned and uploaded to inbox. Details for first invoice requiring coding:
 
-Batch includes 30 items received during week of 2–6 Nov 2026. Highlighted below is one supplier invoice requiring manual review before posting.
+Supplier: Sample Timber Co (Xero contact: FXS-204)
+Invoice ref: STCo-8812
+Invoice date: Wed 4 Nov 2026
+Due date: Wed 2 Dec 2026
+Line 1: 4 x Oak laminated panel 2440x1220x18mm at £95.00 each
+Line 2: 2 x Soft-close drawer runner 450mm pair at £18.50 each
+Subtotal: £417.00
+VAT @ 20%: £83.40
+Total: £500.40
+Nominal code: Marine fabrication materials
+Project tag: PRJ-4418
+Payment run target: Fri 13 Nov 2026
 
-SUPPLIER INVOICE — Sample Timber Co (account FXS-204)
-Invoice ref: STC-7741 | Received: Fri 6 Nov 2026 | Due: Mon 16 Nov 2026
-Project: PRJ-4418 / Gardenia Blvd fit-out
-Line 1: 4 x Oak laminated panel 2440x1220x18mm @ £95.00 ea = £380.00
-Line 2: 2 x Soft-close drawer runner 450mm pair @ £18.50 ea = £37.00
-Subtotal £417.00 | VAT @ 20% = £83.40 | Total £500.40
+Remaining 19 invoices coded and ready. Please compile full payment-run proposal for finance manager approval.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INVOICE POSTED — XERO
+Supplier: Sample Timber Co (FXS-204)
+Xero bill ref: STCo-8812 — posted to Xero as draft bill #BILL-STCo-8812
+Invoice date: Wed 4 Nov 2026 | Due: Wed 2 Dec 2026
+Line 1: 4 x Oak laminated panel 2440x1220x18mm — 4 x £95.00 = £380.00
+Line 2: 2 x Soft-close drawer runner 450mm pair — 2 x £18.50 = £37.00
+Subtotal: £417.00 | VAT @ 20%: £83.40 | Total: £500.40
+Project tag: PRJ-4418 | Nominal: Marine fabrication materials
 
-Finance manager: Oscar Ashworth
-Payment run approval requested by: Mon 9 Nov 2026
-Proposed bank payment date: Mon 16 Nov 2026</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">INVOICE POSTED — Xero, Mon 9 Nov 2026
-Supplier: Sample Timber Co | Account: FXS-204
-Invoice ref: STC-7741 | Project: PRJ-4418 / Gardenia Blvd fit-out
-Posted to Xero as approved bill #BILL-STC7741
-  Oak laminated panel 2440x1220x18mm x4 — £380.00
-  Soft-close drawer runner 450mm pair x2 — £37.00
-  Subtotal: £417.00 | VAT: £83.40 | Total: £500.40
-Due date in Xero: Mon 16 Nov 2026
+PAYMENT RUN SUMMARY — FFOLKES OFFSHORE
+Run date: Fri 13 Nov 2026
+Invoices coded and queued: 20 (covering Mon 2 Nov 2026 to Fri 6 Nov 2026)
+Sample Timber Co contribution: £500.40 (due Wed 2 Dec 2026 — included for early settlement)
+Full batch total: see attached Xero payment-run report
 
-PAYMENT-RUN PROPOSAL — week ending Fri 6 Nov 2026 (30 items total)
-Sample Timber Co STC-7741 — £500.40 — proposed payment Mon 16 Nov 2026
-(29 further coded bills and expense claims included in full payment-run schedule)
-
-ACTION REQUIRED — Oscar Ashworth
-Queued for approval in the Outlook approval queue: payment-run summary dated Mon 9 Nov 2026, total batch value inclusive of all 30 items. Please review and release bank payments at your discretion. No funds will transfer until you approve.</div></div>
+ACTION REQUIRED
+Payment-run proposal queued for approval in the Outlook approval queue. Your finance manager must review, confirm allocations, and release the bank batch. No funds will transfer until approval is given.</div></div>
     </div>
   </div>
 </details>
@@ -353,6 +358,7 @@ Queued for approval in the Outlook approval queue: payment-run summary dated Mon
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
   [SENDER NAME / EMAIL]
+  <div class="legal-banner foot"><strong>Illustration prepared by Vizaible</strong> from Ffolkes Offshore's public job ad. Not produced by or affiliated with Ffolkes Offshore. All people, suppliers, invoices and figures shown are fictional.</div>
 </footer>
 </body>
 </html>
