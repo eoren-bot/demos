@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Haddenham Healthcare — demo</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body {
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #111; background: #fff;
+  max-width: 1100px; margin: 0 auto; padding: 32px 24px;
+}
+header { border-bottom: 1px solid #e3e3e5; padding-bottom: 14px; margin-bottom: 20px; }
+h1 { font-size: 1.55rem; margin: 0 0 4px 0; }
+.subtitle { color: #333; margin: 0 0 6px 0; font-size: 1.02rem; }
+.services { color: #666; font-size: 0.9rem; margin: 6px 0 0 0; }
+.savings {
+  background: #f0f7ef; border-left: 3px solid #3a8a4a;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.92rem; color: #1e4028;
+}
+.savings strong { font-weight: 600; }
+.honest-count {
+  background: #f3f0fb; border-left: 3px solid #6a4ac9;
+  padding: 8px 12px; margin-top: 10px; border-radius: 0 3px 3px 0;
+  font-size: 0.92rem; color: #332154;
+}
+.honest-count strong { font-weight: 600; }
+.meta {
+  font-size: 0.85rem; color: #555; margin-top: 10px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
+}
+.meta span { white-space: nowrap; }
+.meta .pill {
+  background: #eef0f4; padding: 2px 8px; border-radius: 3px;
+}
+.meta .late {
+  background: #fde0e0; color: #5a1a1a; font-weight: 600;
+  padding: 2px 8px; border-radius: 3px;
+}
+h2 { font-size: 1.15rem; margin: 26px 0 8px 0; }
+table.coverage {
+  border-collapse: collapse; width: 100%; font-size: 0.9rem;
+  margin-top: 8px;
+}
+table.coverage th, table.coverage td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid #e8e8ea;
+  vertical-align: top;
+}
+table.coverage th { background: #f6f7f9; font-weight: 600; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+}
+.score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+details {
+  border: 1px solid #e3e3e5; border-radius: 4px;
+  margin: 10px 0; background: #fff;
+}
+details summary {
+  cursor: pointer; padding: 10px 14px; font-weight: 600;
+  list-style: none; display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: '+'; font-weight: 700; color: #777; margin-right: 2px;
+}
+details[open] summary::before { content: '−'; }
+details .body {
+  padding: 10px 14px 16px 14px; border-top: 1px solid #ededf0;
+}
+.columns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+}
+.col h3 { font-size: 0.95rem; margin: 0 0 6px 0; color: #222; }
+.block {
+  background: #f6f7f9; border: 1px solid #e3e3e5;
+  padding: 12px 14px; border-radius: 4px; white-space: pre-wrap;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.84rem; line-height: 1.5; color: #1a1a1a;
+  overflow-x: auto;
+}
+.sample-tag {
+  background: #fff3cd; border: 1px solid #ffeeba;
+  padding: 2px 6px; border-radius: 3px;
+  font-size: 0.74rem; color: #7a5a00; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.disclaimer {
+  background: #eef4ff; border-left: 4px solid #4a7dcc;
+  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  font-size: 0.9rem; color: #1e3a66;
+}
+footer {
+  margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
+  color: #555; font-size: 0.88rem;
+}
+footer a { color: #1a56b0; text-decoration: none; }
+@media (max-width: 760px) {
+  .columns { grid-template-columns: 1fr; }
+  body { padding: 20px 14px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Haddenham Healthcare</h1>
+  <p class="subtitle">Frees up the AP clerk&#x27;s time for supplier relationships and month-end by automating routine document checks and reconciliations.</p>
+  <p class="services">UK healthcare manufacturer — Haddenham Healthcare makes specialist compression garments and wound-care products. Supplier base includes specialist fabrics, medical components, and packaging vendors.</p>
+  <p class="honest-count"><strong>Honest coverage:</strong> Covers 1 of 12 duties fully, 8 partly.</p>
+  <p class="savings"><strong>What this would save:</strong> likely 4–7 hours a week — rough upper-bound only; actual savings depend on supplier volume. Method: ~5 minutes to review each pre-drafted reconciliation / payment-run entry / supplier query vs ~10–20 minutes end-to-end to match an invoice to the PO and delivery note, flag variances, chase missing paperwork, and prepare the month-end position, across roughly 30–60 invoices a week.</p>
+  <div class="meta"><span class="pill">Systems: Microsoft Excel, Prophet21, Sage, QuickBooks</span></div>
+</header>
+
+<h2>Coverage map — every duty in the ad</h2>
+<table class="coverage">
+  <thead><tr>
+    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+    <th>What the agent does</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Process supplier invoices, ensuring accuracy and proper coding to the correct accounts.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent extracts invoice fields and suggests account codes; drafts the update for you to apply in Sage or Prophet21.</td></tr>
+    <tr><td>2</td><td>Match purchase orders and delivery notes to invoices.</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></td><td>Agent flags mismatches across pasted PO, delivery note, and invoice data, producing a complete exception report for sign-off.</td></tr>
+    <tr><td>3</td><td>Resolve any discrepancies between invoices and purchase orders.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts a supplier query email for each discrepancy; resolution judgement and negotiation stay with your team.</td></tr>
+    <tr><td>4</td><td>Prepare and execute payment runs in accordance with company policy and timelines.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts the payment run schedule and totals for review; execution in banking or Sage must be applied by a human.</td></tr>
+    <tr><td>5</td><td>Manage expense claims, ensuring compliance with internal policies.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent checks pasted expense claims against policy rules and flags non-compliant lines; drafts the update for you to apply.</td></tr>
+    <tr><td>6</td><td>Maintain accounts payable records, ensuring all transactions are properly documented.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent prepares filing suggestions and tracker row drafts for you to apply to the live AP record in Sage or Excel.</td></tr>
+    <tr><td>7</td><td>Reconcile supplier statements and resolve any outstanding issues.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent compares pasted supplier statement against ledger data and flags differences; drafts the update for you to apply.</td></tr>
+    <tr><td>8</td><td>Assist in month-end and year-end closing processes as required.</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td>Too vague and catch-all — no specific repeatable task to automate without further detail.</td></tr>
+    <tr><td>9</td><td>Support the Finance Manager with ad hoc financial tasks and reports.</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td>Ad hoc and catch-all — no concrete repeatable task to automate.</td></tr>
+    <tr><td>10</td><td>Liaise with suppliers and internal departments to resolve any queries.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts query emails from pasted notes; live back-and-forth negotiation stays with your team.</td></tr>
+    <tr><td>11</td><td>Ensure compliance with company financial policies and procedures.</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td>Process-level goal rather than a discrete task — no single artefact for the agent to produce.</td></tr>
+    <tr><td>12</td><td>Assist with payments suppliers when required.</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></td><td>Agent drafts payment remittance summaries and schedules; actual payment execution in banking or Sage must be applied by a human.</td></tr>
+  </tbody>
+</table>
+
+<h2>Worked examples (ranked)</h2>
+<details open>
+  <summary><span class="score">#1</span> Duty 2: Match purchase orders and delivery notes to invoices. <span class="badge" style="color:#1e4028;background:#e3f2e5;">full</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent flags mismatches across pasted PO, delivery note, and invoice data, producing a complete exception report for sign-off.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Haddenham Healthcare — AP Matching Request, Mon 9 Nov 2026
+
+Please check the three invoices received last week against our PO and delivery-note records in Prophet21 and flag any mismatches for Finance Manager sign-off.
+
+INV-A101 | Supplier: Vantage Medical Fabrics | Dated: Mon 2 Nov 2026 | Amount: £342.80 | Item: Non-woven barrier fabric rolls | No PO reference quoted on invoice
+INV-A102 | Supplier: Cordell Packaging Solutions | Dated: Tue 3 Nov 2026 | Amount: £218.40 | Item: Sterile blister-pack trays x 500 | PO ref: HH-PO-7741 | No delivery note on file
+INV-A103 | Supplier: Morrow Component Supplies | Dated: Wed 4 Nov 2026 | Amount: £1,610.00 | Item: Surgical-grade silicone valve assemblies x 200 | PO ref: HH-PO-7738 | DN ref: DN-9204 | Expected invoice total per PO: £1,450.00
+
+Requested by: Freya Bentley, AP Coordinator
+For approval by: Phoebe Inglis, Finance Manager</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">HADDENHAM HEALTHCARE — PO / DELIVERY NOTE / INVOICE EXCEPTION REPORT
+Prepared: Mon 9 Nov 2026 | Requested by: Freya Bentley | For sign-off: Phoebe Inglis
+
+EXCEPTION 1 — MISSING PO REFERENCE
+Invoice: INV-A101 | Supplier: Vantage Medical Fabrics | Date: Mon 2 Nov 2026 | Amount: £342.80
+Item: Non-woven barrier fabric rolls
+Issue: No purchase order reference quoted on invoice. Cannot confirm authorised spend.
+Action required: Supplier to resubmit with valid HH PO reference, or AP team to locate matching PO in Prophet21 before payment is released.
+
+EXCEPTION 2 — NO DELIVERY NOTE ON FILE
+Invoice: INV-A102 | Supplier: Cordell Packaging Solutions | Date: Tue 3 Nov 2026 | Amount: £218.40
+Item: Sterile blister-pack trays x 500 | PO ref: HH-PO-7741
+Issue: Goods receipt not confirmed; no delivery note recorded in Prophet21 against HH-PO-7741.
+Action required: Warehouse to confirm receipt and raise DN, or investigate whether goods have arrived.
+
+EXCEPTION 3 — PRICE VARIANCE
+Invoice: INV-A103 | Supplier: Morrow Component Supplies | Date: Wed 4 Nov 2026 | Amount: £1,610.00
+Item: Surgical-grade silicone valve assemblies x 200 | PO ref: HH-PO-7738 | DN ref: DN-9204
+Issue: Invoice total £1,610.00 exceeds PO expected amount of £1,450.00. Variance: £160.00.
+Action required: Query raised with Morrow Component Supplies. Do not post to Sage until supplier provides credit note or written justification approved by Phoebe Inglis.
+
+SUMMARY: 3 invoices reviewed — 3 exceptions raised — 0 cleared for payment run.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#2</span> Duty 1: Process supplier invoices, ensuring accuracy and proper coding to the correct accounts. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent extracts invoice fields and suggests account codes; drafts the update for you to apply in Sage or Prophet21.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Please process these five supplier invoices received this week and suggest Sage nominal codes for each. Extract all key fields and prepare an Excel row draft ready to paste into Sage.
+
+INV-1: Stokeley Medical Fabrics, invoice date Wed 4 Nov 2026, ref SMF-3041, non-woven laminate fabric for wound-care dressings, net, VAT at 20%, due 30 days.
+
+INV-2: Fenwick Packaging Solutions, invoice date Thu 5 Nov 2026, ref FPS-8812, sterile blister-pack trays for tablet dispensers, net, VAT at 20%, due 30 days.
+
+INV-3: Kenworthy Component Supplies, invoice date Fri 6 Nov 2026, ref KCS-0094, polypropylene valve housings for IV sets, net, VAT at 20%, due 30 days.
+
+INV-4: Oakenshaw Sterilisation Services, invoice date Mon 2 Nov 2026, ref OSS-2251, gamma sterilisation batch processing — medical components, VAT exempt, due 14 days.
+
+INV-5: Stokeley Medical Fabrics, invoice date Tue 3 Nov 2026, ref SMF-3038, elastic compression fabric rolls, net, VAT at 20%, due 30 days.
+
+No £ figures are included; coding and row structure only are required.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INVOICE EXTRACTION AND SAGE NOMINAL CODE SUGGESTIONS
+Prepared by Haddenham Healthcare Accounts Payable — Mon 9 Nov 2026
+
+ROW DRAFT FOR SAGE / EXCEL PASTE
+
+Col A  Supplier Name
+Col B  Invoice Ref
+Col C  Invoice Date
+Col D  Due Date
+Col E  Description
+Col F  VAT Code
+Col G  Suggested Nominal Code
+Col H  Nominal Code Description
+Col I  PO Match Required
+
+ROW 1  Stokeley Medical Fabrics | SMF-3041 | 04/11/2026 | 04/12/2026 | Non-woven laminate fabric — wound-care dressings | T1 (20%) | 5001 | Raw Materials — Medical Fabric | YES
+ROW 2  Fenwick Packaging Solutions | FPS-8812 | 05/11/2026 | 05/12/2026 | Sterile blister-pack trays — tablet dispensers | T1 (20%) | 5010 | Packaging Materials | YES
+ROW 3  Kenworthy Component Supplies | KCS-0094 | 06/11/2026 | 06/12/2026 | Polypropylene valve housings — IV sets | T1 (20%) | 5002 | Raw Materials — Medical Components | YES
+ROW 4  Oakenshaw Sterilisation Services | OSS-2251 | 02/11/2026 | 16/11/2026 | Gamma sterilisation batch processing | T2 (Exempt) | 5020 | Contract Processing — Sterilisation | YES
+ROW 5  Stokeley Medical Fabrics | SMF-3038 | 03/11/2026 | 03/12/2026 | Elastic compression fabric rolls | T1 (20%) | 5001 | Raw Materials — Medical Fabric | YES
+
+NOTES
+All five invoices require delivery-note matching before posting in Sage.
+INV-4 (OSS-2251) is VAT-exempt; confirm with tax team before posting T2.
+Due dates calculated from invoice date per stated payment terms.
+Haddenham Healthcare to confirm nominal codes against current chart of accounts before final entry.</div></div>
+    </div>
+  </div>
+</details>
+<details open>
+  <summary><span class="score">#3</span> Duty 3: Resolve any discrepancies between invoices and purchase orders. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts a supplier query email for each discrepancy; resolution judgement and negotiation stay with your team.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Duty: Draft a supplier query email for the price discrepancy found between invoice INV-00412 and PO-00388.
+
+Supplier: Holbrook Medical Textiles
+Contact: Sophia Holbrook
+Email: s.holbrook@holbrook-medical-textiles.example.co.uk
+
+PO-00388 raised: Wed 4 Nov 2026
+PO line item: Non-woven barrier fabric rolls, Grade B2
+Agreed unit price on PO-00388: [no £ figure — see quantity note below]
+Invoice INV-00412 received: Fri 6 Nov 2026
+Invoice unit price for same item: higher than PO rate — exact overage flagged in Prophet21 three-way match
+
+Quantity invoiced matches PO quantity. Delivery note matches. Only the unit price differs.
+Payment due date if approved: Mon 23 Nov 2026
+Our AP contact signing off: Owen Barnes</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">QUERY EMAIL DRAFT — ready for Owen Barnes to review and send
+
+To: s.holbrook@holbrook-medical-textiles.example.co.uk
+From: o.barnes@haddenhamhealthcare.example.co.uk
+Date: Mon 9 Nov 2026
+Subject: Price Discrepancy — Invoice INV-00412 vs PO-00388
+
+Dear Sophia,
+
+Thank you for supplying invoice INV-00412, received here on Fri 6 Nov 2026.
+
+When processing this invoice through our three-way match in Prophet21, our accounts-payable team identified a discrepancy between the unit price charged for Non-woven barrier fabric rolls (Grade B2) and the unit price agreed on our purchase order PO-00388, raised on Wed 4 Nov 2026. The quantity invoiced and the delivery note both align with the PO; the variance relates solely to the unit price.
+
+Could you please review your records and confirm whether the unit price on INV-00412 is correct or whether a credit note or revised invoice should be issued? We would like to resolve this by Fri 13 Nov 2026 to ensure payment can be processed ahead of the due date of Mon 23 Nov 2026.
+
+Please do not hesitate to contact me if you need any further details from our side.
+
+Kind regards,
+Owen Barnes
+Accounts Payable, Haddenham Healthcare</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#4</span> Duty 4: Prepare and execute payment runs in accordance with company policy and timelines. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts the payment run schedule and totals for review; execution in banking or Sage must be applied by a human.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Rosie Halliwell, AP Coordinator
+To: AP Automation Agent
+Date: Mon 9 Nov 2026
+
+Please prepare the payment run draft for Finance Manager approval. All invoices below have been three-way matched in Prophet21 against confirmed POs and delivery notes.
+
+INV-4471  Supplier: Grainger Medical Textiles   Due: Fri 13 Nov 2026   Description: Non-woven fabric rolls (medical grade)
+INV-4472  Supplier: Grainger Medical Textiles   Due: Fri 13 Nov 2026   Description: Spunbond laminate sheets
+INV-4489  Supplier: Halton Packaging Solutions  Due: Fri 13 Nov 2026   Description: Sterile blister-pack trays
+INV-4501  Supplier: Halton Packaging Solutions  Due: Wed 18 Nov 2026   Description: Printed carton sleeves
+INV-4515  Supplier: Vantage Component Supply   Due: Wed 18 Nov 2026   Description: Luer-lock connectors, batch LK-09
+INV-4516  Supplier: Vantage Component Supply   Due: Wed 18 Nov 2026   Description: Needle hub assemblies, batch NH-14
+INV-4530  Supplier: Grainger Medical Textiles   Due: Mon 23 Nov 2026   Description: Hydrophilic wound-care fleece
+
+No amounts are available yet — Finance Manager William Grainger to verify values in Sage before execution.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">HADDENHAM HEALTHCARE — PAYMENT RUN DRAFT
+Prepared by AP Automation Agent on Mon 9 Nov 2026
+For review and approval by William Grainger (Finance Manager)
+NOTE: No £ figures are included. All invoice values must be verified and entered in Sage by William Grainger before execution. Agent does not execute payments.
+
+PAYMENT BATCH 1 — DUE DATE: Fri 13 Nov 2026
+Supplier: Grainger Medical Textiles
+  INV-4471  Non-woven fabric rolls (medical grade)       Value to confirm in Sage
+  INV-4472  Spunbond laminate sheets                     Value to confirm in Sage
+Supplier: Halton Packaging Solutions
+  INV-4489  Sterile blister-pack trays                   Value to confirm in Sage
+Batch 1 supplier count: 2   Invoice count: 3
+
+PAYMENT BATCH 2 — DUE DATE: Wed 18 Nov 2026
+Supplier: Halton Packaging Solutions
+  INV-4501  Printed carton sleeves                       Value to confirm in Sage
+Supplier: Vantage Component Supply
+  INV-4515  Luer-lock connectors, batch LK-09            Value to confirm in Sage
+  INV-4516  Needle hub assemblies, batch NH-14           Value to confirm in Sage
+Batch 2 supplier count: 2   Invoice count: 3
+
+PAYMENT BATCH 3 — DUE DATE: Mon 23 Nov 2026
+Supplier: Grainger Medical Textiles
+  INV-4530  Hydrophilic wound-care fleece                Value to confirm in Sage
+Batch 3 supplier count: 1   Invoice count: 1
+
+NEXT STEPS: Rosie Halliwell to export this schedule to Excel. William Grainger to confirm values in Sage, approve each batch, and execute payments on or before the respective due dates.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#5</span> Duty 7: Reconcile supplier statements and resolve any outstanding issues. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent compares pasted supplier statement against ledger data and flags differences; drafts the update for you to apply.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Prospect: Haddenham Healthcare
+Task: Reconcile supplier statement against our AP ledger and flag differences.
+
+SUPPLIER STATEMENT — Wyndham Medical Fabrics (received Mon 9 Nov 2026)
+Statement date: Fri 6 Nov 2026
+Contact: Hannah Wyndham
+
+Ref        Date           Description                    Status on statement
+WMF-4401   Mon 2 Nov 2026  Non-woven laminate roll x 20   OUTSTANDING
+WMF-4402   Wed 4 Nov 2026  Sterile barrier fabric x 50    OUTSTANDING
+WMF-4403   Thu 5 Nov 2026  Credit note — returns          OUTSTANDING
+WMF-4405   Fri 6 Nov 2026  Breathable film panels x 30    OUTSTANDING
+
+AP LEDGER EXTRACT — Wyndham Medical Fabrics (Prophet21, exported Mon 9 Nov 2026)
+Ref        Date           Description                    Status in ledger
+WMF-4401   Mon 2 Nov 2026  Non-woven laminate roll x 20   Posted, due Fri 27 Nov 2026
+WMF-4402   Wed 4 Nov 2026  Sterile barrier fabric x 50    Posted, due Fri 27 Nov 2026
+WMF-4404   Tue 3 Nov 2026  Packaging film inserts x 40    Posted, due Fri 27 Nov 2026
+WMF-4403   Thu 5 Nov 2026  Credit note — returns          NOT in ledger</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">SUPPLIER STATEMENT RECONCILIATION
+Prospect: Haddenham Healthcare
+Supplier: Wyndham Medical Fabrics
+Statement date: Fri 6 Nov 2026   Reconciliation run: Mon 9 Nov 2026
+
+SIDE-BY-SIDE COMPARISON
+
+Ref       Supplier Statement          AP Ledger (Prophet21)       Status
+WMF-4401  Outstanding (Mon 2 Nov)     Posted, due Fri 27 Nov 2026  MATCHED
+WMF-4402  Outstanding (Wed 4 Nov)     Posted, due Fri 27 Nov 2026  MATCHED
+WMF-4403  Outstanding (Thu 5 Nov)     Not found in ledger          FLAG — credit note missing from Prophet21
+WMF-4404  Not on statement            Posted, due Fri 27 Nov 2026  FLAG — invoice not on supplier statement
+WMF-4405  Outstanding (Fri 6 Nov)     Not found in ledger          FLAG — invoice not yet posted to ledger
+
+ACTIONS REQUIRED
+
+1. WMF-4403 (credit note, Thu 5 Nov 2026): Post to Prophet21 against Wyndham Medical Fabrics account before next payment run. Confirm returns paperwork is on file.
+
+2. WMF-4404 (Packaging film inserts, Tue 3 Nov 2026): Chase Hannah Wyndham at Wyndham Medical Fabrics to confirm whether this invoice should appear on their statement. Check our goods-received note in Prophet21.
+
+3. WMF-4405 (Breathable film panels, Fri 6 Nov 2026): Obtain invoice copy from Hannah Wyndham, verify delivery note, then post to Prophet21.
+
+NEXT STEP: Clerk to clear all three flags in Prophet21 before payment-run preparation on Fri 20 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#6</span> Duty 5: Manage expense claims, ensuring compliance with internal policies. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent checks pasted expense claims against policy rules and flags non-compliant lines; drafts the update for you to apply.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Haddenham Healthcare — Expense Claim Batch for week ending Fri 6 Nov 2026
+Submitted today Mon 9 Nov 2026 for AP compliance check before Sage entry.
+
+Policy reminders: daily meal allowance cap applies per person per day; all lines must carry a receipt reference.
+
+Claimant: Emma Chadwick (Medical Sales Rep)
+  Mon 2 Nov 2026 | Lunch with supplier contact | No receipt reference
+  Tue 3 Nov 2026 | Dinner, client visit | RCP-7741 | EXCEEDS daily meal allowance
+  Wed 4 Nov 2026 | Lunch, travel day | RCP-7755 | Within allowance
+
+Claimant: Alice Cartwright (Medical Sales Rep)
+  Tue 3 Nov 2026 | Breakfast and lunch combined | RCP-7762 | Within allowance
+  Thu 5 Nov 2026 | Dinner, packaging supplier meeting | No receipt reference
+  Fri 6 Nov 2026 | Lunch | RCP-7780 | EXCEEDS daily meal allowance
+
+Claimant: Ella Marston (Accounts Payable)
+  Wed 4 Nov 2026 | Working lunch, internal training | RCP-7791 | Within allowance
+  Fri 6 Nov 2026 | Dinner | No receipt reference</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">Haddenham Healthcare — Expense Compliance Check
+Processed by agent: Mon 9 Nov 2026
+Source batch: week ending Fri 6 Nov 2026
+
+CLAIMANT        DATE              DESCRIPTION                        RECEIPT REF   ALLOWANCE STATUS   FLAGS
+Emma Chadwick   Mon 2 Nov 2026    Lunch with supplier contact        MISSING       N/A                FAIL — no receipt reference
+Emma Chadwick   Tue 3 Nov 2026    Dinner, client visit               RCP-7741      EXCEEDS CAP        FAIL — over daily meal allowance
+Emma Chadwick   Wed 4 Nov 2026    Lunch, travel day                  RCP-7755      Within cap         PASS
+Alice Cartwright Tue 3 Nov 2026   Breakfast and lunch combined       RCP-7762      Within cap         PASS
+Alice Cartwright Thu 5 Nov 2026   Dinner, packaging supplier meeting MISSING       N/A                FAIL — no receipt reference
+Alice Cartwright Fri 6 Nov 2026   Lunch                              RCP-7780      EXCEEDS CAP        FAIL — over daily meal allowance
+Ella Marston    Wed 4 Nov 2026    Working lunch, internal training   RCP-7791      Within cap         PASS
+Ella Marston    Fri 6 Nov 2026    Dinner                             MISSING       N/A                FAIL — no receipt reference
+
+SUMMARY
+Total lines reviewed: 8
+Lines passing: 3
+Lines failing: 5  (3 missing receipt references; 2 exceeding daily meal allowance)
+
+ACTION REQUIRED — Do not post failing lines to Sage until claimants supply missing receipts or resubmit corrected amounts. Notify Emma Chadwick (2 fails), Alice Cartwright (2 fails), and Ella Marston (1 fail) by return.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#7</span> Duty 6: Maintain accounts payable records, ensuring all transactions are properly documented. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent prepares filing suggestions and tracker row drafts for you to apply to the live AP record in Sage or Excel.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Supplier invoice received today, Monday 9 Nov 2026, from Vickery Medical Fabrics.
+Supplier contact: Beatrice Vickery, b.vickery@vickery-medicalfabrics.example.co.uk
+Invoice reference: VMF-2026-0847
+Invoice date: Wed 4 Nov 2026
+PO reference matched to: HHC-PO-3312
+Delivery note reference: DN-5591, received Thu 5 Nov 2026
+Goods: non-woven polypropylene fabric rolls for sterile drape production
+Payment terms: 30 days from invoice date
+Please generate a structured Excel tracker row ready to paste into the master AP ledger, and confirm the suggested filing path.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TRACKER ROW DRAFT — ready to paste into Haddenham Healthcare master AP ledger (Excel)
+
+COLUMNS (paste in this order into the next available row):
+
+Supplier Name         | Vickery Medical Fabrics
+Supplier Contact      | Beatrice Vickery
+Supplier Email        | b.vickery@vickery-medicalfabrics.example.co.uk
+Invoice Ref           | VMF-2026-0847
+Invoice Date          | 04/11/2026
+Date Received         | 09/11/2026
+PO Reference          | HHC-PO-3312
+Delivery Note Ref     | DN-5591
+Delivery Note Date    | 05/11/2026
+Goods Description     | Non-woven polypropylene fabric rolls — sterile drape production
+Payment Terms         | 30 days from invoice date
+Due Date              | 04/12/2026
+Invoice Amount        | [NO AMOUNT — confirm from invoice before posting]
+Status                | Awaiting AP sign-off
+
+FILING SUGGESTION: Scan and save invoice to AP/2026-11/Vickery-Medical-Fabrics/VMF-2026-0847.pdf. Attach DN-5591 scan as a supporting document in the same folder. Cross-reference PO HHC-PO-3312 in Prophet21 to confirm three-way match before updating status to Approved.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#8</span> Duty 10: Liaise with suppliers and internal departments to resolve any queries. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts query emails from pasted notes; live back-and-forth negotiation stays with your team.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Supplier: Niamh Lockhart at Callum Medical Textiles
+Supplier contact email: n.lockhart@callum-medical-textiles.example.co.uk
+Invoice ref: CMT-4471
+Invoice date: Fri 6 Nov 2026
+Our PO ref: HH-PO-2089
+Delivery note ref: DN-7732
+Issue: Invoice quantity shows 2,400 metres of non-woven barrier fabric but our goods-in team (Willow Hartwell) confirmed only 2,100 metres received per DN-7732. No credit note issued.
+No money figures to include.
+Need: draft email to supplier plus internal note to Willow to confirm the shortfall before we reply.
+Urgency: resolve before payment run on Fri 13 Nov 2026.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">OUTBOUND EMAIL — TO SUPPLIER
+
+To: n.lockhart@callum-medical-textiles.example.co.uk
+From: accounts.payable@haddenhamhealthcare.example.co.uk
+Subject: Query — Invoice CMT-4471 / PO HH-PO-2089 — Quantity Discrepancy
+
+Dear Niamh,
+
+Thank you for your invoice CMT-4471 dated Fri 6 Nov 2026. When matching this invoice against our purchase order HH-PO-2089 and delivery note DN-7732, we identified a discrepancy in the quantity of non-woven barrier fabric recorded.
+
+Your invoice states 2,400 metres; however, our goods-in records for DN-7732 show only 2,100 metres were received at our site. We are therefore unable to approve the invoice in its current form and would ask you to review your records and issue a corrected invoice or credit note reflecting the 300-metre shortfall at your earliest convenience.
+
+We are aiming to resolve this before our payment run on Fri 13 Nov 2026, so a response by Wed 11 Nov 2026 would be greatly appreciated.
+
+Please do not hesitate to contact us if you require any further information.
+
+Yours sincerely,
+Accounts Payable, Haddenham Healthcare
+
+---
+
+INTERNAL NOTE — TO WILLOW HARTWELL (GOODS-IN)
+
+Hi Willow,
+
+We are querying invoice CMT-4471 from Callum Medical Textiles (PO HH-PO-2089). Before we finalise our response, could you please confirm in writing that delivery note DN-7732 records a receipt of 2,100 metres of non-woven barrier fabric and not the 2,400 metres shown on the invoice?
+
+We need your confirmation by Tue 10 Nov 2026 so we can keep this on track for the Fri 13 Nov 2026 payment run. Please reply to the AP inbox. Many thanks.
+
+Accounts Payable, Haddenham Healthcare</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#9</span> Duty 12: Assist with payments suppliers when required. <span class="badge" style="color:#5a4300;background:#fff3cd;">partial</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts payment remittance summaries and schedules; actual payment execution in banking or Sage must be applied by a human.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Today is Mon 9 Nov 2026. Please draft remittance advice emails for the three suppliers on this week&#x27;s approved payment list. Payment will be made by BACS today. Details below.
+
+Supplier 1: Larkin Medical Fabrics
+Contact: Samuel Larkin
+Email: s.larkin@larkin-medicalfabrics.example.co.uk
+Invoices: LMF-4401, LMF-4418, LMF-4433
+
+Supplier 2: Underhill Packaging Solutions
+Contact: James Underhill
+Email: j.underhill@underhill-packaging.example.co.uk
+Invoices: UPS-0871, UPS-0902
+
+Supplier 3: Pemberton Component Supplies
+Contact: Elsie Pemberton
+Email: e.pemberton@pemberton-components.example.co.uk
+Invoices: PCS-2210, PCS-2244, PCS-2251
+
+No £ figures to include. Clerks will add amounts after Sage payment run is confirmed.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">Three remittance advice email drafts are prepared below for clerk review. Amounts are intentionally left blank pending Sage payment-run confirmation. BACS payment date: Mon 9 Nov 2026.
+
+---
+
+DRAFT 1 — TO: s.larkin@larkin-medicalfabrics.example.co.uk
+
+Dear Samuel,
+
+Please find below your remittance advice for payment processed today, Mon 9 Nov 2026, by BACS from Haddenham Healthcare.
+
+Invoices settled:
+  LMF-4401   [amount to be inserted]
+  LMF-4418   [amount to be inserted]
+  LMF-4433   [amount to be inserted]
+
+If you have any queries please contact our Accounts Payable team.
+Regards, Haddenham Healthcare Accounts Payable
+
+---
+
+DRAFT 2 — TO: j.underhill@underhill-packaging.example.co.uk
+
+Dear James,
+
+Please find below your remittance advice for payment processed today, Mon 9 Nov 2026, by BACS from Haddenham Healthcare.
+
+Invoices settled:
+  UPS-0871   [amount to be inserted]
+  UPS-0902   [amount to be inserted]
+
+If you have any queries please contact our Accounts Payable team.
+Regards, Haddenham Healthcare Accounts Payable
+
+---
+
+DRAFT 3 — TO: e.pemberton@pemberton-components.example.co.uk
+
+Dear Elsie,
+
+Please find below your remittance advice for payment processed today, Mon 9 Nov 2026, by BACS from Haddenham Healthcare.
+
+Invoices settled:
+  PCS-2210   [amount to be inserted]
+  PCS-2244   [amount to be inserted]
+  PCS-2251   [amount to be inserted]
+
+If you have any queries please contact our Accounts Payable team.
+Regards, Haddenham Healthcare Accounts Payable
+
+---
+
+CLERK ACTION REQUIRED: Insert confirmed amounts from Sage payment run into each draft before sending.</div></div>
+    </div>
+  </div>
+</details>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<footer>
+  Questions, or want a working version for your own inbox / timesheets / invoices?
+  [SENDER NAME / EMAIL]
+</footer>
+</body>
+</html>
