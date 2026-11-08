@@ -103,6 +103,14 @@ details .body {
   padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
+.legal-banner {
+  background: #fff8e6; border: 1px solid #e6c768;
+  padding: 10px 14px; border-radius: 4px;
+  font-size: 0.82rem; color: #4a3810; line-height: 1.5;
+}
+.legal-banner.top { margin-bottom: 18px; }
+.legal-banner.foot { margin-top: 14px; }
+.legal-banner strong { font-weight: 700; }
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -115,11 +123,12 @@ footer a { color: #1a56b0; text-decoration: none; }
 </style>
 </head>
 <body>
+<div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from Fanvue's public job ad. Not produced by or affiliated with Fanvue. All people, suppliers, invoices and figures shown are fictional.</div>
 <header>
   <h1>Fanvue</h1>
-  <p class="subtitle">Frees up the accounts assistant for high-judgement close work by automating routine ledger, inbox, and chasing tasks.</p>
+  <p class="subtitle">Frees up your Accounts Assistant to focus on quality, close, and growth rather than repetitive inbox admin.</p>
   <p class="services">UK employer — Fanvue (role: Accounts Assistant).</p>
-  <p class="honest-count"><strong>Covered: 100%</strong> (agent 75% + your approvals 17% + our assistant 8%)</p>
+  <p class="honest-count"><strong>Covered: 100%</strong> (agent 64% + your approvals 21% + our assistant 14%)</p>
   
   <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
   <div class="meta"><span class="pill">Systems: Xero, Rippling, Excel, Google Sheets</span>
@@ -133,379 +142,414 @@ footer a { color: #1a56b0; text-decoration: none; }
     <th>What the agent does</th>
   </tr></thead>
   <tbody>
-    <tr><td>1</td><td>Review and own the ledger in Xero, including outsourced bookkeepers&#x27; coding, supplier bills and daily bank reconciliations across GBP, USD and EUR accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls daily Xero bank feeds, flags mis-coded transactions, reconciles GBP/USD/EUR accounts and surfaces exceptions for human review.</td></tr>
-    <tr><td>2</td><td>Prepare month-end journals, accruals and prepayments, and balance sheet reconciliations so we close by working day 5</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent drafts standard accrual/prepayment journals and BS recs in Xero; Finance Manager reviews and posts to sign off close.</td></tr>
-    <tr><td>3</td><td>Keep intercompany balances with our US entity reconciled</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reconciles intercompany ledger balances between the UK and US Xero instances monthly, flagging mismatches for resolution.</td></tr>
-    <tr><td>4</td><td>Reconcile payroll, PAYE and pension control accounts to Rippling each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls Rippling payroll data via export, matches control account balances in Xero and surfaces any variance for sign-off.</td></tr>
-    <tr><td>5</td><td>Prepare the UK VAT return in Xero for review</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles VAT return figures from Xero and presents the draft return; Finance Manager reviews before human-backup submits to HMRC.</td></tr>
-    <tr><td>6</td><td>Prepare year-end schedules and answer queries from external accountants and auditors</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates year-end balance sheet schedules from Xero and drafts responses to auditor information requests via the M365 approval queue.</td></tr>
-    <tr><td>7</td><td>Run the invoice inbox, logging, chasing and routing supplier invoices so nothing reaches the ledger without a document</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors the shared invoice inbox, creates draft bills in Xero, routes for approval and chases suppliers for missing documents via email.</td></tr>
-    <tr><td>8</td><td>Chase receipts and missing context from colleagues for card spend, and keep receipt compliance high</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies unreceipted card transactions in Xero, emails the relevant colleague with a polite chase and tracks compliance rate on a dashboard.</td></tr>
-    <tr><td>9</td><td>Maintain supplier records and support onboarding, including verifying bank details before anything is paid</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent creates/updates supplier contacts in Xero, flags new or changed bank details for human verification before any payment run is released.</td></tr>
-    <tr><td>10</td><td>Be the first point of contact for finance questions from the wider team</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine finance queries via email/inbox; complex or policy queries escalate to Finance Manager.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Answer routine queries about invoice status or payment timelines</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent looks up Xero bill/payment status and replies with an ETA via the M365 approval queue.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Respond to colleagues asking where to submit expenses or receipts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts a standard &#x27;how to submit&#x27; reply with links to the expense process and queues it for release.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Handle escalated or policy-level finance questions requiring judgement</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant or Finance Manager handles queries that require policy interpretation or sensitive financial information.</td></tr>
+    <tr><td>1</td><td>Review and own the ledger in Xero, including outsourced bookkeepers&#x27; work on coding, supplier bills and daily bank reconciliations across GBP, USD and EUR accounts</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls daily Xero transactions, flags miscoded entries and unreconciled items across all three currencies, and queues a review summary for the Finance Manager.</td></tr>
+    <tr><td>2</td><td>Prepare month-end journals, accruals and prepayments, and balance sheet reconciliations so we close by working day 5</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent drafts all standard accrual and prepayment journals in Xero and produces a reconciliation pack; Finance Manager reviews and posts to finalise the close.</td></tr>
+    <tr><td>3</td><td>Keep intercompany balances with our US entity reconciled</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches intercompany postings in Xero against the US entity&#x27;s shared ledger export, flags variances, and drafts elimination journals for approval.</td></tr>
+    <tr><td>4</td><td>Reconcile payroll, PAYE and pension control accounts to Rippling each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent imports Rippling payroll reports, reconciles them to Xero control account balances, and flags any variance for human review.</td></tr>
+    <tr><td>5</td><td>Prepare the UK VAT return in Xero for review</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent compiles the VAT return from Xero transaction data and presents a completed draft to the Finance Manager for review before submission.</td></tr>
+    <tr><td>6</td><td>Prepare year-end schedules and answer queries from external accountants and auditors</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates standard year-end schedules from Xero and drafts responses to auditor queries using supporting data, routing anything requiring judgement to the Finance Manager.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Compile fixed asset, prepayment and accruals schedules from Xero for year-end</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent exports and formats standard year-end schedules directly from Xero.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft responses to routine auditor information requests</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts email responses to auditor queries using Xero records, queued for Finance Manager approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Judgement calls on complex audit points or accounting policy questions</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant or Finance Manager handles technical accounting judgements that go beyond standard schedule preparation.</td></tr>
+    <tr><td>7</td><td>Run the invoice inbox, logging, chasing and routing supplier invoices so nothing reaches the ledger without a document</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent monitors the shared invoice inbox, logs each invoice into Xero as a draft bill, routes for approval, and chases suppliers for missing documents via the email approval queue.</td></tr>
+    <tr><td>8</td><td>Chase receipts and missing context from colleagues for card spend, and keep receipt compliance high</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies unmatched card transactions in Xero, drafts personalised chase emails to cardholders via the M365 approval queue, and tracks compliance rates.</td></tr>
+    <tr><td>9</td><td>Maintain supplier records and support onboarding, including verifying bank details before anything is paid</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent creates or updates supplier records in Xero and drafts bank-detail verification requests; a human must confirm verified details before any payment is released.</td></tr>
+    <tr><td>10</td><td>Be the first point of contact for finance questions from the wider team</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles routine finance queries via email, drafts responses, and escalates complex or policy questions to the Finance Manager.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Answer routine questions about invoice status, payment dates, and expense policy</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent looks up Xero records and drafts an accurate reply, queued for release via the M365 approval queue.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Redirect or triage queries that require Finance Manager judgement</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent identifies queries beyond standard answers and routes them to the Finance Manager with relevant context attached.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Handle complex or sensitive finance policy questions requiring professional judgement</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant or Finance Manager handles nuanced policy or contractual finance questions the agent cannot reliably resolve.</td></tr>
   </tbody>
 </table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
-  <summary><span class="score">#1</span> Duty 1: Review and own the ledger in Xero, including outsourced bookkeepers&#x27; coding, supplier bills and daily bank reconciliations across GBP, USD and EUR accounts <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#1</span> Duty 1: Review and own the ledger in Xero, including outsourced bookkeepers&#x27; work on coding, supplier bills and daily bank reconciliations across GBP, USD and EUR accounts <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls daily Xero bank feeds, flags mis-coded transactions, reconciles GBP/USD/EUR accounts and surfaces exceptions for human review.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent pulls daily Xero transactions, flags miscoded entries and unreconciled items across all three currencies, and queues a review summary for the Finance Manager.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Daily bank reconciliation run — Mon 9 Nov 2026
-Account: Fanvue USD operating account (Xero feed)
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Daily Xero ledger check request — Mon 9 Nov 2026
 
-Bookkeeper: Rory Cartwright (outsourced)
-Transaction flagged for review:
+Bookkeeper batch posted Fri 6 Nov 2026. Please review GBP transactions entered last week for coding accuracy and flag any issues before month-end close.
 
-Supplier: Isla Bentley Media LLC
-Bill reference: BILL-USD-0094
-Invoice date: Fri 6 Nov 2026
-USD bill posted to Xero by Rory Cartwright on Fri 6 Nov 2026
-GBP equivalent posted: £1,610.00
-Nominal code applied by bookkeeper: 7502 — Software Subscriptions
-Expected nominal: 7400 — Platform Content Delivery &amp; Distribution
-Expected GBP amount: £1,450.00
-Variance: £160.00
+Bill in question: supplier Rory Cartwright Media Ltd, bill reference BILL-2026-0441, dated Wed 4 Nov 2026, amount £1,610.00. Bookkeeper coded to nominal 7500 (Office Expenses). Expected amount per signed contract: £1,450.00. Correct nominal code should be 7200 (Creator Platform Licensing). Variance to investigate: £160.00. Month-end deadline is Mon 30 Nov 2026.
 
-Finance Manager for approval: George Halliwell</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">FANVUE — DAILY USD RECONCILIATION EXCEPTION REPORT
+Please draft a correction journal and queue summary for the finance manager to review.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">FANVUE — DAILY XERO LEDGER REVIEW SUMMARY
 Run date: Mon 9 Nov 2026
 
-EXCEPTION DETECTED — BILL-USD-0094
+MISCODING FLAG
+Bill BILL-2026-0441 | Rory Cartwright Media Ltd | dated Wed 4 Nov 2026
+Amount posted: £1,610.00 | Expected per contract: £1,450.00
+Variance: £160.00 — requires supplier clarification before approval
+Bookkeeper coded to 7500 (Office Expenses) — INCORRECT
+Correct nominal: 7200 (Creator Platform Licensing)
 
-Supplier: Isla Bentley Media LLC
-Invoice date: Fri 6 Nov 2026
-Coded by: Rory Cartwright (outsourced bookkeeper)
+ACTION TAKEN
+Correction journal drafted in Xero: debit 7200 £1,450.00, credit 7500 £1,450.00
+Excess £160.00 held unallocated pending supplier confirmation
+Posted to Xero as draft correction journal #CJ-0441 — awaiting your finance manager&#x27;s approval
 
-Issue 1 — Wrong nominal code
-  Booked to: 7502 Software Subscriptions
-  Should be: 7400 Platform Content Delivery &amp; Distribution
-  Action: Correction draft raised in Xero as draft bill BILL-USD-0094 pending recode to 7400.
+MONTH-END NOTE
+Correction must be approved before Mon 30 Nov 2026 to close the period cleanly
 
-Issue 2 — Amount variance
-  Posted amount: £1,610.00
-  Expected amount: £1,450.00
-  Variance: £160.00 over expected — query to be raised with supplier before approval.
-
-Posted to Xero as draft bill BILL-USD-0094 with nominal corrected to 7400 and status held pending Finance Manager sign-off.
-Queued for approval in the Outlook approval queue — draft email to George Halliwell flagging both the miscoding and the £160.00 variance for his review and decision.
-
-ACTION REQUIRED: George Halliwell to approve recode and confirm whether to dispute the £160.00 excess with Isla Bentley Media LLC.</div></div>
+REVIEW SUMMARY NOTIFICATION
+Queued for approval in the Outlook approval queue — addressed to your finance manager, summarising the miscoding, the £160.00 variance, and the draft journal reference CJ-0441</div></div>
     </div>
   </div>
 </details>
 <details open>
-  <summary><span class="score">#2</span> Duty 9: Maintain supplier records and support onboarding, including verifying bank details before anything is paid <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
+  <summary><span class="score">#2</span> Duty 4: Reconcile payroll, PAYE and pension control accounts to Rippling each month <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent creates/updates supplier contacts in Xero, flags new or changed bank details for human verification before any payment run is released.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent imports Rippling payroll reports, reconciles them to Xero control account balances, and flags any variance for human review.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Ivy Norcott &lt;i.norcott@pixelsprout.example.co.uk&gt;
-To: suppliers@fanvue.com
-Date: Mon 9 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Fanvue payroll reconciliation request — October 2026
 
-Hi Fanvue team,
+Rippling payroll summary CSV imported (pay period: Oct 2026, run date: Fri 6 Nov 2026)
 
-Please find our supplier details below for onboarding. We provide motion graphics and video editing services for creator-facing campaigns.
+Rippling figures:
+  Gross pay total:         £2,171.20
+  PAYE / NI liability:     £1,450.00
+  Pension contributions:   £342.80
+  Net pay disbursed:       £218.40
 
-Company name: Pixelsprout Ltd
-Contact name: Ivy Norcott
-Email: i.norcott@pixelsprout.example.co.uk
-Phone: 07700 123456
-Bank name: Barclays
-Sort code: 20-45-67
-Account number: 83920147
-Payment terms: 30 days
+Xero control account balances as at Mon 9 Nov 2026:
+  PAYE control account:    £1,450.00
+  Pension control account: £160.00
 
-Please confirm once we are set up. Thanks, Ivy</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">ACTION TAKEN — Mon 9 Nov 2026
+Pension payment deadline: Wed 11 Nov 2026
+Please reconcile and flag any variances before the deadline.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">FANVUE — OCTOBER 2026 PAYROLL RECONCILIATION
+Run date: Mon 9 Nov 2026 | Source: Rippling payroll CSV vs Xero control accounts
 
-XERO CONTACT CREATED
-Supplier name: Pixelsprout Ltd
-Contact person: Ivy Norcott
-Email: i.norcott@pixelsprout.example.co.uk
-Phone: 07700 123456
-Payment terms: 30 days
-Status: Posted to Xero as new supplier contact (pending verification)
-Bank details recorded: Barclays, sort code 20-45-67, account 83920147
-Payment hold: ACTIVE — no payment run will include this supplier until bank details are verified
+PAYE CONTROL ACCOUNT
+  Rippling PAYE / NI liability:   £1,450.00
+  Xero PAYE control balance:      £1,450.00
+  Variance:                        £0.00
+  Status: MATCHED — no action required
 
-VERIFICATION FLAG RAISED
-Bank details for Pixelsprout Ltd were submitted by email on Mon 9 Nov 2026 and have not yet been confirmed via a separate channel. Finance Manager must verify sort code and account number directly with Ivy Norcott before the payment hold is lifted in Xero.
+PENSION CONTROL ACCOUNT
+  Rippling pension contributions:  £342.80
+  Xero pension control balance:    £160.00
+  Variance:                        £342.80 vs £160.00 — DIFFERENCE OF £160.00 (underpaid in Xero)
+  Status: VARIANCE FLAGGED — requires human review before Wed 11 Nov 2026 deadline
 
-ACKNOWLEDGEMENT EMAIL
-Queued for approval in the Outlook approval queue — draft to i.norcott@pixelsprout.example.co.uk confirming Fanvue has received Pixelsprout Ltd&#x27;s supplier details and that setup is in progress, noting payment will follow once internal checks are complete.</div></div>
+ACTION REQUIRED
+  The Xero pension control account is understated by £160.00 against the Rippling figure.
+  Your finance manager should review and correct the Xero pension control posting before
+  the Wed 11 Nov 2026 payment deadline to avoid a late contribution.
+  No Xero entries or emails have been posted; this reconciliation is held pending your approval.</div></div>
     </div>
   </div>
 </details>
 <details open>
   <summary><span class="score">#3</span> Duty 3: Keep intercompany balances with our US entity reconciled <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent reconciles intercompany ledger balances between the UK and US Xero instances monthly, flagging mismatches for resolution.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent matches intercompany postings in Xero against the US entity&#x27;s shared ledger export, flags variances, and drafts elimination journals for approval.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Run monthly intercompany reconciliation for October 2026.
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Intercompany reconciliation run — Mon 9 Nov 2026
 
-UK Xero (Fanvue Ltd) — Intercompany Loan Account balance as at Mon 2 Nov 2026: £218.40 owed by US entity
-US Xero (Fanvue Inc) — Intercompany Loan Account balance as at Mon 2 Nov 2026: £342.80 owed to UK entity
+UK entity: Fanvue Ltd (Xero)
+US entity: Fanvue Inc (shared ledger export, Google Sheets)
 
-GBP/USD rate applied to US balance on Tue 3 Nov 2026: rate locked in US Xero on Fri 6 Nov 2026
-Timing difference created by rate-lock lag, estimated sterling equivalent gap: £160.00
+Recharge in scope: October platform infrastructure recharge from Fanvue Ltd to Fanvue Inc.
 
-Finance Manager: Jessica Kenworthy
-Jessica&#x27;s email: j.kenworthy@fanvue.com
-Period under review: October 2026</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">INTERCOMPANY RECONCILIATION — OCTOBER 2026 — Run Mon 9 Nov 2026
+Xero intercompany receivable posted: £1,610.00 (account IC-200, posted Wed 4 Nov 2026)
+US ledger intercompany payable recorded: £1,450.00 (posted Tue 3 Nov 2026)
+Timing difference identified: £160.00
 
-UK Xero (Fanvue Ltd) intercompany loan balance: £218.40 (US entity owes UK)
-US Xero (Fanvue Inc) intercompany loan balance: £342.80 (UK entity owes US)
-Sterling difference identified: £160.00 — MISMATCH FLAGGED
+Please match, flag the variance, and queue a correcting elimination journal for the finance manager.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INTERCOMPANY RECONCILIATION — Mon 9 Nov 2026
 
-CAUSE: GBP/USD conversion rate in US Xero was locked on Fri 6 Nov 2026, four days after the UK balance was struck on Mon 2 Nov 2026. The £160.00 gap is a currency timing difference, not a missing transaction.
+MATCH RESULT
+UK entity (Xero, account IC-200): £1,610.00 posted Wed 4 Nov 2026
+US entity (Google Sheets shared ledger): £1,450.00 posted Tue 3 Nov 2026
+Variance flagged: £160.00 — Fanvue Ltd carrying a higher receivable than Fanvue Inc has recorded as payable.
 
-RECONCILING ITEM LOGGED: Posted memo journal to UK Xero (Fanvue Ltd) intercompany account referencing timing difference of £160.00 — marked Needs Review, period Oct 2026.
+ROOT CAUSE NOTE
+The £160.00 excess on the UK side appears to be a timing or input difference on the October platform infrastructure recharge. The US ledger reflects £1,450.00; Fanvue Ltd&#x27;s Xero posting reflects £1,610.00. No supporting amendment from Fanvue Inc has been received to justify the higher figure.
 
-RECOMMENDED ACTION: Jessica to confirm whether US Xero (Fanvue Inc) should be updated to the Mon 2 Nov 2026 rate, eliminating the £160.00 variance and aligning both ledgers to £218.40.
+CORRECTING JOURNAL — QUEUED FOR APPROVAL
+Posted to Xero as draft elimination journal #ELIM-2026-11-001 (Mon 9 Nov 2026):
+  Dr Intercompany recharge income (IC-200)  £160.00
+  Cr Intercompany suspense (IC-299)         £160.00
+Status: awaiting your finance manager&#x27;s approval before posting.
 
-EMAIL: Draft prepared for Jessica Kenworthy — subject &quot;October 2026 Intercompany Reconciliation: £160.00 Timing Difference for Review&quot; — queued for approval in the Outlook approval queue before sending to j.kenworthy@fanvue.com.
+RECONCILIATION NOTE
+Queued for approval in the Outlook approval queue — draft note to US finance contact summarising the £160.00 variance and requesting confirmation of the correct recharge figure before Fri 13 Nov 2026.
 
-STATUS: Awaiting Finance Manager sign-off to close reconciliation for October 2026.</div></div>
+ACTION REQUIRED
+Your finance manager should review and approve both the Xero journal and the outbound note before the correcting entry is finalised.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#4</span> Duty 6: Prepare year-end schedules and answer queries from external accountants and auditors <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent generates year-end balance sheet schedules from Xero and drafts responses to auditor information requests via the M365 approval queue.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent generates standard year-end schedules from Xero and drafts responses to auditor queries using supporting data, routing anything requiring judgement to the Finance Manager.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Elliot Chadwick &lt;e.chadwick@gallowayaudit.example.co.uk&gt;
-Sent: Mon 9 Nov 2026
-To: finance@fanvue.com
-Subject: Fanvue Year-End Audit – Fixed Asset Schedule Request
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Elliot Chadwick, Chadwick Audit Partners (e.chadwick@chadwickaudit.example.co.uk)
+To: Fanvue finance team
+Date: Mon 9 Nov 2026
 
-Dear Fanvue Finance Team,
+We are currently reviewing Fanvue&#x27;s year-end position and require a full reconciliation of the deferred revenue balance as at the period end. Please provide a schedule showing opening balance, amounts recognised during the period, new subscriptions billed but not yet earned, and the closing balance. Supporting narrative on the recognition policy would also be helpful. Please respond by Fri 13 Nov 2026.
 
-As part of our year-end audit procedures for the period ending 31 October 2026, we require a full fixed-asset schedule including asset descriptions, acquisition dates, depreciation method, accumulated depreciation to year-end, and net book value. Please provide this at your earliest convenience, ideally by Fri 13 Nov 2026.
+Regards, Elliot Chadwick, Chadwick Audit Partners
 
-Kind regards,
-Elliot Chadwick
-Senior Auditor, Galloway Audit</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">TASK RECEIVED Mon 9 Nov 2026 — Auditor fixed-asset schedule request from Elliot Chadwick, Galloway Audit. Deadline: Fri 13 Nov 2026.
+--- Internal note from finance team ---
+Please pull the deferred revenue figures from Xero and draft a covering email for approval before we reply to Elliot.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">STEP 1 — XERO DATA PULL
+Queried Xero for deferred revenue account movements across the full financial year to period end. Extracted: opening balance, subscription billings posted in-period, revenue recognition journals applied in-period, and closing balance. No £ figures available to include per current configuration.
 
-STEP 1 — DATA PULL FROM XERO
-Queried Xero fixed-asset register for Fanvue, year-end date 31 Oct 2026. Retrieved all asset records including asset name, acquisition date, depreciation method, accumulated depreciation to 31 Oct 2026, and net book value. No £ figures attached per current instruction set; schedule columns confirmed populated in source data.
+STEP 2 — SCHEDULE POSTED TO XERO
+Posted deferred revenue reconciliation schedule to Xero as draft working paper reference DR-YE-2026. Columns: period, opening balance, new billings, amounts recognised, closing balance. Rows reconcile line by line to the Xero general ledger.
 
-STEP 2 — SCHEDULE FORMATTED
-Fixed-asset schedule compiled covering asset classes: Computer Equipment, Software Licences, Office Furniture, and Leasehold Improvements. All fields match Xero register entries as at 31 Oct 2026.
+STEP 3 — JUDGEMENT FLAG
+Recognition policy narrative requires sign-off from your finance manager before disclosure to auditors. Routed to finance manager review queue in Xero.
 
-STEP 3 — DRAFT EMAIL QUEUED
-Queued for approval in the Outlook approval queue.
+STEP 4 — EMAIL DRAFT QUEUED
+Queued for approval in the Outlook approval queue — draft reply to Elliot Chadwick (e.chadwick@chadwickaudit.example.co.uk) on behalf of Fanvue:
 
-To: e.chadwick@gallowayaudit.example.co.uk
-From: finance@fanvue.com
-Subject: Fanvue Year-End Audit – Fixed Asset Schedule to 31 Oct 2026
+  Subject: Deferred Revenue Reconciliation — Fanvue Year-End 2026
+  Dear Elliot, please find attached our deferred revenue schedule (ref DR-YE-2026) reconciling the opening balance through to period end, including subscription billings and recognition journals. Our revenue recognition policy note will follow once internally approved. We aim to have everything with you by Fri 13 Nov 2026. Kind regards, Fanvue Finance Team
 
-Dear Elliot,
-
-Please find attached the Fanvue fixed-asset schedule as at 31 Oct 2026, extracted directly from our Xero fixed-asset register. The schedule covers all asset classes held at year-end and details acquisition dates, depreciation methods, accumulated depreciation, and net book values. Please let us know if you require any further information.
-
-Kind regards, Fanvue Finance Team
-
-ACTION REQUIRED — Finance Manager to review schedule attachment and approve email before dispatch.</div></div>
+ACTION NEEDED — your finance manager must approve the policy narrative and release the email before Fri 13 Nov 2026.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#5</span> Duty 7: Run the invoice inbox, logging, chasing and routing supplier invoices so nothing reaches the ledger without a document <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent monitors the shared invoice inbox, creates draft bills in Xero, routes for approval and chases suppliers for missing documents via email.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent monitors the shared invoice inbox, logs each invoice into Xero as a draft bill, routes for approval, and chases suppliers for missing documents via the email approval queue.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: b.lockhart@contentdeliveryhub.example.co.uk
-To: invoices@fanvue.com
-Date: Mon 9 Nov 2026
-Subject: Invoice INV-CDH-0892
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Inbox scan complete — invoice@fanvue.com — Mon 9 Nov 2026
 
-Hi,
+Three supplier invoices received last week, none with a valid PO reference:
 
-Please find attached our invoice INV-CDH-0892 for content delivery network bandwidth
-services provided to Fanvue during October 2026.
+1. INV-A101 | Supplier: Max Inglis Creative Ltd | Dated: Mon 2 Nov 2026
+   Amount: £342.80 | Service: Social media content production | No PO reference on invoice
 
-Amount due: please refer to attached PDF.
+2. INV-A102 | Supplier: Lily Holbrook Design Studio | Dated: Tue 3 Nov 2026
+   Amount: £218.40 | Service: Creator platform UI asset pack | No delivery note received
 
-Kind regards,
-Beatrice Lockhart
-Content Delivery Hub
+3. INV-A103 | Supplier: Beatrice Lockhart Analytics | Dated: Wed 4 Nov 2026
+   Amount: £1,610.00 | Service: Creator engagement analytics report | Expected: £1,450.00
 
-NOTE TO AGENT: Attached PDF present but contains no PO reference number.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">INVOICE RECEIVED — Mon 9 Nov 2026
-Supplier: Content Delivery Hub | Contact: Beatrice Lockhart
-Invoice ref: INV-CDH-0892 | Service: CDN bandwidth, October 2026
-PO reference: MISSING
+All three require department head sign-off before ledger entry.
+Routing to approval queue now.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">INVOICE INBOX PROCESSING — Fanvue — Mon 9 Nov 2026
 
-HOLD REASON: No PO number found on invoice or in email body. Bill will not be
-logged to the ledger until a valid PO reference is confirmed.
+STEP 1 — DRAFT BILLS POSTED TO XERO
 
-ACTION 1 — DRAFT BILL
-Posted to Xero as draft bill #DRAFT-CDH-0892 (status: On Hold, pending PO
-reference). Account coded to CDN / hosting services. Awaiting PO before
-bill is submitted for approval.
+INV-A101 | Max Inglis Creative Ltd | £342.80 | Dated Mon 2 Nov 2026
+Posted to Xero as draft bill #INV-A101 — flagged: no PO reference
 
-ACTION 2 — SUPPLIER EMAIL
-Queued for approval in the Outlook approval queue.
-To: b.lockhart@contentdeliveryhub.example.co.uk
-Subject: Invoice INV-CDH-0892 — PO Reference Required
-Body: Dear Beatrice, thank you for submitting invoice INV-CDH-0892. Before we
-can process this for payment at Fanvue, we require a valid purchase order
-number to be quoted. Please reply with your PO reference at your earliest
-convenience so we can proceed. Many thanks, Fanvue Finance Team.
+INV-A102 | Lily Holbrook Design Studio | £218.40 | Dated Tue 3 Nov 2026
+Posted to Xero as draft bill #INV-A102 — flagged: no delivery note received
 
-NEXT CHASE DATE: If no reply received by Thu 12 Nov 2026, agent will send
-a follow-up and flag to Lily Holbrook for internal review.</div></div>
+INV-A103 | Beatrice Lockhart Analytics | £1,610.00 | Dated Wed 4 Nov 2026
+Posted to Xero as draft bill #INV-A103 — flagged: amount exceeds expected (£1,450.00) by £160.00
+
+STEP 2 — CHASE AND APPROVAL EMAILS
+
+For INV-A101: Queued for approval in the Outlook approval queue — email to m.inglis@maxingliscreative.example.co.uk requesting PO reference before Fanvue can approve payment.
+
+For INV-A102: Queued for approval in the Outlook approval queue — email to l.holbrook@holbrookdesign.example.co.uk requesting delivery note before Fanvue can proceed.
+
+For INV-A103: Queued for approval in the Outlook approval queue — email to b.lockhart@lockhart-analytics.example.co.uk querying £160.00 overbilling versus agreed £1,450.00; your finance manager also notified to hold payment pending supplier response.
+
+STEP 3 — SUMMARY
+
+Total invoiced: £2,171.20 | If INV-A103 corrected: £2,011.20
+All three bills held as drafts in Xero — none will reach the ledger until documents and approvals are confirmed.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#6</span> Duty 8: Chase receipts and missing context from colleagues for card spend, and keep receipt compliance high <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent identifies unreceipted card transactions in Xero, emails the relevant colleague with a polite chase and tracks compliance rate on a dashboard.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent identifies unmatched card transactions in Xero, drafts personalised chase emails to cardholders via the M365 approval queue, and tracks compliance rates.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Rippling card spend sync — Mon 9 Nov 2026
-Unreceipted transactions older than 7 days: 12 total
-
-Cardholder: Alice Hargreaves (a.hargreaves@fanvue.example.co.uk)
-  Txn RIP-3301  Mon 2 Nov 2026  £218.40  Creator tools subscription
-  Txn RIP-3302  Wed 4 Nov 2026  £342.80  Platform analytics software
-  Txn RIP-3303  Thu 5 Nov 2026  £160.00  Content moderation service top-up
-
-Cardholder: Freddie Wyndham (f.wyndham@fanvue.example.co.uk)
-  Txn RIP-3304  Mon 2 Nov 2026  £1,450.00  Influencer marketing conference tickets
-  Txn RIP-3305  Tue 3 Nov 2026  £342.80  Team offsite venue deposit
-
-Cardholder: Hugo Underhill (h.underhill@fanvue.example.co.uk)
-  Txn RIP-3306  Wed 4 Nov 2026  £218.40  Paid social media ads spend
-  Txn RIP-3307  Thu 5 Nov 2026  £160.00  Creator onboarding software licence
-
-Cardholder: Leo Quintrell (l.quintrell@fanvue.example.co.uk)
-  Txn RIP-3308  Tue 3 Nov 2026  £1,450.00  Creator partnership campaign tools
-  Txn RIP-3309  Fri 6 Nov 2026  £342.80  Video encoding platform fee
-  Txn RIP-3310  Mon 2 Nov 2026  £218.40  Live streaming bandwidth costs
-  Txn RIP-3311  Wed 4 Nov 2026  £160.00  Thumbnail design tool subscription
-  Txn RIP-3312  Thu 5 Nov 2026  £342.80  Rights management software
-
-Receipt compliance rate before this run: 61% (tracked in Google Sheets dashboard)</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">FANVUE — RECEIPT COMPLIANCE CHASE RUN
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Source: Rippling card transaction export, October 2026 — month-end review
 Run date: Mon 9 Nov 2026
-Transactions reviewed: 12  |  Unreceipted (all &gt;7 days old): 12
-Pre-run compliance rate: 61%  |  Flagged to cardholders: 4
 
-XERO ACTIONS
-All 12 transactions pulled from Rippling sync and flagged as awaiting receipt in Xero. Status set to &#x27;Receipt Required&#x27; on each line. Google Sheets dashboard updated: 12 transactions newly chased, compliance rate recalculated pending cardholder response.
+Cardholders with unreceipted transactions over the minimum threshold:
 
-EMAILS QUEUED FOR APPROVAL
+Alice Hargreaves — 6 unreceipted transactions, spend dates between Mon 2 Nov 2026 and Fri 6 Nov 2026, categories: software subscriptions, paid social, team lunch
+Freddie Wyndham — 5 unreceipted transactions, spend dates between Tue 3 Nov 2026 and Thu 5 Nov 2026, categories: creator platform tools, travel
+Hugo Underhill — 3 unreceipted transactions, spend dates between Wed 4 Nov 2026 and Fri 6 Nov 2026, categories: office supplies, contractor referral meal
 
-1. To: a.hargreaves@fanvue.example.co.uk
-Subject: Action needed — 3 unreceipted Fanvue card transactions
-Body: Hi Alice, please upload receipts for RIP-3301 (£218.40, Mon 2 Nov), RIP-3302 (£342.80, Wed 4 Nov), and RIP-3303 (£160.00, Thu 5 Nov). Deadline: Mon 16 Nov 2026. Thanks, Fanvue Finance.
-Queued for approval in the Outlook approval queue.
+Total unreceipted transactions flagged: 14
+Compliance deadline set by finance team: Fri 13 Nov 2026
+Cardholder email domain: fanvue.com (internal)
+Receipt upload portal: Rippling Expenses</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">TASK: Month-end unreceipted card spend chase — Mon 9 Nov 2026
+SOURCE: Rippling export cross-referenced against Xero unmatched transactions
+TOTAL FLAGGED: 14 transactions across 3 cardholders
 
-2. To: f.wyndham@fanvue.example.co.uk
-Subject: Action needed — 2 unreceipted Fanvue card transactions
-Body: Hi Freddie, please upload receipts for RIP-3304 (£1,450.00, Mon 2 Nov) and RIP-3305 (£342.80, Tue 3 Nov). Deadline: Mon 16 Nov 2026. Thanks, Fanvue Finance.
-Queued for approval in the Outlook approval queue.
+XERO STATUS: 14 transactions marked as Unreceipted in Xero awaiting receipt attachment. No amounts posted to expense accounts until receipts are matched.
 
-3. To: h.underhill@fanvue.example.co.uk
-Subject: Action needed — 2 unreceipted Fanvue card transactions
-Body: Hi Hugo, please upload receipts for RIP-3306 (£218.40, Wed 4 Nov) and RIP-3307 (£160.00, Thu 5 Nov). Deadline: Mon 16 Nov 2026. Thanks, Fanvue Finance.
-Queued for approval in the Outlook approval queue.
+COMPLIANCE TRACKER UPDATED: Xero note added — 14 unreceipted items outstanding as of Mon 9 Nov 2026. Deadline: Fri 13 Nov 2026.
 
-4. To: l.quintrell@fanvue.example.co.uk
-Subject: Action needed — 4 unreceipted Fanvue card transactions
-Body: Hi Leo, please upload receipts for RIP-3308 (£1,450.00, Tue 3 Nov), RIP-3309 (£342.80, Fri 6 Nov), RIP-3310 (£218.40, Mon 2 Nov), RIP-3311 (£160.00, Wed 4 Nov), and RIP-3312 (£342.80, Thu 5 Nov). Deadline: Mon 16 Nov 2026. Thanks, Fanvue Finance.
-Queued for approval in the Outlook approval queue.</div></div>
+EMAILS QUEUED — 3 personalised drafts sent to the Outlook approval queue for your finance manager to review and release.
+
+DRAFT 1 — To: a.hargreaves@fanvue.com
+Subject: Action needed — 6 unreceipted card transactions by Fri 13 Nov
+Hi Alice, we have 6 card transactions on your Fanvue Rippling card from Mon 2 Nov to Fri 6 Nov (software subscriptions, paid social, team lunch) that are missing receipts. Please upload them to Rippling Expenses by Fri 13 Nov 2026 so we can clear them in Xero. Thanks, Fanvue Finance Team
+
+DRAFT 2 — To: f.wyndham@fanvue.com
+Subject: Action needed — 5 unreceipted card transactions by Fri 13 Nov
+Hi Freddie, we have 5 transactions on your Fanvue Rippling card from Tue 3 Nov to Thu 5 Nov (creator platform tools, travel) awaiting receipts. Please upload to Rippling Expenses by Fri 13 Nov 2026. Thanks, Fanvue Finance Team
+
+DRAFT 3 — To: h.underhill@fanvue.com
+Subject: Action needed — 3 unreceipted card transactions by Fri 13 Nov
+Hi Hugo, we have 3 transactions on your Fanvue Rippling card from Wed 4 Nov to Fri 6 Nov (office supplies, contractor referral meal) awaiting receipts. Please upload to Rippling Expenses by Fri 13 Nov 2026. Thanks, Fanvue Finance Team
+
+NEXT STEP: Your finance manager to approve and release all 3 emails from the Outlook approval queue.</div></div>
     </div>
   </div>
 </details>
 <details>
   <summary><span class="score">#7</span> Duty 10: Be the first point of contact for finance questions from the wider team <span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles routine finance queries via email/inbox; complex or policy queries escalate to Finance Manager.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent handles routine finance queries via email, drafts responses, and escalates complex or policy questions to the Finance Manager.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Sienna Cartwright &lt;s.cartwright@fanvue.com&gt;
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Sienna Cartwright (Head of Creator Partnerships)
 To: finance@fanvue.com
 Date: Mon 9 Nov 2026
 
 Hi Finance,
 
-Could you check on a payment to our influencer content agency, Halcyon Social? We
-submitted their invoice back on Wed 4 Nov and they&#x27;ve chased me twice already saying
-they haven&#x27;t received anything. The campaign goes live next week and they&#x27;re
-threatening to pause work. The invoice reference on their end is HS-0892.
+A couple of my team submitted expenses last week for travel to a creator event in London on Wed 4 Nov. Neither of them has been reimbursed yet and they are both chasing me. Can you look into what is holding it up? We followed the usual process and uploaded receipts through Rippling.
 
-Can you let me know what&#x27;s happening?
-
-Thanks,
-Sienna Cartwright
-Marketing Manager, Fanvue</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED Mon 9 Nov 2026
-From: Sienna Cartwright (Marketing Manager)
-Re: Payment status for Halcyon Social, invoice HS-0892
+Thanks
+Sienna</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">QUERY RECEIVED — Mon 9 Nov 2026
+From: Sienna Cartwright, Head of Creator Partnerships
+Subject: Team expenses not reimbursed — creator event Wed 4 Nov 2026
 
 XERO CHECK
-Searched Xero for supplier Halcyon Social, invoice reference HS-0892.
-Result: Bill located — imported Wed 4 Nov 2026, current status AWAITING APPROVAL.
-Bill has not yet been approved or submitted for payment. No payment run is scheduled
-until approval is complete.
+Searched Xero for pending expense claims linked to the Creator Partnerships team, event date Wed 4 Nov 2026.
+Finding: One receipt uploaded via Rippling remains in draft status in Xero — it has not yet been approved by a manager and therefore has not entered the payment run.
 
-ACTION
-No escalation required — this is a standard status query.
-Reply drafted to Sienna Cartwright and queued for approval in the Outlook approval queue.
+ACTION TAKEN
+Draft reply queued for approval in the Outlook approval queue, addressed to Sienna Cartwright (s.cartwright@fanvue.example.co.uk):
 
-EMAIL DRAFT
-To: s.cartwright@fanvue.com
-Subject: Re: Halcyon Social payment — invoice HS-0892
+DRAFT EMAIL CONTENT
+Hi Sienna, thank you for getting in touch. We have checked Xero and can see that one expense receipt from your team&#x27;s London trip on Wed 4 Nov is still sitting in draft — it has not yet received manager approval, which is required before Fanvue can process payment. Could you or the relevant team member log into Rippling to confirm the receipt has been fully submitted and assigned to an approver? Once approved, it will be included in the next payment run. If you need further help, your finance manager is available to advise.
+Thanks, Fanvue Finance Team
 
-Hi Sienna, we&#x27;ve checked Xero and can confirm invoice HS-0892 from Halcyon Social
-was received on Wed 4 Nov 2026 and is currently awaiting approval before it can be
-released for payment. We will flag it for the approver today, Mon 9 Nov 2026, to
-prioritise given the campaign timeline. We will keep you updated.
-
-Fanvue Finance Team</div></div>
+ESCALATION FLAG — None required at this stage. If receipt remains unapproved by Wed 11 Nov 2026, escalate to your finance manager.</div></div>
     </div>
   </div>
 </details>
 <details>
-  <summary><span class="score">#8</span> Duty 5: Prepare the UK VAT return in Xero for review <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <summary><span class="score">#8</span> Duty 2: Prepare month-end journals, accruals and prepayments, and balance sheet reconciliations so we close by working day 5 <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
   <div class="body">
-    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent compiles VAT return figures from Xero and presents the draft return; Finance Manager reviews before human-backup submits to HMRC.</p>
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent drafts all standard accrual and prepayment journals in Xero and produces a reconciliation pack; Finance Manager reviews and posts to finalise the close.</p>
     <div class="columns">
-      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: Daisy Marston, Finance Manager, Fanvue
-To: Automation Agent
-Date: Mon 9 Nov 2026
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Month-end close request — October 2026
+Today: Mon 9 Nov 2026 (Working day 5 — close deadline today)
 
-Please prepare the Q3 2026 VAT return for Fanvue ready for my review. The VAT period covers 1 August 2026 to 31 October 2026. Submission deadline is Fri 27 Nov 2026. Pull the figures from Xero, flag any unreconciled transactions, and send me a summary to approve before we submit to HMRC. Our VAT scheme is standard accruals basis.</div></div>
-      <div class="col"><h3>Agent output</h3><div class="block">VAT RETURN PREPARATION — FANVUE
-Period: 1 Aug 2026 to 31 Oct 2026
-Run date: Mon 9 Nov 2026
-HMRC submission deadline: Fri 27 Nov 2026
+Open POs not yet invoiced (accruals needed):
+- PO-2201: Content delivery platform hosting — supplier Callum Beaumont Ltd — £1,610.00 for October, invoice not received
+- PO-2202: Creator analytics subscription — supplier Grace Vickery Data — £342.80 for October, invoice not received
+- PO-2203: Payment processing fees — supplier Owen Brightwell Payments — £218.40 for October, invoice not received
 
-ACTIONS TAKEN IN XERO
-Ran VAT Return report in Xero for the period 1 Aug 2026 to 31 Oct 2026 on the standard accruals basis. Draft return compiled in Xero — status set to Draft, awaiting Finance Manager sign-off before human-authorised submission to HMRC.
+Prepayment to reverse:
+- Toby Driscoll PR Agency annual retainer prepaid — £1,450.00 covers 12 months; October is month 2 of 12, so one month to release
 
-RECONCILIATION CHECK
-All sales invoices and purchase bills for the period are reconciled to bank in Xero. No unreconciled transactions detected. All nominal codes appear correctly mapped to the relevant VAT return boxes.
+Accruals account code: 2110
+Prepayments account code: 1120
+P&amp;L expense accounts: 5050 (hosting), 5060 (analytics), 5070 (payment processing), 5080 (PR)
+Period to close: October 2026</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">FANVUE — OCTOBER 2026 MONTH-END JOURNAL PACK
+Prepared by agent on Mon 9 Nov 2026 (Working day 5)
 
-DRAFT RETURN BOXES — pulled from Xero (no £ figures recorded per standing instruction; box values visible in the Xero draft for Daisy Marston to verify)
-Box 1: Output VAT due on sales
-Box 2: VAT due on EU acquisitions (nil)
-Box 3: Total VAT due
-Box 4: Input VAT reclaimable
-Box 5: Net VAT payable to HMRC
-Boxes 6-9: Net sales, net purchases, EU figures
+ACCRUALS JOURNALS — drafted in Xero, period 31 Oct 2026
+JNL-001: DR 5050 Hosting £1,610.00 / CR 2110 Accruals £1,610.00 — PO-2201 Callum Beaumont Ltd, invoice not yet received
+JNL-002: DR 5060 Analytics £342.80 / CR 2110 Accruals £342.80 — PO-2202 Grace Vickery Data, invoice not yet received
+JNL-003: DR 5070 Payment processing £218.40 / CR 2110 Accruals £218.40 — PO-2203 Owen Brightwell Payments, invoice not yet received
+Total accruals posted to Xero: £2,171.20 (draft, pending Finance Manager approval)
+
+PREPAYMENT RELEASE JOURNAL — drafted in Xero, period 31 Oct 2026
+JNL-004: DR 5080 PR expense £1,450.00 / CR 1120 Prepayments £1,450.00 — Toby Driscoll PR retainer, month 2 of 12 released
+Posted to Xero as draft manual journal JNL-004
+
+BALANCE SHEET RECONCILIATION NOTE
+Accruals control (2110) movement this close: £2,171.20 added
+Prepayments control (1120) movement this close: £1,450.00 released
+Finance Manager to confirm both controls agree to sub-ledger before posting
+
+CLOSE PACK EMAIL
+Queued for approval in the Outlook approval queue — draft addressed to your Finance Manager, subject: Fanvue October 2026 Close Pack — 4 draft journals ready for review, attached reconciliation schedule included. Please approve or amend by end of Mon 9 Nov 2026.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#9</span> Duty 5: Prepare the UK VAT return in Xero for review <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent compiles the VAT return from Xero transaction data and presents a completed draft to the Finance Manager for review before submission.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">Please prepare the Xero VAT return for Fanvue for the quarter ended 31 October 2026. Pull the VAT return report from Xero, reconcile Box 1 through Box 9, and flag any anomalies before we submit. The return needs to be ready for the finance manager to review by end of today, Mon 9 Nov 2026. VAT period: 1 August 2026 to 31 October 2026. Standard rate scheme. We are on accruals basis. Please email the draft summary to the finance manager once compiled.</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">VAT RETURN DRAFT SUMMARY — FANVUE
+Quarter: 1 Aug 2026 to 31 Oct 2026
+Prepared: Mon 9 Nov 2026
+
+XERO DATA PULL COMPLETE
+Agent retrieved the VAT Return report from Xero for the above period (accruals basis, standard rate scheme). All posted transactions through 31 Oct 2026 are included.
+
+BOX RECONCILIATION STATUS
+Box 1 — VAT due on sales: reconciled to Xero output tax ledger. No unreconciled items.
+Box 2 — VAT due on EU acquisitions: nil, as expected for Fanvue&#x27;s UK-only registration status.
+Box 4 — VAT reclaimed on purchases: reconciled to Xero input tax ledger.
+Box 6 — Total value of sales exc. VAT: reconciled. Includes platform subscription and creator payout income lines.
+Box 7 — Total value of purchases exc. VAT: reconciled to supplier invoices posted in Xero.
+Boxes 3, 5, 8, 9: auto-calculated in Xero; figures consistent with reconciled inputs.
+
+ANOMALIES FLAGGED FOR FINANCE MANAGER REVIEW
+1. Three supplier bills posted in Oct 2026 carry a mix of 20% and exempt VAT codes — please confirm correct treatment before submission.
+2. One sales invoice dated Tue 3 Nov 2026 appears in Xero but falls outside this VAT period — excluded from return; confirm this is correct.
 
 NEXT STEP
-Draft summary queued for approval in the Outlook approval queue — addressed to Daisy Marston (Finance Manager, Fanvue) for review. Once approved, a human operator should submit the finalised return to HMRC via Xero no later than Fri 27 Nov 2026.</div></div>
+Review summary emailed to your finance manager — queued for approval in the Outlook approval queue before sending.</div></div>
+    </div>
+  </div>
+</details>
+<details>
+  <summary><span class="score">#10</span> Duty 9: Maintain supplier records and support onboarding, including verifying bank details before anything is paid <span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></summary>
+  <div class="body">
+    <p style="margin:0 0 6px 0;color:#444;font-size:0.92rem;">Agent creates or updates supplier records in Xero and drafts bank-detail verification requests; a human must confirm verified details before any payment is released.</p>
+    <div class="columns">
+      <div class="col"><h3>Input <span class="sample-tag">sample</span></h3><div class="block">From: i.norcott@pixelpress.example.co.uk
+To: accounts@fanvue.com
+Date: Mon 9 Nov 2026
+
+Hi Fanvue team,
+
+Please note our bank details have changed as of this week. Our updated details are:
+
+Account name: Pixel Press Ltd
+Sort code: 20-45-71
+Account number: 83614902
+
+Could you update your records before the next payment run? Our outstanding invoice for content moderation tooling support is due shortly.
+
+Thanks,
+Ivy Norcott
+Pixel Press Ltd</div></div>
+      <div class="col"><h3>Agent output</h3><div class="block">AGENT ACTION SUMMARY — Mon 9 Nov 2026
+
+SUPPLIER: Pixel Press Ltd (existing Xero contact)
+CHANGE REQUEST: Bank details amendment received by email from i.norcott@pixelpress.example.co.uk
+
+XERO UPDATE: Supplier contact record for Pixel Press Ltd updated as a DRAFT CHANGE in Xero — new sort code 20-45-71 and account number 83614902 saved but marked UNVERIFIED. Previous bank details retained until verification is confirmed. Payment to this supplier is BLOCKED in Xero pending approval.
+
+VERIFICATION EMAIL: Queued for approval in the Outlook approval queue — draft addressed to i.norcott@pixelpress.example.co.uk asking Ivy Norcott to confirm the new account name, sort code, and account number by reply, and to call Fanvue accounts on our registered number to provide verbal confirmation.
+
+ACTION REQUIRED FROM YOUR FINANCE MANAGER:
+1. Approve and send the verification email via the Outlook approval queue.
+2. Once Pixel Press Ltd confirms details verbally and in writing, return to Xero and mark the bank detail change as VERIFIED to release the payment block.
+Do not approve any payment to Pixel Press Ltd until step 2 is complete.</div></div>
     </div>
   </div>
 </details>
@@ -515,6 +559,7 @@ Draft summary queued for approval in the Outlook approval queue — addressed to
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
   [SENDER NAME / EMAIL]
+  <div class="legal-banner foot"><strong>Illustration prepared by Vizaible</strong> from Fanvue's public job ad. Not produced by or affiliated with Fanvue. All people, suppliers, invoices and figures shown are fictional.</div>
 </footer>
 </body>
 </html>
