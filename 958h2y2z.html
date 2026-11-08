@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,14 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from Webexpenses's public job ad. Not produced by or affiliated with Webexpenses. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Accounts Payable Assistant ad, run by an agent</p>
   <h1>Webexpenses</h1>
+  <p class="top-sub">Ad posted 6 Nov 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">71%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">24%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">5%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your accounting system. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=Webexpenses%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates invoice processing and supplier chasing, freeing the AP team for higher-value judgement calls.</p>
   <p class="services">UK employer — Webexpenses (role: Accounts Payable Assistant).</p>
   <p class="honest-count"><strong>Covered: 95%</strong> (agent 71% + your approvals 14% + our assistant 10%)</p>
@@ -133,39 +196,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <p class="savings"><strong>What this would save:</strong> likely a few hours a week — rough estimate only; actual savings depend on volume. Every draft stays with you to approve before anything leaves.</p>
   <div class="meta"><span class="pill">Systems: Webexpenses, Zudello, Excel</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Process supplier invoices, credit notes and purchase orders accurately and on time</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads invoices from shared inbox, posts bills and credit notes to the accounting system, and matches them to POs automatically.</td></tr>
-    <tr><td>2</td><td>Run three-way matching and resolve queries with budget holders and suppliers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent performs PO/GRN/invoice matching, drafts query emails to budget holders or suppliers via the approval queue for mismatches.</td></tr>
-    <tr><td>3</td><td>Prepare weekly payment runs, including BACS and international payments, for review and approval</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares the full payment run proposal (BACS + international); a human reviews and releases it to the bank.</td></tr>
-    <tr><td>4</td><td>Reconcile supplier statements each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches supplier statement lines against the ledger, posts adjustments for agreed differences, and flags unresolved items.</td></tr>
-    <tr><td>5</td><td>Review and process employee expense claims in line with policy</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent checks expense claims against policy rules in Webexpenses, flags out-of-policy items for manager approval, and posts approved claims to the ledger.</td></tr>
-    <tr><td>6</td><td>Maintain supplier records, including bank detail changes with fraud checks</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent updates supplier contacts in the accounting system; bank detail changes are queued for a human to approve after fraud-check verification.</td></tr>
-    <tr><td>7</td><td>Reconcile company credit cards</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches credit card transactions to receipts and posted expenses, flags unmatched items, and posts reconciled entries to the ledger.</td></tr>
-    <tr><td>8</td><td>Code input VAT correctly to support VAT returns</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent applies correct VAT tax codes when posting bills, flags ambiguous items for review to ensure the VAT return data is clean.</td></tr>
-    <tr><td>9</td><td>Produce the aged creditors report and flag cash-flow timing to the Assistant Management Accountant</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates the aged creditors report from the accounting system and drafts a summary email highlighting large or overdue items for the AMA.</td></tr>
-    <tr><td>10</td><td>Answer supplier queries promptly and professionally</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads supplier query emails from the shared inbox, pulls relevant invoice/payment data, and drafts responses via the approval queue.</td></tr>
-    <tr><td>11</td><td>Close the purchase ledger in line with the month-end timetable</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent ensures all invoices are posted and reconciled by cut-off, then queues the ledger-close confirmation for the Finance Manager to sign off.</td></tr>
-    <tr><td>12</td><td>Provide details of uninvoiced costs to support the accruals schedule</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent scans open POs and delivery notes for uninvoiced items, compiles an accruals list, and drafts it for the AMA to incorporate into journals.</td></tr>
-    <tr><td>13</td><td>Prepare the accounts payable control account reconciliation for review</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the AP control account balance and creditor ledger totals, reconciles them, and queues the reconciliation for the Finance Manager&#x27;s review.</td></tr>
-    <tr><td>14</td><td>Allocate customer receipts and cover credit control chasing during absences</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent allocates incoming customer payments to open invoices and sends overdue-balance chaser emails via the approval queue when covering AR.</td></tr>
-    <tr><td>15</td><td>Help improve our accounts payable processes and automation</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies recurring exceptions and repetitive tasks, drafts process improvement notes for human review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Identify recurring invoice exceptions or matching failures and summarise patterns</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent logs repeated exception types and drafts a monthly summary report for the Finance Manager.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft updated process notes or workflow changes based on identified inefficiencies</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts revised process documentation and queues it for human review and sign-off.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Evaluate and recommend new automation tools or integrations</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant researches AP automation tools and prepares a shortlist for the Finance Manager.</td></tr>
-    <tr><td>16</td><td>Keep processes documented and up to date</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent maintains process documentation in shared drives, drafting updates whenever a workflow changes and queuing them for human approval.</td></tr>
-    <tr><td>17</td><td>Build experience towards the Assistant Management Accountant role as you progress through your studies</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td>Personal career development and study progression are inherently human activities the agent cannot perform.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Complete AAT / ACCA / CIMA study modules and assignments</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">The employee attends study sessions and submits coursework — no automation applies.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Shadow the Assistant Management Accountant during month-end preparation</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td style="color:#555;">In-person learning and mentoring cannot be performed by the agent.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Review management accounts packs to build technical understanding</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent can pull and format management account reports to give the employee easy access to review material.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -742,7 +772,42 @@ Close-off memo drafted and queued for approval in the Outlook approval queue. Yo
   </div>
 </details>
 
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Process supplier invoices, credit notes and purchase orders accurately and on time</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads invoices from shared inbox, posts bills and credit notes to the accounting system, and matches them to POs automatically.</td></tr>
+    <tr><td>2</td><td>Run three-way matching and resolve queries with budget holders and suppliers</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent performs PO/GRN/invoice matching, drafts query emails to budget holders or suppliers via the approval queue for mismatches.</td></tr>
+    <tr><td>3</td><td>Prepare weekly payment runs, including BACS and international payments, for review and approval</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares the full payment run proposal (BACS + international); a human reviews and releases it to the bank.</td></tr>
+    <tr><td>4</td><td>Reconcile supplier statements each month</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches supplier statement lines against the ledger, posts adjustments for agreed differences, and flags unresolved items.</td></tr>
+    <tr><td>5</td><td>Review and process employee expense claims in line with policy</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent checks expense claims against policy rules in Webexpenses, flags out-of-policy items for manager approval, and posts approved claims to the ledger.</td></tr>
+    <tr><td>6</td><td>Maintain supplier records, including bank detail changes with fraud checks</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent updates supplier contacts in the accounting system; bank detail changes are queued for a human to approve after fraud-check verification.</td></tr>
+    <tr><td>7</td><td>Reconcile company credit cards</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent matches credit card transactions to receipts and posted expenses, flags unmatched items, and posts reconciled entries to the ledger.</td></tr>
+    <tr><td>8</td><td>Code input VAT correctly to support VAT returns</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent applies correct VAT tax codes when posting bills, flags ambiguous items for review to ensure the VAT return data is clean.</td></tr>
+    <tr><td>9</td><td>Produce the aged creditors report and flag cash-flow timing to the Assistant Management Accountant</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent generates the aged creditors report from the accounting system and drafts a summary email highlighting large or overdue items for the AMA.</td></tr>
+    <tr><td>10</td><td>Answer supplier queries promptly and professionally</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads supplier query emails from the shared inbox, pulls relevant invoice/payment data, and drafts responses via the approval queue.</td></tr>
+    <tr><td>11</td><td>Close the purchase ledger in line with the month-end timetable</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent ensures all invoices are posted and reconciled by cut-off, then queues the ledger-close confirmation for the Finance Manager to sign off.</td></tr>
+    <tr><td>12</td><td>Provide details of uninvoiced costs to support the accruals schedule</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent scans open POs and delivery notes for uninvoiced items, compiles an accruals list, and drafts it for the AMA to incorporate into journals.</td></tr>
+    <tr><td>13</td><td>Prepare the accounts payable control account reconciliation for review</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent pulls the AP control account balance and creditor ledger totals, reconciles them, and queues the reconciliation for the Finance Manager&#x27;s review.</td></tr>
+    <tr><td>14</td><td>Allocate customer receipts and cover credit control chasing during absences</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent allocates incoming customer payments to open invoices and sends overdue-balance chaser emails via the approval queue when covering AR.</td></tr>
+    <tr><td>15</td><td>Help improve our accounts payable processes and automation</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent identifies recurring exceptions and repetitive tasks, drafts process improvement notes for human review.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Identify recurring invoice exceptions or matching failures and summarise patterns</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent logs repeated exception types and drafts a monthly summary report for the Finance Manager.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Draft updated process notes or workflow changes based on identified inefficiencies</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts revised process documentation and queues it for human review and sign-off.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Evaluate and recommend new automation tools or integrations</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant researches AP automation tools and prepares a shortlist for the Finance Manager.</td></tr>
+    <tr><td>16</td><td>Keep processes documented and up to date</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent maintains process documentation in shared drives, drafting updates whenever a workflow changes and queuing them for human approval.</td></tr>
+    <tr><td>17</td><td>Build experience towards the Assistant Management Accountant role as you progress through your studies</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td>Personal career development and study progression are inherently human activities the agent cannot perform.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Complete AAT / ACCA / CIMA study modules and assignments</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">The employee attends study sessions and submits coursework — no automation applies.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Shadow the Assistant Management Accountant during month-end preparation</td><td><span class="badge" style="color:#5a1a1a;background:#fde0e0;">not covered</span></td><td style="color:#555;">In-person learning and mentoring cannot be performed by the agent.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Review management accounts packs to build technical understanding</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent can pull and format management account reports to give the employee easy access to review material.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
