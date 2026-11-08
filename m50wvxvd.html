@@ -100,7 +100,7 @@ details .body {
 }
 .disclaimer {
   background: #eef4ff; border-left: 4px solid #4a7dcc;
-  padding: 12px 16px; margin-top: 28px; border-radius: 0 3px 3px 0;
+  padding: 12px 16px; margin-top: 18px; border-radius: 0 3px 3px 0;
   font-size: 0.9rem; color: #1e3a66;
 }
 .legal-banner {
@@ -111,6 +111,53 @@ details .body {
 .legal-banner.top { margin-bottom: 18px; }
 .legal-banner.foot { margin-top: 14px; }
 .legal-banner strong { font-weight: 700; }
+.top-card {
+  border: 1px solid #d8dde6; border-radius: 6px;
+  padding: 22px 26px; margin-bottom: 18px;
+  background: #fff;
+}
+.top-card .top-eyebrow {
+  font-size: 0.78rem; color: #666; letter-spacing: 0.06em;
+  text-transform: uppercase; margin: 0 0 4px 0;
+}
+.top-card h1 { font-size: 1.55rem; margin: 0 0 4px 0; line-height: 1.2; }
+.top-card .top-sub {
+  font-size: 0.92rem; color: #555; margin: 0 0 18px 0;
+}
+.top-figures {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 0 0 18px 0;
+}
+.top-figures .fig {
+  background: #f6f7f9; border-radius: 4px; padding: 14px 14px 12px 14px;
+  text-align: left;
+}
+.top-figures .fig .num {
+  font-size: 1.7rem; font-weight: 700; color: #111;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.top-figures .fig .lbl {
+  font-size: 0.82rem; color: #333; margin-top: 2px;
+}
+.top-figures .fig.agent   { background: #e3f2e5; }
+.top-figures .fig.agent   .num { color: #1e4028; }
+.top-figures .fig.approval { background: #dce7fb; }
+.top-figures .fig.approval .num { color: #1e3a66; }
+.top-figures .fig.uncovered { background: #fde0e0; }
+.top-figures .fig.uncovered .num { color: #5a1a1a; }
+.top-connect {
+  font-size: 0.95rem; color: #222; margin: 0 0 14px 0;
+}
+a.top-cta {
+  display: inline-block; background: #1a56b0; color: #fff;
+  padding: 10px 18px; border-radius: 4px; font-weight: 600;
+  text-decoration: none; font-size: 0.95rem;
+}
+a.top-cta:hover { background: #144788; }
+details.coverage-map { margin-top: 22px; }
+details.coverage-map > summary {
+  font-size: 1.05rem; color: #222;
+}
 footer {
   margin-top: 28px; padding-top: 14px; border-top: 1px solid #e3e3e5;
   color: #555; font-size: 0.88rem;
@@ -118,54 +165,30 @@ footer {
 footer a { color: #1a56b0; text-decoration: none; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
+  .top-figures { grid-template-columns: 1fr; }
   body { padding: 20px 14px; }
-}
-
-.try-it {
-  margin-top: 28px; padding: 18px 20px;
-  background: #fafbfc; border: 1px solid #e3e3e5; border-radius: 4px;
-}
-.try-it h2 { font-size: 1.05rem; margin: 0 0 6px 0; color: #222; }
-.try-it .lead { color: #555; font-size: 0.92rem; margin: 0 0 14px 0; }
-.try-it label { display: block; font-size: 0.88rem; color: #333; margin-bottom: 10px; }
-.try-it label span { display: block; margin-bottom: 4px; font-weight: 600; }
-.try-it select, .try-it textarea {
-  width: 100%; padding: 8px 10px;
-  border: 1px solid #c8c8cc; border-radius: 3px;
-  font: inherit; background: #fff;
-}
-.try-it textarea {
-  min-height: 160px; resize: vertical;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem;
-}
-.try-it .counter {
-  text-align: right; font-size: 0.78rem; color: #777; margin-top: 2px;
-}
-.try-it .counter.over { color: #a33; }
-.try-it button {
-  background: #1a56b0; color: #fff; border: 0;
-  padding: 9px 18px; border-radius: 3px;
-  font: inherit; font-weight: 600; cursor: pointer;
-}
-.try-it button:disabled { background: #88a; cursor: default; }
-.try-it .result, .try-it .error {
-  margin-top: 14px; padding: 12px 14px;
-  border-radius: 3px; white-space: pre-wrap;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem; line-height: 1.5;
-}
-.try-it .result { background: #f6f7f9; border: 1px solid #e3e3e5; color: #1a1a1a; }
-.try-it .error  { background: #fdecec; border: 1px solid #f4bcbc; color: #7a1f1f; font-family: inherit; }
-.try-it .privacy {
-  margin-top: 12px; font-size: 0.82rem; color: #666;
 }
 </style>
 </head>
 <body>
 <div class="legal-banner top"><strong>Illustration prepared by Vizaible</strong> from Carnegie Group's public job ad. Not produced by or affiliated with Carnegie Group. All people, suppliers, invoices and figures shown are fictional.</div>
-<header>
+
+<section class="top-card">
+  <p class="top-eyebrow">Your Construction Administrator ad, run by an agent</p>
   <h1>Carnegie Group</h1>
+  <p class="top-sub">Ad posted 7 Oct 2026</p>
+  <div class="top-figures">
+    <div class="fig agent"><div class="num">80%</div><div class="lbl">Agent</div></div>
+    <div class="fig approval"><div class="num">20%</div><div class="lbl">Your approval</div></div>
+    <div class="fig uncovered"><div class="num">0%</div><div class="lbl">Not covered</div></div>
+  </div>
+  <p class="top-connect">Connects to your accounting system. Nothing is sent, filed or paid without your approval.</p>
+  <a class="top-cta" href="mailto:etay@vizaible.com?subject=Carnegie%20Group%20walkthrough">Book a 15-min walkthrough</a>
+</section>
+
+<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+
+<header>
   <p class="subtitle">Automates ordering, scheduling, and document control so the team focuses on live projects.</p>
   <p class="services">Steel-frame design-and-build contractor for commercial and industrial buildings — end-to-end concept-to-completion across the South East. Scope is industrial units, warehouses, workshops, and commercial steel-frame buildings. No agricultural sheds, no residential housing.</p>
   <p class="honest-count"><strong>Covered: 93%</strong> (agent 80% + your approvals 7% + our assistant 7%) · voice add-on 7%</p>
@@ -173,34 +196,6 @@ footer a { color: #1a56b0; text-decoration: none; }
   <p class="savings"><strong>What this would save:</strong> likely 2–3 hours a week — rough upper-bound only; actual savings depend on your workflow and CRM. Method: ~5 minutes to review each pre-drafted CRM record / reply / booking email vs ~15–25 minutes end-to-end (log the enquiry, chase missing details, pick a diary slot, draft a reply or supplier booking), across roughly 6–10 inbound items a week.</p>
   <div class="meta"><span class="pill">Systems: Microsoft Office, Outlook, Excel, CRM</span></div>
 </header>
-
-<h2>Coverage map — every duty in the ad</h2>
-<table class="coverage">
-  <thead><tr>
-    <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
-    <th>What the agent does</th>
-  </tr></thead>
-  <tbody>
-    <tr><td>1</td><td>Providing administrative support to our Contracts and Site teams</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles document drafting, email chasing, and schedule updates across both teams via M365 and CRM.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Drafting and sending status update emails to contracts and site teams</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts and queues update emails through the M365 approval workflow.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Preparing and updating contract and site documents (letters, trackers)</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates standard documents from templates and stores them in shared folders.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Logging action items and follow-ups from team communications</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads shared inbox, extracts actions, and updates the CRM or task tracker.</td></tr>
-    <tr><td>2</td><td>Ordering site materials and equipment</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares purchase orders and supplier emails for materials; client approves spend before release.</td></tr>
-    <tr><td>3</td><td>Coordinating maintenance administration for company-owned tools, equipment and vehicles</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks service dates, flags upcoming maintenance, and drafts booking/reminder emails to service providers.</td></tr>
-    <tr><td>4</td><td>Managing diaries and bookings</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads and updates shared M365 calendars, drafts meeting invites, and confirms bookings by email.</td></tr>
-    <tr><td>5</td><td>Handling telephone calls</td><td><span class="badge" style="color:#52317a;background:#ece0fb;">voice add-on</span></td><td>Voice add-on answers inbound calls, takes messages, and routes urgent calls to the right team member.</td></tr>
-    <tr><td>6</td><td>Supporting our Estimating team with incoming enquiries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads enquiry emails from the shared inbox, logs them in CRM, and drafts acknowledgement or information-request replies.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Logging new enquiries into the CRM and assigning to the estimator</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads incoming enquiry emails, creates a CRM record, and notifies the estimator.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Drafting acknowledgement emails to prospective clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts a timely acknowledgement from a template and queues it for approval.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Collating enquiry documents (drawings, specs) and attaching to CRM record</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent extracts attachments from the shared inbox and links them to the relevant CRM opportunity.</td></tr>
-    <tr><td>7</td><td>Communicating with clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts client-facing emails (progress updates, queries, confirmations) and queues them for human approval before sending.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Sending project progress update emails to clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts weekly progress emails from project data and queues for approval.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Responding to routine client queries from the shared inbox</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts responses to standard queries (delivery dates, contacts) for human review.</td></tr>
-    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalating complex or sensitive client issues requiring human judgement</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant handles sensitive complaints or contractual disputes that need careful human judgement.</td></tr>
-    <tr><td>8</td><td>Creating and maintaining project schedules in Excel</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent updates Excel-based project schedules held in shared drives using data from emails and team updates.</td></tr>
-    <tr><td>9</td><td>Managing document filing and document control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent organises and files incoming documents (drawings, specs, correspondence) in the correct shared-drive folders with consistent naming.</td></tr>
-  </tbody>
-</table>
 
 <h2>Worked examples (ranked)</h2>
 <details open>
@@ -508,90 +503,42 @@ NOTE TO YOUR CONTRACTS MANAGER — please review the PO total of £500.40 and ap
   </div>
 </details>
 
-<!-- try-it-block -->
-<section class="try-it">
-  <h2>Try it on your own</h2>
-  <p class="lead">Paste a short, representative sample (max 2,000 characters). The agent runs once on your text and shows the result below.</p>
-  <form id="try-form">
-    <label>
-      <span>Task</span>
-      <select name="duty" id="try-duty" required>
-        <option value="bookings">Monday-morning booking requests</option>
-      </select>
-    </label>
-    <label>
-      <span>Your sample data</span>
-      <textarea name="text" id="try-text" rows="10" maxlength="2000" placeholder="Paste a sample of your inbox, timesheet, supplier note, etc." required></textarea>
-    </label>
-    <div class="counter"><span id="try-charcount">0</span>/2000</div>
-    <button type="submit" id="try-submit">Try it</button>
-  </form>
-  <div class="result" id="try-result" hidden></div>
-  <div class="error" id="try-error" hidden></div>
-  <p class="privacy">Your text is processed once to show this result and is not stored.</p>
-</section>
-
-<div class="disclaimer">A person at the company checks every output before anything is sent, filed, or paid. The agent drafts; a human signs off.</div>
+<details class="coverage-map">
+  <summary>See every duty in the ad</summary>
+  <div class="body">
+    <table class="coverage">
+      <thead><tr>
+        <th>#</th><th>Duty (from ad)</th><th>Coverage</th>
+        <th>What the agent does</th>
+      </tr></thead>
+      <tbody>
+    <tr><td>1</td><td>Providing administrative support to our Contracts and Site teams</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent handles document drafting, email chasing, and schedule updates across both teams via M365 and CRM.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Drafting and sending status update emails to contracts and site teams</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts and queues update emails through the M365 approval workflow.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Preparing and updating contract and site documents (letters, trackers)</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent generates standard documents from templates and stores them in shared folders.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Logging action items and follow-ups from team communications</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads shared inbox, extracts actions, and updates the CRM or task tracker.</td></tr>
+    <tr><td>2</td><td>Ordering site materials and equipment</td><td><span class="badge" style="color:#1e3a66;background:#dce7fb;">your approval</span></td><td>Agent prepares purchase orders and supplier emails for materials; client approves spend before release.</td></tr>
+    <tr><td>3</td><td>Coordinating maintenance administration for company-owned tools, equipment and vehicles</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent tracks service dates, flags upcoming maintenance, and drafts booking/reminder emails to service providers.</td></tr>
+    <tr><td>4</td><td>Managing diaries and bookings</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads and updates shared M365 calendars, drafts meeting invites, and confirms bookings by email.</td></tr>
+    <tr><td>5</td><td>Handling telephone calls</td><td><span class="badge" style="color:#52317a;background:#ece0fb;">voice add-on</span></td><td>Voice add-on answers inbound calls, takes messages, and routes urgent calls to the right team member.</td></tr>
+    <tr><td>6</td><td>Supporting our Estimating team with incoming enquiries</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent reads enquiry emails from the shared inbox, logs them in CRM, and drafts acknowledgement or information-request replies.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Logging new enquiries into the CRM and assigning to the estimator</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent reads incoming enquiry emails, creates a CRM record, and notifies the estimator.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Drafting acknowledgement emails to prospective clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts a timely acknowledgement from a template and queues it for approval.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Collating enquiry documents (drawings, specs) and attaching to CRM record</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent extracts attachments from the shared inbox and links them to the relevant CRM opportunity.</td></tr>
+    <tr><td>7</td><td>Communicating with clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent drafts client-facing emails (progress updates, queries, confirmations) and queues them for human approval before sending.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Sending project progress update emails to clients</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts weekly progress emails from project data and queues for approval.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Responding to routine client queries from the shared inbox</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td style="color:#555;">Agent drafts responses to standard queries (delivery dates, contacts) for human review.</td></tr>
+    <tr><td></td><td style="padding-left:28px;color:#555;">↳ Escalating complex or sensitive client issues requiring human judgement</td><td><span class="badge" style="color:#5a4300;background:#fff3cd;">our assistant</span></td><td style="color:#555;">Remote assistant handles sensitive complaints or contractual disputes that need careful human judgement.</td></tr>
+    <tr><td>8</td><td>Creating and maintaining project schedules in Excel</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent updates Excel-based project schedules held in shared drives using data from emails and team updates.</td></tr>
+    <tr><td>9</td><td>Managing document filing and document control</td><td><span class="badge" style="color:#1e4028;background:#e3f2e5;">agent</span></td><td>Agent organises and files incoming documents (drawings, specs, correspondence) in the correct shared-drive folders with consistent naming.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
 
 <footer>
   Questions, or want a working version for your own inbox / timesheets / invoices?
   Etay Oren · etay@vizaible.com
   <div class="legal-banner foot"><strong>Illustration prepared by Vizaible</strong> from Carnegie Group's public job ad. Not produced by or affiliated with Carnegie Group. All people, suppliers, invoices and figures shown are fictional.</div>
 </footer>
-<script>
-(function () {
-  var API_BASE = "https://web-production-c3b095.up.railway.app";
-  var DEMO_ID = "carnegie-group";
-  var form = document.getElementById("try-form");
-  var ta = document.getElementById("try-text");
-  var cc = document.getElementById("try-charcount");
-  var counter = cc.parentElement;
-  var btn = document.getElementById("try-submit");
-  var resBox = document.getElementById("try-result");
-  var errBox = document.getElementById("try-error");
-  var dutySel = document.getElementById("try-duty");
-
-  function updateCounter() {
-    var n = ta.value.length;
-    cc.textContent = n;
-    if (n > 2000) counter.classList.add("over");
-    else counter.classList.remove("over");
-  }
-  ta.addEventListener("input", updateCounter);
-  updateCounter();
-
-  function show(el, text) {
-    el.textContent = text;
-    el.hidden = false;
-  }
-  function hide(el) { el.hidden = true; el.textContent = ""; }
-
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    hide(resBox); hide(errBox);
-    var text = ta.value;
-    if (!text.trim()) { show(errBox, "Paste some text to process."); return; }
-    if (text.length > 2000) { show(errBox, "Please keep the input under 2,000 characters."); return; }
-    btn.disabled = true;
-    var originalLabel = btn.textContent;
-    btn.textContent = "Running ...";
-    fetch(API_BASE + "/try", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ demo_id: DEMO_ID, duty: dutySel.value, text: text })
-    }).then(function (r) {
-      return r.json().then(function (body) { return { status: r.status, body: body }; });
-    }).then(function (w) {
-      if (w.status === 200 && w.body.result) { show(resBox, w.body.result); return; }
-      if (w.body && w.body.message) { show(errBox, w.body.message); return; }
-      show(errBox, "Something went wrong. Please try again shortly.");
-    }).catch(function () {
-      show(errBox, "Couldn't reach the service. Please try again shortly.");
-    }).then(function () {
-      btn.disabled = false; btn.textContent = originalLabel;
-    });
-  });
-})();
-</script>
 </body>
 </html>
